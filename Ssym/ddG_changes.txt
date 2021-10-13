@@ -1,0 +1,28 @@
+1BNI IA96V  -3.100    -0.90  ref 2669964 reports -0.90 1569557 reports -0.95 9551101 -0.80
+1BNI SA91A  -2.400    -1.800 ref 14516751 
+1L63 SA44T   0.000     0.010 ref 8289284 (trying to avoid 0 for the binary clasification)
+1L63 SA38N   0.000    -0.010 ref 1911773
+1L63 LA91A  -3.900    -2.600 ref 10545167
+1L63 AA130S  1.000    -1.0   ref 8218201
+1LZ1 VA2G   -1.300    -2.290 ref 11087397 
+1LZ1 VA2L    0.300    -0.050 ref 11087397 
+1LZ1 IA56T  -4.300    -3.600 ref 9010773  ref  10556244 
+1LZ1 VA74I  -1.900     0.450 ref 11087397 
+1LZ1 VA74L  -0.400     0.190 ref 11087397 
+1LZ1 VA74M  -0.400     0.650 ref 11927576 and 11087397
+1LZ1 VA74F   0.000    -0.290 ref 11927576 and 11087397
+1LZ1 VA110G -2.200     0.480 ref 11927576 and 11087397
+1LZ1 VA110I -0.800     0.860 ref 11927576 and 11087397
+1LZ1 VA110F -1.900    -0.050 ref 11927576 and 11087397
+2LZM IA3C    0.000     1.200 ref 3405287 for -1.2 SH  +1.2 S-S    the mutat has S-S                                                               
+2LZM RA119E  0.000    -0.040 ref 1942034  (trying to avoid 0 for the binary clasification)
+4LYZ GA49A  -0.700    -1.900 ref 11112507 and ref 8771183
+4LYZ GA71A  -2.100    -0.380 ref 11112507 
+4LYZ GA102A -1.200     0.020 ref 11112507 
+4LYZ GA117A -0.800    -1.460 ref 11112507 
+1RN1 QC25K   1.400     0.930 ref 2663837 
+2LZM RA96K   0.000    -0.001 avoiding zero for the binary clasification     
+1L63 SA44E   0.000     0.001 avoiding zero for the binary clasification 
+2LZM KA60P   0.000    -0.001 avoiding zero for the binary clasification
+
+

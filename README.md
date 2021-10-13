@@ -9,9 +9,9 @@ Inspect the results
 
 ```sh
 >more out.txt
-1BNI IA76A   I A  7  0 -1 -1 -1   -1.700    -1.465866      0.055      0.234     2.602509     1.136643  67  -1   -1.000
-1EY0 TA44V   T V 16 17 -1 -1 -1    0.100     0.106838      0.000      0.007     0.097891     0.204729  41  -1   -1.000
-1IHB FA82Q   F Q  4 13 -1 -1 -1   -0.400    -0.738566      0.115      0.339     2.074235     1.335670  60  -1   -1.000
+1BNI IA76A       -1.466
+1EY0 TA44V        0.107
+1IHB FA82Q       -0.739
 ```
 
 ## ΔΔG Curated Databases
@@ -24,7 +24,7 @@ We extracted from Thermomut http://biosig.unimelb.edu.au/thermomutdb/ and ProThe
 
 
 ```sh
->bin/korpm Pucci2018N.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
+>bin/korpm Pucci2018N.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
 ```
 
 get some statistics 
@@ -61,8 +61,8 @@ aa     #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P    
 ### Check ΔΔG Anti-symmetry in Ssym
 
 ```sh
-bin/korpm Pucci2018dirN.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_dir.txt
-bin/korpm Pucci2018revN.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_rev.txt
+bin/korpm Pucci2018dirN.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_dir.txt
+bin/korpm Pucci2018revN.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_rev.txt
 paste Ssym_dir.txt  Ssym_rev.txt  > temp
 awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%s %s %s %s %s %s %s %f  %f %s %s\n",$1,$19, $2, $20, $10, $11,$29, ($11+$29), abs(($11+$29)), $3, $4  }' temp > KORPM_Ssym.txt
 ```

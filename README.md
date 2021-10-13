@@ -3,17 +3,28 @@
 ## Usage 
 
 ```sh
->bin/korpm Pucci2018N.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
+>bin/korpm input.txt --dir Ssym --score_file pot/korp6Dv1.bin -o out.txt
 ```
 Inspect the results
 
 ```sh
->more Ssym_all.txt
-1AMQ CA191Y  C Y  1 19 -1 -1 -1   -2.300    -3.097442      0.636      0.797     2.306742    -0.790700  93  -1   -1.000
-1AMQ CA191F  C F  1  4 -1 -1 -1   -1.600    -2.418850      0.671      0.819     2.306742    -0.112108  93  -1   -1.000
-1AMQ CA191W  C W  1 18 -1 -1 -1   -3.900    -2.130500      3.131      1.770     2.306742     0.176242  93  -1   -1.000
-1AMQ CA191S  C S  1 15 -1 -1 -1   -1.900    -1.884959      0.000      0.015     2.306742     0.421782  93  -1   -1.000
-1BNI FA7L    F L  4  9 -1 -1 -1   -4.100    -0.529391     12.749      3.571     1.976964     1.447573  59  -1   -1.000
+>more out.txt
+1BNI IA76A   I A  7  0 -1 -1 -1   -1.700    -1.465866      0.055      0.234     2.602509     1.136643  67  -1   -1.000
+1EY0 TA44V   T V 16 17 -1 -1 -1    0.100     0.106838      0.000      0.007     0.097891     0.204729  41  -1   -1.000
+1IHB FA82Q   F Q  4 13 -1 -1 -1   -0.400    -0.738566      0.115      0.339     2.074235     1.335670  60  -1   -1.000
+```
+
+## ΔΔG Curated Databases
+
+We extracted from Thermomut http://biosig.unimelb.edu.au/thermomutdb/ and ProThermDB https://web.iitm.ac.in/bioinfo2/prothermdb/index.html
+
+
+## Results with Ssym
+
+
+
+```sh
+>bin/korpm Pucci2018N.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
 ```
 
 get some statistics 
@@ -47,8 +58,7 @@ aa     #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P    
  P    28    14    14    28    9  1.4  0.9    1   13 -1.2  0.6    5    0    10    18 0.643 0.071 0.929 0.900 0.722 0.786 0.214 0.786 1.202 0.866  0.649  67.9  28.6   3.6  0.60
 ```
 
-
-## Check ΔΔG Anti-symmetry in Ssym
+### Check ΔΔG Anti-symmetry in Ssym
 
 ```sh
 bin/korpm Pucci2018dirN.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_dir.txt
@@ -93,11 +103,8 @@ DDGun3D X   684   342   342   684  233  1.4  0.9  105  237 -1.4  0.9  109    0  
 TherNet X   684   342   342   684  223  1.5  1.0  102  240 -1.5  1.0  119    0   325   359 0.652 0.298 0.702 0.686 0.669 0.677 0.323 0.677 1.531 1.093  0.551  58.2  40.9   0.9  0.35 #   0.745   0.742   0
 .002   0.652   0.298   0.375   0.063   0.588   0.219
 ```
+### Comparative results Ssym
 
-
-## ΔΔG Curated Databases
-
-We have two curated databases extracted from Thermomut http://biosig.unimelb.edu.au/thermomutdb/ and ProThermDB https://web.iitm.ac.in/bioinfo2/prothermdb/index.html
 
 
 

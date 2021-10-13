@@ -3,7 +3,7 @@
 ## Usage 
 
 ```sh
->bin/korpm Pucci2018N.txt --dir Ssym --score_file data/korp6Dv1.bin -o Ssym_all.txt
+>bin/korpm Pucci2018N.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
 ```
 Inspect the results
 
@@ -51,8 +51,8 @@ aa     #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P    
 ## Check ΔΔG Anti-symmetry in Ssym
 
 ```sh
-bin/korpm Pucci2018dirN.txt --dir Ssym --score_file data/korp6Dv1.bin -o Ssym_dir.txt
-bin/korpm Pucci2018revN.txt --dir Ssym --score_file data/korp6Dv1.bin -o Ssym_rev.txt
+bin/korpm Pucci2018dirN.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_dir.txt
+bin/korpm Pucci2018revN.txt --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_rev.txt
 paste Ssym_dir.txt  Ssym_rev.txt  > temp
 awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%s %s %s %s %s %s %s %f  %f %s %s\n",$1,$19, $2, $20, $10, $11,$29, ($11+$29), abs(($11+$29)), $3, $4  }' temp > KORPM_Ssym.txt
 ```

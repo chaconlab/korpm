@@ -1,11 +1,15 @@
 # korpm
 
+Fast prediction the stability from 3D strcuture
+
 ## Usage 
+
+The usage is very simple:  
 
 ```sh
 >bin/korpm input.txt --dir Ssym --score_file pot/korp6Dv1.bin -o out.txt
 ```
-Inspect the results
+it only requires: 1) two column input file specifying both PDB file and mutation and 2) the paths the PDB files (--dir) and the KORP potential file (--score_file).  The results are also stored in the out.txt (-o option) file.
 
 ```sh
 >more out.txt
@@ -13,6 +17,7 @@ Inspect the results
 1EY0 TA44V        0.107
 1IHB FA82Q       -0.739
 ```
+The mutation columns stands for: 1st letter is the wild type amino acid, 2nd is the chain ID, digits corresponds to PDB residue positon, and the last letter is the mutated amino acid. We follow the standard convention ΔΔG >= 0 (positives) are stabilizing and ΔΔG < 0 (negatives) are destabilizing.
 
 ## ΔΔG Curated Databases
 
@@ -67,7 +72,7 @@ paste Ssym_dir.txt  Ssym_rev.txt  > temp
 awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%s %s %s %s %s %s %s %f  %f %s %s\n",$1,$19, $2, $20, $10, $11,$29, ($11+$29), abs(($11+$29)), $3, $4  }' temp > KORPM_Ssym.txt
 ```
 
-Hola...
+you can see the results in your favority plot, for example in gnuplot:
 
 ```sh
 gnuplot
@@ -82,8 +87,11 @@ stat "KORPM_Ssym.txt" u 6:7
 ...
 ```
 
+### Comparative results Ssym
+
+Here you can find some compartive results with state of the art stability prediction programs:
+
 ```sh
-SYM
               #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P     N    TPR   FPR   SPE   PPV   NPV   ACC   ERR  accn  RMSE   MAE    PCC    Sc   Ob1   Ob2   MCC #   AUC_R   AUC_P   T
 HROC    TPR     FPR     BMCC    TH      TPR     FPR
 KORPM   X   684   342   342   684  264  1.5  0.9   72  270 -1.5  0.8   78    0   336   348 0.772 0.211 0.789 0.786 0.776 0.781 0.219 0.781 1.324 0.959  0.696  64.3  34.9   0.7  0.56 #   0.858   0.854  -0
@@ -103,7 +111,7 @@ DDGun3D X   684   342   342   684  233  1.4  0.9  105  237 -1.4  0.9  109    0  
 TherNet X   684   342   342   684  223  1.5  1.0  102  240 -1.5  1.0  119    0   325   359 0.652 0.298 0.702 0.686 0.669 0.677 0.323 0.677 1.531 1.093  0.551  58.2  40.9   0.9  0.35 #   0.745   0.742   0
 .002   0.652   0.298   0.375   0.063   0.588   0.219
 ```
-### Comparative results Ssym
+
 
 
 

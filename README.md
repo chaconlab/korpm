@@ -17,19 +17,19 @@ it only requires: 1) two column input file specifying both PDB file and mutation
 1EY0 TA44V        0.107
 1IHB FA82Q       -0.739
 ```
-The mutation columns stands for: 1st letter is the wild type amino acid, 2nd is the chain ID, digits corresponds to PDB residue positon, and the last letter is the mutated amino acid. We follow the standard convention ΔΔG >= 0 (positives) are stabilizing and ΔΔG < 0 (negatives) are destabilizing.
+The mutation columns stands for: 1st letter is the wild type amino acid, 2nd is the chain ID, digits corresponds to PDB residue position, and the last letter is the mutated amino acid. We follow the standard convention ΔΔG >= 0 (positives) are stabilizing and ΔΔG < 0 (negatives) are destabilizing.
 
 ## ΔΔG Curated Databases
 
-We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html)
+We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html) unique mutations trying to avoid entries that potentially interact with ligands or belong to a protein-protein interfaces, and removing entries measured at extreme temperature or pH conditions. The curated database data comprise 3766 mutations from 149 proteins families (homology <50%) with an average of ΔΔG -1.0 Kcal/mol and a standard deviation of 1.6 Kcal/mol. In total, 73% are destabilizing (ΔΔG>0) and 27% are stabilizing (ΔΔG<0). By removing mainly alanines' destabilizing mutations, we obtain a more balanced subset that includes 2344 mutations from 137 proteins families, 58% destabilizing and 42% stabilizing with an average of ΔΔG -0.7 Kcal/mol and a standard deviation of 1.6 Kcal/mol. This subset, named [Id50c08_1merNCLB.txt](Id50c08_1merNCLB.txt), was used for extract training and validation datasets for k-fold cross-validation experiments. Note that this subset is far from being perfectly balanced, e.g., the most frequent amino acid involved in the mutation still is alanine and cysteines, tryptophans, and, prolines still are underpopulated.
 
 <table border="0">
 
  <tr>
     <td>
-     <img src="images/gnuplot.png">  </td>
+     <img src="images/unbalanced.jpg">  </td>
     <td> 
-      <img src="images/gnuplot.png">  </td>
+      <img src="images/balanced.jpg">  </td>
  </tr>
   <tr>
     <td align="center" ><b style="font-size:30px"><a href="Id50c08_1merNCL.txt">Id50c08_1merNCL.txt</a> </b></td>
@@ -49,7 +49,10 @@ get some statistics
 ```sh
 /Mstat.pl Ssym_all.txt 10 11 2
 
-# Current Positives|Negatives threshold (thr) is 0 (ddG >= 0 are not-destabilizing [positives] and ddG < 0 are destabilizing [negatives]).
+# Current Positives|Negatives threshold (thr) is 0 (ddG >= 0 are not destabilizing [positives] and ddG < 0 are destabilizing [negatives]).
+
+
+
 
 aa     #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P     N    TPR   FPR   SPE   PPV   NPV   ACC   ERR  accn  RMSE   MAE    PCC    Sc   Ob1   Ob2   MCC
  X   684   342   342   684  263  1.5  0.9   72  270 -1.5  0.8   79    0   335   349 0.769 0.211 0.789 0.785 0.774 0.779 0.221 0.779 1.339 0.975  0.694  63.7  35.5   0.7  0.56
@@ -84,7 +87,7 @@ paste Ssym_dir.txt  Ssym_rev.txt  > temp
 awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%s %s %s %s %s %s %s %f  %f %s %s\n",$1,$19, $2, $20, $10, $11,$29, ($11+$29), abs(($11+$29)), $3, $4  }' temp > KORPM_Ssym.txt
 ```
 
-you can see the results in your favority plot, for example in gnuplot:
+you can see the results in your favourite plot, for example in gnuplot:
 
 
 <table border="0">
@@ -110,26 +113,16 @@ you can see the results in your favority plot, for example in gnuplot:
 
 Here you can find some compartive results with state of the art stability prediction programs:
 
-```sh
-              #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P     N    TPR   FPR   SPE   PPV   NPV   ACC   ERR  accn  RMSE   MAE    PCC    Sc   Ob1   Ob2   MCC #   AUC_R   AUC_P   T
-HROC    TPR     FPR     BMCC    TH      TPR     FPR
-KORPM   X   684   342   342   684  264  1.5  0.9   72  270 -1.5  0.8   78    0   336   348 0.772 0.211 0.789 0.786 0.776 0.781 0.219 0.781 1.324 0.959  0.696  64.3  34.9   0.7  0.56 #   0.858   0.854  -0
-.056   0.807   0.222   0.585  -0.056   0.807   0.222
-Cartddg X   684   342   342   684  197  1.4  1.6   43  299 -1.5  2.9  145    0   240   444 0.576 0.126 0.874 0.821 0.673 0.725 0.275 0.725 3.438 2.633  0.633  52.3  41.1   6.6  0.47 #   0.809   0.815  -0
-.859   0.713   0.208   0.507  -0.859   0.713   0.208
-FoldX   X   684   342   342   684  188  1.4  0.8   77  265 -1.5  1.0  154    0   265   419 0.550 0.225 0.775 0.709 0.632 0.662 0.338 0.662 1.862 1.286  0.537  60.1  34.5   5.4  0.33 #   0.736   0.748  -0
-.258   0.635   0.292   0.371   0.151   0.526   0.173
-Evo     X   684   342   342   684  209  1.4  0.8  102  240 -1.5  0.9  133    0   311   373 0.611 0.298 0.702 0.672 0.643 0.656 0.344 0.656 1.562 1.123  0.543  61.7  34.9   3.4  0.31 #   0.741   0.753  -0
-.106   0.681   0.325   0.359   0.248   0.535   0.190
-PopMs   X   684   342   342   684  229  1.4  1.0  100  242 -1.5  1.1  113    0   329   355 0.670 0.292 0.708 0.696 0.682 0.689 0.311 0.689 1.581 1.147  0.521  56.6  42.4   1.0  0.38 #   0.755   0.738   0
-.001   0.670   0.292   0.404   0.262   0.488   0.117
-Dynamut X   684   342   342   684   72  1.5  1.2   40  302 -1.4  0.8  270    0   112   572 0.211 0.117 0.883 0.643 0.528 0.547 0.453 0.547 1.879 1.368  0.380  54.4  38.2   7.5  0.13 #   0.624   0.616  -0
-.701   0.629   0.474   0.238  -1.848   0.944   0.781
-DDGun3D X   684   342   342   684  233  1.4  0.9  105  237 -1.4  0.9  109    0   338   346 0.681 0.307 0.693 0.689 0.685 0.687 0.313 0.687 1.434 1.039  0.627  61.8  37.4   0.7  0.37 #   0.753   0.756  -0
-.006   0.696   0.316   0.380   0.011   0.673   0.292
-TherNet X   684   342   342   684  223  1.5  1.0  102  240 -1.5  1.0  119    0   325   359 0.652 0.298 0.702 0.686 0.669 0.677 0.323 0.677 1.531 1.093  0.551  58.2  40.9   0.9  0.35 #   0.745   0.742   0
-.002   0.652   0.298   0.375   0.063   0.588   0.219
-```
+<table border="1">
+<tr><td>KORPM</td><td>1.32</td><td>0.96</td><td>0.70</td><td>64.3</td><td>34.9</td><td>0.7</td><td>0.77</td><td>0.79</td><td>0.79</td><td>0.78</td><td>0.78</td><td>0.56</td><td>0.86</td><td>0.85</td></tr>
+<tr><td>Cartddg</td><td>3.44</td><td>2.63</td><td>0.63</td><td>52.3</td><td>41.1</td><td>6.6</td><td>0.58</td><td>0.87</td><td>0.82</td><td>0.67</td><td>0.73</td><td>0.47</td><td>0.81</td><td>0.82</td></tr>
+<tr><td>FoldX</td><td>1.86</td><td>1.29</td><td>0.54</td><td>60.1</td><td>34.5</td><td>5.4</td><td>0.55</td><td>0.78</td><td>0.71</td><td>0.63</td><td>0.66</td><td>0.33</td><td>0.74</td><td>0.75</td></tr>
+<tr><td>EvoFF</td><td>1.56</td><td>1.12</td><td>0.54</td><td>61.7</td><td>34.9</td><td>3.4</td><td>0.61</td><td>0.70</td><td>0.67</td><td>0.64</td><td>0.66</td><td>0.31</td><td>0.74</td><td>0.75</td></tr>
+<tr><td>PopMu</td><td>1.58</td><td>1.15</td><td>0.52</td><td>56.6</td><td>42.4</td><td>1.0</td><td>0.67</td><td>0.71</td><td>0.70</td><td>0.68</td><td>0.69</td><td>0.38</td><td>0.76</td><td>0.74</td></tr>
+<tr><td>Dynamut</td><td>1.88</td><td>1.37</td><td>0.38</td><td>54.4</td><td>38.2</td><td>7.5</td><td>0.21</td><td>0.88</td><td>0.64</td><td>0.53</td><td>0.55</td><td>0.13</td><td>0.62</td><td>0.62</td></tr>
+<tr><td>DDGun3D</td><td>1.43</td><td>1.04</td><td>0.63</td><td>61.8</td><td>37.4</td><td>0.7</td><td>0.68</td><td>0.69</td><td>0.69</td><td>0.69</td><td>0.69</td><td>0.37</td><td>0.75</td><td>0.76</td></tr>
+<tr><td>ThermoN</td><td>1.53</td><td>1.09</td><td>0.55</td><td>58.2</td><td>40.9</td><td>0.9</td><td>0.65</td><td>0.70</td><td>0.69</td><td>0.67</td><td>0.68</td><td>0.35</td><td>0.75</td><td>0.74</td></tr>
+</table>
 
 
 
@@ -138,3 +131,7 @@ TherNet X   684   342   342   684  223  1.5  1.0  102  240 -1.5  1.0  119    0  
 
 
 
+
+
+
+]

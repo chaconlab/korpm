@@ -21,8 +21,20 @@ The mutation columns stands for: 1st letter is the wild type amino acid, 2nd is 
 
 ## ΔΔG Curated Databases
 
-We extracted from Thermomut http://biosig.unimelb.edu.au/thermomutdb/ and ProThermDB https://web.iitm.ac.in/bioinfo2/prothermdb/index.html
+We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html)
 
+<table border="0">
+
+ <tr>
+    <td>
+     <img src="images/gnuplot.png">  </td>
+    <td> 
+      <img src="images/gnuplot.png">  </td>
+ </tr>
+  <tr>
+    <td><b style="font-size:30px">Title</b></td>
+    <td><b style="font-size:30px">Title 2</b></td>
+ </tr></table>
 
 ## Results with Ssym
 
@@ -74,19 +86,26 @@ awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%s %s %s %s %s %s %s %f 
 
 you can see the results in your favority plot, for example in gnuplot:
 
-```sh
-gnuplot
-plot  "KORPM_Ssym.txt" u 6:7
 
-stat "KORPM_Ssym.txt" u 6:7
-...
-  Linear Model:       y = -0.8267 x + 0.03372
-  Slope:              -0.8267 +- 0.02426
-  Intercept:          0.03372 +- 0.03814
-  Correlation:        r = -0.8795
-...
-```
-
+<table border="0">
+ <tr>
+    <td><b style="font-size:30px">Title</b></td>
+    <td><b style="font-size:30px">Title 2</b></td>
+ </tr>
+ <tr>
+    <td><pre>plot  "KORPM_Ssym.txt" u 6:7
+     stat "KORPM_Ssym.txt" u 6:7
+     ...
+     Linear Model:       y = -0.8267 x + 0.03372
+     Slope:              -0.8267 +- 0.02426
+     Intercept:          0.03372 +- 0.03814
+     Correlation:        r = -0.8795
+     ...</pre>
+  </td>
+    <td> 
+      <img src="images/gnuplot.png" alt="Italian Trulli">  </td>
+ </tr>
+</table>
 ### Comparative results Ssym
 
 Here you can find some compartive results with state of the art stability prediction programs:

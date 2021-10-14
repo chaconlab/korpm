@@ -32,8 +32,8 @@ We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [Pr
       <img src="images/gnuplot.png">  </td>
  </tr>
   <tr>
-    <td><b style="font-size:30px">Title</b></td>
-    <td><b style="font-size:30px">Title 2</b></td>
+    <td align="center" ><b style="font-size:30px"><a href="Id50c08_1merNCL.txt">Id50c08_1merNCL.txt</a> </b></td>
+    <td align="center" ><b style="font-size:30px"><a href="Id50c08_1merNCLB.txt">Id50c08_1merNCLB.txt</a> </b></td>
  </tr></table>
 
 ## Results with Ssym

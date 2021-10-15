@@ -1,18 +1,18 @@
 # korpm
 
-Fast prediction the stability from 3D strcuture
+Fast method for predicting the stability change upon mutation from 3D structure
 
 ## Usage 
 
 The usage is very simple:  
 
 ```sh
->bin/korpm input.txt --dir Ssym --score_file pot/korp6Dv1.bin -o out.txt
+bin/korpm input.txt --dir Ssym --score_file pot/korp6Dv1.bin -o out.txt
 ```
 it only requires: 1) two column input file specifying both PDB file and mutation and 2) the paths the PDB files (--dir) and the KORP potential file (--score_file).  The results are also stored in the out.txt (-o option) file.
 
 ```sh
->more out.txt
+more out.txt
 1BNI IA76A       -1.466
 1EY0 TA44V        0.107
 1IHB FA82Q       -0.739
@@ -21,7 +21,7 @@ The mutation columns stands for: 1st letter is the wild type amino acid, 2nd is 
 
 ## ΔΔG Curated Databases
 
-We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html) unique mutations trying to avoid entries that potentially interact with ligands or belong to a protein-protein interfaces, and removing entries measured at extreme temperature or pH conditions. The curated database data comprise 3766 mutations from 149 proteins families (homology <50%) with an average of ΔΔG -1.0 Kcal/mol and a standard deviation of 1.6 Kcal/mol. In total, 73% are destabilizing (ΔΔG>0) and 27% are stabilizing (ΔΔG<0). By removing mainly alanines' destabilizing mutations, we obtain a more balanced subset that includes 2344 mutations from 137 proteins families, 58% destabilizing and 42% stabilizing with an average of ΔΔG -0.7 Kcal/mol and a standard deviation of 1.6 Kcal/mol. This subset, named [Id50c08_1merNCLB.txt](Id50c08_1merNCLB.txt), was used for extract training and validation datasets for k-fold cross-validation experiments. Note that this subset is far from being perfectly balanced, e.g., the most frequent amino acid involved in the mutation still is alanine and cysteines, tryptophans, and, prolines still are underpopulated.
+We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html) unique mutations trying to avoid entries that potentially interact with ligands or belong to a protein-protein interfaces, and removing entries measured at extreme temperature or pH conditions. The curated database data comprise 3766 mutations from 149 proteins families (homology <50%) with an average of ΔΔG -1.0 Kcal/mol and a standard deviation of 1.6 Kcal/mol. In total, 73% are destabilizing (ΔΔG>0) and 27% are stabilizing (ΔΔG<0). By removing mainly alanines' destabilizing mutations, we obtain a more balanced subset that includes 2344 mutations from 137 proteins families, 58% destabilizing and 42% stabilizing with an average of ΔΔG -0.7 Kcal/mol and a standard deviation of 1.6 Kcal/mol. This subset, named [Id50c08_1merNCLB.txt](Id50c08_1merNCLB.txt), was used for extract training and validation datasets for k-fold cross-validation experiments. Note that this subset is far from being perfectly balanced, e.g., the most frequent amino acid involved in the mutation still is alanine and cysteines, tryptophans, and, prolines still are underpopulated. 
 
 <table border="0">
 
@@ -35,6 +35,8 @@ We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [Pr
     <td align="center" ><b style="font-size:30px"><a href="Id50c08_1merNCL.txt">Id50c08_1merNCL.txt</a> </b></td>
     <td align="center" ><b style="font-size:30px"><a href="Id50c08_1merNCLB.txt">Id50c08_1merNCLB.txt</a> </b></td>
  </tr></table>
+
+In the directory [Db](Db) you can find all the correspond PDB files. 
 
 ## Results with Ssym
 
@@ -107,6 +109,7 @@ you can see the results in your favourite plot, for example in gnuplot:
       <img src="images/gnuplot.jpg" alt="Italian Trulli">  </td>
  </tr>
 </table>
+
 ### Comparative results Ssym
 
 Here you can find some compartive results with state of the art stability prediction programs:

@@ -40,6 +40,9 @@ In the directory [Db](Db) you can find all the correspond PDB files.
 
 ## Results with Ssym
 
+Ssym is a data set with equal number of stabilizing and destabilizing mutations compiled by Pucci et al. (https://doi.org/10.1093/bioinformatics/bty348) for which the structure of both the wild-type and mutant protein are available.  
+
+
 
 
 ```sh

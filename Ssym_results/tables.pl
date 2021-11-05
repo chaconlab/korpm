@@ -1,24 +1,36 @@
 #!/usr/bin/perl
 use strict;
 
-# usage  tables.pl
+# usage  tables.pl > table
 
 my @list_th=("Cartddg","FoldX");
 
 my @list=("Evo","PopMs","Dynamut","DDGun3D","TherNet");
 
+my @listK=("KORPM","KORPMt");
+
 my $cmd ="";
 
+#system ("korpm  ../Pucci2018N.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
 system ("../../Mstat.pl KORPM_Pucci2018N.txt 10 11 2 > NKORPM.Mlog");
 system ("../../confusion.pl  KORPM_Pucci2018N.txt 10 11 1000 >  KORPM_Pucci2018N_prc.txt");
-
-
+#system ("korpm  ../Pucci2018revN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
 system ("../../Mstat.pl KORPM_Pucci2018revN.txt 10 11 2 > RKORPM.Mlog");
 system ("../../confusion.pl  KORPM_Pucci2018revN.txt 10 11 1000 >  KORPM_Pucci2018revN_prc.txt");
-
-
+#system ("korpm  ../Pucci2018dirN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
 system ("../../Mstat.pl KORPM_Pucci2018dirN.txt 10 11 2 > DKORPM.Mlog");
 system ("../../confusion.pl  KORPM_Pucci2018dirN.txt 10 11 1000 >  KORPM_Pucci2018dirN_prc.txt");
+
+
+#system ("korpm  ../Pucci2018N.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
+system ("../../Mstat.pl KORPMt_Pucci2018N.txt 10 11 2 > NKORPMt.Mlog");
+system ("../../confusion.pl  KORPMt_Pucci2018N.txt 10 11 1000 >  KORPMt_Pucci2018N_prc.txt");
+#system ("korpm  ../Pucci2018revN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
+system ("../../Mstat.pl KORPMt_Pucci2018revN.txt 10 11 2 > RKORPMt.Mlog");
+system ("../../confusion.pl  KORPMt_Pucci2018revN.txt 10 11 1000 >  KORPMt_Pucci2018revN_prc.txt");
+#system ("korpm  ../Pucci2018dirN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
+system ("../../Mstat.pl KORPMt_Pucci2018dirN.txt 10 11 2 > DKORPMt.Mlog");
+system ("../../confusion.pl  KORPMt_Pucci2018dirN.txt 10 11 1000 >  KORPMt_Pucci2018dirN_prc.txt");
 
    
 
@@ -56,26 +68,40 @@ foreach (@list) {
 push(@list_th, @list);
 
 system (' echo "SYM" ');
-system ('echo "              #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P     N    TPR   FPR   SPE   PPV   NPV   ACC   ERR  accn  RMSE   MAE    PCC    Sc   Ob1   Ob2   MCC #   AUC_R   AUC_P   THROC    TPR     FPR     BMCC    TH      TPR     FPR"' );
+system ('echo "             S     D     T   TP  avg  err   FP   TN  avg  err   FN    P     N   SEN   SPE   PPV   NPV   ACC  accn  RMSE   MAE   PCC    Sc    Ob1   Ob2  MCC     AUC_R   AUC_P   THROC    Sen     Spe     BMCC    TH     Sen     Spe"' );
 
-my $K="KORPM";
- $cmd="printf \"%-7s\" $K; grep \"\^ X \" N$K.Mlog | tr -d \'\\n\'; echo -n \" \"; tail -1 $K\_Pucci2018N_prc.txt"; system ($cmd);
+
+
+
+
+foreach (@listK) {
+ $cmd="printf \"%-7s\" $_; grep \"\^ X \" N$_.Mlog | sed  \'s\/\X\/\/\' | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018N_prc.txt | sed  \'s\/\#\/\/\' "; system ($cmd);
+ #print $cmd;
+} 
+ 
 foreach (@list_th) {
- $cmd="printf \"%-7s\" $_; grep \"\^ X \" N$_.Mlog | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018N*prc.txt"; system ($cmd);
+ $cmd="printf \"%-7s\" $_; grep \"\^ X \" N$_.Mlog | sed  \'s\/\X\/\/\' | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018N*prc.txt | sed  \'s\/\#\/\/\' "; system ($cmd);
 }
 system ('echo "REVERSE"');
-system ('echo "              #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P     N    TPR   FPR   SPE   PPV   NPV   ACC   ERR  accn  RMSE   MAE    PCC    Sc   Ob1   Ob2   MCC #   AUC_R   AUC_P   THROC    TPR     FPR     BMCC    TH      TPR     FPR"' );
+system ('echo "             S     D     T   TP  avg  err   FP   TN  avg  err   FN    P     N   SEN   SPE   PPV   NPV   ACC  accn  RMSE   MAE   PCC    Sc    Ob1   Ob2  MCC     AUC_R   AUC_P   THROC    Sen     Spe     BMCC    TH     Sen     Spe"' );
 
-$cmd="printf \"%-7s\" $K; grep \"\^ X \" R$K.Mlog | tr -d \'\\n\'; echo -n \" \"; tail -1 $K\_Pucci2018revN_prc.txt"; system ($cmd);
-foreach (@list_th) {
- $cmd="printf \"%-7s\" $_; grep \"\^ X \" R$_.Mlog | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018revN*prc.txt"; system ($cmd);
+foreach (@listK) {
+ $cmd="printf \"%-7s\" $_; grep \"\^ X \" R$_.Mlog | sed  \'s\/\X\/\/\' | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018revN_prc.txt | sed  \'s\/\#\/\/\' "; system ($cmd);
 }
-system ('echo "DIRECT " ');
-system ('echo "              #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P     N    TPR   FPR   SPE   PPV   NPV   ACC   ERR  accn  RMSE   MAE    PCC    Sc   Ob1   Ob2   MCC #   AUC_R   AUC_P   THROC    TPR     FPR     BMCC    TH      TPR     FPR"' );
 
-$cmd="printf \"%-7s\" $K; grep \"\^ X \" D$K.Mlog | tr -d \'\\n\'; echo -n \" \"; tail -1 $K\_Pucci2018dirN_prc.txt"; system ($cmd);
 foreach (@list_th) {
- $cmd="printf \"%-7s\" $_; grep \"\^ X \" D$_.Mlog | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018dirN*prc.txt"; system ($cmd);
+ $cmd="printf \"%-7s\" $_; grep \"\^ X \" R$_.Mlog | sed  \'s\/\X\/\/\' | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018revN*prc.txt | sed  \'s\/\#\/\/\' "; system ($cmd);
+}
+
+system ('echo "DIRECT " ');
+system ('echo "DIRECT " ');
+system ('echo "             S     D     T   TP  avg  err   FP   TN  avg  err   FN    P     N   SEN   SPE   PPV   NPV   ACC  accn  RMSE   MAE   PCC    Sc    Ob1   Ob2  MCC     AUC_R   AUC_P   THROC    Sen     Spe     BMCC    TH     Sen     Spe"' );
+
+foreach (@listK) {
+$cmd="printf \"%-7s\" $_; grep \"\^ X \" D$_.Mlog | sed  \'s\/\X\/\/\' | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018dirN_prc.txt | sed  \'s\/\#\/\/\' "; system ($cmd);
+}
+foreach (@list_th) {
+ $cmd="printf \"%-7s\" $_; grep \"\^ X \" D$_.Mlog | sed  \'s\/\X\/\/\' | tr -d \'\\n\'; echo -n \" \"; tail -1 $_\_Pucci2018dirN*prc.txt | sed  \'s\/\#\/\/\' "; system ($cmd);
 }
 
 

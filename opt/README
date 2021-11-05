@@ -1,0 +1,47 @@
+1) Convert db text into a clean input for korpm
+
+awk '{printf "%4s %-7s %7.3f %3d %5.1f\n",$1, $2, $3, $4, $22/120}' ../Id50c08_1merNCLB.txt > Id50c08_1merNCLB.in 
+awk '{if ($22/120 < 0.3) {printf "%4s %-7s %7.3f %3d %5.1f %s\n",$1, $2, $3, $4, $22/120, $24}}' ../Id50c08_1merNCLB.txt > Id50c08_1merNCLBrsaLT03.in
+awk '{if ($22/120 > 0.3) {printf "%4s %-7s %7.3f %3d %5.1f %s\n",$1, $2, $3, $4, $22/120, $24}}' ../Id50c08_1merNCLB.txt > Id50c08_1merNCLBrsaGT03.in
+
+2) Generate a pair-waise file for optimization
+korpm Id50c08_1merNCLB.in --opt --dir ../Db  --score_file ~/Korp6Dv1/korp6Dv1.bin -r 5 -o  Id50c08_1merNCLB.opt --dexp --class --rsa
+
+3) Optimization 
+
+# K-fold pure random
+korpm_opt Id50c08_1merNCL_full.opt -r 5 --rsa --class -k 10 -n 100 --krand
+korpm_opt Id50c08_1merNCL_full.opt -r 3 --rsa --class -k 10 -n 100 --krand   # reduced DE+ILV+NQST+FY+KH
+
+# K-fold cluster by homology 
+korpm_opt Id50c08_1merNCL_full.opt -r 5 --rsa --class -k 10 -n 100  
+korpm_opt Id50c08_1merNCL_full.opt -r 3 --rsa --class -k 10 -n 100    # reduced DE+ILV+NQST+FY+KH
+
+or run script 
+
+>tables.pl
+
+
+K-fold cluster by homology  Kw=5->20 weights   Kw=3->REDUCED ALPHABET DE+ILV+NQST+FY+KH
+
+   Kw  Kf      A      C      D      E      F      G      H      I      K      L      M      N      P      Q      R      S      T      V      W      Y  |  RMSE   MAE   PPV   Sen   Spe   PCC   ACC   NPV   MCC   ROC   PRC   AUC_R   AUC_P   THROC    Sen     Spe     BMCC    TH      Sen     Spe
+   5    5   1.906  0.777  0.839  0.916  2.362  0.936  1.124  2.533  0.992  2.703  1.687  1.205  1.152  0.992  1.634  1.406  1.194  2.432  1.501  2.564 | 1.395 1.041 0.650 0.511 0.832 0.540 0.705 0.722 0.357 0.770 0.639   0.751   0.653  -0.323   0.690   0.685   0.373  -0.495   0.786   0.589
+   5   10   1.898  0.770  0.837  0.899  2.346  0.928  1.128  2.542  0.987  2.724  1.710  1.216  1.157  0.989  1.628  1.397  1.179  2.451  1.483  2.590 | 1.371 1.024 0.649 0.520 0.832 0.525 0.714 0.731 0.365 0.772 0.638   0.750   0.659  -0.342   0.697   0.675   0.372  -0.493   0.782   0.591
+   3    5   1.894  0.724  0.854  0.854  2.438  0.921  1.022  2.546  1.022  2.546  1.666  1.118  1.416  1.118  1.620  1.118  1.118  2.546  1.416  2.438 | 1.384 1.026 0.668 0.534 0.839 0.548 0.719 0.734 0.388 0.774 0.645   0.761   0.661  -0.264   0.689   0.719   0.404  -0.264   0.689   0.719
+   3   10   1.888  0.699  0.848  0.848  2.447  0.897  1.025  2.567  1.025  2.567  1.698  1.115  1.400  1.115  1.620  1.115  1.115  2.567  1.400  2.447 | 1.370 1.020 0.665 0.541 0.839 0.526 0.726 0.741 0.392 0.776 0.641   0.758   0.668  -0.266   0.685   0.721   0.404  -0.247   0.671   0.735
+
+K-fold pure random Kw=5->20 weights   Kw=3->REDUCED ALPHABET DE+ILV+NQST+FY+KH
+
+   Kw  Kf      A      C      D      E      F      G      H      I      K      L      M      N      P      Q      R      S      T      V      W      Y  |  RMSE   MAE   PPV   Sen   Spe   PCC   ACC   NPV   MCC   ROC   PRC   AUC_R   AUC_P   THROC    Sen     Spe     BMCC    TH      Sen     Spe
+   5    5   1.884  0.761  0.826  0.895  2.355  0.901  1.126  2.538  0.974  2.726  1.718  1.213  1.149  0.991  1.619  1.392  1.143  2.444  1.486  2.579 | 1.298 0.944 0.694 0.503 0.839 0.601 0.698 0.700 0.367 0.771 0.672   0.770   0.672  -0.234   0.681   0.734   0.413  -0.234   0.681   0.734
+   5   10   1.884  0.766  0.826  0.893  2.337  0.903  1.123  2.539  0.972  2.731  1.720  1.213  1.160  0.987  1.614  1.394  1.143  2.446  1.477  2.584 | 1.296 0.944 0.693 0.501 0.840 0.600 0.697 0.699 0.366 0.771 0.671   0.770   0.672  -0.248   0.691   0.729   0.417  -0.248   0.691   0.729
+   3    5   1.871  0.704  0.841  0.841  2.442  0.871  1.023  2.576  1.023  2.576  1.705  1.108  1.398  1.108  1.611  1.108  1.108  2.576  1.398  2.442 | 1.299 0.944 0.705 0.515 0.844 0.601 0.705 0.706 0.384 0.772 0.673   0.772   0.673  -0.276   0.713   0.708   0.417  -0.276   0.713   0.708
+   3   10   1.871  0.692  0.841  0.841  2.447  0.866  1.023  2.576  1.023  2.576  1.707  1.107  1.388  1.107  1.610  1.107  1.107  2.576  1.388  2.447 | 1.298 0.944 0.706 0.516 0.844 0.599 0.706 0.706 0.385 0.772 0.673   0.772   0.673  -0.308   0.734   0.686   0.415  -0.215   0.669   0.748
+
+
+
+awk '{printf "%4s %-7s %7.3f %3d %5.1f\n",$1, $2, $3, $4, $22/120}' ../Id50c08_1merNCL_full.txt > Id50c08_1merNCL_full.in 
+korpm Id50c08_1merNCL_full.in --opt --dir ../Db  --score_file ~/Korp6Dv1/korp6Dv1.bin -r 5 -o  Id50c08_1merNCL_full.opt --dexp --class
+
+
+

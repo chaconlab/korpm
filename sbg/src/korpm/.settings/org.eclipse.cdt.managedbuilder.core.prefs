@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/0.128899120/CPATH/delimiter=\:
+environment/buildEnvironmentInclude/0.128899120/CPATH/operation=replace
+environment/buildEnvironmentInclude/0.128899120/CPATH/value=/opt/intel/compilers_and_libraries_2020.1.217/linux/ipp/include\:/opt/intel/compilers_and_libraries_2020.1.217/linux/mkl/include\:/opt/intel/compilers_and_libraries_2020.1.217/linux/pstl/include\:/opt/intel/compilers_and_libraries_2020.1.217/linux/pstl/stdlib\:/opt/intel/compilers_and_libraries_2020.1.217/linux/tbb/include\:/opt/intel/compilers_and_libraries_2020.1.217/linux/tbb/include\:/opt/intel/compilers_and_libraries_2020.1.217/linux/daal/include
+environment/buildEnvironmentInclude/0.128899120/CPLUS_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/0.128899120/CPLUS_INCLUDE_PATH/operation=replace
+environment/buildEnvironmentInclude/0.128899120/CPLUS_INCLUDE_PATH/value=/opt/intel/clck/2019.8/include
+environment/buildEnvironmentInclude/0.128899120/C_INCLUDE_PATH/delimiter=\:
+environment/buildEnvironmentInclude/0.128899120/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/0.128899120/append=true
+environment/buildEnvironmentInclude/0.128899120/appendContributed=true
+environment/buildEnvironmentLibrary/0.128899120/LIBRARY_PATH/delimiter=\:
+environment/buildEnvironmentLibrary/0.128899120/LIBRARY_PATH/operation=replace
+environment/buildEnvironmentLibrary/0.128899120/LIBRARY_PATH/value=/opt/intel/clck/2019.8/lib/intel64\:/opt/intel/compilers_and_libraries_2020.1.217/linux/mpi/intel64/libfabric/lib\:/opt/intel/compilers_and_libraries_2020.1.217/linux/ipp/lib/intel64\:/opt/intel/compilers_and_libraries_2020.1.217/linux/compiler/lib/intel64_lin\:/opt/intel/compilers_and_libraries_2020.1.217/linux/mkl/lib/intel64_lin\:/opt/intel/compilers_and_libraries_2020.1.217/linux/tbb/lib/intel64/gcc4.8\:/opt/intel/compilers_and_libraries_2020.1.217/linux/tbb/lib/intel64/gcc4.8\:/opt/intel/compilers_and_libraries_2020.1.217/linux/daal/lib/intel64_lin\:/opt/intel/compilers_and_libraries_2020.1.217/linux/daal/../tbb/lib/intel64_lin/gcc4.4\:/opt/intel/compilers_and_libraries_2020.1.217/linux/daal/../tbb/lib/intel64_lin/gcc4.8
+environment/buildEnvironmentLibrary/0.128899120/append=true
+environment/buildEnvironmentLibrary/0.128899120/appendContributed=true

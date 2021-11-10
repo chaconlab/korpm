@@ -83,7 +83,7 @@ CPP_DEPS += \
 %.o: ../%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: Cross G++ Compiler'
-	g++ -DVOLUME_INCLUDED -I../include -I../../../src -O3 -U_FORTIFY_SOURCE -g -Wall -Wdelete-non-abstract-non-virtual-dtor -Wchar-subscripts -Wswitch -Wc++11-compat-deprecated-writable-strings -c -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	g++ -I../include -I../../../src -O2 -U_FORTIFY_SOURCE -g -c -fmessage-length=0 -fpermissive -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

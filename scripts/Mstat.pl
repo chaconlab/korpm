@@ -226,7 +226,10 @@ my $ti = $i;
 my $cont = 0;
 # my @aa = ("X","A","C","D","E","F","G","H","I","K","L","M","N","P","Q","R","S","T","V","W","Y","p");
 my @aa = ("X","A","V","I","L","M","F","W","Y","R","H","K","D","E","S","T","N","Q","C","G","P","p", "1", "2", "3","4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17","18");
-print "\naa     #     S     D     T   TP  avg  err   FP   TN  avg  err   FN   NC    P     N    TPR   FPR   SPE   PPV   NPV   ACC   ERR  accn  RMSE   MAE    PCC    Sc   Ob1   Ob2   MCC\n";
+print "\naa     S     D     T   TP  avg  err   FP   TN  avg  err   FN     P     N   SEN   SPE   PPV   NPV   ACC  accn  RMSE  MAE   PCC    Sc    Ob1   Ob2  MCC\n";
+
+
+
 foreach  my $key( @aa ) 
 {
 
@@ -617,11 +620,15 @@ foreach  my $key( @aa )
     my $ERR = ($FPddG + $FNddG) / ($TPddG + $TNddG + $FNddG + $FPddG); # ERror Rate
     my $ACC = ($TPddG + $TNddG) / ($TPddG + $TNddG + $FNddG + $FPddG); # ACCuracy
 
-    printf "%2s %5d %5d %5d %5d %4d %4.1f %4.1f %4d %4d %4.1f %4.1f %4d %4d %5d %5d %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %6.3f %5.1f %5.1f %5.1f %5.2f\n",$fl, $cont, ($TPddG + $FNddG), ($FPddG + $TNddG), $tot, $TPddG, $TPavg, $TPerr, $FPddG, $TNddG, $TNavg, $TNerr, $FNddG, $NCddG, $TPddG+$FPddG, $TNddG+$FNddG, $TPR, $FPR, $SPE, $pre,$npv, $ACC, $ERR,($TPR + $SPE)/2.0, $rmse, $MAE, $PCC, 100*$nSc/$tot, 100*$nOb1/$tot, 100*$nOb2/$tot, $MCC;
+    printf "%2s %5d %5d %5d %4d %4.1f %4.1f %4d %4d %4.1f %4.1f %4d %5d %5d %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.1f %5.1f %5.1f %5.2f\n",
+     $fl, ($TPddG + $FNddG), ($FPddG + $TNddG), $tot, $TPddG, $TPavg, $TPerr, $FPddG, $TNddG, $TNavg, $TNerr, $FNddG,  $TPddG+$FPddG, $TNddG+$FNddG, 
+     $TPR, $SPE, $pre,$npv, $ACC,($TPR + $SPE)/2.0, $rmse, $MAE, $PCC, 100*$nSc/$tot, 100*$nOb1/$tot, 100*$nOb2/$tot, $MCC;
   }
   else
   {
-    printf "%2s %5d %5d %5d %5d %4d %4.1f %4.1f %4d %4d %4.1f %4.1f %4d %4d %5d %5d %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %6.3f %5.1f %5.1f %5.1f %5.2f\n",$fl, $cont, ($TPddG + $FNddG), ($FPddG + $TNddG), $tot, $TPddG, $TPavg, $TPerr, $FPddG, $TNddG, $TNavg, $TNerr, $FNddG, $NCddG, $TPddG+$FPddG, 0, 0, 0, $pre, 0, 0, 0, 0, $rmse, 0, 0, 0, 0, 0, 0, 0;
+    printf "%2s %5d %5d %5d %4d %4.1f %4.1f %4d %4d %4.1f %4.1f %4d %5d %5d %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.3f %5.1f %5.1f %5.1f %5.2f\n",
+    $fl, ($TPddG + $FNddG), ($FPddG + $TNddG), $tot, $TPddG, $TPavg, $TPerr, $FPddG, $TNddG, $TNavg, $TNerr, $FNddG, $TPddG+$FPddG,
+    0, 0, $pre, 0, 0, 0, 0, $rmse, 0, 0, 0, 0, 0, 0, 0;
   }
 }
 

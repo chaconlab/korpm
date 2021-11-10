@@ -1,0 +1,764 @@
+1JL9 AA25C    -1.440 119  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       ACYIEALDK  8.4  22.0   0.93   93.0 90803   16274250 GdnHCl   Pro-epidermal_growth_factor -
+1TUP AA129D   -0.700 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       ADYSPALNK  7.2  10.0   0.81   82.6 90577    9843948 Urea     Cellular_tumor_antigen_p53 -
+1TUP AA129E   -0.380 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       AEYSPALNK  7.2  10.0   0.81   82.6 90578    9843948 Urea     Cellular_tumor_antigen_p53 -
+5CG0 AA263F   -0.430 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       AFDEMAAEL  6.0     -   4.54    4.1 13477   26785700 Thermal  Beta-glucosidase -
+1SHF AA122F   -2.200  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       AFWWEARSL  8.0  80.1      -    0.0 91147   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1CUN AA173G   -1.600  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       AGDVCANGE  7.0  25.0   0.39   44.6 91419   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1CUN AA126G   -1.300  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       AGEEEAWIN  7.0  25.0   0.37   42.1 91415   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1J7N AA220G    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       AGFAKAFAY  7.5    20   2.72    2.3 30296   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+1J7N AA112G    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       AGGKDALLH  7.5    20  26.32   24.3 30230   19926859 Gdn      lethal_factor - REPLICA  5  0.378  0.351
+1CUN AA156G   -1.000  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       AGKHEAFET  7.0  25.0   0.53   55.7 91409   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1CUN AA206G   -1.800  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       AGLEKAAAQ  7.0  25.0   0.18   17.6 91420   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1CUN AA191G   -0.900  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       AGNITAKMK  7.0  25.0   0.55   55.2 91406   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+5EMZ AA28G    -0.520  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       AGNVKAKIQ  7.4  25.0   0.36   40.2 90422   15857839 GdnHCl   Polyubiquitin-B -
+4HXJ AA138G   -0.530  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       AGNYVAPSD  6.0  22.0   0.25   24.6 90747   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1CUN AA119G   -1.300  16  0  0  3 Xray 0.00  3 ABC                       2 AC   0 -               0 -       AGQFVANVE  7.0  25.0   0.24   22.9 91414   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1CUN AA212G   -1.100  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       AGQRKAKLD  7.0  25.0    0.4   42.3 91412   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+5AZU AA82G    -1.670 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       AGRVIAHTK  7.0    25   8.17    6.9 22126   16042382 Gdn      Azurin - REPLICA  2 -2.390  0.720
+4HXJ AA88G    -1.000  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       AGTFVALYD  6.0  22.0   0.03    2.7 90698   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+4HXJ AA121G   -0.920  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       AGWWLAHSL  6.0  22.0   0.01    0.1 90730   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF AA122L   -2.390  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ALWWEARSL  8.0  80.1      -    0.0 91145   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1HTI AA215P    0.600  23  2  2  2 Xray 2.80  2 AB                        1 A    1 PGA             0 -       APVTGATCK  8.0    25  77.13   67.8 24476    8672446 Urea     Triose-phosphate_isomerase -
+1K9Q AA20R     0.740 123  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,OCT         0 -       ARWEMAKTS  7.0  65.0   0.25   27.4 90477   11420447 Thermal  Trancriptional_coactivator_YAP1 -
+1HUE AA27S    -1.190 108  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       ASAVDAVFD  7.0  63.9    0.0    0.0 16803    9685334 Thermal  HU_DNA-binding_protein -
+1HUE AA56S    -0.130 108  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       ASRERAARK  7.0  63.9  80.76   68.6 16806    9685334 Thermal  HU_DNA-binding_protein -
+1SHF AA122S   -2.540  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ASWWEARSL  8.0  80.1      -    0.0 91143   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1TUP AA129S   -0.190 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       ASYSPALNK  7.2  10.0   0.81   82.6 90579    9843948 Urea     Cellular_tumor_antigen_p53 -
+1REI AA84T    -2.500  50  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       ATEDIATYY  7.5  25.0   0.05    5.4 90188    8202506 GdnHCl   Immunoglobulin_kappa_variable_1D-33 -
+1VQB AA86T    -0.700   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       ATLVPAxxx  7.0    25  90.74   87.7 23044    8378307 Gdn      Gene_V -
+1VQB AA86V     0.500   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       AVLVPAxxx  7.0    25  90.74   87.7 23045    8378307 Gdn      Gene_V -
+1SHF AA122V    0.180  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       AVWWEARSL  8.0  80.1      -    0.0 91167   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1AMQ CA401A    3.200   9  2  2  2 Xray 2.20  2 AB                        1 A    1 PMP             0 -       CAAPLCEAI  7.5    25    0.0    0.0 24289    1731883 Urea     Aspartate_aminotransferase -
+1VQB CA33A    -0.500   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       CAEQLCYVD  7.0  25.0      0    0.0 90043    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1AMQ CA82A    -1.300   9  2  2  2 Xray 2.20  2 AB                        1 A    1 PMP             0 -       CAFGRCTQE  7.5    25   3.56    4.9 24284    1731883 Urea     Aspartate_aminotransferase -
+1AMQ CA191A   -2.200   9  2  2  2 Xray 2.20  2 AB                        1 A    1 PMP             0 -       CAFHGCCHN  7.5    25   4.99    6.0 24285    1731883 Urea     Aspartate_aminotransferase -
+1AMQ CA192A   -1.600   9  2  2  2 Xray 2.20  2 AB                        1 A    1 PMP             0 -       CAHGCCHNP  7.5    25   2.85    2.7 24287    1731883 Urea     Aspartate_aminotransferase -
+1SPD CA6A      0.100 154  0  0  2 Xray 0.00  2 AB                        1 A    3 ACE,CU,ZN       0 -       CAKAVCVLK  7.8  74.9      0    0.0 90241    2254318 Thermal  Superoxide_dimutase_[Cu-Zn] -
+1HCQ CA67A    -2.090  38  0  0  4 Xray 0.00  4 ABCD                      1 A    1 ZN              0 -       CALRKCYEV  6.5  25.0      0    0.0 90469   12051939 GdmCl    Etrogen_receptor -
+5AZU CA112A   -3.350 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          1 CU      CAMFFCTFP  7.0  25.0      0    0.0 90861   15388858 GdmCl    Azurin -
+1AMQ CA270A   -2.500   9  2  2  2 Xray 2.20  2 AB                        1 A    1 PMP             0 -       CAVGACTLV  7.5    25    0.0    0.0 24288    1731883 Urea     Aspartate_aminotransferase -
+1YPI CA126A   -4.900  23  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       CAVILCIGE  8.5  27.0      0    0.0 90949   15023076 Thermal  Trioephosphate_isomerase -
+1GLU CA500A   -1.080  38  0  0  4 Xray 0.00  4 ABCD                      1 A    1 ZN              0 -       CAYRKCLQA  6.5  25.0      0    0.0 90468   12051939 GdmCl    Glucocorticoid_receptor -
+1VQB CA33I    -0.900   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       CIEQLCYVD  7.0  25.0      0    0.0 90044    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB CA33L    -2.600   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       CLEQLCYVD  7.0  25.0      0    0.0 90045    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB CA33M    -3.500   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       CMEQLCYVD  7.0    25    0.0    0.0 23022    8378307 Gdn      Gene_V - REPLICA  2 -3.500  0.000
+1BKS CA81N    -2.420  17  0  0  2 Xray 0.00  2 AB                        1 A    2 NA,PLP          0 -       CNPAQCFEM  7.8  25.0   0.01    0.7 90790   23293932 Urea     Tryptophan_ynthase_alpha_chain -
+1AYF CA95S     0.960  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       CSCQICLTK  8.5    37  51.28   38.5 18933    8880913 Thermal  Adrenodoxin -
+1VQB CA33S    -4.200   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       CSEQLCYVD  7.0    25    0.0    0.0 23941    2038057 Gdn      Gene_V - REPLICA  2 -4.250  0.050
+1SPD CA111S    0.800 154  0  0  2 Xray 0.00  2 AB                        2 AB   3 ACE,CU,ZN       0 -       CSGDHCIIG  7.8  74.9   0.27   26.8 90240    2254318 Thermal  Superoxide_dimutase_[Cu-Zn] -
+1TUP CA182S    0.160 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       CSHERCSDS  7.2  10.0    0.3   32.5 90580    9843948 Urea     Cellular_tumor_antigen_p53 -
+1HCQ CA67S    -1.990  38  0  0  4 Xray 0.00  4 ABCD                      1 A    1 ZN              0 -       CSLRKCYEV  6.5  25.0      0    0.0 90470   12051939 GdmCl    Etrogen_receptor -
+1A43 CA218S   -2.300  66  0  2  2 Xray 2.60  2 AB                        1 A    0 -               0 -       CSMTACQxx  7.3    25  14.25   14.3 20798   12051856 Gdn      HIV-1_capsid_protein - REPLICA  2 -2.550  0.250
+1TUP CA242S   -3.070 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              1 ZN      CSNSSCMGG  7.2  10.0   0.12   14.0 91648    1203434 -        Cellular_tumor_antigen_p53 -
+5AZU CA3S     -5.470 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          1 NO3     CSxAECSVD  7.0  25.0    0.3   32.5 91189   12007613 GuHCl    Azurin -
+1VQB CA33T    -4.600   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       CTEQLCYVD  7.0  25.0      0    0.0 90047    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB CA33V    -0.200   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       CVEQLCYVD  7.0    25    0.0    0.0 23023    8378307 Gdn      Gene_V - REPLICA  2 -0.200  0.000
+1G6N DA138A   -0.300 102  2  2  2 Xray 2.10  2 AB                        1 A    1 CMP             0 -       DAAFLDVTG  7.8  25.0   0.62   66.5 91313   15096034 GdnHCl   cAMP-activated_global_trancriptional_regulator_CRP -
+4HXJ DA91A    -0.430  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       DAALYDYES  6.0  22.0   0.67   69.6 90701   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1AMQ DA15A    -5.800   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       DAAPADPIL  7.5    25  50.66   25.5 23616   19099423 Urea     Aspartate_aminotransferase - REPLICA  3 -5.600  0.356
+4HXJ DA141A    0.130  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       DAAPSDxxx  6.0  22.0   0.74   84.3 90750   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+2CRK DA122A   -0.480 180  0  2  2 Xray 2.35  2 AB                        1 A    1 SO4             0 -       DADDLDPHY  8.0    25  27.06   24.7 23789   19263506 Gdn      Creatine_kinase -
+3D3B DA118A   -0.650 216  0  0  2 Xray 0.00  2 AJ                        1 A    1 NHE             0 -       DAEEDDSSH  7.5  55.0   0.48   50.3 90402   19854945 Thermal  Trancription_antitermination_protein_NusB -
+2KJ3 DA288A    1.200 192  3  0  3 NMRs 0.00  3 ABC                       2 AB   0 -               0 -       DAGFWDNHH  7.5    25   6.25   22.8 27357   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+2BRD DA36A    -0.900 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         1 DPG     DAGVSDPDA  6.0    25  97.85   56.3 21595   14659758 SDS      Bacteriorhodopsin -
+2EWN DA197A   -0.300 183  0  0  2 Xray 0.00  2 AB                        2 AB   1 BTX             0 -       DAKTGDAAQ  7.5  20.0   0.09   11.0 90248   26678378 -        Bifunctional_ligae/repressor_BirA -
+1ROP DA30A     0.300 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DANELDADE  7.0    69  97.15   82.9 16388    8548455 Thermal  Rop -
+1FC1 DA399A   -0.900  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       DAPVLDSDG  7.4    20   6.25    9.5 29623    9649307 Gdn      Immunoglobulin_IgG1 -
+2BRD DA38A    -0.500 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         1 DPG     DASDPDAKK  6.0    25  58.99   53.1 21597   14659758 SDS      Bacteriorhodopsin -
+4HXJ DA99A    -0.560  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       DATETDLSF  6.0  22.0    0.1   12.7 90708   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5CG0 DA260A   -0.670 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       DATPEDEMA  6.0     -   6.94    4.8 13474   26785700 Thermal  Beta-glucosidase -
+1VQB DA36C    -2.000   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       DCCYVDLGN  7.0    25  45.11   32.8 23942    2038057 Gdn      Gene_V - REPLICA  2 -2.050  0.050
+1SS8 DA473C   -0.100  25  0  0  8    - 0.00  8  ABCDEFG                  2  A   0 -               0 -       DCKGGDGNY  7.5  25.0    0.8   84.4 91303   30661519 Urea     60_kDa_chaperonin - REPLICA  2  0.000  0.100
+1ROP DA30C     0.800 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DCNELDADE  7.0    69  97.15   82.9 16384    8548455 Thermal  Rop -
+3D3B DA118E   -0.600 216  0  0  2 Xray 0.00  2 AJ                        1 A    1 NHE             0 -       DEEEDDSSH  7.5  55.0   0.48   50.3 90404   19854945 Thermal  Trancription_antitermination_protein_NusB -
+1AYF DA76E     0.450  72  0  2  2 Xray 1.85  2 AB                        2 AB   2 FES,GOL         0 -       DEEENDMLD  8.5    37  48.58   56.5 18934    8880913 Thermal  Adrenodoxin -
+2GNQ DA324E   -4.140 184  0  1  5 Xray 1.80  1 A                         1 A    1 CL              0 -       DELENDKTI  7.5  25.0   0.12   14.3 91666   20939513 GdnHCl   WD_repeat-containing_protein_5 -
+1TUP DA148E   -0.430 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       DELWVDSTP  7.2  10.0   0.74   76.9 90581    9843948 Urea     Cellular_tumor_antigen_p53 -
+1ROP DA30E     1.000 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DENELDADE  7.0    69  97.15   82.9 16380    8548455 Thermal  Rop -
+1TUP DA228E    0.050 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       DEVGSDCTT  7.2  10.0   0.62   66.3 90583    9843948 Urea     Cellular_tumor_antigen_p53 -
+1ROP DA30F    -0.100 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DFNELDADE  7.0    69  97.15   82.9 16391    8548455 Thermal  Rop -
+1G6N DA138G    0.900 102  2  2  2 Xray 2.10  2 AB                        1 A    1 CMP             0 -       DGAFLDVTG  7.8  25.0   0.62   66.5 91314   15096034 GdnHCl   cAMP-activated_global_trancriptional_regulator_CRP -
+1ROP DA30G     2.000 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DGNELDADE  7.0    69  97.15   82.9 16378    8548455 Thermal  Rop -
+1J7N DA245G    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       DGNYMDKFN  7.5    20  40.25   34.5 30308   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+1VQB DA50H    -1.500   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       DHITLDEGQ  7.0    25   34.7   33.9 23945    2038057 Gdn      Gene_V - REPLICA  2 -1.550  0.050
+1ROP DA30H     0.900 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DHNELDADE  7.0    69  97.15   82.9 16383    8548455 Thermal  Rop -
+1ROP DA30I    -0.800 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DINELDADE  7.0    69  97.15   82.9 16395    8548455 Thermal  Rop -
+1G6N DA138K   -1.300 102  2  2  2 Xray 2.10  2 AB                        1 A    1 CMP             0 -       DKAFLDVTG  7.8  25.0   0.62   66.5 91315   15096034 GdnHCl   cAMP-activated_global_trancriptional_regulator_CRP -
+3D3B DA118K   -1.600 216  0  0  2 Xray 0.00  2 AJ                        1 A    1 NHE             0 -       DKEEDDSSH  7.5  55.0   0.48   50.3 90405   19854945 Thermal  Trancription_antitermination_protein_NusB -
+1SS8 DA523K   -1.100  25  0  0  8    - 0.00  8  ABCDEFG                  3  AB  0 -               0 -       DKMVTDLPx  7.5  25.0    0.4   45.6 91302   30661519 Urea     60_kDa_chaperonin - REPLICA  2 -1.100  0.000
+1ROP DA30K     0.900 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DKNELDADE  7.0    69  97.15   82.9 16382    8548455 Thermal  Rop -
+1G6N DA138L   -0.500 102  2  2  2 Xray 2.10  2 AB                        1 A    1 CMP             0 -       DLAFLDVTG  7.8  25.0   0.62   66.5 91316   15096034 GdnHCl   cAMP-activated_global_trancriptional_regulator_CRP -
+1ROP DA30L    -0.100 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DLNELDADE  7.0    69  97.15   82.9 16390    8548455 Thermal  Rop -
+1ROP DA30M     0.600 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DMNELDADE  7.0    69  97.15   82.9 16387    8548455 Thermal  Rop -
+1VQB DA36N    -1.000   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       DNCYVDLGN  7.0    25  45.11   32.8 23943    2038057 Gdn      Gene_V -
+2CRK DA122N   -1.200 180  0  2  2 Xray 2.35  2 AB                        1 A    1 SO4             0 -       DNDDLDPHY  8.0    25  27.06   24.7 23788   19263506 Gdn      Creatine_kinase -
+3D3B DA118N   -1.340 216  0  0  2 Xray 0.00  2 AJ                        1 A    1 NHE             0 -       DNEEDDSSH  7.5  55.0   0.48   50.3 90401   19854945 Thermal  Trancription_antitermination_protein_NusB -
+5EMZ DA21N    -0.850  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       DNEPSDTTI  7.4  25.0   0.15   15.9 90415   15857839 GdnHCl   Polyubiquitin-B -
+1ROP DA30N     0.800 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DNNELDADE  7.0    69  97.15   82.9 16386    8548455 Thermal  Rop -
+1ROP DA30P    -1.600 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DPNELDADE  7.0    69  97.15   82.9 16396    8548455 Thermal  Rop -
+1G6N DA138Q   -0.100 102  2  2  2 Xray 2.10  2 AB                        1 A    1 CMP             0 -       DQAFLDVTG  7.8  25.0   0.62   66.5 91317   15096034 GdnHCl   cAMP-activated_global_trancriptional_regulator_CRP -
+1ROP DA30Q     1.800 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DQNELDADE  7.0    69  97.15   82.9 16379    8548455 Thermal  Rop -
+3D3B DA118R   -1.410 216  0  0  2 Xray 0.00  2 AJ                        1 A    1 NHE             0 -       DREEDDSSH  7.5  55.0   0.48   50.3 90403   19854945 Thermal  Trancription_antitermination_protein_NusB -
+1ROP DA30R     0.800 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DRNELDADE  7.0    69  97.15   82.9 16385    8548455 Thermal  Rop -
+1G6N DA138S    0.900 102  2  2  2 Xray 2.10  2 AB                        1 A    1 CMP             0 -       DSAFLDVTG  7.8  25.0   0.62   66.5 91318   15096034 GdnHCl   cAMP-activated_global_trancriptional_regulator_CRP -
+1TUP DA148S    0.220 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       DSLWVDSTP  7.2  10.0   0.74   76.9 90582    9843948 Urea     Cellular_tumor_antigen_p53 -
+1ROP DA30S     1.000 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DSNELDADE  7.0    69  97.15   82.9 16381    8548455 Thermal  Rop -
+1ROP DA30T    -0.400 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DTNELDADE  7.0    69  97.15   82.9 16392    8548455 Thermal  Rop -
+1K9Q DA34T     0.460 123  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,OCT         0 -       DTNHIDQTT  7.0  50.0   0.64   64.6 90565   23035249 Thermal  Trancriptional_coactivator_YAP1 - REPLICA  2  0.420  0.040
+1G6N DA138V    1.000 102  2  2  2 Xray 2.10  2 AB                        1 A    1 CMP             0 -       DVAFLDVTG  7.8  25.0   0.62   66.5 91320   15096034 GdnHCl   cAMP-activated_global_trancriptional_regulator_CRP -
+1ROP DA30V    -0.400 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DVNELDADE  7.0    69  97.15   82.9 16393    8548455 Thermal  Rop -
+1ROP DA30W    -0.400 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DWNELDADE  7.0    69  97.15   82.9 16394    8548455 Thermal  Rop -
+1ROP DA30Y     0.200 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       DYNELDADE  7.0    69  97.15   82.9 16389    8548455 Thermal  Rop -
+1Y9X EA54A    -2.270  39  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       EADTVEIVR  7.0  25.0   0.14   16.1 90602   18779322 Urea     DNA/RNA-binding_protein_Alba_1 - REPLICA  2 -1.480  0.790
+1NEY EA97A     0.200  23  0  0  2 Xray 0.00  2 AB                        2 AB   2 13P,FTR         1 13P     EAGHSERRS  7.0  25.0   0.46    5.6 91263   31508957 Thermal  Trioephosphate_isomerase -
+2KJ3 EA272A    1.900 192  3  0  3 NMRs 0.00  3 ABC                       2 AB   0 -               0 -       EAGKGESRV  7.5    25  32.05   56.4 27354   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+1Y9X EA36A    -3.610  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       EAGVSEIVI  7.0  25.0   0.39   38.6 90598   18779322 Urea     DNA/RNA-binding_protein_Alba_1 - REPLICA  2 -2.915  0.695
+1SHF EA107A   -1.270  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EAHKGEKFQ  8.0    25   10.3   13.6 24112    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.175  0.095
+1B26 EA231A   -0.350  74  6  6  6 Xray 3.00  6 ABCDEF                    1 A    0 -               0 -       EAISQELGS  7.0    20  47.51   47.6 28868   12501181 Urea     Glutamate_dehydrogenase - REPLICA  3 -0.490  0.333
+4HXJ EA106A   -1.940  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       EAKKGERLQ  6.0  22.0   0.13   12.4 90715   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5CG0 EA265A    0.430 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       EAMAAELRR  6.0     -  30.91   27.0 13478   26785700 Thermal  Beta-glucosidase -
+5CG0 EA261A    0.530 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       EAPEDEMAA  6.0     -  56.67   57.6 13475   26785700 Thermal  Beta-glucosidase -
+3HHR EA74A    -1.410 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       EASNLELLR  8.0    20  37.78   32.4 29101    8060992 Gdn      Growth_hormone -
+2EWN EA140A   -0.200 183  0  0  2 Xray 0.00  2 AB                        2 AB   1 BTX             0 -       EAWRLEQGP  7.5  20.0   0.23   24.7 90245   26678378 -        Bifunctional_ligae/repressor_BirA -
+1AMQ EA7A     -3.800   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       EAxMFENIT  7.5    25 103.61   54.1 23611   19099423 Urea     Aspartate_aminotransferase - REPLICA  2 -3.400  0.400
+1VQB EA40C    -1.600   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       ECLGNEYPV  7.0  25.0   0.95   97.1 90084    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1JLV EA64D    -1.160 120  0  0  2 Xray 0.00  2 AB                        2 AB   1 GSH             1 GSH     EDALWESRA  6.5  42.0   0.12   13.7 90444   17100654 Thermal  glutathione_tranferases -
+1NEY EA97D     0.100  23  0  0  2 Xray 0.00  2 AB                        2 AB   2 13P,FTR         1 13P     EDGHSERRS  7.0  25.0   0.46    5.6 91264   31508957 Thermal  Trioephosphate_isomerase -
+1SHF EA107D    0.680  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EDHKGEKFQ  8.0    25   10.3   13.6 24107    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2  0.565  0.115
+3HHR EA74D    -1.980 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       EDSNLELLR  8.0    20  37.78   32.4 29099    8060992 Gdn      Growth_hormone -
+1KA6 EA67D    -1.310 124  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,PTR         1 NH2     EDWSAETAP  7.4  57.8   0.45   43.6 91751   14674764 Thermal  SH2_domain-containing_protein_1A -
+1SB0 EB89D    -0.140  42  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       EDxxKEKRI  6.8  25.0   0.66   67.6 90206   29890118 -        Trancriptional_activator_Myb -
+1SHF EA107F   -1.630  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EFHKGEKFQ  8.0    25   10.3   13.6 24114    9819209 Gdn      Fyn_tyrosine_kinase -
+1J7N EA126G    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       EGEGYEPVL  7.5    20  90.44   54.4 30242   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+1SHF EA107G   -2.290  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EGHKGEKFQ  8.0    25   10.3   13.6 20928   12079394 Gdn      Fyn_tyrosine_kinase -
+1LVM EA106G    1.400 129  0  0  3 Xray 0.00  3 ACE                       1 A    1 ACE             0 -       EGPQREERI  8.0  25.0   0.62   61.2 90256   17905838 Thermal  Genome_polyprotein -
+1SHF EA107H   -0.990  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EHHKGEKFQ  8.0    25   10.3   13.6 24110    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -0.975  0.015
+1SHF EA107I   -2.710  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EIHKGEKFQ  8.0    25   10.3   13.6 24118    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -2.775  0.065
+1SHF EA107K   -0.970  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EKHKGEKFQ  8.0    25   10.3   13.6 24111    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.000  0.030
+1PRG EA460K   -0.170 140  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       EKKKTETDM  8.0    10  31.48   14.7 31020   28208577 Urea     Peroxisome_proliferator-activated_receptor_gamma -
+3X3U EA59K     3.920 226  3  3  3 Xray 2.09  3 ABC                       1 A    0 -               0 -       EKLEQEYEV  8.0    37   43.5   40.0 19180   20639520 Gdn      Divalent-cation_tolerance_protein_CutA -
+1SHF EA107L   -3.020  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ELHKGEKFQ  8.0    25   10.3   13.6 24119    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -3.000  0.020
+1OTR EA34L     0.960  15  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       ELHLLENNN  5.0    25  51.52   77.1 20714   12662936 Urea     Ubiquitin -
+3X3U EA59L     2.890 226  3  3  3 Xray 2.09  3 ABC                       1 A    0 -               0 -       ELLEQEYEV  8.0    37   43.5   40.0 19179   20639520 Gdn      Divalent-cation_tolerance_protein_CutA -
+1OTR EB34L     0.960  15  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       ELQDKEGIP  5.0  25.0   0.76   45.9 92285   12662936 Urea     E3_ubiquitin-protein_ligae_RSP5 -
+3HHR EA74L    -1.240 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       ELSNLELLR  8.0    20  37.78   32.4 29104    8060992 Gdn      Growth_hormone -
+1VQB EA30M     0.600   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       EMSLNEQLC  7.0  25.0   0.26   28.7 90078    7547934 GdnHCl   DNA-Binding_protein_G5P - REPLICA  2  0.650  0.050
+1JLV EA64N    -2.300 120  0  0  2 Xray 0.00  2 AB                        2 AB   1 GSH             1 GSH     ENALWESRA  6.5  42.0   0.12   13.7 90445   17100654 Thermal  glutathione_tranferases -
+1VQB EA30N    -1.100   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       ENSLNEQLC  7.0  25.0   0.26   28.7 90079    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1SHF EA107P   -1.710  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EPHKGEKFQ  8.0    25   10.3   13.6 24116    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.800  0.090
+1JLV EA64Q    -2.300 120  0  0  2 Xray 0.00  2 AB                        2 AB   1 GSH             1 GSH     EQALWESRA  6.5  42.0   0.12   13.7 90443   17100654 Thermal  glutathione_tranferases -
+1Y9X EA54Q    -2.250  39  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       EQDTVEIVR  7.0  25.0   0.14   16.1 90604   18779322 Urea     DNA/RNA-binding_protein_Alba_1 - REPLICA  2 -1.685  0.565
+1NEY EA97Q     0.100  23  0  0  2 Xray 0.00  2 AB                        2 AB   2 13P,FTR         1 13P     EQGHSERRS  7.0  25.0   0.46    5.6 91265   31508957 Thermal  Trioephosphate_isomerase -
+1Y9X EA36Q    -2.720  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       EQGVSEIVI  7.0  25.0   0.39   38.6 90600   18779322 Urea     DNA/RNA-binding_protein_Alba_1 - REPLICA  2 -1.995  0.725
+1SHF EA107Q   -0.740  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EQHKGEKFQ  8.0    25   10.3   13.6 24109    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -0.705  0.035
+2ZTA EA11Q    -0.740 210  2  2  2 Xray 1.80  2 AB                        1 A    1 ACE             0 -       EQKVEELLS  7.0    15  70.98   47.0 30434   15037063 Urea     GCN4-p1 -
+2ZTA EA22Q    -1.830 210  2  2  2 Xray 1.80  2 AB                        2 AB   1 ACE             0 -       EQLENEVAR  7.0    15  15.46   21.0 30437   15037063 Urea     GCN4-p1 -
+1AMQ EA265Q   -5.400   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       EQLYNERVG  7.5    25  36.06    1.3 23624   19099423 Urea     Aspartate_aminotransferase - REPLICA  2 -5.850  0.450
+3HHR EA74Q    -1.240 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       EQSNLELLR  8.0    20  37.78   32.4 29100    8060992 Gdn      Growth_hormone -
+2ZTA EA20Q     0.200 210  2  2  2 Xray 1.80  2 AB                        2 AB   1 ACE             0 -       EQYHLENEV  7.0    15  47.51   37.6 30436   15037063 Urea     GCN4-p1 -
+1SHF EA107R   -2.560  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ERHKGEKFQ  8.0  25.0      -   13.6 90661   12079394 GdnHCl   Tyroine-protein_kinase_Fyn - REPLICA  2 -2.970  0.410
+1SHF EA107S   -1.640  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ESHKGEKFQ  8.0    25   10.3   13.6 24113    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.455  0.185
+1OTR EA34S    -0.600  15  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       ESHLLENNN  5.0    25  51.52   77.1 20713   12662936 Urea     Ubiquitin -
+1OTR EB34S    -0.600  15  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       ESQDKEGIP  5.0  25.0   0.76   45.9 92284   12662936 Urea     E3_ubiquitin-protein_ligae_RSP5 -
+3HHR EA74S    -1.110 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       ESSNLELLR  8.0    20  37.78   32.4 29102    8060992 Gdn      Growth_hormone -
+1SHF EA107T   -0.600  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ETHKGEKFQ  8.0    25   10.3   13.6 24108    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -0.640  0.040
+1VQB EA40T    -0.400   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       ETLGNEYPV  7.0  25.0   0.95   97.1 90085    7547934 GdnHCl   DNA-Binding_protein_G5P -
+3X3U EA61T     3.150 226  3  3  3 Xray 2.09  3 ABC                       2 AB   0 -               0 -       ETQEYEVQM  8.0    37   6.87    4.6 19182   20639520 Gdn      Divalent-cation_tolerance_protein_CutA -
+3HHR EA74T    -1.720 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       ETSNLELLR  8.0    20  37.78   32.4 29103    8060992 Gdn      Growth_hormone -
+1SHF EA107V   -2.000  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EVHKGEKFQ  8.0    25   10.3   13.6 24115    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.815  0.185
+3X3U EA61V     3.420 226  3  3  3 Xray 2.09  3 ABC                       2 AB   0 -               0 -       EVQEYEVQM  8.0    37   6.87    4.6 19181   20639520 Gdn      Divalent-cation_tolerance_protein_CutA 3AA9
+1SHF EA107Y   -2.400  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       EYHKGEKFQ  8.0    25   10.3   13.6 24117    9819209 Gdn      Fyn_tyrosine_kinase -
+2BRD FA54A    -1.000 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         0 -       FAAIAFTMY  6.0    25  33.88   23.7 21609   14659758 SDS      Bacteriorhodopsin -
+1J7N FA221A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       FAAKAFAYY  7.5    20    0.0    0.0 30305   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+2BRD FA42A    -1.600 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         0 -       FAAKKFYAI  6.0    25   2.99    3.7 21600   14659758 SDS      Bacteriorhodopsin -
+1SHF FA103A   -2.410  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       FADLSFHKG  8.0  80.1      -    2.5 91144   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+4HXJ FA102A   -1.970  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       FADLSFKKG  6.0  22.0   0.04    3.7 90711   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1FC1 FA405A   -3.300  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       FAGSFFLYS  7.4    20    0.0    0.0 29624    9649307 Gdn      Immunoglobulin_IgG1 -
+1UWO FA14A    -3.420 162  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       FAIDVFHQY  7.2    25    0.5    1.7 20575   11888280 Gdn      Calcium-binding_protein_S100B -
+1F8I FA345A   -0.410  97  0  0  4 Xray 0.00  4 ABCD                      2 AB   3 GLV,MG,SIN      1 GLV     FAKFQFITL  8.0  25.0   0.01    1.0 91105   28432345 GdnHCl   Iocitrate_lyase -
+1J7N FA247A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       FAMDKFNEQ  7.5    20   1.99    4.1 30314   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+1J7N FA217A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       FAQEVFAKA  7.5    20    0.0    0.0 30293   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+5AZU FA110A   -3.350 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       FAQYMFFCT  7.0  25.0      0    0.0 91400   15753320 GdnHCl   Azurin - REPLICA  2 -4.185  0.835
+4HXJ FA86A    -0.840  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       FASTTFVAL  6.0  22.0   0.07    6.7 90695   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5AZU FA97A    -2.390 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       FASVTFDVS  7.0  25.0   0.05    5.0 91398   15753320 GdnHCl   Azurin - REPLICA  2 -2.510  0.120
+5CG0 FA251A   -0.670 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       FAVNWFGPA  6.0     -   2.99    4.3 13469   26785700 Thermal  Beta-glucosidase -
+5CG0 FA334A   -1.110 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       FAYTAFLVS  6.0     -  15.45   16.0 13470   26785700 Thermal  Beta-glucosidase -
+1TUP FA270C   -4.540 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       FCRNSFEVR  7.2  10.0   0.01    0.9 91650    1203434 -        Cellular_tumor_antigen_p53 -
+1ZNJ FB25D     0.600 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              4 ABCD 3 CL,IPH,ZN       0 -       FDRGFFYTP  8.0    25  50.32   37.4 24403    8399225 Gdn      Insulin -
+1ZNJ FB25H     1.000 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              4 ABCD 3 CL,IPH,ZN       0 -       FHRGFFYTP  8.0    25  50.32   37.4 24402    8399225 Gdn      Insulin -
+1SAK FA341I   -6.900 151  0  0  4 NMRl 0.00  4 ABCD                      3 ACD  0 -               0 -       FIFEMFREL  7.0    25    0.5    0.4 25066   10097082 Gdn      Tumor_suppressor_P53 -
+2WSY FA22I    -4.580  17  0  4  4 Xray 3.05  4 ABCD                      1 A    2 NA,PLP          0 -       FIFVPFVTL  7.8    25   1.99    6.5 23472    1540577 Urea     Tryptophan_synthase_alpha-subunit -
+1SHF FA109I   -1.990  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       FIGEKFQIL  8.0  80.1      -    0.0 91150   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+3O39 FA115I   -1.810 224  0  0  2 Xray 0.00  2 AB                        2 AB   2 CD,MSE          0 -       FIKKQFNAN  7.4  25.0   0.18   17.5 90008   24497545 Thermal  Periplamic_chaperone_Spy -
+4HXJ FA86I    -1.650  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       FISTTFVAL  6.0  22.0   0.07    6.7 90696   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF FA103L   -1.110  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       FLDLSFHKG  8.0  80.1      -    2.5 91154   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1REI FA73L     0.980  50  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       FLDYTFTIS  7.5  25.0      0    0.1 90170    9080189 Urea     Immunoglobulin_kappa_variable_1D-33 -
+1JL5 FA1289L   0.300 118  0  4  4 Xray 2.10  4 ABCD                      2 AC   1 CA              0 -       FLENIFSGL  7.6    25   1.99    1.7 26005   21764506 Urea     Outer_protein_M - REPLICA  3 -0.133  0.910
+1SAK FA341L   -3.300 151  0  0  4 NMRl 0.00  4 ABCD                      3 ACD  0 -               0 -       FLFEMFREL  7.0    25    0.5    0.4 25065   10097082 Gdn      Tumor_suppressor_P53 -
+2WSY FA22L    -1.050  17  0  4  4 Xray 3.05  4 ABCD                      1 A    2 NA,PLP          0 -       FLFVPFVTL  7.8    25   1.99    6.5 23471    1540577 Urea     Tryptophan_synthase_alpha-subunit -
+1SHF FA109L   -0.760  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       FLGEKFQIL  8.0  80.1      -    0.0 91157   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1SAK FA328L   -3.500 151  0  0  4 NMRl 0.00  4 ABCD                      2 AC   0 -               0 -       FLGEYFTLQ  7.0    25   27.9   29.5 25061   10097082 Gdn      Tumor_suppressor_P53 -
+1CUN FA157L   -1.400  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       FLHEAFETD  7.0  25.0   0.08    8.0 91418   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+3O39 FA115L   -1.640 224  0  0  2 Xray 0.00  2 AB                        2 AB   2 CD,MSE          0 -       FLKKQFNAN  7.4  25.0   0.18   17.5 90007   24497545 Thermal  Periplamic_chaperone_Spy -
+1VQB FA68L    -4.300   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       FLLSSFKVG  7.0    25  36.87    9.3 23039    8378307 Gdn      Gene_V - REPLICA  2 -4.250  0.050
+1TUP FA134L   -4.780 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       FLNKMFCQL  7.2  10.0      0    0.0 91649    1203434 -        Cellular_tumor_antigen_p53 -
+1PRG FA360L   -0.400 140  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       FLRKPFGDF  8.0    10   5.48    5.2 31018   28208577 Urea     Peroxisome_proliferator-activated_receptor_gamma -
+1CUN FA117L   -2.100  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       FLYQQFVAN  7.0  25.0      0    0.0 91421   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1SHF FA103S   -3.030  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       FSDLSFHKG  8.0  80.1      -    2.5 91139   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1KA6 FA87S    -1.140 124  0  0  2 NMRl 0.00  2 AB                        1 A    2 NH2,PTR         0 -       FSISAFQKP  7.4  57.8   0.04    4.0 91750   14674764 Thermal  SH2_domain-containing_protein_1A -
+5AZU FA110S   -4.600 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       FSQYMFFCT  7.2    20    0.0    0.0 28468   10504393 Gdn      Azurin - REPLICA  4 -4.775  0.996
+1VQB FA13T    -0.700   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       FTQAQFTTR  7.0    25   27.4   30.6 23018    8378307 Gdn      Gene_V -
+1SHF FA103V   -1.880  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       FVDLSFHKG  8.0  80.1      -    2.5 91151   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+2WSY FA22V    -3.440  17  0  4  4 Xray 3.05  4 ABCD                      1 A    2 NA,PLP          0 -       FVFVPFVTL  7.8    25   1.99    6.5 23473    1540577 Urea     Tryptophan_synthase_alpha-subunit -
+1SHF FA109V   -2.110  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       FVGEKFQIL  8.0  80.1      -    0.0 91149   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1VQB FA68V    -5.000   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       FVLSSFKVG  7.0  25.0   0.38    9.3 90067    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1AYF FA59W    -2.380  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       FWHLIFEQH  7.5  20.0   0.01    0.5 90830   12206673 GdnHCl   Adrenodoxin_mitochondrial -
+1AYF FA43W    -1.210  72  0  2  2 Xray 1.85  2 AB                        2 AB   2 FES,GOL         0 -       FWIDGFGAC  7.5  20.0    0.1   10.2 90829   12206673 GdnHCl   Adrenodoxin_mitochondrial -
+1AYF FA64W    -0.330  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       FWQHIFEKL  7.5  20.0   0.28   27.6 90831   12206673 GdnHCl   Adrenodoxin_mitochondrial -
+1AAR FA45W     0.600  15  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       FWRLIFAGK  5.0    25  24.41   24.4 23555    8392867 Gdn      Ubiquitin -
+1AYF FA11W    -0.800  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       FWTVHFINR  7.5  20.0      0    0.0 90828   12206673 GdnHCl   Adrenodoxin_mitochondrial -
+1VQB FA73W     0.800   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       FWVGQFGSL  7.0    25  87.69   78.3 23040    8378307 Gdn      Gene_V - REPLICA  2  0.000  0.800
+5CRO FO58W     2.400 236  2  2  2 Xray 2.30  2 BO                        2 BO   1 PO4             0 -       FWVKPFPSx  7.0  25.0    0.1    8.7 91436    9344748 GdnHCl   Regulatory_protein_cro -
+1SB0 GB108A    0.040  42  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       GAELKGQQA  6.8  25.0   0.68   68.1 90204   29890118 -        Trancriptional_activator_Myb -
+4HXJ GA105A   -1.660  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       GAFKKGERL  6.0  22.0   0.57   57.0 90714   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1IDS GA152A   -4.300  44  4  4  4 Xray 2.00  4 ABCD                      2 AC   1 FE              0 -       GAFPLGIVP  7.9    23  15.25   14.5 27717    8674528 Gdn      Superoxide_dismutase -
+2EWN GA196A    0.400 183  0  0  2 Xray 0.00  2 AB                        2 AB   1 BTX             0 -       GAGKTGDAA  7.5  20.0   0.05    3.7 90244   26678378 -        Bifunctional_ligae/repressor_BirA -
+1CUN GA198A   -0.900  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       GAGLKGKVS  7.0  25.0   0.36   39.1 91407   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+4HXJ GA130A   -1.810  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       GAGQTGYIP  6.0  22.0   0.02    7.3 90739   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1A43 GA156A   -1.000  66  0  2  2 Xray 2.60  2 AB                        1 A    0 -               0 -       GAIRQGPKE  7.3    25   21.6   22.7 20799   12051856 Gdn      HIV-1_capsid_protein - REPLICA  2 -1.900  0.900
+1KKM GH49A     0.900  20  0  0 12 Xray 2.80 12 ABCDEFGHIJKL              2 AH   3 CA,PO4,SEP      1 SEP     GAKIMGVMS  7.0    25  23.76    1.2 21006   12144791 Urea     HPr - REPLICA  2  0.850  0.050
+2EWN GA142A   -2.950 183  0  0  2 Xray 0.00  2 AB                        1 A    1 BTX             0 -       GALEQGPAA  7.5  20.0   0.01    0.4 90252   26678378 -        Bifunctional_ligae/repressor_BirA -
+2EWN GA281A   -0.200 183  0  0  2 Xray 0.00  2 AB                        2 AB   1 BTX             0 -       GALIIGDKE  7.5  20.0    0.1   14.5 90246   26678378 -        Bifunctional_ligae/repressor_BirA -
+4HXJ GA127A   -1.210  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       GALSTGQTG  6.0  22.0   0.36   55.5 90736   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF GA128A   -1.780  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       GALTTGETG  8.0    25  45.74   32.9 20932   12079394 Gdn      Fyn_tyrosine_kinase -
+4HXJ GA116A   -0.280  60  0  0  2 Xray 0.00  2 AC                        2 AC   0 -               0 -       GANTEGDWW  6.0  22.0   0.14   18.9 90725   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+2KJ3 GA278A   -0.800 192  3  0  3 NMRs 0.00  3 ABC                       2 AB   0 -               0 -       GAVLIGNEY  7.5    25  24.14    0.0 27356   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+1KA6 GA93D    -0.630 124  0  0  2 NMRl 0.00  2 AB                        1 A    2 NH2,PTR         0 -       GDPDQGIVI  7.4  57.8   0.26   29.1 91749   14674764 Thermal  SH2_domain-containing_protein_1A -
+1REI GA68D    -0.100  50  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       GDSGSGTDY  7.5  25.0   0.21   27.1 90190    8202506 GdnHCl   Immunoglobulin_kappa_variable_1D-33 -
+1KKM GH49E     1.200  20  0  0 12 Xray 2.80 12 ABCDEFGHIJKL              2 AH   3 CA,PO4,SEP      1 SEP     GEKIMGVMS  7.0    25  23.76    1.2 21004   12144791 Urea     HPr - REPLICA  2  1.300  0.100
+1REI GA57E    -1.000  50  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       GELQAGVPS  7.5  25.0   0.94   98.8 90189    8202506 GdnHCl   Immunoglobulin_kappa_variable_1D-33 -
+1KKM GH49K    -1.000  20  0  0 12 Xray 2.80 12 ABCDEFGHIJKL              2 AH   3 CA,PO4,SEP      1 SEP     GKKIMGVMS  7.0    25  23.76    1.2 20990   12144791 Thermal  HPr - REPLICA  2 -0.900  0.100
+1TUP GA245S   -1.200 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       GSCMGGMNR  7.2  10.0   0.02   11.3 91778   16754663 Urea     Cellular_tumor_antigen_p53 - REPLICA  3 -0.993  0.307
+1CUN HA164A   -2.900  16  0  0  3 Xray 0.00  3 ABC                       2 AC   0 -               0 -       HAFTVHKDR  7.0  25.0   0.14   13.7 91424   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+4HXJ HA122A   -0.620  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       HAWLAHSLS  6.0  22.0   0.05   35.7 90731   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1VQB HA64C     0.500   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       HCYTVHLSS  7.0    25  47.83   45.7 23037    8378307 Gdn      Gene_V -
+1ZNJ HB10D     1.300 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              6 ABDFHJ 3 CL,IPH,ZN       3 CL,IPH,ZN HDCGSHLVE  8.0    25  14.84   21.1 24395    8399225 Gdn      Insulin -
+1ZNJ HB10E     1.440 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              6 ABDFHJ 3 CL,IPH,ZN       3 CL,IPH,ZN HECGSHLVE  8.0    25  14.84   21.1 24396    8399225 Gdn      Insulin -
+1AAR HA68E     0.760  15  2  2  2 Xray 2.30  2 AB                        2 AB   0 -               0 -       HESTLHLVL  5.0    25  24.74   23.3 24809   10600102 Urea     Ubiquitin -
+5AZU HA117G   -2.366 234  0  4  4 Xray 1.90  4 ABCD                      2 AC   2 CU,NO3          1 CU      HGFPGHSAL  7.0    20   0.55    0.6 28477   11964251 Gdn      Azurin -
+1P2P HA48K    -3.210  47  2  2  2 Xray 2.60  2 AB                        1 A    1 CA              0 -       HKCETHDNC  7.0    20    3.3    4.5 29892   10388847 Gdn      Phospholipase_A2 -
+1DPM HA257L   -2.500  92  2  2  2 Xray 2.10  2 AB                        1 A    3 EBP,FMT,ZN      1 EBP     HLHIPHSAI  8.3    25    7.7    7.0 23674   18434422 Urea     Organophosphorus_hydrolase - REPLICA  2 -2.500  0.000
+3O39 HA96L    -0.580 224  0  0  2 Xray 0.00  2 AB                        2 AB   2 CD,MSE          1 MSE     HLNLAHETQ  7.4  25.0   0.39   54.6 90005   24497545 Thermal  Periplamic_chaperone_Spy -
+1P2P HA48N    -2.280  47  2  2  2 Xray 2.60  2 AB                        1 A    1 CA              0 -       HNCETHDNC  7.0    20    3.3    4.5 29891   10388847 Gdn      Phospholipase_A2 -
+1J7N HA91N     0.860 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       HNITKHISL  7.5    20   8.25    7.9 30227   19926859 Gdn      lethal_factor - REPLICA  2  0.730  0.130
+1YEA HA33N    -1.300   6  0  2  2 Xray 1.90  2 AB                        1 A    3 HEC,M3L,SO4     0 -       HNPNLHGIF  6.0  20.0   0.21   21.8 90179    7548046 GdnHCl   Cytochrome_c_mitochondrial_import_factor_CYC2 -
+2W0K HA8P     -0.600  56  2  0  2 Xray 2.35  2 AB                        1 A    0 -               0 -       HPTQPHSVS  7.5    25  87.41   85.0 27332   19941869 Gdn      V1-22_protein - REPLICA  2 -0.700  0.100
+1P2P HA48Q    -1.030  47  2  2  2 Xray 2.60  2 AB                        1 A    1 CA              0 -       HQCETHDNC  7.0    20    3.3    4.5 29890   10388847 Gdn      Phospholipase_A2 -
+1AYF HA56Q    -1.660  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       HQSTCHLIF  8.5    37   3.85    3.0 18924    8880913 Thermal  Adrenodoxin -
+1AAR HA68Q     0.550  15  2  2  2 Xray 2.30  2 AB                        2 AB   0 -               0 -       HQSTLHLVL  5.0    25  24.74   23.3 24808   10600102 Urea     Ubiquitin -
+1TUP HA168R   -2.750 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       HRQSQHMTE  7.2  10.0   0.24   27.3 90799   10654936 Urea     Cellular_tumor_antigen_p53 -
+1AYF HA56R    -1.160  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       HRSTCHLIF  8.5    37   3.85    3.0 18926    8880913 Thermal  Adrenodoxin -
+2W0K HA8S     -0.600  56  2  0  2 Xray 2.35  2 AB                        1 A    0 -               0 -       HSTQPHSVS  7.5    25  87.41   85.0 27333   19941869 Gdn      V1-22_protein - REPLICA  2 -0.400  0.200
+1ZNJ HB10T    -0.220 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              6 ABDFHJ 3 CL,IPH,ZN       3 CL,IPH,ZN HTCGSHLVE  8.0    25  14.84   21.1 24397    8399225 Gdn      Insulin -
+1AYF HA56T    -1.190  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       HTSTCHLIF  8.5    37   3.85    3.0 18925    8880913 Thermal  Adrenodoxin -
+1D5G HA71Y    -0.040  87  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       HYGATHKQA  6.8  25.0   0.05    4.8 90943   17011581 GdnHCl   Tyroine-protein_phosphatase_non-receptor_type_13 -
+5EMZ IA23A    -2.780  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IADTTIENV  7.4  25.0      0    0.0 90418   15857839 GdnHCl   Polyubiquitin-B -
+5EMZ IA61A    -3.230  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IADYNIQKE  7.4  25.0   0.02    2.2 90430   15857839 GdnHCl   Polyubiquitin-B -
+1CUN IA128A   -1.300  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       IAEAWINEK  7.0  25.0   0.01    0.6 91416   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1AMQ IA9A     -4.900   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       IAFENITAA  7.5    25  63.78    6.0 23613   19099423 Urea     Aspartate_aminotransferase - REPLICA  2 -5.000  0.100
+2BRD IA45A    -1.900 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         0 -       IAFYAITTL  6.0    25  14.59    0.4 21602   14659758 SDS      Bacteriorhodopsin -
+5EMZ IA13A    -3.400  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IAGKTITLE  7.4  25.0   0.12   14.4 90412   15857839 GdnHCl   Polyubiquitin-B -
+1J7N IA154A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       IAIGKILSR  7.5    20   3.24    4.1 30269   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+5EMZ IA30A    -3.220  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IAKAKIQDK  7.4  25.0      0    0.0 90424   15857839 GdnHCl   Polyubiquitin-B -
+1SHF IA111A   -2.640  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       IAKFQILNS  8.0  80.1      -   18.3 91142   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+2EWN IA280A   -0.300 183  0  0  2 Xray 0.00  2 AB                        2 AB   1 BTX             0 -       IAKLIIGDK  7.5  20.0   0.12   12.7 90249   26678378 -        Bifunctional_ligae/repressor_BirA -
+1J7N IA39A     0.850 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       IALKEIMKH  7.5    20   3.24    3.1 30209   19926859 Gdn      lethal_factor - REPLICA  2  0.725  0.125
+1VQB IA47A    -7.000   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       IALVKITLD  7.0    25   1.62    1.4 25609    2000379 Gdn      Gene_V -
+1NEY IA170A   -0.600  23  0  0  2 Xray 0.00  2 AB                        2 AB   2 13P,FTR         2 13P,FTR IAPVAIGTG  7.0  25.0   0.46   16.9 91260   31508957 Thermal  Trioephosphate_isomerase -
+4HXJ IA110A   -0.320  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       IARLQIVNN  6.0  22.0      0    0.0 90720   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5AZU IA81A    -2.390 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       IASRVIAHT  7.0    25  20.54   20.4 22861   16522792 Gdn      Azurin - REPLICA  2 -1.910  0.480
+5AZU IA7A     -3.110 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       IASVDIQGN  7.0    25    0.0    0.7 20040   16962971 Gdn      Azurin - REPLICA  2 -3.230  0.120
+4HXJ IA132A   -1.840  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       IATGYIPSN  6.0  22.0      0    0.0 90741   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src - REPLICA  2 -2.480  0.640
+5AZU IA20A    -2.390 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       IATNAITVD  7.0    25   3.78    3.6 22118   16042382 Gdn      Azurin - REPLICA  2 -1.970  0.420
+1UWO IA11A    -4.130 162  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       IAVALIDVF  7.2    25   20.0   15.5 20566   11888280 Gdn      Calcium-binding_protein_S100B -
+2BRD IA52A    -1.400 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         1 DPG     IAVPAIAFT  6.0    25  18.38   12.8 21608   14659758 SDS      Bacteriorhodopsin -
+5EMZ IA3A     -3.180  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IAxMQIFVK  7.4  25.0      0    0.0 90407   15857839 GdnHCl   Polyubiquitin-B -
+1VQB IA47C    -5.300   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       ICLVKITLD  7.0    25   1.62    1.4 23032    8378307 Gdn      Gene_V - REPLICA  3 -5.267  0.047
+1VQB IA78C    -4.400   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       ICSLMIDRL  7.0  25.0   0.57   11.9 90068    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1AON IO3C     -0.400  25 21 21 21 Xray 3.00 21 ABCDEFGHIJKLMNOPQRSTU     2 OU   2 ADP,MG          0 -       ICxMNIRPL  7.8    25  12.97   14.2 21736   15544816 Gdn      Chaperonin_10 -
+1SHF IA111F   -2.710  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       IFKFQILNS  8.0  80.1      -   18.3 91140   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1TUP IA255F   -3.290 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       IFLTIITLE  7.2  10.0      0    0.0 91653    1203434 -        Cellular_tumor_antigen_p53 -
+1VQB IA47F    -2.000   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       IFLVKITLD  7.0    25   1.62    1.4 23033    8378307 Gdn      Gene_V - REPLICA  3 -1.967  0.047
+1D5G IA20F     0.910  87  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       IFSLGISVT  6.8  25.0   0.05    4.8 90944   17011581 GdnHCl   Tyroine-protein_phosphatase_non-receptor_type_13 -
+1SHF IA133F   -3.470  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       IFTGYIPSN  8.0  80.1      -    0.0 91136   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+5EMZ IA23G    -3.580  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IGDTTIENV  7.4  25.0      0    0.0 90419   15857839 GdnHCl   Polyubiquitin-B -
+1SHF IA111L   -1.010  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ILKFQILNS  8.0  80.1      -   18.3 91155   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+2TS1 IA52L     1.330 205  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       ILLATILTM 7.78    25    0.0    0.3 24846    9973571 Urea     Tyrosyl-tRNA_synthetase -
+1JL5 IA1309L   0.200 118  0  4  4 Xray 2.10  4 ABCD                      1 A    1 CA              0 -       ILSNEIRSL  7.6    25    0.0    0.0 26006   21764506 Urea     Outer_protein_M - REPLICA  2  0.450  0.250
+1SHF IA133L   -0.750  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ILTGYIPSN  8.0  80.1      -    0.0 91158   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1R6R IA88N    -0.130 145  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       INRKEIGRM  6.0    25   5.41    5.6 26203   30808916 Urea     Genome_polyprotein -
+1K9Q IA33R    -0.100 123  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,OCT         0 -       IRLNHIDQT  7.0  50.0   0.79   78.9 90566   23035249 Thermal  Trancriptional_coactivator_YAP1 -
+1SHF IA111S   -3.040  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       ISKFQILNS  8.0  80.1      -   18.3 91138   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1TUP IA232T   -3.190 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       ITCTTIHYN  7.2  10.0   0.08    6.5 91652    1203434 -        Cellular_tumor_antigen_p53 -
+1TUP IA195T   -4.120 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       ITQHLIRVE  7.2  10.0   0.06    5.4 91651    1203434 -        Cellular_tumor_antigen_p53 -
+1VQB IA78T    -6.600   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       ITSLMIDRL  7.0  25.0   0.57   11.9 90069    7547934 GdnHCl   DNA-Binding_protein_G5P -
+5AZU IA81T    -2.510 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       ITSRVIAHT  7.0    25  20.54   20.4 22862   16522792 Gdn      Azurin -
+1N0J IA58T    -2.700  44  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 MN              0 -       ITTAQIALQ  7.8    70  52.43    2.5 16307    8605177 Thermal  Superoxide_dismutase_[Mn] 1VAR
+5AZU IA20T    -2.390 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       ITTNAITVD  7.0    25   3.78    3.6 22854   16522792 Gdn      Azurin -
+1CDC IA57V    -0.430  83  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       IVAFEILAN  7.0  25.0   0.25   25.0 91820    9931001 GdnHCl   T-cell_urface_antigen_CD2 -
+5EMZ IA23V    -0.450  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IVDTTIENV  7.4  25.0      0    0.0 90417   15857839 GdnHCl   Polyubiquitin-B -
+5EMZ IA61V    -1.120  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IVDYNIQKE  7.4  25.0   0.02    2.2 90429   15857839 GdnHCl   Polyubiquitin-B -
+1CUN IA128V   -2.400  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       IVEAWINEK  7.0  25.0   0.01    0.6 91423   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1SSO IA29V    -0.400  18  0  0  0 NMRl 0.00  1 A                         1 A    0 -               0 -       IVGKMISFT  7.0    50   2.16    2.0 17968   15005619 Thermal  Sso7d -
+5EMZ IA13V    -1.160  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IVGKTITLE  7.4  25.0   0.12   14.4 90411   15857839 GdnHCl   Polyubiquitin-B -
+5EMZ IA30V    -1.210  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IVKAKIQDK  7.4  25.0      0    0.0 90423   15857839 GdnHCl   Polyubiquitin-B -
+1SHF IA111V   -0.160  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       IVKFQILNS  8.0  80.1      -   18.3 91163   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1VQB IA6V     -0.700   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       IVKVEIKPS  7.0    25   0.54    0.7 23017    8378307 Gdn      Gene_V -
+1CDC IA18V    -1.170  83  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       IVNLNIPNF  7.0  25.0   0.05    5.6 91817    9931001 GdnHCl   T-cell_urface_antigen_CD2 -
+4HXJ IA110V   -0.090  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       IVRLQIVNN  6.0  22.0      0    0.0 90721   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1VQB IA78V    -1.300   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       IVSLMIDRL  7.0  25.0   0.57   11.9 90070    7547934 GdnHCl   DNA-Binding_protein_G5P -
+5AZU IA81V    -0.070 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       IVSRVIAHT  7.0    25  20.54   20.4 22860   16522792 Gdn      Azurin -
+1SHF IA133V   -0.040  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       IVTGYIPSN  8.0  80.1      -    0.0 91165   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1SAK IA332V   -5.000 151  0  0  4 NMRl 0.00  4 ABCD                      2 AC   0 -               0 -       IVTLQIRGR  7.0    25   0.54    0.6 25063   10097082 Gdn      Tumor_suppressor_P53 -
+5AZU IA20V    -0.380 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       IVTNAITVD  7.0    25   3.78    3.6 22852   16522792 Gdn      Azurin -
+5EMZ IA3V     -1.180  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       IVxMQIFVK  7.4  25.0      0    0.0 90406   15857839 GdnHCl   Polyubiquitin-B -
+1AON IO3W     -0.400  25 21 21 21 Xray 3.00 21 ABCDEFGHIJKLMNOPQRSTU     2 OU   2 ADP,MG          0 -       IWxMNIRPL  7.8    25  12.97   14.2 21737   15544816 Gdn      Chaperonin_10 -
+2ZTA KA27A    -0.910 210  2  2  2 Xray 1.80  2 AB                        2 AB   1 ACE             0 -       KAARLKKLV  7.0    15   45.7   53.7 30439   15037063 Urea     GCN4-p1 -
+1FC1 KA370A   -2.200  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       KACLVKGFY  7.4    20  11.18   13.5 29617    9649307 Gdn      Immunoglobulin_IgG1 -
+2BRD KA41A    -1.600 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         1 DPG     KADAKKFYA  6.0    25  26.74    7.2 21599   14659758 SDS      Bacteriorhodopsin -
+5EMZ KA27A    -2.560  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       KAENVKAKI  7.4  25.0      0    1.9 90421   15857839 GdnHCl   Polyubiquitin-B -
+1HTI KA193A    1.000  23  2  2  2 Xray 2.80  2 AB                        1 A    1 PGA             0 -       KAGWLKSNV  8.0    25  57.85   52.2 24475    8672446 Urea     Triose-phosphate_isomerase -
+1Y9X KA68A    -1.030  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       KAIEIKEIR  7.0  25.0   0.57   58.0 90606   18779322 Urea     DNA/RNA-binding_protein_Alba_1 - REPLICA  2 -0.505  0.525
+2EWN KA283A   -0.300 183  0  0  2 Xray 0.00  2 AB                        1 A    1 BTX             0 -       KAIGDKEIF  7.5  20.0   0.68   67.1 90250   26678378 -        Bifunctional_ligae/repressor_BirA -
+1Y9X KA97A    -1.700  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       KAIRKKxxx  6.8  35.0   0.57   58.6 90223   18851941 GdnHCl   DNA/RNA-binding_protein_Alba_1 -
+2ZTA KA8A     -0.390 210  2  2  2 Xray 1.80  2 AB                        2 AB   1 ACE             0 -       KALEDKVEE  7.0    15  48.13   40.9 30433   15037063 Urea     GCN4-p1 -
+2ZTA KA15A    -0.410 210  2  2  2 Xray 1.80  2 AB                        2 AB   1 ACE             0 -       KALLSKNYH  7.0    15  46.18   45.6 30435   15037063 Urea     GCN4-p1 -
+4HXJ KA103A   -0.440  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       KALSFKKGE  6.0  22.0   0.35   38.3 90712   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1OTR KB11A    -0.140  15  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       KALTGKTIT  5.0    25  45.21   48.6 20710   12662936 Urea     Ubiquitin -
+1FC1 KA409A   -3.900  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       KALYSKLTV  7.4    20   0.49    1.2 29626    9649307 Gdn      Immunoglobulin_IgG1 -
+1FC1 KA392A   -0.600  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       KANNYKTTP  7.4    20  37.92   34.5 29618    9649307 Gdn      Immunoglobulin_IgG1 -
+2KJ3 KA229A    1.500 192  3  0  3 NMRs 0.00  3 ABC                       1 A    0 -               0 -       KANSAKDIR  7.5    25  50.56   83.9 27349   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+2BRD KA40A    -0.300 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         1 DPG     KAPDAKKFY  6.0    25  55.42   22.6 21598   14659758 SDS      Bacteriorhodopsin -
+1B26 KA193A    0.350  74  6  6  6 Xray 3.00  6 ABCDEF                    1 A    0 -               0 -       KARGVKVCA  7.0    20   6.81    8.2 28869   12501181 Urea     Glutamate_dehydrogenase - REPLICA  3  0.520  0.329
+2ZTA KA28A    -0.060 210  2  2  2 Xray 1.80  2 AB                        1 A    1 ACE             0 -       KARLKKLVG  7.0    15  86.53   77.4 30440   15037063 Urea     GCN4-p1 -
+4HXJ KA104A   -0.090  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       KASFKKGER  6.0  22.0   0.58   61.0 90713   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5CG0 KA366A   -1.250 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       KASWLKSAS  6.0     -  60.28   62.6 13472   26785700 Thermal  Beta-glucosidase -
+1AMQ KA68E    -4.500   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       KEETTKNYL  7.5    25  77.78    0.2 23622   19099423 Urea     Aspartate_aminotransferase - REPLICA  2 -4.850  0.350
+1AAR KA6E      0.530  15  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       KEIFVKTLT  5.0    25   28.2   31.2 24802   10600102 Urea     Ubiquitin -
+1Y9X KA97E    -2.490  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       KEIRKKxxx  6.8  35.0   0.57   58.6 90224   18851941 GdnHCl   DNA/RNA-binding_protein_Alba_1 -
+1SS8 KA4E     -1.200  25  0  0  8    - 0.00  8  ABCDEFG                  3  AB  0 -               0 -       KEPAAKDVK  7.5 -248.1    0.8   14.0 91304   30661519 Urea     60_kDa_chaperonin - REPLICA  2 -1.300  0.100
+1LVM KA45F     0.430 129  0  0  3 Xray 0.00  3 ACE                       1 A    1 ACE             0 -       KFITNKHLF  8.0  25.0   0.06    6.0 90253   17905838 Thermal  Genome_polyprotein -
+1CUN KA152G   -1.300  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       KGGLLKKHE  7.0  25.0   0.49   52.0 91417   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1NEY KA12G    -3.700  23  0  0  2 Xray 0.00  2 AB                        2 AB   2 13P,FTR         1 13P     KGGNFKLNG  7.0  25.0   0.46    9.9 91262   31508957 Thermal  Trioephosphate_isomerase -
+1VQB KA69H    -1.200   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       KHSSFKVGQ  7.0    25  52.02   47.8 23947    2038057 Gdn      Gene_V - REPLICA  2 -1.250  0.050
+1SB0 KB90H    -0.340  42  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       KHxKEKRIK  6.8  25.0   0.54   69.7 90211   29890118 -        Trancriptional_activator_Myb - REPLICA  2 -0.305  0.035
+1Y9X KA68L     1.670  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       KLIEIKEIR  7.0  25.0   0.57   58.0 90608   18779322 Urea     DNA/RNA-binding_protein_Alba_1 - REPLICA  2  0.895  0.775
+1AMQ KA68M    -5.400   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       KMETTKNYL  7.5    25  77.78    0.2 23619   19099423 Urea     Aspartate_aminotransferase - REPLICA  2 -5.050  0.350
+1VQB KA69M     0.200   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       KMSSFKVGQ  7.0    25  52.02   47.8 23948    2038057 Gdn      Gene_V - REPLICA  2  0.150  0.050
+1DXX KA18N    -3.700  93  2  0  2 Xray 2.60  2 AB                        1 A    0 -               0 -       KNDVQKKTF  7.0     -  35.97   35.7 12638   25340340 Urea     Dystrophin - REPLICA  2 -3.700  0.000
+1Y9X KA40N    -3.100  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       KNIVIKARG  7.0  37.0   0.37   35.9 91832   18571501 Thermal  DNA/RNA-binding_protein_Alba_1 -
+1AAR KA29N    -1.480  15  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       KNVKAKIQD  5.0    25  23.33   23.4 24806   10600102 Urea     Ubiquitin -
+1AAR KA27Q    -1.910  15  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       KQENVKAKI  5.0    25   4.86    7.2 24804   10600102 Urea     Ubiquitin -
+1AAR KA6Q      0.260  15  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       KQIFVKTLT  5.0    25   28.2   31.2 24803   10600102 Urea     Ubiquitin -
+1AAR KA29Q    -1.670  15  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       KQVKAKIQD  5.0    25  23.33   23.4 24805   10600102 Urea     Ubiquitin -
+1VQB KA24V     0.800   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       KVRQGKPYS  7.0  25.0   0.73   72.2 90076    7547934 GdnHCl   DNA-Binding_protein_G5P -
+4HXJ LA124A   -0.610  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       LAAHSLSTG  6.0  22.0   0.55   54.1 90733   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1ROP LA41A    -6.120 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       LACESLHDH  6.0    25  45.33    0.4 20420    8539253 Thermal  Rop -
+1NEY LA230A   -0.800  23  0  0  2 Xray 0.00  2 AB                        1 A    2 13P,FTR         1 13P     LADGFLVGG  7.0  25.0   0.46    1.4 91261   31508957 Thermal  Trioephosphate_isomerase -
+4HXJ LA120A   -1.640  60  0  0  2 Xray 0.00  2 AC                        2 AC   0 -               0 -       LADWWLAHS  6.0  22.0   0.08   47.8 90729   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF LA101A   -3.920  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       LAEDDLSFH  8.0  80.1      -    6.1 91134   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1J7N LA145A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       LAEKALNVY  7.5    20    0.0    0.0 30254   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+1SB0 LB97A    -0.170  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LAELELLLM  6.8  25.0   0.65   59.1 90207   29890118 -        Trancriptional_activator_Myb -
+1NVO LA13A    -5.600 133  0  0  2 NMRl 0.00  2 AB                        2 AB   2 ACE,NH2         0 -       LAELQLIKQ  5.5  25.0   0.24    2.0 91715   12655072 GdnHCl   DF1 -
+1J7N LA129A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       LAEPVLVIQ  7.5    20   1.64    1.0 30251   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+5EMZ LA67A    -2.570  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       LAESTLHLV  7.4  25.0      0    0.0 90431   15857839 GdnHCl   Polyubiquitin-B -
+4HXJ LA100A   -1.790  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       LAETDLSFK  6.0  22.0   0.02    3.1 90709   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+4HXJ LA89A    -1.490  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       LAFVALYDY  6.0  22.0   0.45   43.0 90699   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+4HXJ LA108A   -2.260  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       LAGERLQIV  6.0  22.0      0    0.0 90717   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1J7N LA188A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       LAGQDLLFT  7.5    20  19.12   20.3 30272   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+5EMZ LA50A    -2.730  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       LAGRQLEDG  7.4  25.0   0.02    3.3 90427   15857839 GdnHCl   Polyubiquitin-B -
+5EMZ LA56A    -4.050  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       LAGRTLSDY  7.4  25.0      0    0.0 90428   15857839 GdnHCl   Polyubiquitin-B -
+2BRD LA48A    -0.100 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         1 DPG     LAITTLVPA  6.0    25  50.79   11.5 21605   14659758 SDS      Bacteriorhodopsin -
+1B28 LA40A    -1.310  30  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LAIYQLVME  7.5    25    8.0    7.4 21658   12487987 Urea     PROTEIN -
+1CUN LA214A   -3.200  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       LAKAKLDEN  7.0  25.0      0    0.0 91425   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+5AZU LA125A   -0.720 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       LAKGTLTLK  7.0    25    0.0    0.6 20043   16962971 Gdn      Azurin - REPLICA  2 -1.195  0.475
+1VQB LA49A    -6.100   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LAKITLDEG  7.0  25.0   0.04    4.2 90058    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1J7N LA174A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       LALDVLNTI  7.5    20   1.64    1.8 30281   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+5CG0 LA389A    0.670 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       LALNNLYNK  6.0     -  39.32   49.2 13464   26785700 Thermal  Beta-glucosidase -
+2BRD LA61A     0.700 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         0 -       LALSMLLGY  6.0    25  27.31   27.5 21616   14659758 SDS      Bacteriorhodopsin -
+1FC1 LA368A   -3.000  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       LALTCLVKG  7.4    20   1.64    1.6 29616    9649307 Gdn      Immunoglobulin_IgG1 -
+1CUN LA196A   -4.100  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       LAMKGLKGK  7.0  25.0      0    0.1 91427   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+5AZU LA50A    -1.790 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       LANWVLSTA  7.0    25    0.0    0.0 22123   16042382 Gdn      Azurin - REPLICA  2 -1.730  0.060
+1FC1 LA398A   -0.900  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       LAPPVLDSD  7.4    20  49.15   50.2 29622    9649307 Gdn      Immunoglobulin_IgG1 -
+5EMZ LA43A    -4.360  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       LAQQRLIIF  7.4  25.0      0    0.2 90426   15857839 GdnHCl   Polyubiquitin-B -
+5CG0 LA100A    0.810 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       LARFSLSWA  6.0     -    0.0    0.0 13462   26785700 Thermal  Beta-glucosidase -
+2KJ3 LA241A    1.000 192  3  0  3 NMRs 0.00  3 ABC                       1 A    0 -               0 -       LARVQLGNV  7.5    25    0.0   57.4 27351   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+2BRD LA62A     0.500 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         0 -       LASMLLGYG  6.0    25  69.36   33.0 21617   14659758 SDS      Bacteriorhodopsin -
+5CG0 LA335A   -0.840 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       LATAFLVSA  6.0     -  20.21   23.9 13479   26785700 Thermal  Beta-glucosidase -
+5EMZ LA15A    -3.850  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       LATITLEVE  7.4  25.0   0.05    5.3 90413   15857839 GdnHCl   Polyubiquitin-B -
+5EMZ LA69A    -3.050  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       LATLHLVLR  7.4  25.0   0.04    4.4 90432   15857839 GdnHCl   Polyubiquitin-B -
+2BRD LA58A     0.300 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         0 -       LATMYLSML  6.0    25  33.32   11.7 21613   14659758 SDS      Bacteriorhodopsin -
+5AZU LA33A    -1.670 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       LATVNLSHP  7.0    25   0.55    0.1 22121   16042382 Gdn      Azurin - REPLICA  2 -1.315  0.355
+5CG0 LA350A   -0.700 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       LAVPSLLDD  6.0     -   3.82    2.8 13463   26785700 Thermal  Beta-glucosidase -
+1CUN LA203A   -3.700  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       LAVSDLEKA  7.0  25.0      0    0.0 91426   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1FC1 LA351A   -2.100  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       LAVYTLPPS  7.4    20   3.28    5.6 29614    9649307 Gdn      Immunoglobulin_IgG1 -
+1UWO LA3A     -1.200 162  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LAxSELEKA  7.2    25    0.0    0.1 20563   11888280 Gdn      Calcium-binding_protein_S100B -
+1VQB LA81C    -3.700   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       LCIDRLRLV  7.0  25.0   0.16    6.5 90071    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB LA49C    -4.100   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LCKITLDEG  7.0  25.0   0.04    4.2 90059    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB LA37C    -4.600   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       LCYVDLGNE  7.0  25.0   0.67   15.9 90050    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1SHF LA101F   -1.200  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       LFEDDLSFH  8.0  80.1      -    6.1 91153   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1SAK LA344F   -6.100 151  0  0  4 NMRl 0.00  4 ABCD                      4 ABCD 0 -               0 -       LFFRELNEA  7.0    25   2.18    1.1 25067   10097082 Gdn      Tumor_suppressor_P53 -
+1SAK LA330F   -5.200 151  0  0  4 NMRl 0.00  4 ABCD                      2 AC   0 -               0 -       LFYFTLQIR  7.0    25  11.47   12.7 25062   10097082 Gdn      Tumor_suppressor_P53 -
+1SB0 LB97G    -0.900  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LGELELLLM  6.8  25.0   0.65   59.1 90214   29890118 -        Trancriptional_activator_Myb -
+1VQB LA32H    -0.900   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LHNEQLCYV  7.0  25.0   0.47   43.3 90080    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1SHF LA101I   -0.690  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       LIEDDLSFH  8.0  80.1      -    6.1 91160   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1SAK LA344I   -1.200 151  0  0  4 NMRl 0.00  4 ABCD                      4 ABCD 0 -               0 -       LIFRELNEA  7.0    25   2.18    1.1 25068   10097082 Gdn      Tumor_suppressor_P53 -
+1VQB LA49I    -1.900   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LIKITLDEG  7.0  25.0   0.04    4.2 90060    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1K9Q LA30I     0.870 123  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,OCT         1 NH2     LIRYFLNHI  7.0  50.0   0.06    5.8 90567   23035249 Thermal  Trancriptional_coactivator_YAP1 -
+1VQB LA37I    -1.400   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       LIYVDLGNE  7.0  25.0   0.67   15.9 90051    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1BKS LA50N    -6.280  17  0  0  2 Xray 0.00  2 AB                        1 A    2 NA,PLP          0 -       LNALELGVP  7.8  25.0   0.01    0.1 90792   23293932 Urea     Tryptophan_ynthase_alpha_chain -
+1R6R LA81N    -6.840 145  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LNINVLRGF  6.0    25   1.09    0.8 26202   30808916 Urea     Genome_polyprotein -
+3FIL LA37N    -1.270  57  0  0  2 Xray 0.00  2 AB                        2 AB   2 CA,FME          0 -       LNNNDLGVD  7.0  25.0      -    7.1 91307   22509974 GdnHCl   Immunoglobulin_G-binding_protein_G -
+1BKS LA99N    -4.150  17  0  0  2 Xray 0.00  2 AB                        1 A    2 NA,PLP          0 -       LNPIGLLMY  7.8  25.0   0.01    1.2 90793   23293932 Urea     Tryptophan_ynthase_alpha_chain -
+1TUP LA201P    0.350 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       LPEGNLRVE  7.2  10.0   0.93   87.0 90584    9843948 Urea     Cellular_tumor_antigen_p53 -
+1SB0 LB97P    -3.600  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LPELELLLM  6.8  25.0   0.65   59.1 90216   29890118 -        Trancriptional_activator_Myb -
+3O39 LA32P    -3.250 224  0  0  2 Xray 0.00  2 AB                        1 A    2 CD,MSE          0 -       LPFKDLNLT  7.4  25.0   0.05    5.3 90003   24497545 Thermal  Periplamic_chaperone_Spy -
+1KA6 LA31P    -1.710 124  0  0  2 NMRl 0.00  2 AB                        1 A    2 NH2,PTR         0 -       LPSYLLRDS  7.4  57.8   0.06    4.9 91754   14674764 Thermal  SH2_domain-containing_protein_1A -
+1VQB LA65P    -1.500   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       LPTVHLSSF  7.0    25  75.91   28.8 23038    8378307 Gdn      Gene_V -
+1AV1 LA230P    0.200  27  4  4  4 Xray 4.00  4 ABCD                      2 AD   0 -               0 -       LPVSFLSAL  7.4    25  51.34   25.7 22384   16922511 Gdn      Apolipoprotein_A-I - REPLICA  2  0.000  0.200
+1TUP LA145Q   -2.980 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       LQPVQLWVD  7.2  10.0   0.03    2.6 91654    1203434 -        Cellular_tumor_antigen_p53 -
+1VQB LA32R    -1.600   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LRNEQLCYV  7.0  25.0   0.47   43.3 90081    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1AV1 LA141R   -1.000  27  4  4  4 Xray 4.00  4 ABCD                      3 ABD  0 -               0 -       LRQEKLSPL  7.4    25   14.2   18.1 21023   12173940 Gdn      Apolipoprotein_A-I - REPLICA  2 -0.650  0.350
+1SHF LA101S   -3.880  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       LSEDDLSFH  8.0  80.1      -    6.1 91135   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1R6R LA50S    -2.810 145  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LSFMALVAF  6.0    25  22.94   23.9 26200   30808916 Urea     Genome_polyprotein -
+1R6R LA54S    -0.240 145  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       LSVAFLRFL  6.0    25   35.5   34.7 26201   30808916 Urea     Genome_polyprotein -
+1TUP LA206S   -0.100 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       LSVEYLDDR  7.2  10.0   0.35   37.7 90585    9843948 Urea     Cellular_tumor_antigen_p53 -
+1UWO LA3S     -2.770 162  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LSxSELEKA  7.2    25    0.0    0.1 20564   11888280 Gdn      Calcium-binding_protein_S100B -
+1VQB LA81T    -5.100   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       LTIDRLRLV  7.0  25.0   0.16    6.5 90072    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1REI LA78T    -0.800  50  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       LTISSLQPE  7.5  25.0      0    0.0 90191    8202506 GdnHCl   Immunoglobulin_kappa_variable_1D-33 -
+1VQB LA49T    -5.700   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LTKITLDEG  7.0  25.0   0.04    4.2 90061    7547934 GdnHCl   DNA-Binding_protein_G5P -
+5AZU LA50T    -2.340 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       LTNWVLSTA  7.0    25    0.0    0.0 22859   16522792 Gdn      Azurin -
+1VQB LA37T    -5.200   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       LTYVDLGNE  7.0  25.0   0.67   15.9 90052    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1CDC LA95V    -0.750  83  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       LVALDLRIL  7.0  25.0   0.01    1.1 91823    9931001 GdnHCl   T-cell_urface_antigen_CD2 -
+1ROP LA41V    -2.530 148  2  2  2 Xray 1.70  2 AB                        2 AB   0 -               0 -       LVCESLHDH  6.0    25  45.33    0.4 20419    8539253 Thermal  Rop -
+1SHF LA101V   -1.630  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       LVEDDLSFH  8.0  80.1      -    6.1 91152   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1SB0 LB97V    -0.300  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       LVELELLLM  6.8  25.0   0.65   59.1 90210   29890118 -        Trancriptional_activator_Myb -
+4HXJ LA108V   -1.210  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       LVGERLQIV  6.0  22.0      0    0.0 90718   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1CDC LA16V    -2.200  83  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       LVGINLNIP  7.0  25.0   0.01    0.2 91816    9931001 GdnHCl   T-cell_urface_antigen_CD2 -
+1VQB LA81V    -0.200   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       LVIDRLRLV  7.0  25.0   0.16    6.5 90073    7547934 GdnHCl   DNA-Binding_protein_G5P -
+2TS1 LA105V   -0.650 205  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       LVKEQLGRF 7.78    25   0.55    0.5 24848    9973571 Urea     Tyrosyl-tRNA_synthetase -
+1VQB LA49V    -2.900   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LVKITLDEG  7.0  25.0   0.04    4.2 90062    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1CDC LA50V     0.370  83  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       LVKPFLKSG  7.0  25.0   0.48   44.2 91819    9931001 GdnHCl   T-cell_urface_antigen_CD2 -
+5AZU LA50V    -0.360 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       LVNWVLSTA  7.0    25    0.0    0.0 22858   16522792 Gdn      Azurin -
+1VQB LA28V     1.100   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LVPYSLNEQ  7.0    25   28.4   32.3 23019    8378307 Gdn      Gene_V -
+1CDC LA89V    -0.140  83  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       LVTRILDKA  7.0  25.0   0.22   21.0 91822    9931001 GdnHCl   T-cell_urface_antigen_CD2 -
+1VQB LA37V    -3.500   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       LVYVDLGNE  7.0  25.0   0.67   15.9 90053    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB LA32W     2.800   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LWNEQLCYV  7.0  25.0   0.47   43.3 90082    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB LA32Y     1.000   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       LYNEQLCYV  7.0    25  42.05   43.3 23021    8378307 Gdn      Gene_V -
+1K9Q LA30Y     0.350 123  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,OCT         1 NH2     LYRYFLNHI  7.0  65.0   0.06    5.8 90475   11420447 Thermal  Trancriptional_coactivator_YAP1 -
+2BRD MA56A     1.400 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         1 DPG     MAAFTMYLS  6.0    25  14.99   13.3 21611   14659758 SDS      Bacteriorhodopsin -
+1UWO MA7A     -5.260 162  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       MAEKAMVAL  7.2    25    3.0    2.4 20565   11888280 Gdn      Calcium-binding_protein_S100B -
+1B28 MA31A    -3.170  30  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       MAENGMSVN  7.5    25   63.0   42.3 21652   12487987 Urea     PROTEIN -
+1VQB MA77A    -2.100   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       MAGSLMIDR  7.0  25.0   0.44   42.4 90099    7547934 GdnHCl   DNA-Binding_protein_G5P -
+5AZU MA121A   -2.870 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          1 CU      MASALMKGT  7.0    25    0.0    0.2 22131   16042382 Gdn      Azurin -
+1CUN MA193A   -2.200  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       MATAKMKGL  7.0  25.0    0.1    9.4 91422   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1J7N MA73A     0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       MAVLEMYKA  7.5    20    0.0    0.0 30213   19926859 Gdn      lethal_factor - REPLICA  3  0.340  0.315
+2BRD MA60A    -0.800 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         0 -       MAYLSMLLG  6.0    25    3.0    3.9 21615   14659758 SDS      Bacteriorhodopsin -
+5CG0 MA262F    0.530 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       MFEDEMAAE  6.0     -  45.98   42.2 13476   26785700 Thermal  Beta-glucosidase -
+1VQB MA77F    -0.200   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       MFGSLMIDR  7.0  25.0   0.44   42.4 90101    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1SAK MA340I    0.700 151  0  0  4 NMRl 0.00  4 ABCD                      3 ACD  0 -               0 -       MIRFEMFRE  7.0    25  17.49   19.5 25064   10097082 Gdn      Tumor_suppressor_P53 -
+1TUP MA237I   -3.180 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              1 ZN      MIYNYMCNS  7.2  10.0   0.04    4.8 91655    1203434 -        Cellular_tumor_antigen_p53 -
+1VQB MA77L    -1.200   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       MLGSLMIDR  7.0  25.0   0.44   42.4 90102    7547934 GdnHCl   DNA-Binding_protein_G5P -
+2TS1 MA55L     0.210 205  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       MLILTMRRF  7.8  68.5   0.01    0.2 90543    9973571 Urea     Tyroine--tRNA_ligase -
+1TUP MA133L    0.300 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       MLLNKMFCQ  7.2  10.0   0.01    0.7 90586    9843948 Urea     Cellular_tumor_antigen_p53 -
+1VQB MA77T    -0.800   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       MTGSLMIDR  7.0  25.0   0.44   42.4 90103    7547934 GdnHCl   DNA-Binding_protein_G5P -
+4HXJ NA135A   -0.140  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       NAIPSNYVA  6.0  22.0   0.75   79.7 90744   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5CG0 NA249A   -0.940 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       NAISVNWFG  6.0     -   12.3   11.8 13468   26785700 Thermal  Beta-glucosidase -
+4HXJ NA113A    0.070  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       NAIVNNTEG  6.0  22.0   0.26   26.2 90724   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+4HXJ NA112A   -0.200  60  0  0  2 Xray 0.00  2 AC                        2 AC   0 -               0 -       NAQIVNNTE  6.0  22.0   0.68   72.5 90723   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SB0 NB104A    0.130  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       NASTENELK  6.8  25.0   0.53   53.6 90203   29890118 -        Trancriptional_activator_Myb -
+1AMQ NA294D    0.800   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       NDIRANYSN  7.5    25  53.96    0.9 23636   19099423 Urea     Aspartate_aminotransferase -
+1TUP NA268D    0.920 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       NDLGRNSFE  7.2  10.0   0.11   10.2 90576    9843948 Urea     Cellular_tumor_antigen_p53 - REPLICA  2  1.065  0.145
+1P2P NA89D    -0.190  47  2  2  2 Xray 2.60  2 AB                        2 AB   1 CA              1 CA      NDSKNNACE  7.0  20.0   0.48   11.9 91793    1817255 GdnHCl   Phopholipase_A2__major_isoenzyme -
+1SB0 NB104G   -0.120  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       NGSTENELK  6.8  25.0   0.53   53.6 90205   29890118 -        Trancriptional_activator_Myb -
+1YEA NA52I     2.400   6  0  2  2 Xray 1.90  2 AB                        1 A    3 HEC,M3L,SO4     1 HEC     NITDANINK  6.0  52.4    0.1   11.8 91668    8639684 Thermal  Cytochrome_c_ioform_2 - REPLICA  3  2.633  0.634
+1SB0 NB104P   -0.360  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       NPSTENELK  6.8  25.0   0.53   53.6 90212   29890118 -        Trancriptional_activator_Myb -
+1AMQ NA294R   -2.600   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       NRIRANYSN  7.5    25  53.96    0.9 23637   19099423 Urea     Aspartate_aminotransferase -
+1AMQ NA297R   -4.400   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             1 PMP     NRNYSNPPA  7.5    25  23.91    7.0 23638   19099423 Urea     Aspartate_aminotransferase - REPLICA  2 -5.150  0.750
+1SB0 NB104V    0.150  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       NVSTENELK  6.8  25.0   0.53   53.6 90202   29890118 -        Trancriptional_activator_Myb -
+1TUP NA239Y    1.490 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              1 ZN      NYYMCNSSC  7.2  10.0   0.24   25.0 90587    9843948 Urea     Cellular_tumor_antigen_p53 - REPLICA  2  1.430  0.060
+1OTR PB37A    -1.080  15  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       PAEGIPPDQ  5.0  25.0   0.22   48.3 91298   15560788 GdnHCl   E3_ubiquitin-protein_ligae_RSP5 -
+2EWN PA143A   -0.300 183  0  0  2 Xray 0.00  2 AB                        2 AB   1 BTX             0 -       PAEQGPAAA  7.5  20.0   0.01    0.8 90247   26678378 -        Bifunctional_ligae/repressor_BirA -
+1OTR PB38A     1.100  15  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       PAGIPPDQQ  5.0  25.0   0.13   37.3 91299   15560788 GdnHCl   E3_ubiquitin-protein_ligae_RSP5 -
+1H0X PA18A    -1.940  39  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       PAGKKPVMN  7.0  25.0   0.67   69.0 90174   19262980 Urea     DNA/RNA-binding_protein_Alba_1 -
+4HXJ PA133A   -1.360  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       PAGYIPSNY  6.0  22.0   0.08    9.4 90742   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SCE PA29A     0.230 152  4  4  4 Xray 2.20  4 ABCD                      2 AB   1 CL              0 -       PAHYSPRYA  7.5    25  81.75    8.2 19873   10926502 Urea     Suc1 -
+1SCE PA52A    -2.570 152  4  4  4 Xray 2.20  4 ABCD                      1 A    1 CL              0 -       PAKAIPTDY  7.5    25   9.16    9.2 19875   10926502 Urea     Suc1 -
+1FC1 PA395A   -3.800  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       PAKTTPPVL  7.4    20  42.99   46.0 29620    9649307 Gdn      Immunoglobulin_IgG1 -
+1H0X PA62A    -2.580  39  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       PARFLPDKI  7.0  25.0   0.57   57.7 90175   19262980 Urea     DNA/RNA-binding_protein_Alba_1 -
+1SCE PA20A    -0.300 152  4  4  4 Xray 2.20  4 ABCD                      1 A    1 CL              0 -       PARLEPFID  7.5    25  57.79   60.7 19872   10926502 Urea     Suc1 -
+2BRD PA50A     0.100 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         0 -       PATLVPAIA  6.0    25   5.64    5.2 21607   14659758 SDS      Bacteriorhodopsin -
+1SCE PA90A     1.190 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       PAVHVPEPH  7.5    25   30.3   20.8 19877   10926502 Urea     Suc1 -
+1SCE PA44A    -3.040 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       PAVMLPKAM  7.5    25  25.37   18.7 19874   10926502 Urea     Suc1 -
+1SCE PA92A     0.070 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       PAVPEPHIL  7.5    25  37.35   38.8 19878   10926502 Urea     Suc1 -
+2BRD PA37A    -0.200 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         0 -       PAVSDPDAK  6.0    25  64.13   63.5 21596   14659758 SDS      Bacteriorhodopsin -
+1SCE PA58A    -0.350 152  4  4  4 Xray 2.20  4 ABCD                      1 A    1 CL              0 -       PAYFNPETG  7.5    25  92.32  102.9 19876   10926502 Urea     Suc1 -
+4HXJ PA139A   -0.140  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       PAYVAPSDx  6.0  22.0   0.63   67.6 90748   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SCE PA7A     -0.200 152  4  4  4 Xray 2.20  4 ABCD                      1 A    1 CL              0 -       PAxxVPRLL  7.5    25  21.14   24.8 19871   10926502 Urea     Suc1 -
+1YEA PA25G    -0.800   6  0  2  2 Xray 1.90  2 AB                        1 A    3 HEC,M3L,SO4     0 -       PGEGGPNKV  6.0  20.0   0.57   59.0 90177    7548046 GdnHCl   Cytochrome_c_mitochondrial_import_factor_CYC2 -
+1YEA PA76G    -1.100   6  0  2  2 Xray 1.90  2 AB                        1 A    3 HEC,M3L,SO4     1 M3L     PGKYIPGTK  6.0  20.0   0.75   79.7 90178    7548046 GdnHCl   Cytochrome_c_mitochondrial_import_factor_CYC2 - REPLICA  2 -1.150  0.050
+1SCE PA90G     1.330 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       PGVHVPEPH  7.5    25   30.3   20.8 19879   10926502 Urea     Suc1 -
+1SCE PA92G     0.070 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       PGVPEPHIL  7.5    25  37.35   38.8 19880   10926502 Urea     Suc1 -
+1PRG PA467L    0.110 140  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       PLSLHPLLQ  8.0    10  40.87   65.5 31019   28208577 Urea     Peroxisome_proliferator-activated_receptor_gamma -
+1TUP PA151S   -4.490 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       PSDSTPPPG  7.2  10.0    0.1    9.7 91656    1203434 -        Cellular_tumor_antigen_p53 -
+2W0K PA7S     -1.500  56  2  0  2 Xray 2.35  2 AB                        1 A    0 -               0 -       PSLTQPHSV  7.5     -  41.58   45.0 13557   19941869 Thermal  V1-22_protein 3B5G REPLICA  2 -2.050  0.550
+1YEA PA71T    -0.800   6  0  2  2 Xray 1.90  2 AB                        1 A    3 HEC,M3L,SO4     1 M3L     PTLTNPKYI  7.2    20    0.7    7.3 29533    2822088 Gdn      Iso-2_cytochrome_c -
+1SCE PA90V    -0.630 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       PVVHVPEPH  7.1    25   30.3   20.8 26136   11434772 Gdn      Cyclin-dependent_kinases_regulatory_subunit - REPLICA  2 -0.625  0.005
+1SCE PA92V    -0.180 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       PVVPEPHIL  7.1    25  37.35   38.8 26137   11434772 Gdn      Cyclin-dependent_kinases_regulatory_subunit - REPLICA  2 -0.130  0.050
+1HTI QA179A    0.100  23  2  2  2 Xray 2.80  2 AB                        1 A    1 PGA             0 -       QAATPQQAQ  8.0    25  87.91   66.7 24474    8672446 Urea     Triose-phosphate_isomerase -
+4HXJ QA109A   -0.210  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       QAERLQIVN  6.0  22.0   0.31   41.9 90719   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5EMZ QA41A    -1.460  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       QAPDQQRLI  7.4  25.0      0    0.0 90425   15857839 GdnHCl   Polyubiquitin-B -
+1FC1 QA347A   -0.700  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       QAREPQVYT  7.4    20  31.91   30.4 29611    9649307 Gdn      Immunoglobulin_IgG1 -
+4HXJ QA128A   -0.350  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       QASTGQTGY  6.0  22.0   0.56   58.3 90737   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1HTI QA179D    1.500  23  2  2  2 Xray 2.80  2 AB                        1 A    1 PGA             0 -       QDATPQQAQ  8.0    25  87.91   66.7 24472    8672446 Urea     Triose-phosphate_isomerase -
+1REI QA38D    -1.200  50  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       QDWYQQTPG  7.5  25.0   0.12   12.2 90321    9079368 GdnHCl   Immunoglobulin_kappa_variable_1D-33 -
+1TUP QA167E   -0.430 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       QEKQSQHMT  7.2  10.0   0.49   71.0 90591    9843948 Urea     Cellular_tumor_antigen_p53 -
+1LVM QA58F     0.600 129  0  0  3 Xray 0.00  3 ACE                       1 A    1 ACE             0 -       QFLLVQSLH  8.0  25.0   0.34   31.9 90255   17905838 Thermal  Genome_polyprotein -
+1CUN QA115G   -1.000  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       QGLEYQQFV  7.0  25.0    0.1    9.2 91408   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1TUP QA104H    0.240 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       QHKTYQGSY  7.2  10.0   0.47   47.2 90588    9843948 Urea     Cellular_tumor_antigen_p53 -
+1K9Q QA35K     0.230 123  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,OCT         0 -       QKHIDQTTT  7.0  50.0   0.74   77.9 90568   23035249 Thermal  Trancriptional_coactivator_YAP1 -
+1TUP QA165K   -1.270 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       QKIYKQSQH  7.2  10.0   0.33   34.1 90590    9843948 Urea     Cellular_tumor_antigen_p53 -
+3O39 QA100L   -2.000 224  0  0  2 Xray 0.00  2 AB                        2 AB   2 CD,MSE          1 MSE     QLHETQNKI  7.4  25.0   0.33   33.6 90006   24497545 Thermal  Periplamic_chaperone_Spy -
+3O39 QA49L    -0.050 224  0  0  2 Xray 0.00  2 AB                        1 A    2 CD,MSE          1 MSE     QLIKGQRDQ  7.4  25.0   0.15   37.4 90004   24497545 Thermal  Periplamic_chaperone_Spy -
+1TUP QA104P    0.110 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       QPKTYQGSY  7.2  10.0   0.47   47.2 90589    9843948 Urea     Cellular_tumor_antigen_p53 -
+1PRG QA314P   -0.300 140  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       QPLNDQVTL  8.0    10  15.68   19.7 31014   28208577 Urea     Peroxisome_proliferator-activated_receptor_gamma -
+1PRG QA286P   -0.300 140  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       QPQGCQFRS  8.0  10.0    0.1   10.9 90535   28208577 Urea     Peroxiome_proliferator-activated_receptor_gamma -
+1REI QA89R    -1.800  50  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       QRYYCQQYQ  7.5  25.0   0.02    3.0 90322    9079368 GdnHCl   Immunoglobulin_kappa_variable_1D-33 -
+3X3U QA73V    -4.130 226  3  3  3 Xray 2.09  3 ABC                       2 AB   0 -               0 -       QVVSHQQAL  8.0    37  10.08   13.7 19183   20639520 Gdn      Divalent-cation_tolerance_protein_CutA -
+1B26 RA190A   -0.340  74  6  6  6 Xray 3.00  6 ABCDEF                    1 A    0 -               0 -       RAATGRGVK  7.0  69.5   0.44    1.3 16371   12501181 Thermal  Glutamate_dehydrogenase - REPLICA  3 -0.357  0.039
+1Y9X RA57A    -1.360  39  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       RAEIVRNRF  7.0  25.0   0.43   44.3 90610   18779322 Urea     DNA/RNA-binding_protein_Alba_1 - REPLICA  2 -1.075  0.285
+2ZTA RA25A    -1.660 210  2  2  2 Xray 1.80  2 AB                        2 AB   1 ACE             0 -       RAEVARLKK  7.0    15   69.0   43.6 30438   15037063 Urea     GCN4-p1 -
+4HXJ RA107A   -0.320  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       RAKGERLQI  6.0  22.0   0.48   49.1 90716   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1PRG RA357A    0.190 140  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       RAKSLRKPF  8.0    10  39.74   34.9 31017   28208577 Urea     Peroxisome_proliferator-activated_receptor_gamma -
+1TUP RA175A   -0.730 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              1 ZN      RAVVRRCPH  7.2  10.0      0    1.7 91657    1203434 -        Cellular_tumor_antigen_p53 -
+4HXJ RA95A    -0.070  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       RAYESRTET  6.0  22.0   0.78   78.1 90705   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1A43 RA167A   -3.000  66  0  2  2 Xray 2.60  2 AB                        1 A    0 -               0 -       RAYVDRFYK  7.3    25  37.99   36.6 20801   12051856 Gdn      HIV-1_capsid_protein - REPLICA  2 -3.050  0.050
+1VQB RA82C    -1.500   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       RCDRLRLVP  7.0    25  19.21   22.7 23043    8378307 Gdn      Gene_V - REPLICA  2 -1.500  0.000
+1AAR RA42E     1.630  15  2  2  2 Xray 2.30  2 AB                        2 AB   0 -               0 -       REDQQRLIF  5.0    25  17.03   22.2 24807   10600102 Urea     Ubiquitin -
+1A7C RA30E    -1.200  31  3  3  3 Xray 1.95  3 ABC                       1 A    4 ACE,NAG,NH2,RIP 0 -       RESKDRNVV  6.6  50.2  50.66   55.1 17891    8142362 Thermal  Plasminogen_activator_inhibitor_1 -
+1PRG RA288H    0.060 140  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       RHCQFRSVE  8.0    10  36.24   28.0 31015   28208577 Urea     Peroxisome_proliferator-activated_receptor_gamma -
+1TUP RA273H   -0.300 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       RHFEVRVCA  7.2  10.0   0.25   25.6 91781   16754663 Urea     Cellular_tumor_antigen_p53 -
+1TUP RA174K   -0.220 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       RKEVVRRCP  7.2  10.0   0.21   48.8 90592    9843948 Urea     Cellular_tumor_antigen_p53 -
+1AMQ RA266K   -5.000   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             1 PMP     RKYNERVGA  7.5    25  38.86    2.1 23632   19099423 Urea     Aspartate_aminotransferase -
+1Y9X RA57L     1.290  39  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       RLEIVRNRF  7.0  25.0   0.43   44.3 90612   18779322 Urea     DNA/RNA-binding_protein_Alba_1 - REPLICA  2  1.125  0.165
+1KA6 RA55L    -1.630 124  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,PTR         2 NH2,PTR RLYTYRVSQ  7.4  57.8   0.39   56.1 91753   14674764 Thermal  SH2_domain-containing_protein_1A -
+1AMQ RA266M   -3.400   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             1 PMP     RMYNERVGA  7.5    25  38.86    2.1 23634   19099423 Urea     Aspartate_aminotransferase - REPLICA  2 -3.600  0.200
+1TUP RA282Q   -2.050 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       RQGRDRRTE  6.8  10.0   0.15   14.7 91277   12600206 Urea     Cellular_tumor_antigen_p53 -
+1Y9X RA95Q     0.120  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       RQIAIRKKx  6.8  35.0   0.43   44.1 90225   18851941 GdnHCl   DNA/RNA-binding_protein_Alba_1 -
+1AAR RA72Q    -0.330  15  2  2  2 Xray 2.30  2 AB                        2 AB   0 -               0 -       RQLVLRLRG  5.0    25  38.43   28.8 24810   10600102 Urea     Ubiquitin -
+1TUP RA282W   -3.300 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       RWGRDRRTE  7.2  10.0   0.15   14.7 91782   16754663 Urea     Cellular_tumor_antigen_p53 -
+1BOY RA200W    0.600  79  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       RWTVNRKST  7.5    23  43.23   39.5 27700   15865421 Gdn      Tissue_factor -
+5CG0 SA358A   -0.630 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       SADTGSWAD  6.0     -  24.74   27.7 13471   26785700 Thermal  Beta-glucosidase -
+4HXJ SA94A     0.520  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       SADYESRTE  6.0  22.0   0.35   34.3 90704   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF SA124A   -0.710  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SAEARSLTT  8.0    25   0.85    0.9 24126    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -0.695  0.015
+1A0F SA11A    -1.800  64  0  0  2 Xray 0.00  2 AB                        1 A    1 GTS             1 GTS     SAGACSLAS  6.5  56.7      0    0.0 90597   17223798 GdmCl    Glutathione_S-tranferase_GstA -
+4HXJ SA125A    0.180  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       SAHSLSTGQ  6.0  22.0   0.74   76.6 90734   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SCE SA28A    -0.340 152  4  4  4 Xray 2.20  4 ABCD                      2 AB   1 CL              0 -       SAIHYSPRY  7.5    25   9.39    2.6 19881   10926502 Urea     Suc1 -
+5CG0 SA247A   -0.050 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       SAITISVNW  6.0     -  10.24   12.4 13467   26785700 Thermal  Beta-glucosidase -
+2KJ3 SA273A    1.400 192  3  0  3 NMRs 0.00  3 ABC                       2 AB   0 -               0 -       SAKGESRVL  7.5    25  24.74    0.0 27355   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+4HXJ SA123A   -1.460  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       SALAHSLST  6.0  22.0      0    0.3 90732   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SB0 SB101A    0.160  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       SALLMSTEN  6.8  25.0   0.13   16.1 90201   29890118 -        Trancriptional_activator_Myb -
+2BRD SA35A    -0.300 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         1 DPG     SAMGVSDPD  6.0    25  15.36   15.9 21594   14659758 SDS      Bacteriorhodopsin -
+2BRD SA59A     0.100 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         0 -       SAMYLSMLL  6.0    25   27.3    2.6 21614   14659758 SDS      Bacteriorhodopsin -
+3HHR SA71A    -1.260 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       SAQQKSNLE  8.0    20  46.08   28.5 29096    8060992 Gdn      Growth_hormone -
+1G6N SA128A   -0.260 102  2  2  2 Xray 2.10  2 AB                        2 AB   1 CMP             1 CMP     SAQVTSEKV  7.9    20  11.95   11.9 29593    9588945 Thermal  Catabolite_activator_protein -
+4HXJ SA101A   -0.820  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       SATDLSFKK  6.0  22.0   0.33   39.8 90710   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+4HXJ SA140A    0.440  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       SAVAPSDxx  6.0  22.0   0.22   20.3 90749   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+4HXJ SA134A    0.240  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       SAYIPSNYV  6.0  22.0   0.23   24.6 90743   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+3X3U SA11A     4.950 226  3  3  3 Xray 2.09  3 ABC                       2 AC   0 -               0 -       SAxTASVVV  8.0    37   6.83    6.0 19178   20639520 Gdn      Divalent-cation_tolerance_protein_CutA -
+1EQ7 SA2A     -0.800  95  3  3  3 Xray 1.90  3 ABC                       1 A    0 -               0 -       SAxxSSNAK  7.0     4 115.19  108.1 31451   10843861 Gdn      Major_outer_membrane_lipoprotein_Lpp -
+1JL9 SA9C     -1.510 119  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       SCCPLSHDG  8.4  22.0    0.9   95.1 90802   16274250 GdnHCl   Pro-epidermal_growth_factor -
+1VQB SA67C    -3.700   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       SCHLSSFKV  7.0  25.0      0    0.0 90065    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1ZNJ SA9D      0.100 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              2 AF   3 CL,IPH,ZN       1 IPH     SDCCTSICS  8.0    25  15.36   55.0 24394    8399225 Gdn      Insulin -
+1SHF SA124D   -2.000  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SDEARSLTT  8.0  25.0      -    0.9 90673   12079394 GdnHCl   Tyroine-protein_kinase_Fyn - REPLICA  2 -2.010  0.010
+1HTI SA105D   -1.300  23  2  2  2 Xray 2.80  2 AB                        1 A    1 PGA             0 -       SDFGESDEL  8.0    25  51.19   54.5 24473    8672446 Urea     Triose-phosphate_isomerase -
+1SHF SA124F   -1.900  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SFEARSLTT  8.0    25   0.85    0.9 24130    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -2.040  0.140
+5CG0 SA337F   -0.750 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       SFFLVSATE  6.0     -   2.56    1.8 13481   26785700 Thermal  Beta-glucosidase -
+1SHF SA124G   -1.680  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SGEARSLTT  8.0    25   0.85    0.9 24133    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.885  0.205
+1CUN SA201G   -1.000  16  0  0  3 Xray 0.00  3 ABC                       1 A    0 -               0 -       SGGKVSDLE  7.0  25.0   0.48   52.7 91411   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1SCE SA28G     0.890 152  4  4  4 Xray 2.20  4 ABCD                      2 AB   1 CL              0 -       SGIHYSPRY  7.5    25   9.39    2.6 19882   10926502 Urea     Suc1 -
+1SB0 SB101G   -0.190  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       SGLLMSTEN  6.8  25.0   0.13   16.1 90208   29890118 -        Trancriptional_activator_Myb -
+1SHF SA124H   -1.250  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SHEARSLTT  8.0    25   0.85    0.9 24125    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.010  0.240
+1SHF SA124I   -1.100  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SIEARSLTT  8.0  25.0      -    0.9 90670   12079394 GdnHCl   Tyroine-protein_kinase_Fyn - REPLICA  2 -1.255  0.155
+1SHF SA124K    0.110  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SKEARSLTT  8.0    25   0.85    0.9 24121    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -0.205  0.315
+1SHF SA124L   -0.370  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SLEARSLTT  8.0    25   0.85    0.9 24124    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -0.500  0.130
+1SHF SA124N   -0.730  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SNEARSLTT  8.0    25   0.85    0.9 24123    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.075  0.345
+1OTR SB19P     1.270  15  0  0  2 NMRl 0.00  2 AB                        1 B    0 -               0 -       SPEVESSDT  5.0  25.0   0.02   61.9 91300   15560788 GdnHCl   E3_ubiquitin-protein_ligae_RSP5 -
+1TUP SA260P   -0.320 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       SPLEDSSGN  7.2  10.0    0.6   64.9 90593    9843948 Urea     Cellular_tumor_antigen_p53 -
+1SB0 SB101P   -1.020  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       SPLLMSTEN  6.8  25.0   0.13   16.1 90215   29890118 -        Trancriptional_activator_Myb -
+1G6N SA128P    0.140 102  2  2  2 Xray 2.10  2 AB                        2 AB   1 CMP             1 CMP     SPQVTSEKV  7.9    20  11.95   11.9 29594    9588945 Thermal  Catabolite_activator_protein -
+3R2P SA55P    -0.200  27  2  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       SPSVTSTFS  7.4    25  43.52   45.7 26018   21040803 Gdn      Apolipoprotein_A-I - REPLICA  2 -0.650  0.450
+3HHR SA71Q    -1.460 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       SQQQKSNLE  8.0    20  46.08   28.5 29098    8060992 Gdn      Growth_hormone -
+1SHF SA124R   -0.180  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SREARSLTT  8.0    25   0.85    0.9 24122    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -0.370  0.190
+1SHF SA124T   -1.650  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       STEARSLTT  8.0    25   0.85    0.9 24129    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -1.755  0.105
+1VQB SA67T    -1.600   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       STHLSSFKV  7.0  25.0      0    0.0 90066    7547934 GdnHCl   DNA-Binding_protein_G5P -
+3HHR SA71T    -0.720 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       STQQKSNLE  8.0    20  46.08   28.5 29095    8060992 Gdn      Growth_hormone -
+1HUE SA31T     0.410 108  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       STVFDSITE  7.0  63.9   27.3   23.3 16804    9685334 Thermal  HU_DNA-binding_protein -
+1SHF SA124V   -1.100  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SVEARSLTT  8.0    25   0.85    0.9 24128    9819209 Gdn      Fyn_tyrosine_kinase - REPLICA  2 -0.965  0.135
+1SB0 SB101V   -0.640  42  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       SVLLMSTEN  6.8  25.0   0.13   16.1 90213   29890118 -        Trancriptional_activator_Myb -
+3HHR SA71V    -1.320 221  3  3  3 Xray 2.80  3 ABC                       1 A    0 -               0 -       SVQQKSNLE  8.0    20  46.08   28.5 29097    8060992 Gdn      Growth_hormone -
+1SHF SA124Y   -2.290  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       SYEARSLTT  8.0  25.0      -    0.9 90676   12079394 GdnHCl   Tyroine-protein_kinase_Fyn - REPLICA  2 -2.280  0.010
+1AYF TA54A    -1.310  72  0  2  2 Xray 1.85  2 AB                        2 AB   2 FES,GOL         1 FES     TAACSTCHL  8.5    37   17.3    8.3 18928    8880913 Thermal  Adrenodoxin -
+2BRD TA47A    -1.000 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         1 DPG     TAAITTLVP  6.0    25  20.19   19.0 21604   14659758 SDS      Bacteriorhodopsin -
+1AMQ TA10A    -1.300   9  2  2  2 Xray 2.20  2 AB                        2 AB   1 PMP             0 -       TAENITAAP  7.5    25  95.17   70.5 23615   19099423 Urea     Aspartate_aminotransferase -
+4HXJ TA96A     0.060  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       TAESRTETD  6.0  22.0   0.68   68.7 90706   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5EMZ TA7A     -1.370  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       TAFVKTLLT  7.4  25.0   0.09   16.1 90409   15857839 GdnHCl   Polyubiquitin-B -
+2BRD TA55A    -0.100 178  3  3  3   EC 3.50  3 ABC                       2 AC   2 DPG,RET         1 DPG     TAIAFTMYL  6.0    25   58.4    8.6 21610   14659758 SDS      Bacteriorhodopsin -
+1TUP TA123A   -0.130 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       TAKSVTCTY  7.2  10.0   0.37   35.2 90801   10654936 Urea     Cellular_tumor_antigen_p53 -
+1ZNJ TA8A      0.160 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              2 AF   3 CL,IPH,ZN       0 -       TAQCCTSIC  8.0    25    0.0   68.6 24398    8399225 Gdn      Insulin -
+1FC1 TA350A   -0.300  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       TAQVYTLPP  7.4    20   6.49    4.0 29613    9649307 Gdn      Immunoglobulin_IgG1 -
+4HXJ TA98A    -0.010  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       TARTETDLS  6.0  22.0   0.54   60.4 90707   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5EMZ TA22A    -1.740  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       TASDTTIEN  7.4  25.0   0.24   24.7 90416   15857839 GdnHCl   Polyubiquitin-B -
+4HXJ TA126A   -1.790  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       TASLSTGQT  6.0  22.0   0.52   57.6 90735   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF TA127A   -2.590  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       TASLTTGET  8.0    25  49.75   60.3 20931   12079394 Gdn      Fyn_tyrosine_kinase -
+2EWN TA195A   -0.400 183  0  0  2 Xray 0.00  2 AB                        2 AB   1 BTX             0 -       TATGKTGDA  7.5  20.0      0    0.0 90251   26678378 -        Bifunctional_ligae/repressor_BirA -
+4HXJ TA129A   -1.110  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       TATGQTGYI  6.0  22.0   0.14   55.5 90738   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5EMZ TA9A      0.060  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       TATLLTGKT  7.4  25.0   0.01   88.2 90410   15857839 GdnHCl   Polyubiquitin-B -
+1FC1 TA366A   -2.800  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       TAVSLTCLV  7.4    20   0.72    0.0 29615    9649307 Gdn      Immunoglobulin_IgG1 -
+2BRD TA46A    -2.200 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         0 -       TAYAITTLV  6.0    25   1.44    1.6 21603   14659758 SDS      Bacteriorhodopsin -
+1FC1 TA394A   -1.000  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       TAYKTTPPV  7.4    20   2.16    1.1 29619    9649307 Gdn      Immunoglobulin_IgG1 -
+4HXJ TA85A    -0.640  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       TAxSTTFVA  6.0  22.0   0.18   17.5 90694   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1VQB TA62C    -0.700   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       TCGLYTVHL  7.0  25.0   0.14   11.7 90092    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB TA48C    -0.800   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       TCVKITLDE  7.0  25.0   0.26   24.6 90089    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1ZNJ TA8H      1.760 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              2 AF   3 CL,IPH,ZN       0 -       THQCCTSIC  8.0    25    0.0   68.6 24399    8399225 Gdn      Insulin -
+1REI TA39K     1.270  50  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       TKYQQTPGK  7.5  25.0      0   37.2 90171    9080189 Urea     Immunoglobulin_kappa_variable_1D-33 -
+2TS1 TA51P    -0.680 205  2  2  2 Xray 2.30  2 AB                        1 A    0 -               0 -       TPHLATILT 7.78    25  10.81   10.6 24855    9973571 Urea     Tyrosyl-tRNA_synthetase -
+1TUP TA150P   -0.080 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       TPVDSTPPP  7.2  10.0   0.68   61.6 90594    9843948 Urea     Cellular_tumor_antigen_p53 -
+1K9Q TA36R    -0.310 123  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,OCT         0 -       TRIDQTTTW  7.0  50.0   0.48   50.3 90569   23035249 Thermal  Trancriptional_coactivator_YAP1 -
+1ZNJ TA8R      1.250 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              2 AF   3 CL,IPH,ZN       0 -       TRQCCTSIC  8.0    25    0.0   68.6 24400    8399225 Gdn      Insulin -
+1AYF TA54S     0.050  72  0  2  2 Xray 1.85  2 AB                        2 AB   2 FES,GOL         1 FES     TSACSTCHL  8.5    37   17.3    8.3 18927    8880913 Thermal  Adrenodoxin -
+1VQB TA62V     1.300   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       TVGLYTVHL  7.0  25.0   0.14   11.7 90093    7547934 GdnHCl   DNA-Binding_protein_G5P -
+4YEF TA134V   -0.930  61  0  0  2 Xray 0.00  2 AH                        1 A    2 GLC,GOL         0 -       TVGQWTHDP  7.5  25.0   0.02   32.5 90133   29193585 GdmCl    5-AMP-activated_protein_kinae_subunit_beta-1 -
+5AZU VA22A    -1.430 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       VAAITVDKS  7.0    25    0.0    0.1 22855   16522792 Gdn      Azurin - REPLICA  2 -1.550  0.120
+1J7N VA147A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       VAALNVYYE  7.5    20    0.0    0.0 30263   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+5AZU VA5A     -0.960 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       VAECSVDIQ  7.0    25  22.77   20.5 22116   16042382 Gdn      Azurin -
+1J7N VA119A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       VAEHYVYAK  7.5    20   1.95    2.1 30239   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+1SCE VA89A    -0.240 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       VAEVHVPEP  7.5    25   54.0   34.2 19883   10926502 Urea     Suc1 -
+1CDC VA30A    -4.880  83  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       VAIDEVRWE  7.0  25.0      0    0.0 91815    9931001 GdnHCl   T-cell_urface_antigen_CD2 -
+5EMZ VA26A    -3.370  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       VAIENVKAK  7.4  25.0      0    0.0 90420   15857839 GdnHCl   Polyubiquitin-B -
+5AZU VA95A    -0.960 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       VAKDSVTFD  7.0    25  13.66   15.8 22127   16042382 Gdn      Azurin - REPLICA  2 -0.780  0.180
+1VQB VA35A    -2.200   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VALCYVDLG  7.0    25   6.51    0.0 23024    8378307 Gdn      Gene_V - REPLICA  3 -2.233  0.047
+4HXJ VA111A   -0.770  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       VALQIVNNT  6.0  22.0   0.45   60.5 90722   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1TUP VA203A    0.490 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       VANLRVEYL  7.2  10.0   0.13   12.3 90595    9843948 Urea     Cellular_tumor_antigen_p53 -
+1J7N VA70A     0.750 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       VAPSDVLEM  7.5    20   1.95    4.8 30225   19926859 Gdn      lethal_factor - REPLICA  6  0.940  0.538
+1VQB VA45A    -2.100   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VAPVLVKIT  7.0  25.0   0.32    0.4 90054    7547934 GdnHCl   DNA-Binding_protein_G5P -
+5AZU VA31A    -1.670 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       VAQFTVNLS  7.0    25    0.0    0.0 22120   16042382 Gdn      Azurin - REPLICA  2 -1.430  0.240
+5EMZ VA5A     -2.410  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       VAQIFVKTL  7.4  25.0   0.03    2.2 90408   15857839 GdnHCl   Polyubiquitin-B -
+2KJ3 VA239A    1.000 192  3  0  3 NMRs 0.00  3 ABC                       1 A    0 -               0 -       VARARVQLG  7.5    25   0.65   35.6 27350   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+1J7N VA213A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       VASNEVQEV  7.5    20   0.65    1.5 30284   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+4HXJ VA137A   -1.180  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       VASNYVAPS  6.0  22.0   0.12   11.2 90746   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF VA138A   -2.070  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VASNYVAPV  7.0  25.0   0.09    8.4 90616   16142914 GdnHCl   Tyroine-protein_kinase_Fyn - REPLICA  2 -2.100  0.030
+1TUP VA143A   -3.340 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       VATCPVQLW  7.2  10.0      0    0.1 90798   10654936 Urea     Cellular_tumor_antigen_p53 - REPLICA  2 -3.420  0.080
+5EMZ VA17A    -1.650  15  0  0  2 Xray 0.00  1 A                         1 A    0 -               0 -       VATLEVEPS  7.4  25.0   0.01    0.9 90414   15857839 GdnHCl   Polyubiquitin-B -
+2KJ3 VA264A    1.000 192  3  0  3 NMRs 0.00  3 ABC                       2 AB   0 -               0 -       VATNSVETV  7.5    25  29.93    4.2 27352   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+1FC1 VA397A   -1.400  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       VATPPVLDS  7.4    20  11.71   14.2 29621    9649307 Gdn      Immunoglobulin_IgG1 -
+4HXJ VA87A    -1.640  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       VATTFVALY  6.0  22.0   0.25   24.1 90697   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+2BRD VA49A     0.700 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         1 RET     VATTLVPAI  6.0    25   0.65    0.7 21606   14659758 SDS      Bacteriorhodopsin -
+1CDC VA78A    -3.010  83  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       VATYNVTVY  7.0  25.0      0    0.0 91821    9931001 GdnHCl   T-cell_urface_antigen_CD2 -
+2KJ3 VA267A    0.200 192  3  0  3 NMRs 0.00  3 ABC                       2 AB   0 -               0 -       VAVETVVGK  7.5    25  20.82    0.1 27353   24945274 Gdn      Heterokaryon_incompatibility_protein_s -
+1CUN VA171A   -1.200  16  0  0  3 Xray 0.00  3 ABC                       2 AC   0 -               0 -       VAVNDVCAN  7.0  25.0   0.01    2.5 91413   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1VQB VA43C    -2.100   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VCEYPVLVK  7.0  25.0   0.37   28.7 90087    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1AON VO95C    -0.300  25 21 21 21 Xray 3.00 21 ABCDEFGHIJKLMNOPQRSTU     2 OP   2 ADP,MG          0 -       VCLAIVEAx  7.8    25  18.22   17.6 21738   15544816 Gdn      Chaperonin_10 -
+1VQB VA35C    -1.400   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VCLCYVDLG  7.0    25   6.51    0.0 23025    8378307 Gdn      Gene_V - REPLICA  3 -1.433  0.047
+1VQB VA63C    -4.100   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VCLYTVHLS  7.0  25.0   0.17   15.9 90063    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB VA45C    -0.100   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VCPVLVKIT  7.0    25  29.28    0.4 23031    8378307 Gdn      Gene_V -
+1VQB VA19C    -0.300   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       VCRSGVSRQ  7.0  25.0   0.68   66.4 90074    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB VA70C    -3.300   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VCSFKVGQF  7.0  25.0   0.69   32.0 90096    7547934 GdnHCl   DNA-Binding_protein_G5P - REPLICA  2 -3.200  0.100
+1Y9X VA53E    -4.800  39  0  0  2 NMRl 0.00  2 AB                        1 A    0 -               0 -       VEVDTVEIV  7.0  37.0   0.09    8.3 91833   18571501 Thermal  DNA/RNA-binding_protein_Alba_1 -
+5CG0 VA336F   -2.140 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       VFAFLVSAT  6.0     -    0.0    0.0 13480   26785700 Thermal  Beta-glucosidase -
+1TUP VA157F   -3.880 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       VFGTRVRAM  7.2  10.0      0    0.5 91659    1203434 -        Cellular_tumor_antigen_p53 -
+1VQB VA35F    -3.200   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VFLCYVDLG  7.0    25   6.51    0.0 23026    8378307 Gdn      Gene_V - REPLICA  3 -3.167  0.047
+1SHF VA138F   -0.730  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VFSNYVAPV  8.0  80.1      -    8.4 91159   14556750 Thermal  Tyroine-protein_kinase_Fyn - REPLICA  2 -0.385  0.345
+1CUN VA163G   -1.000  16  0  0  3 Xray 0.00  3 ABC                       2 AC   0 -               0 -       VGDFTVHKD  7.0  25.0   0.17   17.6 91410   16618492 Urea     Spectrin_alpha_chain_non-erythrocytic_1 -
+1SCE VA89G     0.810 152  4  4  4 Xray 2.20  4 ABCD                      2 AC   1 CL              0 -       VGEVHVPEP  7.5    25   54.0   34.2 19884   10926502 Urea     Suc1 -
+5AZU VA60G    -3.110 234  0  4  4 Xray 1.90  4 ABCD                      2 AB   2 CU,NO3          0 -       VGQGVVTDG  7.0    25   9.11    7.6 20041   16962971 Gdn      Azurin - REPLICA  2 -3.110  0.000
+1SHF VA138G   -3.770  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VGSNYVAPV  7.0  25.0   0.09    8.4 90614   16142914 GdnHCl   Tyroine-protein_kinase_Fyn -
+1SHF VA138H    0.020  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VHSNYVAPV  7.0  25.0   0.09    8.4 90619   16142914 GdnHCl   Tyroine-protein_kinase_Fyn -
+1HUE VA42I    -0.820 108  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       VIGDKVQLI  7.0  63.9    1.3    0.1 16805    9685334 Thermal  HU_DNA-binding_protein -
+1SHF VA138I    0.170  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VISNYVAPV  8.0  80.1      -    8.4 91166   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1VQB VA35L    -2.700   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VLLCYVDLG  7.0    25   6.51    0.0 23028    8378307 Gdn      Gene_V - REPLICA  3 -2.700  0.000
+1VQB VA45L    -3.000   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VLPVLVKIT  7.0  25.0   0.32    0.4 90055    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1SHF VA138L    0.040  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VLSNYVAPV  7.0  25.0   0.09    8.4 90620   16142914 GdnHCl   Tyroine-protein_kinase_Fyn - REPLICA  2 -0.040  0.080
+1PRG VA290M    0.030 140  0  2  2 Xray 2.20  2 AB                        1 A    0 -               0 -       VMFRSVEAV  8.0    10  29.93   16.4 31016   28208577 Urea     Peroxisome_proliferator-activated_receptor_gamma -
+1VQB VA35M    -1.100   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VMLCYVDLG  7.0    25   6.51    0.0 23029    8378307 Gdn      Gene_V - REPLICA  3 -1.067  0.047
+1SHF VA138M   -0.510  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VMSNYVAPV  7.0  25.0   0.09    8.4 90617   16142914 GdnHCl   Tyroine-protein_kinase_Fyn -
+1VQB VA70P    -5.000   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VPSFKVGQF  7.0    25  63.76   32.0 23950    2038057 Gdn      Gene_V - REPLICA  2 -5.050  0.050
+1SHF VA138S   -4.170  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VSSNYVAPV  7.0  25.0   0.09    8.4 90621   16142914 GdnHCl   Tyroine-protein_kinase_Fyn -
+5AZU VA22T    -0.960 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       VTAITVDKS  7.0    25    0.0    0.1 22856   16522792 Gdn      Azurin -
+1VQB VA43T    -1.600   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VTEYPVLVK  7.0  25.0   0.37   28.7 90088    7547934 GdnHCl   DNA-Binding_protein_G5P -
+4YEE VA134T   -0.710  61  0  0  2 Xray 0.00  2 AS                        1 A    2 GLC,GOL         0 -       VTGQWVHDP  7.5  25.0   0.35   34.4 90132   29193585 GdmCl    5-AMP-activated_protein_kinae_subunit_beta-2 -
+5AZU VA95T     0.960 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       VTKDSVTFD  7.0    25  13.66   15.8 22863   16522792 Gdn      Azurin -
+1VQB VA35T    -5.300   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VTLCYVDLG  7.0  25.0   0.07    0.0 90048    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB VA63T    -5.000   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VTLYTVHLS  7.0  25.0   0.17   15.9 90064    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB VA45T    -3.500   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VTPVLVKIT  7.0  25.0   0.32    0.4 90056    7547934 GdnHCl   DNA-Binding_protein_G5P -
+5AZU VA31T    -1.080 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       VTQFTVNLS  7.0    25    0.0    0.0 22857   16522792 Gdn      Azurin -
+1VQB VA19T    -0.600   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       VTRSGVSRQ  7.0  25.0   0.68   66.4 90075    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1VQB VA70T    -3.500   7  0  2  2 Xray 1.80  2 AB                        2 AB   0 -               0 -       VTSFKVGQF  7.0  25.0   0.69   32.0 90098    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1SHF VA138T   -2.320  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VTSNYVAPV  7.0  25.0   0.09    8.4 90615   16142914 GdnHCl   Tyroine-protein_kinase_Fyn -
+1SHF VA138W    0.130  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       VWSNYVAPV  7.0  25.0   0.09    8.4 90622   16142914 GdnHCl   Tyroine-protein_kinase_Fyn -
+4HXJ WA118A   -1.290  60  0  0  2 Xray 0.00  2 AC                        2 AC   0 -               0 -       WAEGDWWLA  6.0  22.0   0.34   30.5 90726   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF WA120A   -2.350  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       WAGDWWEAR  8.0  80.1      -   19.0 91146   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+4HXJ WA119A   -1.200  60  0  0  2 Xray 0.00  2 AC                        2 AC   0 -               0 -       WAGDWWLAH  6.0  22.0   0.15   13.7 90727   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5AZU WA48A    -3.350 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       WAGHNWVLS  7.0    25    0.0    0.0 22122   16042382 Gdn      Azurin - REPLICA  2 -4.185  0.835
+1A43 WA184A   -0.700  66  0  2  2 Xray 2.60  2 AB                        2 AB   0 -               0 -       WAVKNWMTE  7.3    25  70.69   11.0 20797   12051856 Gdn      HIV-1_capsid_protein -
+1DFO WA16F    -1.100  88  0  0  2 Xray 0.00  2 AB                        2 AB   2 FFO,PLG         0 -       WFAELWQAM  7.5  30.0   0.33   29.8 90852    8621691 Urea     Serine_hydroxymethyltranferase -
+1SHF WA120F   -0.550  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       WFGDWWEAR  8.0  80.1      -   19.0 91161   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+2GNQ WA330F   -4.500 184  0  1  5 Xray 1.80  1 A                         1 A    1 CL              0 -       WFIKLWKSD  7.5  25.0   0.04    3.6 91664   20939513 GdnHCl   WD_repeat-containing_protein_5 -
+1DFO WA385F   -1.500  88  0  0  2 Xray 0.00  2 AB                        1 A    2 FFO,PLG         0 -       WFLAGWMCD  7.5  30.0   0.08    8.7 90851    8621691 Urea     Serine_hydroxymethyltranferase - REPLICA  2 -2.175  0.675
+1K9Q WA39F     0.240 123  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,OCT         1 OCT     WFTTTWQDP  6.1  50.0    0.4   38.2 90875   10764597 Thermal  Trancriptional_coactivator_YAP1 -
+4HXJ WA119I   -0.770  60  0  0  2 Xray 0.00  2 AC                        2 AC   0 -               0 -       WIGDWWLAH  6.0  22.0   0.15   13.7 90728   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1SHF WA120L   -0.400  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       WLGDWWEAR  8.0  80.1      -   19.0 91162   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1SHF WA120S   -2.700  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       WSGDWWEAR  8.0  80.1      -   19.0 91141   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1SHF WA120V   -0.990  60  0  4  4 Xray 1.90  1 A                         1 A    0 -               0 -       WVGDWWEAR  8.0  80.1      -   19.0 91156   14556750 Thermal  Tyroine-protein_kinase_Fyn -
+1DFO WA16Y    -3.550  88  0  0  2 Xray 0.00  2 AB                        2 AB   2 FFO,PLG         0 -       WYAELWQAM  7.5  30.0   0.33   29.8 90239    8910307 Urea     Serine_hydroxymethyltranferase -
+1B0O WA19Y    -6.910  73  0  2  2 Xray 2.50  2 AB                        1 A    1 PLM             0 -       WYAGTWYSL  7.1    30   1.66    1.7 19535    8043610 Gdn      Beta_lactoglobulin -
+2GNQ WA330Y   -4.600 184  0  1  5 Xray 1.80  1 A                         1 A    1 CL              0 -       WYIKLWKSD  7.5  25.0   0.04    3.6 91665   20939513 GdnHCl   WD_repeat-containing_protein_5 -
+1DFO WA183Y   -3.400  88  0  0  2 Xray 0.00  2 AB                        1 A    2 FFO,PLG         0 -       WYVVDWAKM  7.5  30.0   0.03    2.3 90238    8910307 Urea     Serine_hydroxymethyltranferase -
+1EQ7 YA55A    -1.100  95  3  3  3 Xray 1.90  3 ABC                       3 ABC  0 -               0 -       YAATKYRxx  7.0     4  76.28   24.9 31453   10843861 Gdn      Major_outer_membrane_lipoprotein_Lpp -
+1FC1 YA407A   -2.500  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       YAFFLYSKL  7.4    20    0.0    0.0 29625    9649307 Gdn      Immunoglobulin_IgG1 -
+2BRD YA57A    -3.700 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         0 -       YAFTMYLSM  6.0    25   0.94    0.6 21612   14659758 SDS      Bacteriorhodopsin -
+5AZU YA108A   -3.590 234  0  4  4 Xray 1.90  4 ABCD                      1 A    2 CU,NO3          0 -       YAGEQYMFF  7.0    25   0.94    1.4 22129   16042382 Gdn      Azurin - REPLICA  2 -3.290  0.300
+1VQB YA41A    -0.400   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       YAGNEYPVL  7.0  25.0   0.85   82.6 90086    7547934 GdnHCl   DNA-Binding_protein_G5P -
+2BRD YA43A    -1.300 178  3  3  3   EC 3.50  3 ABC                       1 A    2 DPG,RET         1 DPG     YAKKFYAIT  6.0    25  15.91   15.0 21601   14659758 SDS      Bacteriorhodopsin -
+1J7N YA148A    0.500 116  2  2  2 Xray 2.30  2 AB                        1 A    2 SO4,ZN          0 -       YALNVYYEI  7.5    20   3.28    2.2 30266   19926859 Gdn      lethal_factor - REPLICA  3  0.287  0.302
+4HXJ YA92A     0.260  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       YALYDYESR  6.0  22.0   0.08    9.2 90702   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5CG0 YA390A   -0.340 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       YANNLYNKP  6.0     -   6.08    4.6 13465   26785700 Thermal  Beta-glucosidase -
+1FC1 YA349A   -0.600  98  2  2  2 Xray 2.90  2 AB                        2 AB   4 FUC,GAL,MAN,NAG 0 -       YAPQVYTLP  7.4    20   7.02    6.1 29612    9649307 Gdn      Immunoglobulin_IgG1 -
+4HXJ YA136A    0.230  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       YAPSNYVAP  6.0  22.0   0.32   30.3 90745   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+4HXJ YA131A   -1.520  60  0  0  2 Xray 0.00  2 AC                        2 AC   0 -               0 -       YAQTGYIPS  6.0  22.0    0.2   28.6 90740   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+5CG0 YA420A   -1.420 235  2  2  2 Xray 2.09  2 AB                        1 A    2 NAG,TRS         0 -       YARIQYYRA  6.0     -   2.34    3.5 13473   26785700 Thermal  Beta-glucosidase -
+4HXJ YA90A    -0.310  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       YAVALYDYE  6.0  22.0   0.56   54.0 90700   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1B28 YA36A    -2.710  30  0  0  2 NMRl 0.00  2 AB                        2 AB   0 -               0 -       YAVNSYIYQ  7.5    25    0.0    7.2 21655   12487987 Urea     PROTEIN -
+1KA6 YA54C    -1.420 124  0  0  2 NMRl 0.00  2 AB                        2 AB   2 NH2,PTR         2 NH2,PTR YCIYTYRVS  7.4  57.8   0.01    1.3 91752   14674764 Thermal  SH2_domain-containing_protein_1A -
+5CRO YO26C     2.200 236  2  2  2 Xray 2.30  2 BO                        1 O    1 PO4             1 PO4     YCLGVYQSA  7.0    45  90.78   76.8 18224    2314475 Thermal  Lambda_cro_repressor -
+1TUP YA220C   -4.000 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       YCVVPYEPP  7.2  10.0   0.11   11.4 91169   17015838 Urea     Cellular_tumor_antigen_p53 -
+3X3U YA86D    -6.380 226  3  3  3 Xray 2.09  3 ABC                       1 A    0 -               0 -       YDHHPYQTP  8.0    37  28.54   39.3 19184   20639520 Gdn      Divalent-cation_tolerance_protein_CutA -
+5CRO YO26D     2.700 236  2  2  2 Xray 2.30  2 BO                        1 O    1 PO4             1 PO4     YDLGVYQSA  7.0    45  90.78   76.8 18225    2314475 Thermal  Lambda_cro_repressor -
+1AYF YA82F    -0.010  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       YFDLAYGLT  8.5    37  86.57   83.2 18931    8880913 Thermal  Adrenodoxin -
+1REI YA71F     1.290  50  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       YFGTDYTFT  7.5  25.0    0.2    1.1 90173    9080189 Urea     Immunoglobulin_kappa_variable_1D-33 -
+1TUP YA236F    0.270 161  0  5  4 Xray 2.20  1 A                         1 A    1 ZN              0 -       YFHYNYMCN  7.2  10.0      0    0.4 90596    9843948 Urea     Cellular_tumor_antigen_p53 -
+5CRO YO26F     0.400 236  2  2  2 Xray 2.30  2 BO                        1 O    1 PO4             1 PO4     YFLGVYQSA  7.0    45  90.78   76.8 18219    2314475 Thermal  Lambda_cro_repressor -
+1REI YA49F    -0.600  50  0  0  2 Xray 0.00  2 AB                        2 AB   0 -               0 -       YFLLIYEAS  7.5  25.0    0.2   20.4 90192    8202506 GdnHCl   Immunoglobulin_kappa_variable_1D-33 -
+4HXJ YA92F    -0.180  60  0  0  2 Xray 0.00  2 AC                        1 A    0 -               0 -       YFLYDYESR  6.0  22.0   0.08    9.2 90703   10542092 GdnHCl   Proto-oncogene_tyroine-protein_kinase_Src -
+1HNG YA76F    -1.490 107  0  2  2 Xray 2.80  2 AB                        1 A    0 -               0 -       YFSGTYNVT  5.0    25    0.0    0.2 24917   10623553 Urea     Immunoglobulin -
+1REI YA32H     1.340  50  0  0  2 Xray 0.00  2 AB                        1 A    0 -               0 -       YHIIKYLNW  7.5  25.0   0.32   29.9 90172    9080189 Urea     Immunoglobulin_kappa_variable_1D-33 -
+5CRO YO26H     1.900 236  2  2  2 Xray 2.30  2 BO                        1 O    1 PO4             1 PO4     YHLGVYQSA  7.0    45  90.78   76.8 18223    2314475 Thermal  Lambda_cro_repressor -
+1AYF YA82L    -0.360  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       YLDLAYGLT  8.5    37  86.57   83.2 18930    8880913 Thermal  Adrenodoxin -
+5CRO YO26L     1.100 236  2  2  2 Xray 2.30  2 BO                        1 O    1 PO4             1 PO4     YLLGVYQSA  7.0    45  90.78   76.8 18221    2314475 Thermal  Lambda_cro_repressor -
+5CRO YO26Q     1.400 236  2  2  2 Xray 2.30  2 BO                        1 O    1 PO4             1 PO4     YQLGVYQSA  7.0    45  90.78   76.8 18222    2314475 Thermal  Lambda_cro_repressor -
+1VQB YA26R    -0.400   7  0  2  2 Xray 1.80  2 AB                        1 A    0 -               0 -       YRGKPYSLN  7.0  25.0   0.41   41.4 90077    7547934 GdnHCl   DNA-Binding_protein_G5P -
+1AYF YA82S    -0.330  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       YSDLAYGLT  8.5    37  86.57   83.2 18929    8880913 Thermal  Adrenodoxin -
+1ZNJ YB26T    -0.300 171  0  0 12 Xray 2.00 12 ABCDEFGHIJKL              4 ABCD 3 CL,IPH,ZN       0 -       YTGFFYTPK  8.0    25   2.81    2.2 24401    8399225 Gdn      Insulin -
+5CRO YO26V     0.900 236  2  2  2 Xray 2.30  2 BO                        1 O    1 PO4             1 PO4     YVLGVYQSA  7.0    45  90.78   76.8 18220    2314475 Thermal  Lambda_cro_repressor -
+1AYF YA82W    -0.210  72  0  2  2 Xray 1.85  2 AB                        1 A    2 FES,GOL         0 -       YWDLAYGLT  8.5    37  86.57   83.2 18932    8880913 Thermal  Adrenodoxin -
+5CRO YO26W    -0.100 236  2  2  2 Xray 2.30  2 BO                        1 O    1 PO4             1 PO4     YWLGVYQSA  7.0    45  90.78   76.8 18218    2314475 Thermal  Lambda_cro_repressor -

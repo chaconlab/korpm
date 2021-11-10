@@ -1,0 +1,34 @@
+
+ALL,  NCL --> no close ligand, NL --> no ligand, 1mer --> monomer Nmer --> oligomer
+
+    6761    Id50c08_all.txt
+    5920    Id50c08_allNCL.txt
+    4192    Id50c08_allNL.txt
+     988    Id50c08_allNmer.txt
+     619    Id50c08_allNmerNCL.txt
+     357    Id50c08_allNmerNL.txt
+    5773    Id50c08_all1mer.txt
+    5301    Id50c08_all1merNCLs.txt
+    5301    Id50c08_all1merNCL.txt
+    3835    Id50c08_all1merNL.txt
+    
+ok -> remove duplicates & fulfill criteria 
+    
+    4817    Id50c08_ok.txt
+    4236    Id50c08_okNCL.txt
+    3181    Id50c08_okNL.txt
+
+    3766    Id50c08_ok1merNCL.txt
+    2897    Id50c08_ok1merNL.txt
+    4058    Id50c08_ok1mer.txt
+    
+     470    Id50c08_okNmerNCL.txt
+     292    Id50c08_okNmerNL.txt
+     764    Id50c08_okNmer.txt
+     
+     684    Id50c08_cullstag.txt
+     327    Id50c08_cull.txt
+     
+    1060    Id50c08_rep.txt
+    
+

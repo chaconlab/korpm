@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lenergy -lpdb2 -ltools
+LIBS :=
 

@@ -46,19 +46,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: ../../../lib/libpdb2.a
+all: ../../../lib/libpdb.a
 
 # Tool invocations
-../../../lib/libpdb2.a: $(OBJS) $(USER_OBJS)
+../../../lib/libpdb.a: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Intel Archiver'
-	xiar -r  "../../../lib/libpdb2.a" $(OBJS) $(USER_OBJS) $(LIBS)
+	xiar -r  "../../../lib/libpdb.a" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(ARCHIVES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(S_UPPER_DEPS)$(CPP_DEPS)$(C_DEPS) ../../../lib/libpdb2.a
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(ARCHIVES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(ASM_DEPS)$(S_DEPS)$(S_UPPER_DEPS)$(CPP_DEPS)$(C_DEPS) ../../../lib/libpdb.a
 	-@echo ' '
 
 .PHONY: all clean dependents

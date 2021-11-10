@@ -111,7 +111,6 @@
 								<option id="intel.linkstep.perflibs.daal.1361905509" name="Use Intel(R) Data Analytics Acceleration Library" superClass="intel.linkstep.perflibs.daal" value="perflibs.daal.none" valueType="enumerated"/>
 								<option id="intel.linkstep.options.static.1905183990" name="Link with Static Libraries (-static)" superClass="intel.linkstep.options.static" value="false" valueType="boolean"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="intel.linkstep.libname.1510688344" name="Additional Libraries (-l)" superClass="intel.linkstep.libname" useByScannerDiscovery="false" valueType="libs">
-									<listOptionValue builtIn="false" value="rasp2"/>
 									<listOptionValue builtIn="false" value="energy"/>
 									<listOptionValue builtIn="false" value="pdb2"/>
 									<listOptionValue builtIn="false" value="tools"/>

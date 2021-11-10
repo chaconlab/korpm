@@ -82,8 +82,8 @@ CPP_DEPS += \
 # Each subdirectory must supply rules for building sources it contributes
 %.o: ../%.cpp
 	@echo 'Building file: $<'
-	@echo 'Invoking: Cross G++ Compiler'
-	g++ -DVOLUME_INCLUDED -I../include -I../../../src -O3 -U_FORTIFY_SOURCE -g -Wall -Wdelete-non-abstract-non-virtual-dtor -Wchar-subscripts -Wswitch -Wc++11-compat-deprecated-writable-strings -c -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	@echo 'Invoking: Intel C++ Compiler'
+	icpc -g -O3 -inline-level=2 -I../include -I../../../src -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -c -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

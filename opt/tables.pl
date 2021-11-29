@@ -23,13 +23,17 @@ system ($cmd);
 
 # get prc
 my $out2="r".$kw."_k".$k.".prc";
-$cmd="../../confusion.pl  out.txt 2 3 1000 >  $out2\n"; 
+$cmd="../../confusion.pl  out.txt 2 3 100 >  $out2\n"; 
 system ($cmd);
 #print $cmd;
 # print
 $cmd="printf \"%4d %4d \" $kw $k;  grep AVG $out \| sed  \'s\/AVG\/\/\' \| tr -d \'\\n\';  tail -1 $out2 \| sed  \'s\/\#\/\/\' \n";
 #print $cmd;
 system ($cmd);
+$cmd="printf \"%4d %4d \" $kw $k;  grep SIG $out \| sed  \'s\/SIG\/\/\';";  
+system ($cmd);
+
+
 #print $cmd;
 
 }
@@ -53,7 +57,8 @@ system ($cmd);
 $cmd="printf \"%4d %4d \" $kw $k;  grep AVG $out \| sed  \'s\/AVG\/\/\' \| tr -d \'\\n\';  tail -1 $out2 \| sed  \'s\/\#\/\/\' \n";
 #print $cmd;
 system ($cmd);
-#print $cmd;
+$cmd="printf \"%4d %4d \" $kw $k;  grep SIG $out \| sed  \'s\/SIG\/\/\';";  
+system ($cmd);
 
 }
 }

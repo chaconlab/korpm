@@ -10,12 +10,12 @@ korpm Id50c08_1merNCLB.in --opt --dir ../Db  --score_file ~/Korp6Dv1/korp6Dv1.bi
 3) Optimization 
 
 # K-fold pure random
-korpm_opt Id50c08_1merNCL_full.opt -r 5 --rsa --class -k 10 -n 100 --krand
-korpm_opt Id50c08_1merNCL_full.opt -r 3 --rsa --class -k 10 -n 100 --krand   # reduced DE+ILV+NQST+FY+KH
+korpm_opt Id50c08_1merNCLB.opt -r 5 --rsa --class -k 10 -n 100 --krand
+korpm_opt Id50c08_1merNCLB.opt -r 3 --rsa --class -k 10 -n 100 --krand   # reduced DE+ILV+NQST+FY+KH
 
 # K-fold cluster by homology 
-korpm_opt Id50c08_1merNCL_full.opt -r 5 --rsa --class -k 10 -n 100  
-korpm_opt Id50c08_1merNCL_full.opt -r 3 --rsa --class -k 10 -n 100    # reduced DE+ILV+NQST+FY+KH
+korpm_opt Id50c08_1merNCLB.opt -r 5 --rsa --class -k 10 -n 100  
+korpm_opt Id50c08_1merNCLB.opt -r 3 --rsa --class -k 10 -n 100    # reduced DE+ILV+NQST+FY+KH
 
 or run script 
 
@@ -30,6 +30,7 @@ K-fold cluster by homology  Kw=5->20 weights   Kw=3->REDUCED ALPHABET DE+ILV+NQS
    3    5   1.894  0.724  0.854  0.854  2.438  0.921  1.022  2.546  1.022  2.546  1.666  1.118  1.416  1.118  1.620  1.118  1.118  2.546  1.416  2.438 | 1.384 1.026 0.668 0.534 0.839 0.548 0.719 0.734 0.388 0.774 0.645   0.761   0.661  -0.264   0.689   0.719   0.404  -0.264   0.689   0.719
    3   10   1.888  0.699  0.848  0.848  2.447  0.897  1.025  2.567  1.025  2.567  1.698  1.115  1.400  1.115  1.620  1.115  1.115  2.567  1.400  2.447 | 1.370 1.020 0.665 0.541 0.839 0.526 0.726 0.741 0.392 0.776 0.641   0.758   0.668  -0.266   0.685   0.721   0.404  -0.247   0.671   0.735
 
+
 K-fold pure random Kw=5->20 weights   Kw=3->REDUCED ALPHABET DE+ILV+NQST+FY+KH
 
    Kw  Kf      A      C      D      E      F      G      H      I      K      L      M      N      P      Q      R      S      T      V      W      Y  |  RMSE   MAE   PPV   Sen   Spe   PCC   ACC   NPV   MCC   ROC   PRC   AUC_R   AUC_P   THROC    Sen     Spe     BMCC    TH      Sen     Spe
@@ -40,8 +41,19 @@ K-fold pure random Kw=5->20 weights   Kw=3->REDUCED ALPHABET DE+ILV+NQST+FY+KH
 
 
 
+### other opt stuff
+
 awk '{printf "%4s %-7s %7.3f %3d %5.1f\n",$1, $2, $3, $4, $22/120}' ../Id50c08_1merNCL_full.txt > Id50c08_1merNCL_full.in 
 korpm Id50c08_1merNCL_full.in --opt --dir ../Db  --score_file ~/Korp6Dv1/korp6Dv1.bin -r 5 -o  Id50c08_1merNCL_full.opt --dexp --class
 
 
+
+
+
+## checing avg
+
+korpm_opt Id50c08_1merNCLB.opt -r 5 --rsa --class -k 10 -n 100 --krand
+../../Mstat.pl out.txt 2 3 1
+../../confusion.pl  out.txt 2 3 1000 > out_prc.txt
+plot "out_prc.txt"  u 2:3 w l, "" u 4:2 w l, "rocs.txt" u 1:4 w l, "" u 3:5 w l,"" u 2:6 w l,  "" u 4:7 w l, "" u 5:8 w l,"" u 6:9 w l
 

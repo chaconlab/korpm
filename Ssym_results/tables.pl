@@ -20,6 +20,8 @@ system ("../scripts/confusion.pl  KORPM_Pucci2018revN.txt 10 11 1000 >  KORPM_Pu
 #system ("korpm  ../Pucci2018dirN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
 system ("../scripts/Mstat.pl KORPM_Pucci2018dirN.txt 10 11 2 > DKORPM.Mlog");
 system ("../scripts/confusion.pl  KORPM_Pucci2018dirN.txt 10 11 1000 >  KORPM_Pucci2018dirN_prc.txt");
+system ("paste KORPM_Pucci2018dirN.txt  KORPM_Pucci2018revN.txt > temp"); 
+system ("awk \'function abs(x){return (x < 0) ? -x : x;} {printf \"\%s \%s \%s \%s \%s \%s \%s \%f  \%f \%s \%s\\n\",\$1,\$19, \$2, \$20, \$10, \$11,\$29, (\$11+\$29), abs((\$11+\$29)), \$3, \$4  }\' temp > KORPM_Ssym.txt");
 
 
 #system ("korpm  ../Pucci2018N.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
@@ -31,7 +33,8 @@ system ("../scripts/confusion.pl  KORPMt_Pucci2018revN.txt 10 11 1000 >  KORPMt_
 #system ("korpm  ../Pucci2018dirN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
 system ("../scripts/Mstat.pl KORPMt_Pucci2018dirN.txt 10 11 2 > DKORPMt.Mlog");
 system ("../scripts/confusion.pl  KORPMt_Pucci2018dirN.txt 10 11 1000 >  KORPMt_Pucci2018dirN_prc.txt");
-
+system ("paste KORPMt_Pucci2018dirN.txt  KORPMt_Pucci2018revN.txt > temp"); 
+system ("awk \'function abs(x){return (x < 0) ? -x : x;} {printf \"\%s \%s \%s \%s \%s \%s \%s \%f  \%f \%s \%s\\n\",\$1,\$19, \$2, \$20, \$10, \$11,\$29, (\$11+\$29), abs((\$11+\$29)), \$3, \$4  }\' temp > KORPMt_Ssym.txt");
    
 
 foreach (@list_th) {

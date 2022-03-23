@@ -5,36 +5,36 @@ use strict;
 
 my @list_th=("Cartddg","FoldX");
 
-my @list=("Evo","PopMs","Dynamut","DDGun3D","TherNet");
+my @list=("Evo","PopMs","Dynamut","DDGun3D","TherNet","ACDCNN");
 
-my @listK=("KORPM","KORPMt");
+my @listK=("KORPM");
 
 my $cmd ="";
 
-#system ("korpm  ../Pucci2018N.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
-system ("../scripts/Mstat.pl KORPM_Pucci2018N.txt 10 11 2 > NKORPM.Mlog");
-system ("../scripts/confusion.pl  KORPM_Pucci2018N.txt 10 11 1000 >  KORPM_Pucci2018N_prc.txt");
+#system ("korpm  ../Pucci2018N.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018N.txt --dexp --rsa --class  > log");
+#system ("../scripts/Mstat.pl KORPM_Pucci2018N.txt 10 11 2 > NKORPM.Mlog");
+#system ("../scripts/confusion.pl  KORPM_Pucci2018N.txt 10 11 1000 >  KORPM_Pucci2018N_prc.txt");
 #system ("korpm  ../Pucci2018revN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
-system ("../scripts/Mstat.pl KORPM_Pucci2018revN.txt 10 11 2 > RKORPM.Mlog");
-system ("../scripts/confusion.pl  KORPM_Pucci2018revN.txt 10 11 1000 >  KORPM_Pucci2018revN_prc.txt");
-#system ("korpm  ../Pucci2018dirN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
-system ("../scripts/Mstat.pl KORPM_Pucci2018dirN.txt 10 11 2 > DKORPM.Mlog");
-system ("../scripts/confusion.pl  KORPM_Pucci2018dirN.txt 10 11 1000 >  KORPM_Pucci2018dirN_prc.txt");
-system ("paste KORPM_Pucci2018dirN.txt  KORPM_Pucci2018revN.txt > temp"); 
-system ("awk \'function abs(x){return (x < 0) ? -x : x;} {printf \"\%s \%s \%s \%s \%s \%s \%s \%f  \%f \%s \%s\\n\",\$1,\$19, \$2, \$20, \$10, \$11,\$29, (\$11+\$29), abs((\$11+\$29)), \$3, \$4  }\' temp > KORPM_Ssym.txt");
+#system ("../scripts/Mstat.pl KORPM_Pucci2018revN.txt 10 11 2 > RKORPM.Mlog");
+#system ("../scripts/confusion.pl  KORPM_Pucci2018revN.txt 10 11 1000 >  KORPM_Pucci2018revN_prc.txt");
+#system ("korpm  ../Pucci2018dirN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018dirN.txt --dexp --rsa --class > log");
+#system ("../scripts/Mstat.pl KORPM_Pucci2018dirN.txt 10 11 2 > DKORPM.Mlog");
+#system ("../scripts/confusion.pl  KORPM_Pucci2018dirN.txt 10 11 1000 >  KORPM_Pucci2018dirN_prc.txt");
+#system ("paste KORPM_Pucci2018dirN.txt  KORPM_Pucci2018revN.txt > temp"); 
+#system ("awk \'function abs(x){return (x < 0) ? -x : x;} {printf \"\%4s \%4s \%-7s \%-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f \\n\",\$1,\$19, \$2, \$20, \$10, \$11,\$29, (\$11+\$29), abs((\$11+\$29)), \$3+\$4  }\' temp > KORPM_Pucci2018_sym.txt");
 
 
-#system ("korpm  ../Pucci2018N.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
-system ("../scripts/Mstat.pl KORPMt_Pucci2018N.txt 10 11 2 > NKORPMt.Mlog");
-system ("../scripts/confusion.pl  KORPMt_Pucci2018N.txt 10 11 1000 >  KORPMt_Pucci2018N_prc.txt");
-#system ("korpm  ../Pucci2018revN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
-system ("../scripts/Mstat.pl KORPMt_Pucci2018revN.txt 10 11 2 > RKORPMt.Mlog");
-system ("../scripts/confusion.pl  KORPMt_Pucci2018revN.txt 10 11 1000 >  KORPMt_Pucci2018revN_prc.txt");
-#system ("korpm  ../Pucci2018dirN.txt -r 5 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPM_Pucci2018revN.txt --dexp --rsa --class > log");
-system ("../scripts/Mstat.pl KORPMt_Pucci2018dirN.txt 10 11 2 > DKORPMt.Mlog");
-system ("../scripts/confusion.pl  KORPMt_Pucci2018dirN.txt 10 11 1000 >  KORPMt_Pucci2018dirN_prc.txt");
-system ("paste KORPMt_Pucci2018dirN.txt  KORPMt_Pucci2018revN.txt > temp"); 
-system ("awk \'function abs(x){return (x < 0) ? -x : x;} {printf \"\%s \%s \%s \%s \%s \%s \%s \%f  \%f \%s \%s\\n\",\$1,\$19, \$2, \$20, \$10, \$11,\$29, (\$11+\$29), abs((\$11+\$29)), \$3, \$4  }\' temp > KORPMt_Ssym.txt");
+#system ("korpm  ../Pucci2018N.txt -r 21 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPMt_Pucci2018N.txt --dexp --rsa --class > log");
+#system ("../scripts/Mstat.pl KORPMt_Pucci2018N.txt 10 11 2 > NKORPMt.Mlog");
+#system ("../scripts/confusion.pl  KORPMt_Pucci2018N.txt 10 11 1000 >  KORPMt_Pucci2018N_prc.txt");
+#system ("korpm  ../Pucci2018revN.txt -r 21 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPMt_Pucci2018revN.txt --dexp --rsa --class > log");
+#system ("../scripts/Mstat.pl KORPMt_Pucci2018revN.txt 10 11 2 > RKORPMt.Mlog");
+#system ("../scripts/confusion.pl  KORPMt_Pucci2018revN.txt 10 11 1000 >  KORPMt_Pucci2018revN_prc.txt");
+#system ("korpm  ../Pucci2018dirN.txt -r 21 --dir ../Ssym --score_file ../pot/korp6Dv1.bin -o KORPMt_Pucci2018dirN.txt --dexp --rsa --class > log");
+#system ("../scripts/Mstat.pl KORPMt_Pucci2018dirN.txt 10 11 2 > DKORPMt.Mlog");
+#system ("../scripts/confusion.pl  KORPMt_Pucci2018dirN.txt 10 11 1000 >  KORPMt_Pucci2018dirN_prc.txt");
+#system ("paste KORPMt_Pucci2018dirN.txt  KORPMt_Pucci2018revN.txt > temp"); 
+#system ("awk \'function abs(x){return (x < 0) ? -x : x;} {printf \"\%4s \%4s \%-7s \%-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f \\n\",\$1,\$19, \$2, \$20, \$10, \$11,\$29, (\$11+\$29), abs((\$11+\$29)), \$3+\$4  }\' temp > KORPMt_Pucci2018_sym.txt");
    
 
 foreach (@list_th) {
@@ -45,12 +45,12 @@ foreach (@list_th) {
  $cmd="../scripts/Mstat.pl  $_\_Pucci2018revN_th8.txt 3 4 2 > R$_.Mlog\n"; system ($cmd);
  $cmd="../scripts/confusion.pl  $_\_Pucci2018revN_th8.txt 3 4 1000 >  $_\_Pucci2018revN_th8_prc.txt"; system ($cmd); 
  $cmd="paste $_\_Pucci2018dirN_th8.txt  $_\_Pucci2018revN_th8.txt  > temp"; system ($cmd); 
- $cmd="awk 'function abs(x){return (x < 0) ? -x : x;} {printf \"%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\\n\",  \$1,\$5, \$2, \$6, \$3, \$4, \$8, (\$4-\$8), abs((\$4-\$8)), (\$3+\$7)  }' temp > $_\_Pucci2018_th8_sym.txt"; system ($cmd); 
+ $cmd="awk 'function abs(x){return (x < 0) ? -x : x;} {printf \"%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\\n\",  \$1,\$5, \$2, \$6, \$3, \$4, \$8, (\$4+\$8), abs((\$4+\$8)), (\$3+\$7)  }' temp > $_\_Pucci2018_th8_sym.txt"; system ($cmd); 
 
  
  
 # print "$cmd\n"; 
-  # system ($cmd);  
+# system ($cmd);  
 }
 
 foreach (@list) {
@@ -61,7 +61,7 @@ foreach (@list) {
  $cmd="../scripts/Mstat.pl  $_\_Pucci2018revN.txt 3 4 2 > R$_.Mlog\n"; system ($cmd);
  $cmd="../scripts/confusion.pl  $_\_Pucci2018revN.txt 3 4 1000 >  $_\_Pucci2018revN_prc.txt"; system ($cmd); 
  $cmd="paste $_\_Pucci2018dirN.txt  $_\_Pucci2018revN.txt  > temp"; system ($cmd); 
- $cmd="awk 'function abs(x){return (x < 0) ? -x : x;} {printf \"%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\\n\",  \$1,\$5, \$2, \$6, \$3, \$4, \$8, (\$4-\$8), abs((\$4-\$8)), (\$3+\$7)  }' temp > $_\_Pucci2018_sym.txt"; system ($cmd); 
+ $cmd="awk 'function abs(x){return (x < 0) ? -x : x;} {printf \"%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\\n\",  \$1,\$5, \$2, \$6, \$3, \$4, \$8, (\$4+\$8), abs((\$4+\$8)), (\$3+\$7)  }' temp > $_\_Pucci2018_sym.txt"; system ($cmd); 
 
 # print "$cmd\n"; 
   

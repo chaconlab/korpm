@@ -1,0 +1,257 @@
+##############################################
+
+KORPM
+
+################################################
+../../Mstat.pl KORPM_Pucci2018N.txt 10 11 2 > NKORPM.Mlog
+../../confusion.pl  KORPM_Pucci2018N.txt 10 11 1000 >  KORPM_Pucci2018N_prc.txt
+tail  KORPM_Pucci2018N_prc.txt
+
+../../Mstat.pl KORPM_Pucci2018revN.txt 10 11 2 > RKORPM.Mlog
+../../confusion.pl  KORPM_Pucci2018revN.txt 10 11 1000 >  KORPM_Pucci2018revN_prc.txt
+tail  KORPM_Pucci2018revN_prc.txt
+
+../../Mstat.pl KORPM_Pucci2018dirN.txt 10 11 2 > DKORPM.Mlog
+../../confusion.pl  KORPM_Pucci2018dirN.txt 10 11 1000 >  KORPM_Pucci2018dirN_prc.txt
+tail  KORPM_Pucci2018dirN_prc.txt
+
+
+../../Mstat.pl KORPM_Pucci2018N.txt 10 11 2  0.0 > NKORPM.Mlog
+../../Mstat.pl KORPM_Pucci2018revN.txt 10 11 2  0.0 > RKORPM.Mlog
+../../Mstat.pl KORPM_Pucci2018dirN.txt 10 11 2  0.0 > DKORPM.Mlog
+
+
+tail  KORPM_Pucci2018N_prc.txt
+tail  KORPM_Pucci2018revN_prc.txt
+tail  KORPM_Pucci2018dirN_prc.txt
+
+
+paste KORPM_Pucci2018dirN.txt  KORPM_Pucci2018revN.txt  > temp
+awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%s %s %s %s %s %s %s %f  %f %s %s\n",$1,$19, $2, $20, $10, $11,$29, ($11+$29), abs(($11+$29)), $3, $4  }' temp > KORPM_Pucci2018_sym.txt
+stat "KORPM_Pucci2018_sym.txt" u 6:7
+r = -0.93
+
+grep " C" KORPM_Pucci2018_sym.txt > FDI_sC.txt
+grep " P" KORPM_Pucci2018_sym.txt > FDI_sP.txt
+grep " D" KORPM_Pucci2018_sym.txt > FDI_sD.txt
+grep " E" KORPM_Pucci2018_sym.txt > FDI_sE.txt
+grep " W" KORPM_Pucci2018_sym.txt > FDI_sW.txt
+grep " Y" KORPM_Pucci2018_sym.txt > FDI_sY.txt
+
+
+plot "KORPM_Pucci2018_sym.txt" u 6:7, -x, "FDI_sC.txt" u 6:7 with circles lc rgb "blue" fs transparent solid 0.15 noborder, "FDI_sP.txt" u 6:7 with circles lc rgb "red" fs transparent solid 0.15 noborder, -x+1, -x-1
+
+################################################
+
+DYNAMUT
+
+################################################
+
+../../Mstat.pl Dynamut_Pucci2018N.txt 3 4 2  > NDynamut.Mlog
+../../confusion.pl  Dynamut_Pucci2018N.txt  3 4 1000 >  Dynamut_Pucci2018N_prc.txt
+tail  Dynamut_Pucci2018N_prc.txt
+
+../../Mstat.pl Dynamut_Pucci2018revN.txt 3 4 2  > RDynamut.Mlog
+../../confusion.pl  Dynamut_Pucci2018revN.txt  3 4 1000 >  Dynamut_Pucci2018revN_prc.txt
+tail  Dynamut_Pucci2018revN_prc.txt
+
+
+../../Mstat.pl Dynamut_Pucci2018dirN.txt 3 4 2  > NDynamut.Mlog
+../../confusion.pl  Dynamut_Pucci2018dirN.txt  3 4 1000 >  Dynamut_Pucci2018dirN_prc.txt
+tail  Dynamut_Pucci2018dirN_prc.txt
+
+
+paste Dynamut_Pucci2018dirN.txt  Dynamut_Pucci2018revN.txt  > temp
+awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",$1,$5, $2, $6, $3, $4,$8, ($4-$8), abs(($4-$8)), ($3+$7)  }' temp > Dynamut_Pucci2018_sym.txt
+
+stat "Dynamut_Pucci2018_sym.txt" u 6:7
+
+
+
+
+paste Dynamut_Pucci2018dirN.txt  Dynamut_Pucci2018invN.txt  > temp
+awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",$1,$5, $2, $6, $3, $4,$8, ($4-$8), abs(($4-$8)), ($3+$7)  }' temp > Dynamut_Pucci2018_sym.txt
+
+stat "Dynamut_Pucci2018_sym.txt" u 6:7
+r = -0.112
+
+################################################
+
+Cartddg
+
+################################################
+
+
+../../Mstat.pl Cartddg_Pucci2018N_th8.txt 3 4 2  > NCartddg.Mlog
+../../confusion.pl  Cartddg_Pucci2018N_th8.txt  3 4 1000 >  Cartddg_Pucci2018N_th8_prc.txt
+tail  Cartddg_Pucci2018N_th8_prc.txt
+
+../../Mstat.pl Cartddg_Pucci2018revN_th8.txt 3 4 2  > RCartddg.Mlog
+../../confusion.pl  Cartddg_Pucci2018revN_th8.txt  3 4 1000 >  Cartddg_Pucci2018revN_th8_prc.txt
+tail  Cartddg_Pucci2018revN_th8_prc.txt
+
+
+../../Mstat.pl Cartddg_Pucci2018dirN_th8.txt 3 4 2  > NCartddg.Mlog
+../../confusion.pl  Cartddg_Pucci2018dirN_th8.txt  3 4 1000 >  Cartddg_Pucci2018dirN_th8_prc.txt
+tail  Cartddg_Pucci2018dirN_th8_prc.txt
+
+
+paste Cartddg_Pucci2018dirN_th8.txt  Cartddg_Pucci2018revN_th8.txt  > temp
+awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",$1,$5, $2, $6, $3, $4,$8, ($4-$8), abs(($4-$8)), ($3+$7)  }' temp > Cartddg_Pucci2018_th8_sym.txt
+
+stat "Cartddg_Pucci2018_th8_sym.txt" u 6:7
+r = -0.4124
+
+
+################################################
+
+FOLDX
+
+################################################
+
+
+
+awk 'function abs(x){return (x < 0) ? -x : x;}   function thd(x){return (x < -8.0) ? -8 : x;}  { printf "%4s %-7s %7.2f %7.2f\n",  $1 , $2, $3, thd($4)  }' FoldX_Pucci2018N.txt > FoldX_Pucci2018N_th8.txt 
+awk 'function abs(x){return (x < 0) ? -x : x;}   function thd(x){return (x < -8.0) ? -8 : x;}  { printf "%4s %-7s %7.2f %7.2f\n",  $1 , $2, $3, thd($4)  }' FoldX_Pucci2018invN.txt > FoldX_Pucci2018invN_th8.txt
+awk 'function abs(x){return (x < 0) ? -x : x;}   function thd(x){return (x < -8.0) ? -8 : x;}  { printf "%4s %-7s %7.2f %7.2f\n",  $1 , $2, $3, thd($4)  }' FoldX_Pucci2018dirN.txt > FoldX_Pucci2018dirN_th8.txt
+ 
+
+../../Mstat.pl FoldX_Pucci2018N_th8.txt 3 4 2 > NFoldX.Mlog
+../../confusion.pl  FoldX_Pucci2018N_th8.txt  3 4 1000 >  FoldX_Pucci2018N_th8_prc.txt
+tail  FoldX_Pucci2018N_th8_prc.txt
+
+../../Mstat.pl FoldX_Pucci2018revN_th8.txt 3 4 2 > RFoldX.Mlog
+../../confusion.pl  FoldX_Pucci2018revN_th8.txt  3 4 1000 >  FoldX_Pucci2018revN_th8_prc.txt
+tail  FoldX_Pucci2018revN_th8_prc.txt
+# AUC_ROC= 0.691    AUC_PRC= 0.875    Best_ROC thr= -0.190  TPR= 0.573   FPR= 0.236    BestMCC= 0.332   thr= 0.151   TPR= 0.466   FPR= 0.101  
+
+../../Mstat.pl FoldX_Pucci2018dirN_th8.txt 3 4 2 > DFoldX.Mlog
+../../confusion.pl  FoldX_Pucci2018dirN_th8.txt  3 4 1000 >  FoldX_Pucci2018dirN_th8_prc.txt
+tail  FoldX_Pucci2018dirN_th8_prc.txt
+
+paste FoldX_Pucci2018dirN_th8.txt  FoldX_Pucci2018revN_th8.txt  > temp
+awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",$1,$5, $2, $6, $3, $4,$8, ($4-$8), abs(($4-$8)), ($3+$7)  }' temp > FoldX_Pucci2018_th8_sym.txt
+stat "FoldX_Pucci2018_th8_sym.txt" u 6:7
+r = -0.2747
+
+################################################
+
+EVOFF
+
+################################################
+
+
+
+../../Mstat.pl Evo_Pucci2018N.txt 3 4 2  > NEvo.Mlog
+../../confusion.pl  Evo_Pucci2018N.txt  3 4 1000 >  Evo_Pucci2018N_prc.txt
+tail  Evo_Pucci2018N_prc.txt
+
+../../Mstat.pl Evo_Pucci2018revN.txt 3 4 2 > REvo.Mlog
+../../confusion.pl  Evo_Pucci2018revN.txt  3 4 1000 >  Evo_Pucci2018revN_prc.txt
+tail  Evo_Pucci2018revN_prc.txt
+
+../../Mstat.pl Evo_Pucci2018dirN.txt 3 4 2 > DEvo.Mlog
+../../confusion.pl  Evo_Pucci2018dirN.txt  3 4 1000 >  Evo_Pucci2018dirN_prc.txt
+tail  Evo_Pucci2018dirN_prc.txt
+
+
+paste Evo_Pucci2018dirN.txt  Evo_Pucci2018revN.txt  > temp
+awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",$1,$5, $2, $6, $3, $4,$8, ($4-$8), abs(($4-$8)), ($3+$7)  }' temp > Evo_Pucci2018_sym.txt
+stat "Evo_Pucci2018_sym.txt" u 6:7
+r = -0.5826
+
+
+
+################################################
+
+DDGUN 
+
+################################################
+
+
+../../Mstat.pl DDGun3D_Pucci2018N.txt 3 4 2  > NDDGun3D.Mlog
+../../confusion.pl  DDGun3D_Pucci2018N.txt  3 4 1000 >  DDGun3D_Pucci2018N_prc.txt
+tail  DDGun3D_Pucci2018N_prc.txt
+
+../../Mstat.pl DDGun3D_Pucci2018revN.txt 3 4 2 > RDDGun3D.Mlog
+../../confusion.pl  DDGun3D_Pucci2018revN.txt  3 4 1000 >  DDGun3D_Pucci2018invN_prc.txt
+tail  DDGun3D_Pucci2018revN_prc.txt
+
+../../Mstat.pl DDGun3D_Pucci2018dirN.txt 3 4 2 > DDDGun3D.Mlog
+../../confusion.pl  DDGun3D_Pucci2018dirN.txt  3 4 1000 >  DDGun3D_Pucci2018dirN_prc.txt
+tail  DDGun3D_Pucci2018dirN_prc.txt
+
+paste DDGun3D_Pucci2018dirN.txt  DDGun3D_Pucci2018revN.txt  > temp
+awk 'function abs(x){return (x < 0) ? -x : x;}   { printf "%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",$1,$5, $2, $6, $3,  $4 ,$8, $4+$8, abs($4+$8), ($3+$7)  }' temp > DDGun3D_Pucci2018_sym.txt
+
+stat "DDGun3D_Pucci2018_sym.txt" u 6:7
+r = -0.99
+
+
+
+
+################################################
+
+POPMUSIC Sym
+
+################################################
+
+
+
+
+../../Mstat.pl PopMs_Pucci2018N.txt 3 4 2 > NPopMs.Mlog
+../../confusion.pl  PopMs_Pucci2018N.txt  3 4 1000 >  PopMs_Pucci2018N_prc.txt
+tail  PopMs_Pucci2018N_prc.txt
+
+../../Mstat.pl PopMs_Pucci2018revN.txt 3 4 2  > RPopMs.Mlog
+../../confusion.pl  PopMs_Pucci2018revN.txt  3 4 1000 >  PopMs_Pucci2018revN_prc.txt
+tail  PopMs_Pucci2018revN_prc.txt
+
+../../Mstat.pl PopMs_Pucci2018dirN.txt 3 4 2  > DPopMs.Mlog
+../../confusion.pl  PopMs_Pucci2018dirN.txt  3 4 1000 >  PopMs_Pucci2018dirN_prc.txt
+tail  PopMs_Pucci2018dirN_prc.txt
+
+
+paste PopMs_Pucci2018dirN.txt  PopMs_Pucci2018irevN.txt  > temp
+
+awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",$1,$5, $2, $6, $3, $4,$8, ($4-$8), abs(($4-$8)), ($3+$7)  }' temp > PopMs_Pucci2018_sym.txt
+stat "PopMs_Pucci2018_sym.txt" u 6:7
+r = -0.7709
+
+
+################################################
+
+ThermoNet 
+
+################################################
+
+
+../../Mstat.pl TherNet_Pucci2018N.txt 3 4 2 > NThermonet.Mlog
+../../confusion.pl   TherNet_Pucci2018N.txt  3 4 1000 >  TherNet_Pucci2018N_prc.txt
+tail  TherNet_Pucci2018N_prc.txt
+# AUC_ROC= 0.610    AUC_PRC= 0.785    Best_ROC thr= -0.855  TPR= 0.719   FPR= 0.202    BestMCC= 0.523   thr= -0.600  TPR= 0.690   FPR= 0.173  
+
+../../Mstat.pl TherNet_Pucci2018revN.txt 3 4 2 > RThermonet.Mlog
+../../confusion.pl   TherNet_Pucci2018revN.txt  3 4 1000 >  TherNet_Pucci2018invN_prc.txt
+tail  TherNet_Pucci2018revN_prc.txt
+
+../../Mstat.pl TherNet_Pucci2018dirN.txt 3 4 2 > DThermonet.Mlog
+../../confusion.pl   TherNet_Pucci2018dirN.txt  3 4 1000 >  TherNet_Pucci2018dirN_prc.txt
+tail  TherNet_Pucci2018dirN_prc.txt
+
+paste TherNet_Pucci2018dirN.txt  TherNet_Pucci2018revN.txt  > temp
+awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%4s %4s %-7s %-7s %7.2f %7.2f %7.2f %7.2f %7.2f %7.2f\n",$1,$5, $2, $6, $3, $4,$8, ($4-$8), abs(($4-$8)), ($3+$7)  }' temp > TherNet_Pucci2018_sym.txt
+stat "TherNet_Pucci2018_sym.txt" u 5:6
+r = 0.96
+
+
+
+
+plot "KORPM_Pucci2018N_prc.txt" u 2:3 w l, "" u 4:2 w l,   "Cartddg_Pucci2018N_th8_prc.txt" u 2:3 w l, "" u 4:2 w l, "Evo_Pucci2018N_prc.txt" u 2:3 w l, "" u 4:2 w l, "FoldX_Pucci2018N_th8_prc.txt" u 2:3 w l, "" u 4:2 w l, "Dynamut_Pucci2018N_prc.txt" u 2:3 w l, "" u 4:2 w l, "../FN_prc.txt" u 2:3 w l, "" u 4:2 w l
+
+plot "KORPM_Pucci2018dirN_prc.txt" u 2:3 w l, "" u 4:2 w l,   "Cartddg_Pucci2018dirN_th8_prc.txt" u 2:3 w l, "" u 4:2 w l, "Evo_Pucci2018dirN_prc.txt" u 2:3 w l, "" u 4:2 w l, "FoldX_Pucci2018dirN_th8_prc.txt" u 2:3 w l, "" u 4:2 w l, "Dynamut_Pucci2018dirN_prc.txt" u 2:3 w l, "" u 4:2 w l, "../FD_prc.txt" u 2:3 w l, "" u 4:2 w l
+
+
+
+
+

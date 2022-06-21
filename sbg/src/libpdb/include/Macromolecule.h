@@ -194,8 +194,8 @@ public:
 	 */
 	void rename_residues();
 
-	// Set some sequence "seq" (in 1-letter format) from residue "index" (internal index) up to end of "seq"
-	void setSeq(char *seq, int index);
+	//  some sequence "seq" (in 1-letter format) from residue "index" (internal index) up to end of "seq"
+	void mutseq(char seq, int index);
 
 	/// Returns an object that stores the spatial dimensions of the system
 	/// The center stored is computed as the middle point between the farthest atoms of the system (included hydrogens)

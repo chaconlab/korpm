@@ -139,6 +139,7 @@ int main(int argc, char *argv[])
 		{
 			mol->delete_hydrogens(); // Remove Hydrogens
 			mol2->delete_hydrogens(); // Remove Hydrogens
+
 			//			printf( ">> Hydrogens were removed.\n" );
 		}
 
@@ -264,11 +265,13 @@ int main(int argc, char *argv[])
 //		if(nmol > 1 || ri >= 0 || rf >= 0) // If mobile Multi-PDB found
 		if(nmol > 1) // If mobile Multi-PDB found
 		{
-			printf( "> %d models found in input mobile Multi-PDB: %s\n", nmol, file_mob);
+			printf( "# %d models found in input mobile Multi-PDB: %s\n", nmol, file_mob);
+
 
 			// Select relevant atoms
 			mol_ca = mol->select(calpha2);
 			mol2_ca = mol2->select(calpha2X);
+
 
 			// Copy trimmed reference Macromolecule (just mobile loop region) to load decoys coordinates later
 			Macromolecule *mol2_decoy = new Macromolecule(mol_ca);
@@ -390,18 +393,35 @@ int main(int argc, char *argv[])
 			mol2_ca = mol2->select(calpha2X);
 
 			// Condition(s) to select flanks
+			Conditions *cflank= new Conditions();
 			Condition *cflankN = new Condition(-1,-1,-1,-1,ichain,ichain,ri-nflanks,ri-1,-1,-1);
 			Condition *cflankC = new Condition(-1,-1,-1,-1,ichain,ichain,rf+1,rf+nflanks,-1,-1);
-			Conditions *cflank= new Conditions();
+			cflankN->add(" N  ");
+			cflankN->add(" CA ");
+			cflankN->add(" C  ");
+			cflankC->add(" N  ");
+			cflankC->add(" CA ");
+			cflankC->add(" C  ");
 			cflank->add(cflankN);
 			cflank->add(cflankC);
 
 			// Select relevant atoms (the whole chain)
 			Macromolecule *mol_flanks = mol->select(cflank);
-			Macromolecule *mol2_flanks = mol2->select(cflank);
+			mol_flanks->writePDB("mol_flanks.pdb");
 
-			// mol_flanks->writePDB("mol_flanks.pdb");
-			// mol2_flanks->writePDB("mol2_flanks.pdb");
+			Conditions *cflank2= new Conditions();
+			Condition *cflankN2 = new Condition(-1,-1,-1,-1,ichain,ichain,ri-nflanks,ri-1,-1,-1);
+			Condition *cflankC2 = new Condition(-1,-1,-1,-1,ichain,ichain,rf+1,rf+nflanks,-1,-1);
+			cflankN2->add(" N  ");
+			cflankN2->add(" CA ");
+			cflankN2->add(" C  ");
+			cflankC2->add(" N  ");
+			cflankC2->add(" CA ");
+			cflankC2->add(" C  ");
+			cflank2->add(cflankN2);
+			cflank2->add(cflankC2);
+			Macromolecule *mol2_flanks = mol2->select(cflank2);
+			mol2_flanks->writePDB("mol2_flanks.pdb");
 
 			// Compute transformation of target PDB and RMSD evaluation
 			float matrix4[4][4];
@@ -414,14 +434,14 @@ int main(int argc, char *argv[])
 			{
 				// Alignment of target PDB (minRMSD) (computed with flanks selection, but applied to full model)
 				M4Rot *matrix4_op = new M4Rot(matrix4);
-				mol2_ca->applyAtoms(matrix4_op); // superpose
+				mol2->applyAtoms(matrix4_op); // superpose
 				delete matrix4_op;
 
 				strcpy(file_out,((temp=pdb_moved.getValue()).c_str()));
 				mol2->writePDB(file_out);
 				printf("rmsd> Complete mobile PDB was aligned to flanks into %s\n", file_out);
 			}
-			// mol2->writePDB("aliflanks.pdb");
+			mol2->writePDB("aliflanks.pdb");
 
 			delete mol_ca;
 			delete mol2_ca;

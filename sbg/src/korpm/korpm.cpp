@@ -1,5 +1,5 @@
-#include "libenergy/include/korpe.h" // KORP energy
-#include "libenergy/include/rama.h" // Rama energy
+#include <libenergy/include/korpe.h> // KORP energy
+#include <libenergy/include/rama.h> // Rama energy
 
 #include <libpdb/include/pdbIter.h>
 #include <libpdb/include/Macromolecule.h>
@@ -63,6 +63,7 @@ int main(int argc, char *argv[])
 	bool pclase = false; // Homology class index
 	bool rsa_switch = false; //Read Relative Surface Area (RSA) from input file. RSA value is expected at 4th or 5th (if --class) columns
 	bool dexp_switch = false;  // Read DDG exp from file
+	bool frev_switch = false;  // Read DDG exp from file
 
 	// COMMAND-LINE PARSER:
 	using namespace TCLAP;
@@ -108,6 +109,11 @@ int main(int argc, char *argv[])
 		SwitchArg Pclase("","class", "Read write homology class info", false);
 		cmd.add( Pclase );
 
+		bool fakerevese_switch = false;  // Read DDG exp from file
+
+		SwitchArg Frev("","frev", "Fake reverse mutation", false);
+		cmd.add( Frev );
+
 		SwitchArg RSA("","rsa", "Read Relative Surface Area (RSA) from input file. RSA value is expected at 4th or 5th (if --class) columns.", false);
 		cmd.add( RSA);
 
@@ -136,6 +142,11 @@ int main(int argc, char *argv[])
 			rama_switch = true;
 		}
 
+
+		if(Frev.isSet())
+				{
+					frev_switch = true;
+				}
 
 		if (run_mode != 0)
 			weighted = true; // Enable weighted workflow
@@ -610,10 +621,19 @@ int main(int argc, char *argv[])
 		}
 
 
+		if (frev_switch) {
+			molr->mutseq(aa2[0],posInChain[0]);
+			char dump; int dumpi;
+			dump=aa2[0];
+			dumpi=aa2I[0];
+			aa2[0]=aa1[0];
+			aa2I[0]=aa1I[0];
+			aa1[0]=dump;
+			aa1I[0]=dumpi;
 
-
-
-
+			sprintf(mutstr, "%c%c%d%c", aa1[0], chn[0], posInChain[0], aa2[0]);
+			deltaE*=-1.0;
+		}
 
 
 
@@ -835,13 +855,11 @@ int main(int argc, char *argv[])
 						double W6DR[20] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447};
 						double W6DK[20] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447};
 
-
 						if(!custom_weights) // Set default weights
 							if(run_mode == 56) //  KORP + RAMA
 								W6D = W6DR;
 							else   // KORP
 								W6D = W6DK;
-
 
 						if(binding)
 						{
@@ -883,11 +901,12 @@ int main(int argc, char *argv[])
 				//				Pmut = -korp6DM(contactsM, ncontM, map, posInChain, chn, aa2I, &(fmut));
 
 			}
+
 			case 6: // Ramachandran alone
 			{
 				double *Wrama;
-				double WramaK[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.26};
-				double WramaR[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.26};
+				double WramaK[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.239};
+				double WramaR[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.239};
 
 				if(run_mode == 56) // RAMA weights with KORP
 					Wrama = WramaK;
@@ -999,7 +1018,7 @@ int main(int argc, char *argv[])
 			}
 			case 21:
 			{
-				double W6D21[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.26};
+				double W6D21[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.239};
 
 				if(!custom_weights) {
 					W6D = W6D21;
@@ -1149,6 +1168,8 @@ int main(int argc, char *argv[])
 		free(resnums);
 		free(reschainids);
 		delete molr;
+
+
 
 		//		if(binding)
 		//		{

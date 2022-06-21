@@ -1936,7 +1936,7 @@ int main( int argc, char * argv[] )
 	double ub[NVAR];   // upper bounds
 	double xmax[NVAR];
 	double xavg[NVAR];
-
+	int NEFF=0;
 
 	// NEW ALL DATA
 	// double xi[NVAR]={ 1.62906,1.25222,1.16860,1.38073,2.36187,1.41764,1.08243,2.26649,1.41488,2.85751,1.49585,1.61682,1.43767,0.99600,1.93309,1.22990,1.59651,2.31484,1.44050,2.58258};
@@ -2939,6 +2939,8 @@ int main( int argc, char * argv[] )
 				suma = 0.0;
 				double suma_sqrt = 0.0;
 
+				// minP=1000;
+				// maxP=-1000;
 				for(int ii=d.nrange; ii<d.nexp; ii++)
 				{
 					int i=d.index[ii];
@@ -2953,8 +2955,8 @@ int main( int argc, char * argv[] )
 					suma_sqrt += dumpx*dumpx;
 					suma += fabsf(dumpx);
 
-					//	if(d.exp[i] < minP) minP=d.exp[i];
-					//	if(d.exp[i] > maxP) maxP=d.exp[i];
+					// if(d.com[i] < minP) minP=d.com[i];
+					// if(d.com[i] > maxP) maxP=d.com[i];
 
 
 					// Contingency table (confusion matrix)
@@ -2984,7 +2986,7 @@ int main( int argc, char * argv[] )
 				f0avg += rmse;
 				ave /= (d.nexp-d.nrange);
 
-
+				NEFF += (d.nexp-d.nrange);
 
 				if(TPddG > 0)
 				{
@@ -3063,10 +3065,12 @@ int main( int argc, char * argv[] )
 						arec[au]=(float) TPddG / ((float) TPddG + (float) FNddG);  // RECall = Sensitivity (SN) = True Positive Rate (TPR)
 					else
 						arec[au]=0;
+
 					if( TPddG + FPddG > 0 )
 						appv[au]=(float) TPddG / ((float) TPddG + (float) FPddG); // Positive Predictive Value = PRECision
 					else
 						appv[au]=0;
+
 					if( TNddG + FPddG > 0 )
 						afpr[au]=(float) FPddG / (float) (TNddG + FPddG); // False Positive Rate (FPR)
 					else
@@ -3416,15 +3420,22 @@ int main( int argc, char * argv[] )
 		{
 			fprintf(stderr, "\n  Error->Cannot open file\n");
 		}
+		fprintf(f,"# FPR REC PPV  1 vs 2 and 2 vs 3\n");
 
 		float avgroc[BINSAUC][3];
 		float sigroc[BINSAUC][3];
 
 		for(int i=0; i<BINSAUC; i++)
 		{
+
+			// save all plots
+//			for(int j=0; j<KNNRUNS; j++)
+//			{
+//				fprintf(f,"%7.3f %7.3f %7.3f ", Afpr[i][j], Arec[i][j], Appv[i][j]);
+//			}
+
 			// avg
 			avgroc[i][0]=0; avgroc[i][1]=0; avgroc[i][2]=0;
-			sigroc[i][0]=0; sigroc[i][1]=0; sigroc[i][2]=0;
 			for(int j=0; j<KNNRUNS; j++)
 			{
 				avgroc[i][0]+=Afpr[i][j];
@@ -3435,7 +3446,10 @@ int main( int argc, char * argv[] )
 			avgroc[i][1]/=(KNNRUNS*1.0);
 			avgroc[i][2]/=(KNNRUNS*1.0);
 
+
+
 			// sigma
+			sigroc[i][0]=0; sigroc[i][1]=0; sigroc[i][2]=0;
 			for(int j=0; j<KNNRUNS; j++)
 			{
 				sigroc[i][0]+=pow(Afpr[i][j]-avgroc[i][0],2);
@@ -3458,10 +3472,7 @@ int main( int argc, char * argv[] )
 					avgroc[i][2]-1.96*sigroc[i][2]/sqrt(KNNRUNS*1.0));
 
 
-			//			for(int j=0; j<KNNRUNS; j++)
-			//						{
-			//							fprintf(f,"%7.3f %7.3f %7.3f ", Afpr[i][j], Arec[i][j], Appv[i][j]);
-			//						}
+
 
 
 			fprintf(f,"\n");

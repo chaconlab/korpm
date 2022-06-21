@@ -481,25 +481,29 @@ void Macromolecule::rename_residues()
 	delete iter;
 }
 
-// MON: Untested yet... 5/8/2019
-// Set some sequence "seq" (in 1-letter format) from residue "index" (internal index) up to end of "seq"
-void Macromolecule::setSeq(char *seq, int index)
+
+// mut some sequence "seq" (in 1-letter format) from residue "index" (internal index) up to end of "seq"
+void Macromolecule::mutseq(char seq, int index)
 {
-	int len = strlen(seq); // get sequence length
 	pdbIter *iter = new pdbIter( this );
 	Residue *res;
 
 	int s = 0; // Sequence index
 	int i; // Aminoacids table index
 
-	for(iter->pos_fragment = index; !iter->gend_fragment() && s < len; iter->next_fragment())
+
+
+	for(iter->pos_fragment = 0; !iter->gend_fragment(); iter->next_fragment())
 	{
 		res = (Residue *) iter->get_fragment();
-		if(res->getMolType() != tmol_smol)
+
+		if ((res->getIdNumber() == index) && (res->getMolType() != tmol_smol) )
 		{
+		    printf(" Warning res %s --> %c pos %d %d\n",res->getName(), seq, index, res->getIdNumber()  );
+
 			for(i = 0; i < N_AMINO; i++)
 			{
-				if(AA[i].aa_name1 == seq[s])
+				if(AA[i].aa_name1 == seq)
 				{
 					res->modifyName( AA[i].aa_name3 );
 					break;
@@ -508,8 +512,11 @@ void Macromolecule::setSeq(char *seq, int index)
 		}
 	}
 
+
 	delete iter;
 }
+
+
 
 // Mon modified (5/4/2010)
 // Convert to 3BB + 2R reduced model (Erases some atoms and changes values in others )
@@ -1216,7 +1223,9 @@ bool Macromolecule::writeMloop( char *name, int n, int ifr, int ilr, char chain)
 //			sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
 //					cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), pos[0], pos[1], pos[2], a->getPdbocc(), a->getPdbfact() );
 			sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
-					chain, res->getIdNumber()/*res->get_pos()*/,res->get_letter(), pos[0], pos[1], pos[2], a->getPdbocc(), a->getPdbfact() );
+//					chain, res->getIdNumber()/*res->get_pos()*/,res->get_letter(), pos[0], pos[1], pos[2], a->getPdbocc(), a->getPdbfact() );
+	        // remove  Occupancy annd Bfactor
+					chain, res->getIdNumber()/*res->get_pos()*/,res->get_letter(), pos[0], pos[1], pos[2], 0.0, 0.0 );
 
 			fputs( line, file );
 

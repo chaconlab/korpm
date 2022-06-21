@@ -3150,7 +3150,7 @@ double korp6DM(contact *contacts, int icont, korp *map,  int posM, char chM,  in
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
 		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
-		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
+	    if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
 			// printf("%d fai %d %d pos %d Maa %c cont %c\n", c, contacts[c].fai,contacts[c].fbi, posIN, Maa, contacts[c].seqA);
@@ -3306,7 +3306,7 @@ double korp6DMW(contact *contacts, int icont, korp *map,  int posM, char chM,  i
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
-			// printf("%d fai %d %d pos %d Maa %c cont %c\n", c, contacts[c].fai,contacts[c].fbi, posIN, Maa, contacts[c].seqA);
+			//printf("%d fai %d %d Maa %c cont %c  %f %f\n", c, contacts[c].fai,contacts[c].fbi, posM, Maa, contacts[c].seqA, contacts[c].d, br[0]);
 			if ( (contacts[c].fai == posM) and (contacts[c].fach == chM) )
 			{
 				c_seqA = Maa;

@@ -7,7 +7,7 @@ Fast method for predicting the stability change upon mutation from 3D structure
 The usage is very simple:  
 
 ```sh
-bin/korpm input.txt --dir Ssym --score_file pot/korp6Dv1.bin -o out.txt
+sbg/bin/korpm input.txt --dir Ssym --score_file pot/korp6Dv1.bin -o out.txt
 ```
 it only requires: 1) two column input file specifying both PDB file and mutation and 2) the paths the PDB files (--dir) and the KORP potential file (--score_file).  The results are also stored in the out.txt (-o option) file.
 
@@ -46,7 +46,7 @@ Ssym is a data set with equal number of stabilizing and destabilizing mutations 
 
 
 ```sh
-bin/korpm Pucci2018N.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
+sbg/bin/korpm Pucci2018N.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
 ```
 
 get some statistics 
@@ -82,8 +82,8 @@ scripts/Mstat.pl Ssym_all.txt 10 11 2
 ### Check ΔΔG Anti-symmetry in Ssym
 
 ```sh
-bin/korpm Pucci2018dirN.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_dir.txt
-bin/korpm Pucci2018revN.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_rev.txt
+sbg/bin/korpm Pucci2018dirN.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_dir.txt
+sbg/bin/korpm Pucci2018revN.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_rev.txt
 paste Ssym_dir.txt  Ssym_rev.txt  > temp
 awk 'function abs(x){return (x < 0) ? -x : x;} {printf "%s %s %s %s %s %s %s %f  %f %s %s\n",$1,$19, $2, $20, $10, $11,$29, ($11+$29), abs(($11+$29)), $3, $4  }' temp > KORPM_Ssym.txt
 ```

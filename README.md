@@ -13,7 +13,7 @@ it only requires: 1) two column input file specifying both PDB file and mutation
 
 ```sh
 more out.txt
-1BNI IA76A       -1.466
+1BNI IA76A       -1.452
 1EY0 TA44V        0.107
 1IHB FA82Q       -0.739
 ```
@@ -99,10 +99,10 @@ you can see the results in your favourite plot, for example in gnuplot:
 plot  "KORPM_Ssym.txt" u 6:7
 stat "KORPM_Ssym.txt" u 6:7
 ...
-Linear Model:       y = -0.8267 x + 0.03372
-Slope:              -0.8267 +- 0.02426
-Intercept:          0.03372 +- 0.03814
-Correlation:        r = -0.8795
+Linear Model:       y = -0.8267 x + 0.03461
+Slope:              -0.8252 +- 0.02437
+Intercept:          0.03461 +- 0.03838
+Correlation:        r = -0.8782
 ...
 </pre>
   </td>

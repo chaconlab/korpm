@@ -114,13 +114,49 @@ Here you can find some compartive results with state of the art stability predic
 <font size="8" face="Courier New" >
 <table border="1">
 <tr><td>METHOD</td><td>RMSE</td><td>MAE</td><td>PCC</td><td>Sc</td><td>Ob1</td><td>Ob2</td><td>TPR</td><td>TNR</td><td> PPV</td><td>NPV</td><td>ACC</td><td>MCC</td><td>AROC</td><td>APRC</td></tr>
-<tr><td>KORPM</td><td>1.32</td><td>0.96</td><td>0.70</td><td>64.3</td><td>34.9</td><td>0.7</td><td>0.77</td><td>0.79</td><td>0.79</td><td>0.78</td><td>0.78</td><td>0.56</td><td>0.86</td><td>0.85</td></tr>
+<tr><td>KORPM</td><td>1.34</td><td>0.96</td><td>0.69</td><td>63.7</td><td>35.5</td><td>0.7</td><td>0.77</td><td>0.79</td><td>0.79</td><td>0.78</td><td>0.78</td><td>0.56</td><td>0.86</td><td>0.86</td></tr>
 <tr><td>Cartddg</td><td>3.44</td><td>2.63</td><td>0.63</td><td>52.3</td><td>41.1</td><td>6.6</td><td>0.58</td><td>0.87</td><td>0.82</td><td>0.67</td><td>0.73</td><td>0.47</td><td>0.81</td><td>0.82</td></tr>
+ <tr><td>ACDCNN</td><td>1.38</td><td>1.01</td><td>0.69</td><td>61.5</td><td>38.1</td><td>0.0</td><td>0.70</td><td>0.70</td><td>0.70</td><td>0.70</td><td>0.70</td><td>0.40</td><td>0.80</td><td>0.80</td></tr>
 <tr><td>FoldX</td><td>1.86</td><td>1.29</td><td>0.54</td><td>60.1</td><td>34.5</td><td>5.4</td><td>0.55</td><td>0.78</td><td>0.71</td><td>0.63</td><td>0.66</td><td>0.33</td><td>0.74</td><td>0.75</td></tr>
 <tr><td>EvoFF</td><td>1.56</td><td>1.12</td><td>0.54</td><td>61.7</td><td>34.9</td><td>3.4</td><td>0.61</td><td>0.70</td><td>0.67</td><td>0.64</td><td>0.66</td><td>0.31</td><td>0.74</td><td>0.75</td></tr>
 <tr><td>PopMusic-S</td><td>1.58</td><td>1.15</td><td>0.52</td><td>56.6</td><td>42.4</td><td>1.0</td><td>0.67</td><td>0.71</td><td>0.70</td><td>0.68</td><td>0.69</td><td>0.38</td><td>0.76</td><td>0.74</td></tr>
 <tr><td>Dynamut</td><td>1.88</td><td>1.37</td><td>0.38</td><td>54.4</td><td>38.2</td><td>7.5</td><td>0.21</td><td>0.88</td><td>0.64</td><td>0.53</td><td>0.55</td><td>0.13</td><td>0.62</td><td>0.62</td></tr>
 <tr><td>DDGun3D</td><td>1.43</td><td>1.04</td><td>0.63</td><td>61.8</td><td>37.4</td><td>0.7</td><td>0.68</td><td>0.69</td><td>0.69</td><td>0.69</td><td>0.69</td><td>0.37</td><td>0.75</td><td>0.76</td></tr>
 <tr><td>ThermoNet</td><td>1.53</td><td>1.09</td><td>0.55</td><td>58.2</td><td>40.9</td><td>0.9</td><td>0.65</td><td>0.70</td><td>0.69</td><td>0.67</td><td>0.68</td><td>0.35</td><td>0.75</td><td>0.74</td></tr>
+</table>
+</font>
+
+### Appendix.
+
+Corrections of original Ssym dataset based on ThermoMutDB data.
+
+<font size="8" face="Courier New" >
+<table border="1">
+<tr><td>PDB</td><td>Mutation</td><td>Original </td><td>Corrected </td><td> Medline References from ThermoMutDB</td></tr>
+<tr><td>1BNI</td><td>IA96V</td><td>-3.1</td><td>-0.9</td><td>2669964 (-0.90); 1569557 (0.95);  9551101 (-0.80)</td></tr>
+<tr><td>1BNI</td><td>SA91A</td><td>-2.4</td><td>-1.8</td><td>14516751</td></tr>
+<tr><td>1L63</td><td>SA44T</td><td>0.0</td><td>0.01</td><td>8289284</td> </tr>
+<tr><td>1L63</td><td>SA38N</td><td>0.0</td><td>-0.01</td><td>1911773</td></tr>
+<tr><td>1L63</td><td>LA91A</td><td>-3.9</td><td>-2.6</td><td>10545167</td></tr>
+<tr><td>1L63</td><td>AA130S</td><td>1.0</td><td>-1.0</td><td>8218201</td></tr>
+<tr><td>1LZ1</td><td>VA2G</td><td>-1.3</td><td>-2.29</td><td>11087397</td></tr>
+<tr><td>1LZ1</td><td>VA2L</td><td>0.3</td><td>-0.05</td><td>11087397</td></tr>
+<tr><td>1LZ1</td><td>IA56T</td><td>-4.3</td><td>-3.6</td><td>9010773; 10556244</td></tr>
+<tr><td>1LZ1</td><td>VA74I</td><td>-1.9</td><td>0.45</td><td>11087397</td></tr>
+<tr><td>1LZ1</td><td>VA74L</td><td>-0.4</td><td>0.19</td><td>11087397</td></tr>
+<tr><td>1LZ1</td><td>VA74M</td><td>-0.4</td><td>0.65</td><td>11927576; 11087397</td></tr>
+<tr><td>1LZ1</td><td>VA110G</td><td>-2.2</td><td>0.48</td><td>11927576; 11087397</td></tr>
+<tr><td>1LZ1</td><td>VA110I</td><td>-0.8</td><td>0.86</td><td>11927576; 11087397</td></tr>
+<tr><td>1LZ1</td><td>VA110F</td><td>-1.9</td><td>-0.05</td><td>11927576; 11087397</td></tr>
+<tr><td>2LZM</td><td>IA3C</td><td>0.0</td><td>1.2</td><td>3405287 </td></tr>
+<tr><td>2LZM</td><td>RA119E</td><td>0.0</td><td>-0.04</td><td>1942034 </td></tr> 
+<tr><td>4LYZ</td><td>GA49A</td><td>-0.7</td><td>-1.9</td><td>11112507; 8771183</td></tr>
+<tr><td>4LYZ</td><td>GA71A</td><td>-2.1</td><td>-0.38</td><td>11112507</td></tr>
+<tr><td>4LYZ</td><td>GA102A</td><td>-1.2</td><td>0.02</td><td>11112507</td></tr>
+<tr><td>4LYZ</td><td>GA117A</td><td>-0.8</td><td>-1.46</td><td>11112507</td></tr>
+<tr><td>1RN1</td><td>QC25K</td><td>1.4</td><td>0.93</td><td>2663837</td></tr>
+<tr><td>2LZM</td><td>RA96K</td><td>0.0</td><td>-0.001</td><td>Avoiding zero for the binary classification</td></tr>
+<tr><td>1L63</td><td>SA44E</td><td>0.0</td><td>0.001</td><td>Avoiding zero for the binary classification</td></tr>
+<tr><td>2LZM</td><td>KA60P</td><td>0.0</td><td>-0.001</td><td>Avoiding zero for the binary classification</td></tr>
 </table>
 </font>

@@ -1,6 +1,6 @@
 # korpm
 
-Fast method for predicting the stability change upon mutation from 3D structure
+Fast method for predicting the stability change upon mutation from 3D structure. Predicting protein stability changes upon mutation using a simple orientational potential. I. Martín-Hernández, Y. Dehouck, U. Bastolla, J.R. López-Blanco and P. Chacón (submitted).
 
 ## Usage 
 
@@ -45,9 +45,7 @@ Ssym is a data set with equal number of stabilizing and destabilizing mutations 
 ```sh
 sbg/bin/korpm Pucci2018N.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
 ```
-
-get some statistics 
-
+Where [Pucci2018N.txt](Pucci2018N.txt) is the mutations input file and the [Ssym](Ssym) directory in where the input PDB files are store. Since this input contains the experimental ΔΔG (see Appendix for small corrections) you can cross-check the predictions by: 
 ```sh
 scripts/Mstat.pl Ssym_all.txt 10 11 2
 ```
@@ -76,6 +74,7 @@ scripts/Mstat.pl Ssym_all.txt 10 11 2
 <tr><td>P</td><td>0.64</td><td>0.93</td><td>0.90</td><td>0.72</td><td>0.79</td><td>1.20</td><td>0.87</td><td>0.65</td><td>67.9</td><td>28.6</td><td>3.6</td><td>0.6</td><td>28</td><td>9</td><td>1.4</td><td>0.9</td><td>1</td><td>13</td><td>-1.2</td><td>0.6</td><td>5</td><td>10</td><td>18</td></tr>
 </table>
  </pre>
+ 
 ### Check ΔΔG Anti-symmetry in Ssym
 
 ```sh

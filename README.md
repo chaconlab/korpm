@@ -21,7 +21,11 @@ The mutation columns stands for: 1st letter is the wild type amino acid, 2nd is 
 
 ## ΔΔG Curated Databases
 
+<<<<<<< HEAD
+We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html) unique mutations trying to avoid entries that potentially interact with ligands or belong to a protein-protein interfaces, and removing entries measured at extreme temperature or pH conditions. The curated database data comprise 3766 mutations from 141 proteins families (sequence identity <30%) with an average of ΔΔG -1.0 Kcal/mol and a standard deviation of 1.6 Kcal/mol. In total, 73% are destabilizing (ΔΔG>0) and 27% are stabilizing (ΔΔG<0). By removing mainly alanines' destabilizing mutations, we obtain a more balanced subset that includes 2344 mutations from 129 proteins families, 58% destabilizing and 42% stabilizing with an average of ΔΔG -0.7 Kcal/mol and a standard deviation of 1.6 Kcal/mol. This subset, named [Id50c08_1merNCLB.txt](Id50c08_1merNCLB.txt), was used for extract training and validation datasets for k-fold cross-validation experiments. Note that this subset is far from being perfectly balanced, e.g., the most frequent amino acid involved in the mutation still is alanine and cysteines, tryptophans, and, prolines still are underpopulated. 
+=======
 We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html) unique mutations trying to avoid entries that potentially interact with ligands or belong to a protein-protein interfaces, and removing entries measured at extreme temperature or pH conditions. The initial curated database data comprise 3766 mutations from 149 proteins families (homology <50%) with an average of ΔΔG -1.0 Kcal/mol and a standard deviation of 1.6 Kcal/mol. In total, 73% are destabilizing (ΔΔG>0) and 27% are stabilizing (ΔΔG<0). By removing mainly alanines' destabilizing mutations, we obtain a more balanced subset that includes 2344 mutations from 137 proteins families, 58% destabilizing and 42% stabilizing with an average of ΔΔG -0.7 Kcal/mol and a standard deviation of 1.6 Kcal/mol. This subset, named [Id50c08_1merNCLB.txt](Id50c08_1merNCLB.txt), was used for extract training and validation datasets for k-fold cross-validation experiments. Note that this subset is far from being perfectly balanced, e.g., the most frequent amino acid involved in the mutation still is alanine and cysteines, tryptophans, and, prolines still are underpopulated. 
+>>>>>>> 5a73b5ab385150b580b2fd3f1b2ad26fa3d55cf3
 
 <table border="0">
 
@@ -32,8 +36,8 @@ We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [Pr
       <img src="images/balanced.jpg">  </td>
  </tr>
   <tr>
-    <td align="center" ><b style="font-size:30px"><a href="Id50c08_1merNCL.txt">Id50c08_1merNCL.txt</a> </b></td>
-    <td align="center" ><b style="font-size:30px"><a href="Id50c08_1merNCLB.txt">Id50c08_1merNCLB.txt</a> </b></td>
+    <td align="center" ><b style="font-size:30px"><a href="Id30c08_1merNCL.txt">Id30c08_1merNCL.txt</a> </b></td>
+    <td align="center" ><b style="font-size:30px"><a href="Id30c08_1merNCLB.txt">Id30c08_1merNCLB.txt</a> </b></td>
  </tr></table>
 
 In the directory [Db](Db) you can find all the correspond PDB files. 

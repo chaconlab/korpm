@@ -1,0 +1,290 @@
+12CA HA94Y    -1.170  32  0  1  1 Xray 2.40  1 A                         1 A    2 HG,ZN           1 ZN      HYIQFHFHW  7.5    25  15.39   15.6 27542   31778702 Gdn      Carbonic_anhydrase_2 -
+1A7V AA66H    -1.980  68  0  0  1 Xray 0.00  1 A                         1 A    1 HEM             1 HEM     AHGDTAALP  6.5  25.0    0.3   30.6 91926   19647747 GdnHCl   Cytochrome_c -
+1A7V KA13H    -0.600  68  0  0  1 Xray 0.00  1 A                         1 A    1 HEM             1 HEM     KHAILKQMG  6.5  25.0   0.67   68.2 91932   19647747 GdnHCl   Cytochrome_c -
+1AKK LA94A    -3.500   6  0  0  1 NMRl 0.00  1 A                         1 A    1 HEC             1 HEC     LAREDLIAY  7.0    10   4.92    3.7 30958    8611545 Gdn      Cytochrome_c -
+1AM7 HA48N    -5.000  70  1  3  1 Xray 2.30  1 A                         1 A    2 IPA,TRN         1 TRN     HNYSDHPRK  7.0    25    2.2    8.2 20727   10556513 Thermal  Lysozyme -
+1ANK FA86L    -0.800  71  0  1  1 Xray 2.00  1 A                         1 A    2 AMP,ANP         1 AMP     FLLDGFPRT  7.2  51.8   5.98    2.1 17679    1748642 Thermal  Adenylate_kinase -
+1ANK GA85V    -2.400  71  0  1  1 Xray 2.00  1 A                         1 A    2 AMP,ANP         1 AMP     GVLLDGFPR  7.2  51.8  16.52    9.3 17678    1748642 Thermal  Adenylate_kinase -
+1AXB EA104K    0.640  28  0  1  1 Xray 2.00  1 A                         1 A    1 FOS             1 FOS     EKDLVEYSP  7.0  50.6  78.42   71.0 17873    8539251 Thermal  TEM_beta-lactamase -
+1AXB GA238S   -1.250  28  0  1  1 Xray 2.00  1 A                         1 A    1 FOS             1 FOS     GSSGAGERG  7.0  50.6  78.42   28.1 17873    8539251 Thermal  TEM_beta-lactamase -
+1AXB SA235A    0.580  28  0  1  1 Xray 2.00  1 A                         1 A    1 FOS             1 FOS     SAADKSGAG  7.0  50.6   5.12    5.2 17879    8539251 Thermal  TEM_beta-lactamase -
+1BNL DA76A    -0.820  78  0  1  1 Xray 2.90  1 A                         1 A    1 ZN              1 ZN      DANLKDELL  7.4    20  22.21   46.1 29132   17544408 Gdn      Endostatin -
+1BP2 FA106A   -0.900  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     FAAICFSKV  8.0    25   5.98    5.7 24480    1420172 Gdn      Phospholipase_A2 -
+1BP2 FA106I    1.900  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     FIAICFSKV  8.0    30   5.98    5.7 19501    1420172 Gdn      Phospholipase_A2 -
+1BP2 FA106Y    0.600  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     FYAICFSKV  8.0    30   5.98    5.7 19500    1420172 Gdn      Phospholipase_A2 -
+1BP2 FA22A     0.500  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     FALLDFNNY  8.0    30  10.46   11.0 19499    1420172 Gdn      Phospholipase_A2 -
+1BP2 FA22I     2.700  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     FILLDFNNY  8.0    30  10.46   11.0 19498    1420172 Gdn      Phospholipase_A2 -
+1BP2 FA22Y     1.500  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     FYLLDFNNY  8.0    30  10.46   11.0 19497    1420172 Gdn      Phospholipase_A2 -
+1BP2 HA48A    -3.100  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     HACQTHDNC  8.0    30    8.8   10.0 19311        DOI Gdn      Phospholipase_A2 - REPLICA  2 -3.100  0.000
+1BP2 HA48N    -3.000  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     HNCQTHDNC  8.0    30    8.8   10.0 19309        DOI Gdn      Phospholipase_A2 - REPLICA  2 -3.000  0.000
+1BP2 HA48Q    -0.600  47  0  1  1 Xray 1.70  1 A                         1 A    2 CA,MPD          1 MPD     HQCQTHDNC  8.0    30    8.8   10.0 19310        DOI Gdn      Phospholipase_A2 - REPLICA  2 -0.600  0.000
+1BPI GA37A    -2.300   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     GAVYGGCRA  7.0    39  47.01   44.4 18825    7540212 Thermal  Trypsin_inhibitor - REPLICA  2 -2.250  0.050
+1BPI GA37D    -1.700   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     GDVYGGCRA  8.7    25  47.01   44.4 23987    7681323 GSH      Trypsin_inhibitor -
+1BPI IA18A    -1.500   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     IAKARIIRY  7.0    39  32.43   35.6 18812    7540212 Thermal  Trypsin_inhibitor -
+1BPI KA46A     0.100   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     KANNFKSAE  7.0    39   80.7   81.0 18830    7540212 Thermal  Trypsin_inhibitor -
+1BPI NA44A    -3.300   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     NAKRNNFKS  7.0    39  14.34   15.3 18829    7540212 Thermal  Trypsin_inhibitor -
+1BPI RA20A    -1.800   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     RARIIRYFY  7.0    39  19.21   16.8 18814    7540212 Thermal  Trypsin_inhibitor -
+1BPI YA35D    -3.800   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     YDTFVYGGC  8.7    25   8.89    6.9 23980    7681323 GSH      Trypsin_inhibitor -
+1BPI YA35F    -0.600   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     YFTFVYGGC  8.7    25   8.89    6.9 23981    7681323 GSH      Trypsin_inhibitor -
+1BPI YA35L    -3.700   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     YLTFVYGGC  8.7    25   8.89    6.9 23983    7681323 GSH      Trypsin_inhibitor -
+1BPI YA35N    -3.700   5  0  1  1 Xray 1.09  1 A                         1 A    1 PO4             1 PO4     YNTFVYGGC  8.7    25   8.89    6.9 23984    7681323 GSH      Trypsin_inhibitor -
+1BU4 DA15A    -0.190  10  0  0  1 Xray 0.00  1 A                         1 A    2 2GP,CA          1 CA      DASSSDVST  7.0  25.0   0.35   35.3 90347   11453993 Urea     RNAseT1 -
+1BU4 HA92N    -1.740  10  0  0  1 Xray 0.00  1 A                         1 A    2 2GP,CA          1 2GP     HNVITHTGA  6.0  25.0   0.16   17.3 91936    9466938 Urea     RNAseT1 - REPLICA  2 -1.310  0.430
+1BU4 HA92Q    -0.570  10  0  0  1 Xray 0.00  1 A                         1 A    2 2GP,CA          1 2GP     HQVITHTGA  6.0  25.0   0.16   17.3 91938    9466938 Urea     RNAseT1 - REPLICA  2  0.035  0.605
+1BVC HA113Q   -0.360  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 PO4     HQAIIHVLH  7.0     0  37.93   39.8 31543    8158639 Urea     Myoglobin - REPLICA  2 -0.130  0.230
+1BVC HA119F   -0.710  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 PO4     HFHSRHPGD  7.0     0  16.49   15.8 31545    8158639 Urea     Myoglobin - REPLICA  2 -0.340  0.370
+1BVC HA64Q    -0.100  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 BLA     HQLKKHGVT  7.0     0  28.59   27.6 31536    8158639 Urea     Myoglobin - REPLICA  2 -0.225  0.125
+1BVC HA82Q     0.150  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 PO4     HQKGHHEAE  7.0     0   2.75    3.5 31537    8158639 Urea     Myoglobin - REPLICA  2 -0.025  0.175
+1BVC HA93G    -0.010  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 BLA     HGAQSHATK  7.0     0  24.74   21.9 31540    8158639 Urea     Myoglobin - REPLICA  2  0.020  0.030
+1BVC HA97Q     0.020  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 BLA     HQATKHKIP  7.0     0  43.43   40.4 31541    8158639 Urea     Myoglobin - REPLICA  2 -0.055  0.075
+1BVC LA135A   -1.700  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 BLA     LANKALELF  5.0    25   0.55    0.7 24992   10051585 Urea     Myoglobin - REPLICA  5 -1.340  0.441
+1BVC RA118A   -0.230  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 PO4     RALHSRHPG  4.0   4.2   0.33   36.4 90552    9601047 Urea     Myoglobin -
+1BVC RA31A    -0.390  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 PO4     RAILIRLFK  4.0   4.2   0.45   44.3 90554    9601047 Urea     Myoglobin -
+1BVC VA68T    -0.600  81  0  1  1 Xray 1.50  1 A                         1 A    2 BLA,PO4         1 BLA     VTGVTVLTA  7.8     4  22.12   21.4 31287    8612074 Urea     Myoglobin - REPLICA  2 -0.600  0.000
+1C2R GA34S    -2.200  82  0  1  1 Xray 2.50  1 A                         1 A    1 HEC             1 HEC     GSAKTGPNL  7.5  30.0   0.15   15.2 90979   10747794 GdnHCl   Cytochrome_c2 -
+1C2R KA12D    -1.100  82  0  1  1 Xray 2.50  1 A                         1 A    1 HEC             1 HEC     KDEFNKCKT  7.5    25  47.16   39.7 22926    1654091 Gdn      Cytochrome_c2 -
+1C2R PA35A    -2.000  82  0  1  1 Xray 2.50  1 A                         1 A    1 HEC             1 HEC     PAKTGPNLY  7.5  30.0   0.15   15.6 90978   10747794 GdnHCl   Cytochrome_c2 -
+1C2R YA75C    -3.050  82  0  1  1 Xray 2.50  1 A                         1 A    1 HEC             1 HEC     YCIATYVKD  7.5    20  12.17   11.0 29730    1850617 Gdn      Cytochrome_c2 -
+1C9O EA12K    -0.290  14  0  0  1 Xray 0.00  1 A                         1 A    2 NA,TRS          1 TRS     EKFNNEKGY  7.0    75 102.46   93.5 16193   16720692 Thermal  Cold_shock_protein - REPLICA  3 -0.273  0.135
+1C9O EA21A    -0.290  14  0  0  1 Xray 0.00  1 A                         1 A    2 NA,TRS          1 NA      EAIEVEGGS  7.0    70  80.14   94.4 16260   11800561 Thermal  Cold_shock_protein - REPLICA  2 -0.290  0.000
+1C9O EA21K    -0.260  14  0  0  1 Xray 0.00  1 A                         1 A    2 NA,TRS          1 NA      EKIEVEGGS  7.0    75  80.14   94.4 16170   16720692 Thermal  Cold_shock_protein - REPLICA  3 -0.173  0.252
+1C9O FA38W     0.700  14  0  0  1 Xray 0.00  1 A                         1 A    2 NA,TRS          1 TRS     FWGEGFKTL  7.0    25  95.17   78.1 21417   14729346 Gdn      Cold_shock_protein - REPLICA  2  0.100  0.600
+1C9O GA23Q    -0.290  14  0  0  1 Xray 0.00  1 A                         1 A    2 NA,TRS          1 NA      GQVEGGSDV  7.0    70  53.37   52.4 16261   11800561 Thermal  Cold_shock_protein - REPLICA  4 -0.300  0.010
+1C9O NA11S     0.330  14  0  0  1 Xray 0.00  1 A                         1 A    2 NA,TRS          1 TRS     NSWFNNEKG  7.0    70   84.7   51.0 16258   11800561 Thermal  Cold_shock_protein - REPLICA  4  0.275  0.055
+1C9O SA24D     0.190  14  0  0  1 Xray 0.00  1 A                         1 A    2 NA,TRS          1 NA      SDEGGSDVF  7.0    70  87.88   80.4 16286   11800561 Thermal  Cold_shock_protein - REPLICA  5  0.184  0.044
+1C9O YA15F    -0.050  14  0  0  1 Xray 0.00  1 A                         1 A    2 NA,TRS          1 TRS     YFEKGYGFI  7.0    70  36.03   31.1 16259   11800561 Thermal  Cold_shock_protein - REPLICA  5 -0.012  0.069
+1CYO FA35H    -2.820  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     FHLTKFLEE  7.0  66.2  11.96   11.4 16467    9215576 Thermal  Cytochrome_b5 -
+1CYO FA35L    -1.870  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     FLLTKFLEE  7.0  66.2  11.96   11.4 16466    9215576 Thermal  Cytochrome_b5 - REPLICA  2 -1.870  0.000
+1CYO FA35Y     0.790  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     FYLTKFLEE  7.0  66.2  11.96   11.4 16465    9215576 Thermal  Cytochrome_b5 - REPLICA  2  0.910  0.120
+1CYO SA71L     0.800  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     SLRELSKTF  7.0    25  17.06   16.6 22063   16246823 Gdn      Cytochrome_b5 -
+1CYO VA45E    -2.060  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VEGEEVLRE  7.0  77.6  46.84   49.8 16134   10631476 Thermal  Cytochrome_b5 - REPLICA  2 -2.370  0.310
+1CYO VA45G    -1.910  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VGGEEVLRE  7.0    25  46.84   49.8 25787   10631476 Urea     Cytochrome_b -
+1CYO VA45H    -1.390  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VHGEEVLRE  7.0  77.6  46.84   49.8 16133   10631476 Thermal  Cytochrome_b5 - REPLICA  3 -1.460  0.136
+1CYO VA45T    -0.960  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VTGEEVLRE  7.0    25  46.84   49.8 25785   10631476 Urea     Cytochrome_b -
+1CYO VA45Y    -1.550  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VYGEEVLRE  7.0  77.6  46.84   49.8 16132   10631476 Thermal  Cytochrome_b5 - REPLICA  2 -1.540  0.010
+1CYO VA61E    -1.100  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VEFEDVGHS  7.0  67.2  66.36   69.3 16405   10508399 Thermal  Cytochrome_b5 -
+1CYO VA61H    -1.630  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VHFEDVGHS  7.0  67.2  66.36   69.3 16407   10508399 Thermal  Cytochrome_b5 -
+1CYO VA61K    -2.340  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VKFEDVGHS  7.0  67.2  66.36   69.3 16408   10508399 Thermal  Cytochrome_b5 -
+1CYO VA61Y    -1.290  33  0  1  1 Xray 1.50  1 A                         1 A    1 HEM             1 HEM     VYFEDVGHS  7.0  67.2  66.36   69.3 16406   10508399 Thermal  Cytochrome_b5 -
+1DKT EA18A    -1.250  91  2  2  1 Xray 2.90  1 A                         1 A    1 V7O             1 V7O     EAEEFEYRH  7.5    10  14.31   13.5 30715   12140288 Urea     Cyclin-dependent_kinase_subunit - REPLICA  2 -1.250  0.000
+1DKT KA11A     0.510  91  2  2  1 Xray 2.90  1 A                         1 A    1 V7O             1 V7O     KAYSDKYDD  7.5    10  43.27   51.0 30713   12140288 Urea     Cyclin-dependent_kinase_subunit - REPLICA  2  0.510  0.000
+1DKT RA71A    -0.680  91  2  2  1 Xray 2.90  1 A                         1 A    1 V7O             1 V7O     RALFRRPLP  7.5    10  21.83   23.9 30728   12140288 Urea     Cyclin-dependent_kinase_subunit - REPLICA  2 -0.680  0.000
+1EW6 HA55V     5.100  96  0  2  1 Xray 1.78  1 A                         1 A    2 HEM,SO4         1 HEM     HVFGDHTEK  7.0    20  46.73   41.8 30339   25330337 Urea     Dehaloperoxidase_A -
+1FKB DA37S    -0.440  35  0  1  1 Xray 1.70  1 A                         1 A    1 RAP             1 RAP     DSKKFDSSR  6.5  21.5  30.53   28.0 28033   27381026 Urea     Peptidyl-prolyl_cis-trans_isomerase_FKBP1A - REPLICA  2 -0.440  0.000
+1FKB RA42A    -0.640  35  0  1  1 Xray 1.70  1 A                         1 A    1 RAP             1 RAP     RASRDRNKP  6.5  21.5  53.28   52.7 28034   27381026 Urea     Peptidyl-prolyl_cis-trans_isomerase_FKBP1A - REPLICA  2 -0.640  0.000
+1FKJ FA36A    -3.540  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     FAGKKFDSS  7.5    25   27.9   26.9 24014    9558354 Urea     FK_binding_protein - REPLICA  2 -3.540  0.000
+1FKJ FA99L    -0.920  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     FLTLVFDVE  7.5  22.0   0.06    6.6 90337   20552687 GdnHCl   Peptidyl-prolyl_ci-trans_isomerase_FKBP1A -
+1FKJ IA56A    -2.480  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     IAQEVIRGW  7.5    25  16.22   19.6 24017    9558354 Urea     FK_binding_protein - REPLICA  2 -2.480  0.000
+1FKJ IA56D    -3.160  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     IDQEVIRGW  7.5    25  16.22   19.6 24018    9558354 Urea     FK_binding_protein - REPLICA  2 -3.160  0.000
+1FKJ IA56T    -1.810  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     ITQEVIRGW  7.5    25  16.22   19.6 24019    9558354 Urea     FK_binding_protein - REPLICA  2 -1.810  0.000
+1FKJ IA91A    -1.540  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     IAPGIIPPH  7.5    25   7.57    7.8 24023    9558354 Urea     FK_binding_protein - REPLICA  2 -1.540  0.000
+1FKJ IA91V    -0.380  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     IVPGIIPPH  7.5    25   7.57    7.8 24024    9558354 Urea     FK_binding_protein - REPLICA  2 -0.380  0.000
+1FKJ LA97A    -3.560  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     LAHATLVFD  7.5    25   0.55    0.2 24025    9558354 Urea     FK_binding_protein - REPLICA  4 -3.600  0.081
+1FKJ VA55A    -2.130  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     VAKQEVIRG  7.5    25  18.22   19.5 24016    9558354 Urea     FK_binding_protein - REPLICA  2 -2.130  0.000
+1FKJ WA59F     2.720  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     WFIRGWEEG  7.5    25   4.57    3.9 21075   12600203 Urea     FK506_binding_protein -
+1FKJ WA59L     2.350  35  2  2  1 Xray 1.70  1 A                         1 A    1 FK5             1 FK5     WLIRGWEEG  7.5    25   4.57    3.9 21076   12600203 Urea     FK506_binding_protein -
+1FRD HA42R     4.000  37  0  1  1 Xray 1.70  1 A                         1 A    1 FES             1 FES     HRFSCHSGS  7.5    25  40.13   41.9 25249    7773177 Gdn      Ferredoxin_heterocyst -
+1FXA FA65A    -1.000  37  0  1  1 Xray 2.50  1 A                         1 A    1 FES             1 FES     FADQSFLDD  7.5    25  39.86   42.3 25241    7773177 Gdn      Ferredoxin -
+1FXA FA65I    -0.900  37  0  1  1 Xray 2.50  1 A                         1 A    1 FES             1 FES     FIDQSFLDD  7.5    25  39.86   42.3 25242    7773177 Gdn      Ferredoxin -
+1FXA FA65W    -0.600  37  0  1  1 Xray 2.50  1 A                         1 A    1 FES             1 FES     FWDQSFLDD  7.5    25  39.86   42.3 25244    7773177 Gdn      Ferredoxin -
+1FXA FA65Y    -0.500  37  0  1  1 Xray 2.50  1 A                         1 A    1 FES             1 FES     FYDQSFLDD  7.5    25  39.86   42.3 25243    7773177 Gdn      Ferredoxin -
+1FXA RA42A    -2.400  37  0  1  1 Xray 2.50  1 A                         1 A    1 FES             1 FES     RAFSCRAGA  7.5    25  37.99   35.1 25245    7773177 Gdn      Ferredoxin -
+1FXA RA42H    -1.400  37  0  1  1 Xray 2.50  1 A                         1 A    1 FES             1 FES     RHFSCRAGA  7.5    25  37.99   35.1 25246    7773177 Gdn      Ferredoxin -
+1FXA TA48A     0.100  37  0  1  1 Xray 2.50  1 A                         1 A    1 FES             1 FES     TAACSTCAG  7.5    25  23.07   25.1 25247    7773177 Gdn      Ferredoxin -
+1HFY DA87N    -1.290  40  0  0  1 Xray 0.00  1 A                         1 A    1 CA              1 CA      DNDLTDDIV  7.0  25.0   0.23   27.8 91739   15276846 GdnHCl   Alpha-lactalbumin -
+1HRC LA94I    -1.510   6  0  1  1 Xray 1.90  1 A                         1 A    2 ACE,HEC         1 HEC     LIREDLIAY  6.0    25   1.09    0.6 27253   32439437 Gdn      Cytochrome_c - REPLICA 13 -1.410  0.504
+1HRC LA94V    -1.920   6  0  1  1 Xray 1.90  1 A                         1 A    2 ACE,HEC         1 HEC     LVREDLIAY  6.0    25   1.09    0.6 27245   32439437 Gdn      Cytochrome_c - REPLICA 13 -1.944  0.470
+1HRC TA49V    -2.010   6  0  1  1 Xray 1.90  1 A                         1 A    2 ACE,HEC         1 HEC     TVFTYTDAN  4.5    22  22.35   24.1 27978   28474881 Gdn      Ferricytochrome_c - REPLICA  2 -1.115  0.895
+1I5T NA52I    -3.140   6  0  0  1 NMRl 0.00  1 A                         1 A    2 CYN,HEC         1 HEC     NITDANKNK  7.2    25  20.49   19.9 25817    7548170 Urea     Cytochrome_c -
+1I5T PA30A    -5.390   6  0  0  1 NMRl 0.00  1 A                         1 A    2 CYN,HEC         1 HEC     PAKTGPNLH  7.0    15  17.62   20.0 30582    1326327 Gdn      Cytochrome_c - REPLICA  2 -5.565  0.175
+1I5T PA30V    -5.000   6  0  0  1 NMRl 0.00  1 A                         1 A    2 CYN,HEC         1 HEC     PVKTGPNLH  7.2    25  17.62   20.0 25822    7548170 Urea     Cytochrome_c -
+1IGV VA61A    -3.780 109  0  1  1 Xray 1.85  1 A                         1 A    1 MN              1 MN      VADGEVSFE  7.0    25    0.0    0.0 25863    9636033 Urea     Calbindin_D9k -
+1IGV VA61G    -4.350 109  0  1  1 Xray 1.85  1 A                         1 A    1 MN              1 MN      VGDGEVSFE  7.0    25    0.0    0.0 25864    9636033 Urea     Calbindin_D9k -
+1K5U KA112A    0.310  13  0  0  1 Xray 0.00  1 A                         1 A    1 SO4             1 SO4     KAVGLKKNG  6.6  25.0   0.27   33.9 91763   18308335 GdnHCl   Fibroblat_growth_factor_1 -
+1K5U KA112D    1.580  13  0  0  1 Xray 0.00  1 A                         1 A    1 SO4             1 SO4     KDVGLKKNG  6.6  25.0   0.27   33.9 91765   18308335 GdnHCl   Fibroblat_growth_factor_1 - REPLICA  2  1.305  0.275
+1K5U NA114A   -1.840  13  0  0  1 Xray 0.00  1 A                         1 A    1 SO4             1 SO4     NALKKNGSC  6.6  25.0    0.4   77.2 91769   18308335 GdnHCl   Fibroblat_growth_factor_1 -
+1L63 LA66A    -3.300   0  0  1  1 Xray 1.75  1 A                         1 A    2 BME,CL          1 CL      LAAEKLFNQ  5.4  65.3   1.64    2.7 16522   10545167 Thermal  Lysozyme -
+1PIN QA33A    -0.570  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     QANASQWER  7.0    40   28.0   29.7 18688   19565466 Thermal  Pin1_WW_domain -
+1PIN SA16A    -0.440  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     SAKRMSRSS  7.0    40  35.84   34.1 18658   19565466 Thermal  Pin1_WW_domain -
+1PIN SA16G    -0.920  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     SGKRMSRSS  7.0    40  35.84   34.1 18659   19565466 Thermal  Pin1_WW_domain -
+1PIN SA32A    -0.260  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     SATNASQWE  7.0    40  36.69   36.0 18686   19565466 Thermal  Pin1_WW_domain -
+1PIN SA32G    -0.810  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     SGTNASQWE  7.0    40  36.69   36.0 18687   19565466 Thermal  Pin1_WW_domain -
+1PIN WA34A    -0.400  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     WAASQWERP  7.0    40  65.28   63.4 18689   19565466 Thermal  Pin1_WW_domain -
+1PIN WA34F    -0.100  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     WFASQWERP  7.0    40  65.28   63.4 18690   19565466 Thermal  Pin1_WW_domain -
+1PIN YA23A    -1.080  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     YAGRVYYFN  7.0  40.0   0.21   21.8 91454   19565466 Thermal  Peptidyl-prolyl_ci-trans_isomerase_NIMA-interacting_1 -
+1PIN YA23F    -0.520  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     YFGRVYYFN  7.0    40  21.99   21.8 18671   19565466 Thermal  Pin1_WW_domain -
+1PIN YA23L    -1.180  48  0  2  1 Xray 1.35  1 A                         1 A    4 1PG,ALA,PRO,SO4 1 1PG     YLGRVYYFN  7.0    40  21.99   21.8 18670   19565466 Thermal  Pin1_WW_domain -
+1RGG EA54Q    -2.300  43  0  2  1 Xray 1.20  1 A                         1 A    1 SO4             1 SO4     EQYYHEYTV  5.5  55.6   10.3    8.2 17044   14500895 Thermal  GuanyloRNase - REPLICA  2 -2.000  0.300
+1RGG RA65A    -1.000  43  0  2  1 Xray 1.20  1 A                         1 A    1 SO4             1 SO4     RAARTRGTR  7.0    49  25.76   16.0 18069   14500895 Thermal  GuanyloRNase - REPLICA  2 -1.150  0.150
+1RGG YA86F    -0.300  43  0  2  1 Xray 1.20  1 A                         1 A    1 SO4             1 SO4     YFGDHYATF  7.0    25  22.46   20.7 20280   11554795 Thermal  GuanyloRNase -
+1RN1 EA58A    -0.640  10  0  1  1 Xray 1.84  1 A                         1 A    1 SO4             1 SO4     EAPYYEWPI 6.01    25   5.72    4.6 23917    1980207 Urea     RNAseT1 1LRA REPLICA  4 -0.403  0.649
+1RN1 HA40T    -0.260  10  0  1  1 Xray 1.84  1 A                         1 A    1 SO4             1 SO4     HTSYPHKYN  6.0    25  34.08   35.2 19807    8125111 Thermal  RNAseT1 -
+1RN1 HA92A    -0.620  10  0  1  1 Xray 1.84  1 A                         1 A    1 SO4             1 SO4     HAVITHTGA  6.0    25  19.79   33.6 19809    8125111 Thermal  RNAseT1 - REPLICA  3 -0.583  0.389
+1RN1 NA36A    -0.030  10  0  1  1 Xray 1.84  1 A                         1 A    1 SO4             1 SO4     NAVGSNSYP  7.0    25  50.55   64.3 20678    1731929 Urea     RNAseT1 -
+1RN1 PA73V    -2.010  10  0  1  1 Xray 1.84  1 A                         1 A    1 SO4             1 SO4     PVGGSPGAD  8.0    25  16.21   15.8 25687    8917450 Gdn      RNAseT1 - REPLICA  4 -2.027  0.327
+1RX4 CA152E   -0.300 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 BME     CEHSYCFEI  7.8  15.0   0.16   17.4 90136    8257692 Urea     Dihydrofolate_reductae -
+1RX4 DA122A   -1.600 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     DAVEGDTHF  7.8    15 106.18   94.8 30414   12684013 Urea     Dihydrofolate_reductase -
+1RX4 DA27N     1.400 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     DNLPADLAW  7.8    15  13.19   12.6 30560    3300767 Urea     Dihydrofolate_reductase -
+1RX4 EA139K   -1.000 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 BME     EKVFSEFHD  7.8    15   43.5   40.4 30565    3300767 Urea     Dihydrofolate_reductase - REPLICA  2 -0.990  0.010
+1RX4 EA139Q   -0.420 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 BME     EQVFSEFHD  7.8    15   43.5   40.4 30569    2692706 Urea     Dihydrofolate_reductase -
+1RX4 FA31A    -1.900 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     FALAWFKRN  7.8    15  21.92   21.7 30409   12684013 Urea     Dihydrofolate_reductase -
+1RX4 FA31V    -1.500 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     FVLAWFKRN  7.8    15  21.92   21.7 30562    3300767 Urea     Dihydrofolate_reductase -
+1RX4 GA15A     0.700 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     GARVIGMEN  7.8    15  48.28   47.7 30405   12684013 Urea     Dihydrofolate_reductase -
+1RX4 GA43A    -0.400 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     GAVIMGRHT  7.8    15  11.44   10.7 30411   12684013 Urea     Dihydrofolate_reductase -
+1RX4 IA94L    -0.700 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     ILIMVIGGG  7.8  15.0   0.09    8.8 91849   10656786 Urea     Dihydrofolate_reductae -
+1RX4 IA94V    -0.780 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     IVIMVIGGG  7.8  15.0   0.09    8.8 91850   10656786 Urea     Dihydrofolate_reductae -
+1RX4 LA28R     1.700 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     LRPADLAWF  7.8    15  42.05   49.6 30561    3300767 Urea     Dihydrofolate_reductase - REPLICA  2  1.710  0.010
+1RX4 LA54V     0.400 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     LVGRPLPGR  7.8    15   6.55    7.9 30413   12684013 Urea     Dihydrofolate_reductase -
+1RX4 RA44A    -1.400 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     RAIMGRHTW  7.8    15  18.34   19.4 30412   12684013 Urea     Dihydrofolate_reductase -
+1RX4 RA44L     1.400 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     RLIMGRHTW  7.8    15  18.34   19.4 30504    1610817 Urea     Dihydrofolate_reductase - REPLICA  2  1.450  0.050
+1RX4 TA113V   -1.200 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     TVLYLTHID  7.8    15   0.72    1.4 30564    3300767 Urea     Dihydrofolate_reductase -
+1RX4 TA35A    -1.100 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     TAKRNTLDK  7.8    15    0.0    0.0 30410   12684013 Urea     Dihydrofolate_reductase -
+1RX4 VA75A    -0.050 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     VAVTWVKSV  7.8    15   1.95    2.6 30517    2655702 Urea     Dihydrofolate_reductase -
+1RX4 VA75C    -0.050 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     VCVTWVKSV  7.8    15   1.95    2.6 30518    2655702 Urea     Dihydrofolate_reductase -
+1RX4 VA75H    -1.600 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     VHVTWVKSV  7.8    15   1.95    2.6 30520    2655702 Urea     Dihydrofolate_reductase - REPLICA  2 -1.600  0.000
+1RX4 VA75I    -1.650 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     VIVTWVKSV  7.8    15   1.95    2.6 30522    2655702 Urea     Dihydrofolate_reductase -
+1RX4 VA75R    -2.000 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     VRVTWVKSV  7.8    15   1.95    2.6 30523    2655702 Urea     Dihydrofolate_reductase -
+1RX4 VA75S    -0.800 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     VSVTWVKSV  7.8    15   1.95    2.6 30519    2655702 Urea     Dihydrofolate_reductase -
+1RX4 VA75Y    -1.800 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 NAP     VYVTWVKSV  7.8    15   1.95    2.6 30524    2655702 Urea     Dihydrofolate_reductase -
+1RX4 WA22L     0.100 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     1 DDF     WLAMPWNLP  7.8    15  12.89   14.0 30407   12684013 Urea     Dihydrofolate_reductase -
+1SUP GA169A    0.300 155  0  1  1 Xray 1.60  1 A                         1 A    3 CA,NA,PMS       1 NA      GAGYPGKYP  8.0  58.8   1.27    0.6 16989    2684274 Thermal  Subtilisin_BPN' -
+1SUP NA218S    1.070 155  0  1  1 Xray 1.60  1 A                         1 A    3 CA,NA,PMS       1 PMS     NSGAYNGTS  8.0  58.8  66.26   64.4 16988    2684274 Thermal  Subtilisin_BPN' -
+1SUP NA76D     0.450 155  0  1  1 Xray 1.60  1 A                         1 A    3 CA,NA,PMS       1 CA      NDAALNNSI  8.0  58.8  68.99   65.4 16993    2684274 Thermal  Subtilisin_BPN' -
+1SUP YA217K    0.720 155  0  1  1 Xray 1.60  1 A                         1 A    3 CA,NA,PMS       1 PMS     YKYGAYNGT  8.0  58.8  33.22   31.8 16991    2684274 Thermal  Subtilisin_BPN' -
+1THQ AA85G    -0.870 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 LDA     AGEPIAGYG  8.0    25  40.83   42.8 23807   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ DA24N    -0.600 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 ACT     DNEHYDLYI  8.0    25   0.69    0.2 23815   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ LA105A   -0.760 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 LDA     LAHLGLGFT  8.0    25  67.18   69.9 23809   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ MA72A    -0.340 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 LDA     MALYAMAFK  8.0    25  10.99   10.9 23817   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ QA139A   -0.970 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 LDA     QAVTFQMTY  8.0    25   1.12    0.8 23823   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ QA160A    0.180 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 ACT     QAMRFQFLE  8.0    25  18.48   16.8 23824   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ SA130A   -1.270 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 LDA     SAPLASVGY  8.0    25   7.68    7.7 23821   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ TA108A   -0.400 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 LDA     TALGFTAGV  8.0    25   6.49    6.0 23820   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ WA17A    -0.980 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 LDA     WAAQTWQQP  8.0    25  76.92   71.5 23811   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ YA87F    -1.370 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     1 ACT     YFIAGYGWE  8.0    25   4.21    3.7 23808   20133664 Urea     PhoPQ-activated_gene_P -
+1WQ5 FA139W   -0.600  17  1  1  1 Xray 2.30  2 AB                        2 AB   2 GOL,SO4         1 GOL     FWSAPFRQA  7.8    23   6.48    6.2 27774    7629069 Urea     Tryptophan_synthase_alpha-subunit - REPLICA  2 -0.650  0.050
+1YCC FA10I    -1.140   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     FIATLFKTR  4.6  52.7   0.03    2.4 90126    7880822 Thermal  Cytochrome_c_ioform_1 -
+1YCC FA10M    -3.520   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     FMATLFKTR  4.6  52.7   0.03    2.4 90129    7880822 Thermal  Cytochrome_c_ioform_1 -
+1YCC FA10W    -1.300   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     FWATLFKTR  4.6  52.7   0.03    2.4 90127    7880822 Thermal  Cytochrome_c_ioform_1 -
+1YCC FA10Y    -0.470   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     FYATLFKTR  4.6  52.7   0.03    2.4 90124    7880822 Thermal  Cytochrome_c_ioform_1 -
+1YCC KA73A    -0.450   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     KATNPKYIP  7.5    25  84.59   92.1 24434    7893716 Gdn      Iso-1_cytochrome_c -
+1YCC KA73G    -0.740   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     KGTNPKYIP  7.5    25  84.59   92.1 24433    7893716 Gdn      Iso-1_cytochrome_c -
+1YCC KA73H    -1.580   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     KHTNPKYIP  5.8    25  84.59   92.1 24648    9890932 Gdn      Iso-1_cytochrome_c - REPLICA  8 -1.500  0.414
+1YCC KA73I    -1.190   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     KITNPKYIP  7.5    25  84.59   92.1 24160    9070448 Gdn      Iso-1_cytochrome_c - REPLICA  3 -0.927  0.372
+1YCC KA73L    -0.030   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     KLTNPKYIP  7.5    25  84.59   92.1 24436    7893716 Gdn      Iso-1_cytochrome_c -
+1YCC KA73R    -0.030   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     KRTNPKYIP  7.5    25  84.59   92.1 24438    7893716 Gdn      Iso-1_cytochrome_c -
+1YCC KA73V    -1.380   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     KVTNPKYIP  7.5    25  84.59   92.1 24159    9070448 Gdn      Iso-1_cytochrome_c - REPLICA  3 -0.887  0.698
+1YCC KA73W    -1.600   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     KWTNPKYIP  4.5    25  84.59   92.1 24154    9070448 Thermal  Iso-1_cytochrome_c - REPLICA  2 -1.515  0.085
+1YCC LA85A    -2.800   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     LAFGGLKKE  6.0    25   2.18    3.9 25057   10631980 Thermal  Iso-1_cytochrome_c -
+1YCC LA94A    -3.580   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     LARNDLITY  4.6  52.7   0.01    0.5 90130    7880822 Thermal  Cytochrome_c_ioform_1 -
+1YCC LA94I     0.330   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     LIRNDLITY  4.6  52.7   0.01    0.5 90122    7880822 Thermal  Cytochrome_c_ioform_1 -
+1YCC LA94T    -3.050   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     LTRNDLITY  4.6  52.7   0.01    0.5 90128    7880822 Thermal  Cytochrome_c_ioform_1 -
+1YCC LA94V    -1.060   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     LVRNDLITY  4.6  52.7   0.01    0.5 90125    7880822 Thermal  Cytochrome_c_ioform_1 -
+1YCC NA52F    -0.060   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     NFTDANIKK  7.0    22   8.88   11.3 27938    7766619 Gdn      Iso-1_cytochrome_c -
+1YCC NA52H    -1.270   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     NHTDANIKK  4.6    27   8.88   11.3 19625    7766619 Thermal  Iso-1_cytochrome_c - REPLICA  2 -1.485  0.215
+1YCC NA52M     2.910   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     NMTDANIKK  4.0    27   8.88   11.3 19634    7766619 Thermal  Iso-1_cytochrome_c - REPLICA  3  3.067  0.739
+1YCC NA52Q    -0.080   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     NQTDANIKK  4.6    27   8.88   11.3 19621    7766619 Thermal  Iso-1_cytochrome_c - REPLICA  2 -0.460  0.380
+1YCC NA52S    -0.370   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     NSTDANIKK  7.0    22   8.88   11.3 27931    7766619 Gdn      Iso-1_cytochrome_c - REPLICA  4 -0.243  0.727
+1YCC NA52T     0.590   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     NTTDANIKK  4.6    27   8.88   11.3 19627    7766619 Thermal  Iso-1_cytochrome_c - REPLICA  4  0.742  0.874
+1YCC NA52V     2.020   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 HEC     NVTDANIKK  7.0    22   8.88   11.3 27935    7766619 Gdn      Iso-1_cytochrome_c - REPLICA  3  2.043  0.315
+1YCC PA71I    -1.700   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PILTNPKYI  6.0    20    0.0    5.2 29642    3026439 Gdn      Iso-1_cytochrome_c -
+1YCC PA71T    -1.700   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PTLTNPKYI  6.0    20    0.0    5.2 29641    3026439 Gdn      Iso-1_cytochrome_c -
+1YCC PA71V    -1.000   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PVLTNPKYI  6.0    20    0.0    5.2 29640    3026439 Gdn      Iso-1_cytochrome_c -
+1YCC PA76G    -0.780   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PGKYIPGTK  4.6    25  67.65   76.0 19982    9485396 Thermal  Iso-1_cytochrome_c -
+1YCC PA76L    -3.440   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PLKYIPGTK  4.6    25  67.65   76.0 19981    9485396 Thermal  Iso-1_cytochrome_c -
+1YCC PA76R    -0.970   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PRKYIPGTK  4.6    25  67.65   76.0 19984    9485396 Thermal  Iso-1_cytochrome_c -
+1YCC PA76S    -1.890   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PSKYIPGTK  4.6    25  67.65   76.0 19985    9485396 Thermal  Iso-1_cytochrome_c -
+1YCC PA76V    -1.070   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PVKYIPGTK  4.6    25  67.65   76.0 19983    9485396 Thermal  Iso-1_cytochrome_c -
+1YCC PA76W    -2.380   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PWKYIPGTK  4.6    25  67.65   76.0 19987    9485396 Thermal  Iso-1_cytochrome_c -
+1YCC PA76Y    -2.070   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     1 M3L     PYKYIPGTK  4.6    25  67.65   76.0 19986    9485396 Thermal  Iso-1_cytochrome_c -
+1YRI MA53A    -2.800  22  0  1  1 Xray 1.00  1 A                         1 A    2 ACT,IOD         1 IOD     MAVFGMTRS  7.0     -  29.99   30.7 13819   21377472 Thermal  Villin-1 -
+2DRI FA15A     3.100 181  0  1  1 Xray 1.60  1 A                         1 A    1 RIP             1 RIP     FANNPFFVS  7.0  57.5   0.02    2.9 91434   17242374 Thermal  Riboe_import_binding_protein_RbsB -
+2DRI NA13A     1.000 181  0  1  1 Xray 1.60  1 A                         1 A    1 RIP             1 RIP     NATLNNPFF  7.0  57.5   0.06    6.3 91431   17242374 Thermal  Riboe_import_binding_protein_RbsB -
+2DRI NA190A    2.000 181  0  1  1 Xray 1.60  1 A                         1 A    1 RIP             1 RIP     NAFAQNDEM  7.0  57.5   0.01    2.1 91433   17242374 Thermal  Riboe_import_binding_protein_RbsB -
+2DRI NA64A     3.200 181  0  1  1 Xray 1.60  1 A                         1 A    1 RIP             1 RIP     NALLINPTD  7.0  57.5      0    0.0 91435   17242374 Thermal  Riboe_import_binding_protein_RbsB -
+2DRI QA235A    0.830 181  0  1  1 Xray 1.60  1 A                         1 A    1 RIP             1 RIP     QATIAQLPD  7.0  57.5   0.03    3.4 91430   17242374 Thermal  Riboe_import_binding_protein_RbsB -
+2DRI SA9A      1.300 181  0  1  1 Xray 1.60  1 A                         1 A    1 RIP             1 RIP     SALVVSTLN  7.0  57.5      0    0.0 91432   17242374 Thermal  Riboe_import_binding_protein_RbsB -
+2HBB DA8A     -1.300 186  0  0  1 Xray 0.00  1 A                         1 A    1 ZN              1 ZN      DAFLKDVKG  5.5  25.0    0.7   69.7 90356   28494951 GdnHCl   50S_riboomal_protein_L9 -
+2HBB IA37A    -1.280 186  0  0  1 Xray 0.00  1 A                         1 A    1 ZN              1 ZN      IAGLAIEAT  5.5  25.0   0.28   27.6 90384   28494951 GdnHCl   50S_riboomal_protein_L9 -
+2HBB IA37V     0.090 186  0  0  1 Xray 0.00  1 A                         1 A    1 ZN              1 ZN      IVGLAIEAT  5.5  25.0   0.28   27.6 90383   28494951 GdnHCl   50S_riboomal_protein_L9 -
+2HBB KA14A    -0.730 186  0  0  1 Xray 0.00  1 A                         1 A    1 ZN              1 ZN      KAGKGKKGE  5.5  25.0   0.65   67.1 90364   28494951 GdnHCl   50S_riboomal_protein_L9 -
+2HBB KA14G    -1.300 186  0  0  1 Xray 0.00  1 A                         1 A    1 ZN              1 ZN      KGGKGKKGE  5.5  25.0   0.65   67.1 90365   28494951 GdnHCl   50S_riboomal_protein_L9 -
+2HBB KA15G    -1.740 186  0  0  1 Xray 0.00  1 A                         1 A    1 ZN              1 ZN      KGKGKKGEI  5.5  25.0   0.74   73.9 90367   28494951 GdnHCl   50S_riboomal_protein_L9 -
+2HBB LA47A    -0.840 186  0  0  1 Xray 0.00  1 A                         1 A    1 ZN              1 ZN      LALKALEAQ  5.5  25.0   0.18   17.2 90392   28494951 GdnHCl   50S_riboomal_protein_L9 -
+2HMB FA16Y    -3.440  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     FYSKNFDDY  8.0    25  21.92   22.9 25215    8660291 Urea     Fatty_acid_binding_protein -
+2HMB FA57S    -3.630  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     FSHSTFKNT  8.0    25  45.34   45.2 25216    8660291 Urea     Fatty_acid_binding_protein -
+2HMB RA106T   -3.540  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     RTTLVRELI  8.0    25  10.48   10.9 25221    8660291 Urea     Fatty_acid_binding_protein -
+2HMB RA126K   -4.660  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     RKVCTRTYE  8.0    25    8.3    7.7 25222    8660291 Urea     Fatty_acid_binding_protein -
+2HMB RA126Q   -0.620  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     RQVCTRTYE  8.0    25    8.3    7.7 25223    8660291 Urea     Fatty_acid_binding_protein -
+2HMB TA40E    -3.270  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     TEKPTTIIE  8.0    25   2.16    3.3 25218    8660291 Urea     Fatty_acid_binding_protein -
+2HMB TA40Q    -4.370  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     TQKPTTIIE  8.0    25   2.16    3.3 25219    8660291 Urea     Fatty_acid_binding_protein -
+2HMB TA40V    -1.840  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     TVKPTTIIE  8.0    25   2.16    3.3 25220    8660291 Urea     Fatty_acid_binding_protein -
+2HMB YA128F   -3.820  63  0  1  1 Xray 2.10  1 A                         1 A    1 PLM             1 PLM     YFTRTYEKE  8.0    25   6.08    6.3 25217    8660291 Urea     Fatty_acid_binding_protein -
+2IFB AA104C    2.540  53  0  1  1 Xray 2.00  1 A                         1 A    1 PLM             1 PLM     ACELIAVRE  7.2    20   9.07    9.0 29741    8218166 Gdn      Fatty_acid_binding_protein -
+2IFB FA68C     0.050  53  0  1  1 Xray 2.00  1 A                         1 A    1 PLM             1 PLM     FCGVDFAYS  7.0  25.0   0.18   17.5 91109   15723553 Urea     Fatty_acid-binding_protein_intetinal -
+2IFB FA93S    -1.390  53  0  1  1 Xray 2.00  1 A                         1 A    1 PLM             1 PLM     FSVGKFKRV  7.0  25.0   0.07    7.7 91110   15723553 Urea     Fatty_acid-binding_protein_intetinal -
+2IFB IA23C     0.910  53  0  1  1 Xray 2.00  1 A                         1 A    1 PLM             1 PLM     ICKMGINVV  7.2    20  11.35   13.5 29736    8218166 Gdn      Fatty_acid_binding_protein -
+2IFB LA72C    -0.140  53  0  1  1 Xray 2.00  1 A                         1 A    1 PLM             1 PLM     LCAYSLADG  7.2    20  16.93   18.4 29739    8218166 Gdn      Fatty_acid_binding_protein -
+2IFB VA60C     0.800  53  0  1  1 Xray 2.00  1 A                         1 A    1 PLM             1 PLM     VCNIDVVFE  7.2    20  11.71   13.1 29738    8218166 Gdn      Fatty_acid_binding_protein -
+2IFB VA60N    -0.890  53  0  1  1 Xray 2.00  1 A                         1 A    1 PLM             1 PLM     VNNIDVVFE  7.0    25  11.71   13.1 25676   10692339 Urea     Fatty_acid_binding_protein - REPLICA  2 -0.755  0.135
+2IMM FA32Y     0.380  46  0  0  1 Xray 0.00  1 A                         1 A    2 ACT,SO4         1 ACT     FYQKNFLAW  7.4    20   40.0   21.3 29925    8028003 Gdn      ScFv_B8E5_protein -
+2IMM TA63S     0.290  46  0  0  1 Xray 0.00  1 A                         1 A    2 ACT,SO4         1 SO4     TSDRFTGSG  7.4    20  43.98   44.7 29927    8028003 Gdn      ScFv_B8E5_protein -
+2PR5 TA30M     0.500 199  0  0  1 Xray 0.00  1 A                         1 A    3 ACY,FMN,NA      1 FMN     TMVVITDPA  7.9  25.0   0.08    8.1 91352   23861663 Thermal  Blue-light_photoreceptor -
+2PR5 VA120I    1.400 199  0  0  1 Xray 0.00  1 A                         1 A    3 ACY,FMN,NA      1 FMN     VITYFVGIQ  7.9  25.0      0   20.2 91363   23861663 Thermal  Blue-light_photoreceptor -
+2PR5 VA25I     0.400 199  0  0  1 Xray 0.00  1 A                         1 A    3 ACY,FMN,NA      1 ACY     VIHVRVGVV  7.9  25.0   0.08   43.7 91351   23861663 Thermal  Blue-light_photoreceptor -
+2V0U CA450A    0.480 206  0  0  1 Xray 0.00  1 A                         1 A    2 FMN,GOL         1 FMN     CARNCCRFL  7.0  20.0   0.24   24.7 91888   32126442 Urea     NPH1-1 -
+2VY0 DA287A   -5.980 207  0  0  1 Xray 0.00  1 A                         1 A    5 CA,CL,MPD,MRD,NA 1 CA      DAMVVDYVR  7.0  20.0    0.2   23.1 91187   17999688 GdnHCl   LamA -
+2VY0 EA53A    -6.600 207  0  0  1 Xray 0.00  1 A                         1 A    5 CA,CL,MPD,MRD,NA 1 CA      EAWHDEFEG  7.0  20.0   0.15   18.9 91188   17999688 GdnHCl   LamA -
+3BDC LA36D    -6.300   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     LDTFRLLLV  5.0  25.0   0.02    1.2 91546   19004768 GdnHCl   SNuclease -
+3BDC LA36E    -4.600   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     LETFRLLLV  5.0  25.0   0.02    1.2 91548   19004768 GdnHCl   SNuclease - REPLICA  2 -5.500  0.900
+3BDC LA37D    -3.400   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     LDFRLLLVD  7.0  25.0   0.06    5.7 91553   19004768 GdnHCl   SNuclease - REPLICA  2 -3.200  0.200
+3BDC LA37E    -2.700   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     LEFRLLLVD  5.0  25.0   0.06    5.7 91554   19004768 GdnHCl   SNuclease - REPLICA  2 -2.850  0.150
+3BDC LA37K    -3.100   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     LKFRLLLVD  7.0  25.0   0.06    5.7 91557   19004768 GdnHCl   SNuclease -
+3BDC LA38K    -2.800   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     LKRLLLVDT  7.0  25.0   0.02    1.3 91563   19004768 GdnHCl   SNuclease -
+3BDC NA118E   -1.900   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     NEYKGNNTH  5.0  25.0   0.08    6.9 91572   19004768 GdnHCl   SNuclease - REPLICA  2 -2.050  0.150
+3BDC NA118K   -2.100   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     NKYKGNNTH  7.0  25.0   0.08    6.9 91575   19004768 GdnHCl   SNuclease -
+3BDC TA41D    -3.000   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 CA      TDLVDTPEF  5.0  25.0   0.01    2.6 91576   19004768 GdnHCl   SNuclease - REPLICA  2 -3.350  0.350
+3BDC TA41E    -2.700   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 CA      TELVDTPEF  5.0  25.0   0.01    2.6 91578   19004768 GdnHCl   SNuclease - REPLICA  2 -3.200  0.500
+3BDC TA41K    -2.300   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 CA      TKLVDTPEF  7.0  25.0   0.01    2.6 91581   19004768 GdnHCl   SNuclease -
+3BDC VA39E    -4.300   2  0  0  1 Xray 0.00  1 A                         1 A    2 CA,THP          1 THP     VELLLVDTP  5.0  25.0      0    0.1 91602   19004768 GdnHCl   SNuclease - REPLICA  2 -4.850  0.550
+3BLS YA150F   -0.700 211  0  1  1 Xray 2.30  1 A                         1 A    1 APB             1 APB     YFQRLYANS  6.8  54.6   9.36   10.1 17438   10493583 Thermal  Beta_lactamase - REPLICA  2 -0.850  0.150
+3C2I DA156E   -0.880 213  0  0  1 Xray 0.00  3 ABC                       2 AC   2 5CM,MSE         1 MSE     DENDFDFTV  7.5  25.0   0.04    6.4 91181   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3C2I RA106Q   -0.120 213  0  0  1 Xray 0.00  3 ABC                       1 A    2 5CM,MSE         1 MSE     RQGWTRKLK  7.5  25.0   0.02    5.6 91180   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3C2I RA106W   -0.040 213  0  0  1 Xray 0.00  3 ABC                       1 A    2 5CM,MSE         1 MSE     RWGWTRKLK  7.5  25.0   0.02    5.6 91177   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3C2I RA111G    0.420 213  0  0  1 Xray 0.00  3 ABC                       3 ABC  2 5CM,MSE         1 5CM     RGLKQRKSG  7.5  25.0   0.42   14.3 91186   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3C2I RA133C   -0.360 213  0  0  1 Xray 0.00  3 ABC                       3 ABC  2 5CM,MSE         1 5CM     RCKAFRSKV  7.5  25.0   0.65   35.4 91176   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3C2I RA133H   -0.230 213  0  0  1 Xray 0.00  3 ABC                       3 ABC  2 5CM,MSE         1 5CM     RHKAFRSKV  7.5  25.0   0.65   35.4 91182   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3C2I SA134C   -1.040 213  0  0  1 Xray 0.00  3 ABC                       2 AC   2 5CM,MSE         1 5CM     SCAFRSKVE  7.5  25.0   0.32    4.3 91179   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3C2I TA158A   -0.470 213  0  0  1 Xray 0.00  3 ABC                       2 AC   2 5CM,MSE         1 MSE     TAFDFTVTG  7.5  25.0   0.38   20.0 91185   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3C2I TA158M   -0.250 213  0  0  1 Xray 0.00  3 ABC                       2 AC   2 5CM,MSE         1 MSE     TMFDFTVTG  7.5  25.0   0.38   20.0 91175   26418480 Urea     Methyl-CpG-binding_protein_2 -
+3MBP AA63E     1.800  45  0  1  1 Xray 1.70  1 A                         1 A    1 GLC             1 GLC     AEIFWAHDR  7.5  25.0   0.14   16.7 91785   11344330 GdnHCl   Maltoe/maltodextrin-binding_periplasmic_protein -
+3MBP WA230E   -3.100  45  0  1  1 Xray 1.70  1 A                         1 A    1 GLC             1 GLC     WENGPWAWS  7.5  25.0   0.06    6.6 91788   11344330 GdnHCl   Maltoe/maltodextrin-binding_periplasmic_protein -
+3MBP WA340E   -2.300  45  0  1  1 Xray 1.70  1 A                         1 A    1 GLC             1 GLC     WESAFWYAV  7.5  25.0   0.15   15.5 91792   11344330 GdnHCl   Maltoe/maltodextrin-binding_periplasmic_protein -
+3MBP WA62E     0.400  45  0  1  1 Xray 1.70  1 A                         1 A    1 GLC             1 GLC     WEIIFWAHD  7.5  25.0   0.23   22.9 91784   11344330 GdnHCl   Maltoe/maltodextrin-binding_periplasmic_protein -
+3MBP YA155E   -2.700  45  0  1  1 Xray 1.70  1 A                         1 A    1 GLC             1 GLC     YEQEPYFTW  7.5  25.0   0.16   17.7 91786   11344330 GdnHCl   Maltoe/maltodextrin-binding_periplasmic_protein -
+3ONI QA443H    0.890  58  2  1  1 Xray 1.61  1 A                         1 A    3 EDO,JQ1,NI      1 EDO     QHRKLQDVF  7.5    10   19.6   19.8 31092   27403962 Urea     Bromodomain-containing_protein_2 - REPLICA  2  1.285  0.395
+3ONI RA419W    0.600  58  2  1  1 Xray 1.61  1 A                         1 A    3 EDO,JQ1,NI      1 NI      RWADVRLMF  7.5    10  37.12   36.8 31076   27403962 Urea     Bromodomain-containing_protein_2 - REPLICA  2  0.290  0.310
+3PGK LA399W   -2.680  24  0  1  1 Xray 2.50  1 A                         1 A    4 3PG,ACE,ATP,MG  1 ACE     LWSLELLEG  7.5    25   4.92    5.0 24557    7577989 Gdn      Phosphoglycerate_kinase -
+3S92 HA395R    1.120  58  1  1  1 Xray 1.36  1 A                         1 A    2 EDO,JQ1         1 JQ1     HRPPDHEVV  7.5    10  48.93   46.8 31078   27403962 Urea     Bromodomain-containing_protein_3 - REPLICA  2  1.575  0.455
+3ZCF GA41S    -3.900   6  0  0  1 Xray 0.00  1 A                         1 A    1 HEC             1 HEC     GSRKTGQAP  6.5  15.0    0.1   11.5 91312   29083920 GdmCl    Cytochrome_c -
+3ZCF YA48H    -5.560   6  0  0  1 Xray 0.00  1 A                         1 A    1 HEC             1 HEC     YHGYSYTAA  6.5  15.0   0.17   17.6 91311   29083920 GdmCl    Cytochrome_c -
+451C FA34Y     1.900 227  0  1  1 Xray 1.60  1 A                         1 A    1 HEM             1 HEM     FYAAKFAGQ  5.0  50.4  10.96   12.1 17883   10608805 Thermal  Cytochrome_c551 - REPLICA  2  1.615  0.285
+451C FA7A      1.100 227  0  1  1 Xray 1.60  1 A                         1 A    1 HEM             1 HEM     FAEVLFKNK  5.0  50.4  10.46   10.7 17880   10608805 Thermal  Cytochrome_c551 -
+451C VA78I     1.000 227  0  1  1 Xray 1.60  1 A                         1 A    1 HEM             1 HEM     VIAKWVLSQ  5.0  50.4    5.2    6.0 17890   10608805 Thermal  Cytochrome_c551 - REPLICA  3  0.850  0.593
+451C WA56F    -1.900 227  0  1  1 Xray 1.60  1 A                         1 A    1 HEM             1 HEM     WFQGVWGPI  7.0    10  41.16   39.8 30732   11399087 Urea     Cytochrome_c551 -
+4BUQ YA137A    0.890 229  0  0  1 Xray 0.00  1 A                         1 A    1 KGM             1 KGM     YATNNYNSD  7.4  25.0   0.63   62.2 91890   28250938 GdmCl    FimH -
+4BUQ YA48A    -1.440 229  0  0  1 Xray 0.00  1 A                         1 A    1 KGM             1 KGM     YAHNDYPET  7.4  25.0   0.51   50.5 91889   28250938 GdmCl    FimH -
+4HE7 AA19D    -0.240 230  0  0  1 Xray 0.00  1 A                         1 A    2 NA,PCA          1 NA      ADCQLANQC  7.6  25.0   0.76   79.8 90435   27616457 Urea     Defenin-like_protein -
+4HE7 AA19G     0.060 230  0  0  1 Xray 0.00  1 A                         1 A    2 NA,PCA          1 NA      AGCQLANQC  7.6  25.0   0.76   79.8 90437   27616457 Urea     Defenin-like_protein -
+4HE7 AA19K    -0.460 230  0  0  1 Xray 0.00  1 A                         1 A    2 NA,PCA          1 NA      AKCQLANQC  7.6  25.0   0.76   79.8 90436   27616457 Urea     Defenin-like_protein -
+5NP8 CA316R   -5.900  24  0  0  1 Xray 0.00  1 A                         1 A    3 3PG,93T,EDO     1 93T     CRGLDCGPE  7.4  25.0   0.02    2.3 91099   24838780 Thermal  Phophoglycerate_kinase_1 -
+6DS9 EA41Q     0.200   0  0  0  1 Xray 0.00  1 A                         1 A    4 CL,EDO,SCN,ZN   1 CL      EQEKKEIAA  8.5  25.0      -   38.5 91106    6183058 GdnHCl   de_novo_deigned_three_helix_bundle_GRa3D - REPLICA  2  0.200  0.000
+1ANK DA84H    -1.400  71  0  1  1 Xray 2.00  1 A                         1 A    2 AMP,ANP         2 AMP,ANP DHFLLDGFP  7.2  51.8   9.72    9.6 17677    1748642 Thermal  Adenylate_kinase -
+1ANK RA88G    -0.200  71  0  1  1 Xray 2.00  1 A                         1 A    2 AMP,ANP         2 AMP,ANP RGGFPRTIP  7.4  51.8  32.31   31.3 17686    2542263 Thermal  Adenylate_kinase -
+1I5T YA67F    -1.960   6  0  0  1 NMRl 0.00  1 A                         1 A    2 CYN,HEC         2 CYN,HEC YFLMEYLEN  7.0    15  33.69   29.9 30583    1326327 Gdn      Cytochrome_c - REPLICA  2 -2.135  0.175
+1RX4 GA95A     1.300 150  0  1  1 Xray 2.20  1 A                         1 A    3 BME,DDF,NAP     2 DDF,NAP GAMVIGGGR  7.8    15   1.27    0.8 30418   12559923 Urea     Dihydrofolate_reductase -
+1THQ FA55A    -1.050 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     2 ACT,LDA FAGGGFGLS  8.0    25  72.25   71.3 23806   20133664 Urea     PhoPQ-activated_gene_P -
+1THQ YA23A    -0.910 157  0  1  1 Xray 1.90  1 A                         1 A    3 ACT,LDA,MPD     2 ACT,LDA YAPEHYDLY  8.0    25  52.88   50.2 23812   20133664 Urea     PhoPQ-activated_gene_P -
+1YCC FA82Y    -0.700   6  0  0  1 Xray 0.00  1 A                         1 A    3 HEC,M3L,SO4     2 HEC,M3L FYKMAFGGL  6.0    25  16.94   20.4 25056   10631980 Thermal  Iso-1_cytochrome_c -
+1YRI FA47A    -2.300  22  0  1  1 Xray 1.00  1 A                         1 A    2 ACT,IOD         2 ACT,IOD FADEDFKAV  7.0     -   1.99    2.5 13816   21377472 Thermal  Villin-1 -
+3K82 EA334L   -3.350 222  1  1  1 Xray 1.40  1 A                         1 A    4 EPE,GOL,PO4,SNN 2 EPE,SNN ELGEGEGIF  7.5     -  10.88   10.7 13607   24845085 Thermal  Disks_large_homolog_11 -
+3K82 EA334Q   -1.680 222  1  1  1 Xray 1.40  1 A                         1 A    4 EPE,GOL,PO4,SNN 2 EPE,SNN EQGEGEGIF  7.5     -  10.88   10.7 13608   24845085 Thermal  Disks_large_homolog_12 -

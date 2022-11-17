@@ -1,10 +1,12 @@
 
-#Results from S461 dataset*
+#Results from S461 dataset
 
+```sh
 S461_KORPM_DIR.txt   Direct subset
-              *_prc.txt   Corresponding PRC Curves      
+         *_prc.txt   Corresponding PRC Curves      
+```
 
-Equivalent result files for Cartddg, FoldX, Evo, PopM, Dynamut2, DDGun3D, ACDCNN methods
+Equivalent result files for Cartddg, FoldX, Evo, PopMs, Dynamut2, DDGun3D, ACDCNN methods
 
 #Comparative TABLES
 
@@ -23,8 +25,8 @@ ThermoNet     74   387   461   37  0.6  0.5  106  281 -1.6  0.9   37   143   318
 ACDCNN        74   387   461   22  0.6  0.4   43  344 -1.5  0.7   52    65   396 0.297 0.889 0.338 0.869 0.794 0.593 1.065 0.775 0.605  72.7  27.1   0.2  0.20    0.736   0.340  -0.215   0.595   0.749   0.279  -0.166   0.541   0.793
 ```
 
-KORPM  results trained with balanced dataset [../Id25c03_1merNCLB_S461.txt](Id25c03_1merNCLB_S461.txt) exluding all proteins with a sequence identity <0.25 respect S461 proteins 
-KORPM* results trained with balanced dataset [../Id25c03_1merNCLB.txt](Id25c03_1merNCLB.txt) in where just the Ssym mutations where excluded (default korpm weights)  
+-KORPM  results trained with balanced dataset [Id25c03_1merNCLB_S461.txt](../Id25c03_1merNCLB_S461.txt) exluding all proteins with a sequence identity <0.25 respect S461 proteins 
+-KORPM* results trained with balanced dataset [Id25c03_1merNCLB.txt](../Id25c03_1merNCLB.txt) in where just the Ssym mutations where excluded (default korpm weights)  
 
 
 

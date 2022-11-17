@@ -17,7 +17,7 @@ use strict;
 
 my @list0=("Dynamut2","PopMs","DDgun3D","ThermoNet","ACDCNN");
 my @list=("CartDD","FoldX","EvoFF","Dynamut2","PopMs","DDgun3D","ThermoNet","ACDCNN");
-my @listF=("KORPM","CartDD","FoldX","EvoFF","Dynamut2","PopMs","DDgun3D","ThermoNet","ACDCNN");
+my @listF=("KORPM","CartDD","FoldX","EvoFF","PopMs","Dynamut2","DDgun3D","ThermoNet","ACDCNN");
 
 
 my $cmd ="";

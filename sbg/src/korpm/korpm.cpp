@@ -144,9 +144,9 @@ int main(int argc, char *argv[])
 
 
 		if(Frev.isSet())
-				{
-					frev_switch = true;
-				}
+		{
+			frev_switch = true;
+		}
 
 		if (run_mode != 0)
 			weighted = true; // Enable weighted workflow
@@ -376,7 +376,7 @@ int main(int argc, char *argv[])
 		rsa=-1;
 
 		if (!dexp_switch)  // simple input
-				nscan = sscanf(myline,"%s %s ",&pdbid, &mutstr);
+			nscan = sscanf(myline,"%s %s ",&pdbid, &mutstr);
 		else if (pclase)
 		{
 			if(rsa_switch)
@@ -392,8 +392,8 @@ int main(int argc, char *argv[])
 				nscan = sscanf(myline,"%s %s %f",&pdbid, &mutstr, &deltaE);
 		}
 
-       // fprintf(stdout,"%s %s %f %d %f\n",pdbid, mutstr, deltaE, Hclass, rsa);
-     //	getchar();
+		// fprintf(stdout,"%s %s %f %d %f\n",pdbid, mutstr, deltaE, Hclass, rsa);
+		//	getchar();
 
 		sprintf(mainpdb,"%s/%s.pdb",maindir,pdbid);
 
@@ -611,8 +611,8 @@ int main(int argc, char *argv[])
 		molr = mol->select_cpy(ncac2);
 
 		// Formatting main PDB
-				//	printf( "%s> Formatting main PDB (receptor) residues order and checking for missing atoms at CG-model %d\n", prog, cgmodel );
-				//	else	fprintf(stderr, "%s> No missing atom(s) in main PDB (receptor)!\n", prog );
+		//	printf( "%s> Formatting main PDB (receptor) residues order and checking for missing atoms at CG-model %d\n", prog, cgmodel );
+		//	else	fprintf(stderr, "%s> No missing atom(s) in main PDB (receptor)!\n", prog );
 
 		if(molr->format_residues(false,cgmodel) > 0)
 		{
@@ -642,58 +642,67 @@ int main(int argc, char *argv[])
 		float mut_coord[15];
 		int l56size;
 		int *iaa = NULL; // AA index for each loop aminoacid
-		if(run_mode == 6 || run_mode == 56)
+		if (!(run_mode == 6 || run_mode == 56))
+				{
+			r_right=0;
+			r_left=0;
+				}
+
+
+		// Atomic selection Conditions
+		Condition *mutzone= new Condition(-1,-1,-1,-1,ichain[0],ichain[0],posInChain[0]-r_left,posInChain[0]+r_right,-1,-1);
+		//Condition *mutzone= new Condition(-1,-1,-1,-1,-1,-1,posInChain[0]-r_left,posInChain[0]+r_right,-1,-1);
+		Conditions *mutzone2= new Conditions();
+		mutzone2->add(mutzone);
+
+		//mol->writePDB("mierda.pdb");
+		Macromolecule *mutmol = molr->select_cpy(mutzone2);
+
+
+
+		l56size=(r_left+r_right+1);
+
+
+		// Checking
+		if( mutmol->get_num_atoms() != (l56size)*3 )
 		{
+			fprintf(stdout, "Error, missing N, CA or C atoms %8s %7.3f %6s %c %c %4d %c, expected %d present %d\n", mainpdb, deltaE, mutstr, aa1[0], chn[0], posInChain[0], aa2[0], l56size*3, mutmol->get_num_atoms());
+			exit(1);
 
-
-			// Atomic selection Conditions
-			Condition *mutzone= new Condition(-1,-1,-1,-1,ichain[0],ichain[0],posInChain[0]-r_left,posInChain[0]+r_right,-1,-1);
-			//Condition *mutzone= new Condition(-1,-1,-1,-1,-1,-1,posInChain[0]-r_left,posInChain[0]+r_right,-1,-1);
-			Conditions *mutzone2= new Conditions();
-			mutzone2->add(mutzone);
-
-			//mol->writePDB("mierda.pdb");
-			Macromolecule *mutmol = molr->select_cpy(mutzone2);
-
-
-
-			l56size=(r_left+r_right+1);
-			// Checking
-			if( mutmol->get_num_atoms() != (l56size)*3 )
-			{
-				fprintf(stderr,"Error, missing N, CA or C atoms in %s within the 5 residues mutated region (%d-%d, %d atoms found but %d expected). Forcing exit!\n", mainpdb, posInChain[0]-2,posInChain[0]+2,  mutmol->get_num_atoms(), l56size*3);
-				exit(1);
-				continue;
-			}
-
-			char *mutseq = mutmol->get_sequence(); // PDB sequence in 1-letter code
-
-			// Get the dihedrals for Rama stuff
-			float *coord_mut; // 5 residues atomic coordinates
-			mutmol->coordMatrix( &coord_mut ); // get coordinates vector
-			for(int i = 0; i < 15; i++)
-				dihedrals[i]=999;
-			finddihedral( coord_mut, l56size*3, dihedrals ); // Get the dihedrals array for supplied coordinates
-			free( coord_mut );
-
-			// Setting cis-Prolines in sequence only for protein modeling and Rama potential
-			if(setCisPro(dihedrals,mutseq,l56size) > 0)
-				fprintf(stdout,"\n%s> Warning, cis-PRO(s) detected: %s\n",prog,mutseq);
-
-			iaa = seq2iaa(mutseq,5); // Translate 1-letter code sequence into our indexing scheme, cis-Prolines included
-			if(debug)
-			{
-				printf( "%s> %d aminoacids sequence from %s is mutseq= %s and iaa=", prog, 5, mainpdb, mutseq );
-				for(int i = 0; i < l56size; i++)
-					printf( " %d",iaa[i]);
-				printf("\n");
-				for(int i = 0; i < l56size; i++)
-					printf( " %7.2f",dihedrals[i]*180/M_PI);
-				printf("\n");
-			}
-			free( mutseq );
-			//			exit(0);
 		}
+
+		if (run_mode == 6 || run_mode == 56) {
+
+		char *mutseq = mutmol->get_sequence(); // PDB sequence in 1-letter code
+
+		// Get the dihedrals for Rama stuff
+		float *coord_mut; // 5 residues atomic coordinates
+		mutmol->coordMatrix( &coord_mut ); // get coordinates vector
+		for(int i = 0; i < 15; i++)
+			dihedrals[i]=999;
+		finddihedral( coord_mut, l56size*3, dihedrals ); // Get the dihedrals array for supplied coordinates
+		free( coord_mut );
+
+		// Setting cis-Prolines in sequence only for protein modeling and Rama potential
+		if(setCisPro(dihedrals,mutseq,l56size) > 0)
+			fprintf(stdout,"\n%s> Warning, cis-PRO(s) detected: %s\n",prog,mutseq);
+
+		iaa = seq2iaa(mutseq,5); // Translate 1-letter code sequence into our indexing scheme, cis-Prolines included
+		if(debug)
+		{
+			printf( "%s> %d aminoacids sequence from %s is mutseq= %s and iaa=", prog, 5, mainpdb, mutseq );
+			for(int i = 0; i < l56size; i++)
+				printf( " %d",iaa[i]);
+			printf("\n");
+			for(int i = 0; i < l56size; i++)
+				printf( " %7.2f",dihedrals[i]*180/M_PI);
+			printf("\n");
+		}
+		free( mutseq );
+		}
+		//			exit(0);
+        delete mutmol;
+
 
 
 
@@ -851,9 +860,8 @@ int main(int argc, char *argv[])
 				{
 					if(weighted)
 					{
-
-						double W6DR[20] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447};
-						double W6DK[20] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447};
+						double W6DR[20] = {1.875,0.718,0.876,0.876,2.440,0.973,1.030,2.512,1.030,2.512,1.643,1.113,1.411,1.113,1.608,1.113,1.113,2.512,1.411,2.440};
+						double W6DK[20] = {1.875,0.718,0.876,0.876,2.440,0.973,1.030,2.512,1.030,2.512,1.643,1.113,1.411,1.113,1.608,1.113,1.113,2.512,1.411,2.440};
 
 						if(!custom_weights) // Set default weights
 							if(run_mode == 56) //  KORP + RAMA
@@ -905,8 +913,10 @@ int main(int argc, char *argv[])
 			case 6: // Ramachandran alone
 			{
 				double *Wrama;
-				double WramaK[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.239};
+				//double WramaK[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.239};
 				double WramaR[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.239};
+				// double WramaK[20] = {1.896,0.721,0.854,0.854,2.436,0.920,1.022,2.545,1.022,2.545,1.667,1.118,1.418,1.118,1.622,1.118,1.118,2.545,1.418,2.436};
+				double WramaK[20] = {1.875,0.718,0.876,0.876,2.440,0.973,1.030,2.512,1.030,2.512,1.643,1.113,1.411,1.113,1.608,1.113,1.113,2.512,1.411,2.440};
 
 				if(run_mode == 56) // RAMA weights with KORP
 					Wrama = WramaK;
@@ -915,10 +925,10 @@ int main(int argc, char *argv[])
 
 				//  Generating neighbor dependent distributions for current loop
 
-//				if ((r_left!=2) or (r_right!=2)) {
-//					printf("\n range2 %d %d %d %d\n", firstP, lastP, r_left, r_right);
-//					getchar();
-//				}
+				//				if ((r_left!=2) or (r_right!=2)) {
+				//					printf("\n range2 %d %d %d %d\n", firstP, lastP, r_left, r_right);
+				//					getchar();
+				//				}
 
 				int endi=r_right+r_left;
 				for(int i=1; i < endi; i++) // Screen relevant AAs (first and last residues from 5-residues region are discarded)
@@ -1018,7 +1028,9 @@ int main(int argc, char *argv[])
 			}
 			case 21:
 			{
-				double W6D21[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.239};
+				// double W6D21[21] = {1.888,0.699,0.848,0.848,2.447,0.897,1.025,2.567,1.025,2.567,1.698,1.115,1.400,1.115,1.620,1.115,1.115,2.567,1.400,2.447,-0.239};
+				// double W6D21[21] = {1.896,0.721,0.854,0.854,2.436,0.920,1.022,2.545,1.022,2.545,1.667,1.118,1.418,1.118,1.622,1.118,1.118,2.545,1.418,2.436,-0.239};
+				double W6D21[21] =  {1.875,0.718,0.876,0.876,2.440,0.973,1.030,2.512,1.030,2.512,1.643,1.113,1.411,1.113,1.608,1.113,1.113,2.512,1.411,2.440, 0.1};
 
 				if(!custom_weights) {
 					W6D = W6D21;

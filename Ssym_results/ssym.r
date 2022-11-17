@@ -109,12 +109,14 @@ corr_eqn <- function(x,y, digits = 2) {
 ###########################################################
 ###########################################################
 setwd("~/korpm/korpm/Ssym_results")
-
-
+setwd("~/Google Drive/DRAFTS/KORPM/FIGS/Ssym_results")
+setwd("~/korpm/R2/Ssym_results")
 #Import the data and make de DF
 cnames=c("thrP","REC_TPR","PREC_PPV","FPR","SP","MCC","ACC","ERR","F05","F1","F2","dist2")
 
 KORPM <- read.table(file = "KORPM_Pucci2018N_prc.txt")
+KORPMF <- read.table(file = "KORPM_Pucci2018N_prcB.txt")
+
 CartesianΔΔG <- read.table(file = "Cartddg_Pucci2018N_th8_prc.txt")
 EvoFF <- read.table(file = "Evo_Pucci2018N_prc.txt")
 FoldX <- read.table(file = "FoldX_Pucci2018N_th8_prc.txt")
@@ -128,6 +130,7 @@ ACDCNN <- read.table(file = "ACDCNN_Pucci2018N_prc.txt")
 
 #Define de column names
 colnames(KORPM)=cnames
+colnames(KORPMF)=cnames
 colnames(CartesianΔΔG)=cnames
 colnames(EvoFF)=cnames
 colnames(FoldX)=cnames
@@ -156,11 +159,14 @@ PopMusicS<-PopMusicS %>%
   mutate(Method = "PopMusicS")
 ACDCNN<-ACDCNN %>%
   mutate(Method = "ACDCNN")
+KORPMF<-KORPMF %>%
+  mutate(Method = "KORPMF")
+
 #merge all df for a unique representation
 totaldata <- rbind(KORPM,CartesianΔΔG,EvoFF,FoldX,Dynamut2,DDGun3D, ThermoNet,PopMusicS,ACDCNN)
 ### FIGURE 1 ######
 
-roc<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method, colour =Method)) +
+p1<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method, colour =Method)) +
   labs(title="ROC Symmetric", x="1-Specificity (FP rate)", y= "Sensitivity (TP rate)")+
   geom_smooth( stat = "identity" ) +
   scale_x_continuous(expand = c(0, 0))+
@@ -181,10 +187,39 @@ roc<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method, colour =Method)
         axis.title.x = element_text(margin = margin(t = 15, r = 0, b = 0, l = 0)),
         axis.title.y = element_text(margin = margin(t = 0, r = 15, b = 0, l = 0)))
 
+#p3 <- roc +  geom_line(data = KORPMF, aes(x = FPR, y = REC_TPR), color='#A6CEE3', linetype="dashed", size=1 )
+#roc <- p1 +  geom_line(data = KORPMF, aes(x = FPR, y = REC_TPR), color='black', linetype="dotted", size=0.5 )
+roc <- p1 +  geom_smooth(data = KORPMF,  stat = "identity", method = "lm", aes(x =  FPR, y = REC_TPR), color='black', linetype="dotted", size=0.5 )  
+
 print(roc)
+# 600 450 
 
+p1 <-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method, colour =Method)) +
+  labs(title="ROC Symmetric", x="1-Specificity (FP rate)", y= "Sensitivity (TP rate)")+
+  geom_smooth( stat = "identity" ) +
+  scale_x_continuous(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+
+  expand_limits(x=c(0,1), y=c(0, 1))+
+  #  scale_color_brewer(type="seq", palette="Accent")+
+  scale_color_brewer(type="seq", palette="Paired", limits = c("KORPM","CartesianΔΔG","ACDCNN","FoldX","Dynamut2","DDGun3D", "ThermoNet","PopMusicS", "EvoFF"))+
+  geom_abline(slope=1, intercept=0, colour ="grey")+
+  theme_bw()+
+  theme(plot.margin = unit(c(20, 20, 10, 10), "pt"), 
+        #legend.position =  c(0.85, 0.40), legend.title=element_blank(), 
+        # plot.title= element_blank(),
+        #legend.title=element_blank(), legend.position =  "top", legend.position =  c(0.0, 1.0),
+        legend.position = "none",
+        plot.title = element_text(hjust=0.5,size =12, face="bold"), 
+        axis.text=element_text(size=12, face="bold"),
+        axis.title=element_text(size=12, face="bold"),
+        axis.title.x = element_text(margin = margin(t = 15, r = 0, b = 0, l = 0)),
+        axis.title.y = element_text(margin = margin(t = 0, r = 15, b = 0, l = 0)))
+#roc0 <- p1 +  geom_smooth(data = KORPMF,  stat = "identity", method = "lm", aes(x =  FPR, y = REC_TPR), color='black', linetype="dotted", size=0.5 )  
+roc0 <- p1
 
-prc<-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =Method)) +
+print(roc0)
+
+p1 <-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =Method)) +
   labs(title="Precison-Recall Curves (PRC) Symmetric", x= "Recall(Sensitivity)", y="Precision(PPV)")+
   geom_smooth( stat = "identity", method = "lm" ) +
   scale_x_continuous(expand = c(0, 0))+
@@ -198,8 +233,16 @@ prc<-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =Me
         axis.title=element_text(size=12, face="bold"),
         axis.title.x = element_text(margin = margin(t = 15, r = 0, b = 0, l = 0)),
         axis.title.y = element_text(margin = margin(t = 0, r = 15, b = 0, l = 0)))
+prc0 <- p1 
+
+prc <- prc0 +  geom_smooth(data = KORPMF,  stat = "identity", method = "lm", aes(x = REC_TPR, y = PREC_PPV), color='black', linetype="dotted", size=0.5 )  
 
 print(prc)
+
+plot_grid(roc, prc,  labels = c('A', 'B'), label_size = 18, ncol = 2)
+
+
+
 
 #     RESULTS PUCCI  DIRECT
 
@@ -207,6 +250,8 @@ print(prc)
 cnames=c("thrP","REC_TPR","PREC_PPV","FPR","SP","MCC","ACC","ERR","F05","F1","F2","dist2")
 
 KORPM <- read.table(file = "KORPM_Pucci2018dirN_prc.txt")
+KORPMF <- read.table(file = "KORPM_Pucci2018dirN_prcB.txt")
+
 CartesianΔΔG <- read.table(file = "Cartddg_Pucci2018dirN_th8_prc.txt")
 EvoFF <- read.table(file = "Evo_Pucci2018dirN_prc.txt")
 FoldX <- read.table(file = "FoldX_Pucci2018dirN_th8_prc.txt")
@@ -226,6 +271,7 @@ colnames(DDGun3D)=cnames
 colnames(ThermoNet)=cnames
 colnames(PopMusicS)=cnames
 colnames(ACDCNN)=cnames
+colnames(KORPMF)=cnames
 
 #Add a column with the method (for future distinguish)
 KORPM<-KORPM %>%
@@ -246,13 +292,16 @@ PopMusicS<-PopMusicS %>%
   mutate(Method = "PopMusicS")
 ACDCNN<-ACDCNN %>%
   mutate(Method = "ACDCNN")
+KORPMF<-KORPMF %>%
+  mutate(Method = "KORPMF")
+
 
 #merge all df for a unique representation
 totaldata <- rbind(KORPM,CartesianΔΔG,EvoFF,FoldX,Dynamut2,DDGun3D, ThermoNet,PopMusicS,ACDCNN)
 
 
 
-roc1<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method, colour =Method)) +
+p1<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method, colour =Method)) +
   labs(title="ROC Direct", x="1-Specificity (FP rate)", y= "Sensitivity (TP rate)")+
   geom_smooth( stat = "identity" ) +
   scale_x_continuous(expand = c(0, 0))+
@@ -262,7 +311,7 @@ roc1<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method, colour =Method
   geom_abline(slope=1, intercept=0, colour ="grey")+
   theme_bw()+
   theme(plot.margin = unit(c(20, 20, 10, 10), "pt"), 
-        # legend.title=element_blank(),  legend.key.size =unit(1, 'cm'), legend.justification=c(0.5,0.6), legend.position =  c(0.85, 0.50),
+        #legend.position =  c(0.85, 0.40), legend.title=element_blank(), 
         #legend.title=element_blank(), legend.position =  "right",
         legend.position = "none",
         plot.title = element_text(hjust=0.5,size =12, face="bold"), 
@@ -270,11 +319,13 @@ roc1<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method, colour =Method
         axis.title=element_text(size=12, face="bold"),
         axis.title.x = element_text(margin = margin(t = 5, r = 0, b = 0, l = 0)),
         axis.title.y = element_text(margin = margin(t = 0, r = 5, b = 0, l = 0)))
+#roc1 <- p1 +  geom_smooth(data = KORPMF,  stat = "identity", method = "lm", aes(x =  FPR, y = REC_TPR), color='black', linetype="dotted", size=0.5 )  
+roc1 <- p1 
 
 print(roc1)
 
 
-prc1<-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =Method)) +
+p1<-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =Method)) +
   labs(title="Precison-Recall Curves (PRC) Direct", x= "Recall(Sensitivity)", y="Precision(PPV)")+
   geom_smooth( stat = "identity", method = "lm" ) +
   scale_x_continuous(expand = c(0, 0))+
@@ -282,11 +333,16 @@ prc1<-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =M
   expand_limits(x=c(0,1), y=c(0, 1))+
   scale_color_brewer(type="seq", palette="Paired", limits = c("KORPM","CartesianΔΔG","ACDCNN","FoldX","Dynamut2","DDGun3D", "ThermoNet","PopMusicS", "EvoFF"))+
   theme_bw()+
-  theme(plot.margin = unit(c(20, 20, 10, 10), "pt"), legend.position = "none",plot.title = element_text(hjust=0.5,size =12, face="bold"), 
+  theme(plot.margin = unit(c(20, 20, 10, 10), "pt"),
+        #legend.position =  c(0.85, 0.40), legend.title=element_blank(), 
+        legend.position = "none",
+        plot.title = element_text(hjust=0.5,size =12, face="bold"), 
         axis.text=element_text(size=12, face="bold"),
         axis.title=element_text(size=12, face="bold"),
         axis.title.x = element_text(margin = margin(t = 5, r = 0, b = 0, l = 0)),
         axis.title.y = element_text(margin = margin(t = 0, r = 5, b = 0, l = 0)))
+#prc1 <- p1 +  geom_smooth(data = KORPMF,  stat = "identity", method = "lm", aes(x = REC_TPR, y = PREC_PPV), color='black', linetype="dotted", size=0.5 )  
+prc1 <- p1 
 
 print(prc1)
 
@@ -298,6 +354,8 @@ print(prc1)
 cnames=c("thrP","REC_TPR","PREC_PPV","FPR","SP","MCC","ACC","ERR","F05","F1","F2","dist2")
 
 KORPM <- read.table(file = "KORPM_Pucci2018revN_prc.txt")
+KORPMF <- read.table(file = "KORPM_Pucci2018revN_prcB.txt")
+
 CartesianΔΔG <- read.table(file = "Cartddg_Pucci2018revN_th8_prc.txt")
 EvoFF <- read.table(file = "Evo_Pucci2018revN_prc.txt")
 FoldX <- read.table(file = "FoldX_Pucci2018revN_th8_prc.txt")
@@ -310,6 +368,8 @@ ACDCNN <- read.table(file = "ACDCNN_Pucci2018revN_prc.txt")
 
 #Define de column names
 colnames(KORPM)=cnames
+colnames(KORPMF)=cnames
+
 colnames(CartesianΔΔG)=cnames
 colnames(EvoFF)=cnames
 colnames(FoldX)=cnames
@@ -322,6 +382,7 @@ colnames(ACDCNN)=cnames
 #Add a column with the method (for future distinguish)
 KORPM<-KORPM %>%
   mutate(Method = "KORPM")
+
 CartesianΔΔG<-CartesianΔΔG %>%
   mutate(Method = "CartesianΔΔG")
 EvoFF<-EvoFF %>%
@@ -338,12 +399,13 @@ PopMusicS<-PopMusicS %>%
   mutate(Method = "PopMusicS")
 ACDCNN<-ACDCNN %>%
   mutate(Method = "ACDCNN")
-
+KORPMF<-KORPMF %>%
+  mutate(Method = "KORPMF")
 #merge all df for a unique representation
 totaldata <- rbind(KORPM,CartesianΔΔG,EvoFF,FoldX,Dynamut2,DDGun3D, ThermoNet,PopMusicS,ACDCNN)
 
 
-roc2<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method,  colour =Method)) +
+p1<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method,  colour =Method)) +
   labs(title="ROC Reverse", x="1-Specificity (FP rate)", y= "Sensitivity (TP rate)")+
   geom_smooth( stat = "identity" ) +
   scale_x_continuous(expand = c(0, 0))+
@@ -361,11 +423,12 @@ roc2<-ggplot(totaldata, aes(x = FPR, y = REC_TPR, group = Method,  colour =Metho
         axis.title=element_text(size=12, face="bold"),
         axis.title.x = element_text(margin = margin(t = 5, r = 0, b = 0, l = 0)),
         axis.title.y = element_text(margin = margin(t = 0, r = 5, b = 0, l = 0)))
-
+#roc2 <- p1 +  geom_smooth(data = KORPMF,  stat = "identity", method = "lm", aes(x =  FPR, y = REC_TPR), color='black', linetype="dotted", size=0.5 )  
+roc2 <- p1 
 print(roc2)
 
 
-prc2<-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =Method)) +
+p1<-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =Method)) +
   labs(title="Precison-Recall Curves (PRC) Reverse", x= "Recall(Sensitivity)", y="Precision(PPV)")+
   geom_smooth( stat = "identity", method = "lm" ) +
   scale_x_continuous(expand = c(0, 0))+
@@ -378,15 +441,15 @@ prc2<-ggplot(totaldata, aes(x = REC_TPR, y = PREC_PPV, group = Method, colour =M
         axis.title=element_text(size=12, face="bold"),
         axis.title.x = element_text(margin = margin(t = 5, r = 0, b = 0, l = 0)),
         axis.title.y = element_text(margin = margin(t = 0, r = 5, b = 0, l = 0)))
-
+#prc2 <- p1 +  geom_smooth(data = KORPMF,  stat = "identity", method = "lm", aes(x = REC_TPR, y = PREC_PPV), color='black', linetype="dotted", size=0.5 )  
+prc2 <- p1 
 print(prc2)
 
 
 
 
-plot_grid(roc, prc,roc1, prc1,roc2, prc2, labels = c('A', '','B', '', 'C', ''), label_size = 18, ncol = 2)
-
-plot_grid(roc, prc,  labels = c('A', 'B'), label_size = 18, ncol = 2)
+plot_grid(roc0, prc0,roc1, prc1,roc2, prc2, labels = c('A', '','B', '', 'C', ''), label_size = 18, ncol = 2)
+# 1050 x 1350
 
 
 
@@ -458,8 +521,8 @@ for (i in 1:length(fiN)) {
     geom_abline(slope=-1, intercept=1, colour ="#b2b2b2",linetype="dashed")+
     geom_abline(slope=-1, intercept=0, colour ="black")+
     annotate("text_npc",npcx = 0.9, npcy = 0.95, label = metodos[i] ,size = 6)+
-    #annotate("text_npc",npcx = 0.9, npcy = 0.90, label = corr_eqn(sym$Dir,sym$Rev),size = 6)+
-    #stat_cor( method = "pearson", aes(x = Dir, y = Rev), label.x.npc = 0.6, label.y.npc = 0.90, digits = 2, colour="deepskyblue3",  r.accuracy = NULL)
+    annotate("text_npc",npcx = 0.9, npcy = 0.90, label = corr_eqn(sym$Dir,sym$Rev),size = 6)+
+#    stat_cor( method = "pearson", aes(x = Dir, y = Rev), label.x.npc = 0.6, label.y.npc = 0.90, digits = 2, colour="deepskyblue3",  r.accuracy = NULL)
     theme_bw()+
     theme(plot.margin = unit(c(20, 20, 10, 10), "pt"), plot.title = element_text(hjust=0.5,size =18),axis.ticks = element_blank(), 
           axis.text=element_text(size=12,face="bold"),
@@ -477,7 +540,7 @@ for (i in 1:length(fiN)) {
 #print(pl[[1]])
 
 plot_grid(plotlist = pl, labels = "AUTO", label_size = 18, ncol = 3)
-
+# 1400 x 1800 FigS6
 
 
 fiN2 = c("KORPM_Pucci2018N","Cartddg_Pucci2018N_th8","ACDCNN_Pucci2018N","FoldX_Pucci2018N_th8","Dynamut_Pucci2018N","DDGun3D_Pucci2018N", 
@@ -536,13 +599,13 @@ for (i in 1:length(fiN)) {
           axis.title.y = element_text(margin = margin(t = 0, r = 5, b = 0, l = 0)))
   pl[[i]] <-   symchart # add each plot into plot list
   
-  print(symchart)
+  # print(symchart)
   
 }
 
 
 plot_grid(plotlist = pl, labels = "AUTO", label_size = 18, ncol = 3)
-
+# figs3 1400x1600
 #
 #  just KORPM -- FIG 2
 #
@@ -582,7 +645,7 @@ symchart<-ggplot(sym, aes(x = Dir, y = Rev)) +
         axis.title.x = element_text(margin = margin(t = 5, r = 0, b = 0, l = 0)),
         axis.title.y = element_text(margin = margin(t = 0, r = 5, b = 0, l = 0)))
 print(symchart)
-
+# 600x 450 fig2
 
 # alternative  FIG 2
 KORPMsym <-   symchart # add each plot into plot list

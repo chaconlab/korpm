@@ -37,19 +37,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: ../../../libpdb2_gcc.a
+all: ../../../lib/libpdb2_gcc.a
 
 # Tool invocations
-../../../libpdb2_gcc.a: $(OBJS) $(USER_OBJS)
+../../../lib/libpdb2_gcc.a: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC Archiver'
-	ar -r  "../../../libpdb2_gcc.a" $(OBJS) $(USER_OBJS) $(LIBS)
+	ar -r  "../../../lib/libpdb2_gcc.a" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(CC_DEPS)$(C++_DEPS)$(ARCHIVES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) ../../../libpdb2_gcc.a
+	-$(RM) $(CC_DEPS)$(C++_DEPS)$(ARCHIVES)$(C_UPPER_DEPS)$(CXX_DEPS)$(OBJS)$(CPP_DEPS)$(C_DEPS) ../../../lib/libpdb2_gcc.a
 	-@echo ' '
 
 .PHONY: all clean dependents

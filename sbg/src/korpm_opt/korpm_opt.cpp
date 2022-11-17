@@ -2310,7 +2310,7 @@ int main( int argc, char * argv[] )
 
 			// Minimum number of cases per bin test
 			int mincases = minfactor * aproxkbinsAvg/KN;
-			if (mincases<d.nexp /KN*0.6)
+			if (mincases<d.nexp /KN*0.5)
 				checkZero=true;
 
 

@@ -43,7 +43,7 @@ all: ../../../bin/korpm_gcc
 ../../../bin/korpm_gcc: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L../../../lib -static -o "../../../bin/korpm_gcc" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++ -L../../../lib -o "../../../bin/korpm_gcc" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

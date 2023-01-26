@@ -30,17 +30,22 @@ my $ws="1.889  0.710  0.894  0.894  2.333  0.941  1.047  2.526  1.047  2.526  1.
 print "$ws\n"; 
 
 # removed cases
-my $dump="2JIE\\|1XZO\\|1N18\\|2VY0\\|1O1U\\|4YEE\\|4YEF\\|3BCI\\|3O39\\|2MPC\\|3FIS\\|2KJ3\\|1FH5\\|3D2A\\|3K82\\|1XWS\\|1IR3\\|5VP3\\|1PFL\\|3S92\\|4BJX\\|3BCI\\|2MPC\\|3S92\\|4BJX\\|2CLR\\|1X0J\\|1R6R\\|1A7V\\|4N6V\\|1PRG\\|1MN1\\|2PR5\\|1GWY\\|2KS4\\|1GLU\\|1HCQ\\|3ECU\\|1PRE\\|1SPD\\|2JUC\\|2DVV\\|2OUO\\|1OSI\\|1F8I\\|1D5G\\|4WAA\\|1DXX\\|2RPN\\|3G1G\\|2BJD";
+#my $dump="2JIE\\|1XZO\\|1N18\\|2VY0\\|1O1U\\|4YEE\\|4YEF\\|3BCI\\|3O39\\|2MPC\\|3FIS\\|2KJ3\\|1FH5\\|3D2A\\|3K82\\|1XWS\\|1IR3\\|5VP3\\|1PFL\\|3S92\\|4BJX\\|3BCI\\|2MPC\\|3S92\\|4BJX\\|2CLR\\|1X0J\\|1R6R\\|1A7V\\|4N6V\\|1PRG\\|1NM1\\|2PR5\\|1GWY\\|2KS4\\|1GLU\\|1HCQ\\|3ECU\\|1PRE\\|2JUC\\|2DVV\\|2OUO\\|1OSI\\|1F8I\\|1D5G\\|4WAA\\|1DXX";
+# removed cases
+my $dump="I129\\|I130\\|2JIE\\|1XZO\\|1N18\\|2VY0\\|1O1U\\|4YEE\\|4YEF\\|3BCI\\|3O39\\|2MPC\\|3FIS\\|2KJ3\\|1FH5\\|3D2A\\|3K82\\|1XWS\\|1IR3\\|5VP3\\|1PFL\\|3S92\\|4BJX\\|3BCI\\|2MPC\\|3S92\\|4BJX\\|2CLR\\|1X0J\\|1R6R\\|1A7V\\|4N6V\\|1PRG\\|1MN1\\|2PR5\\|1GWY\\|2KS4\\|1GLU\\|1HCQ\\|3ECU\\|1PRE\\|1SPD\\|2JUC\\|2DVV\\|2OUO\\|1OSI\\|1F8I\\|1D5G\\|4WAA\\|1DXX\\|2RPN\\|3G1G\\|2BJD";
 
- $cmd="grep -v \"I129\\|I130\\|$dump\"  Evo_S669_new_th8.txt > S461_EvoFF_DIR.txt"; system ($cmd);
+
+
+ $cmd="grep -v \"$dump\"  Evo_S669_new_th8.txt >  temp; ./ch_val.pl temp > S461_EvoFF_DIR.txt"; system ($cmd);
+ print "$cmd\n"; 
+ $cmd="grep -v  \"$dump\" FoldX_S669_new_th8.txt > temp;./ch_val.pl temp > S461_FoldX_DIR.txt"; system ($cmd);
  #print "$cmd\n"; 
- $cmd="grep -v  \"I129\\|I130\\|$dump\" FoldX_S669_new_th8.txt > S461_FoldX_DIR.txt"; system ($cmd);
- #print "$cmd\n"; 
- $cmd="grep -v  \"I129\\|I130\\|$dump\" Cartesianddg_S669_new_th8.txt > S461_CartDD_DIR.txt"; system ($cmd);
+ $cmd="grep -v  \"$dump\" Cartesianddg_S669_new_th8.txt > temp; ./ch_val.pl temp > S461_CartDD_DIR.txt"; system ($cmd);
+
 
 foreach (@list0) {
  $cmd="./ch_val.pl  S669_$_\_DIR.txt >  temp"; system ($cmd);
- $cmd="grep -v \"I129\\|I130\\|$dump\" temp  > S461_$_\_DIR.txt";
+ $cmd="grep -v \"$dump\" temp  > S461_$_\_DIR.txt";
  #print "$cmd\n";  
  system ($cmd);
 }
@@ -49,7 +54,7 @@ foreach (@list0) {
 ### KORMP
 # change values --> changes.txt 
 $cmd="./ch_val.pl  S669.txt >  temp"; system ($cmd);
-$cmd="grep -v  \"I129\\|I130\\|$dump\" temp > S461.txt"; system ($cmd);
+$cmd="grep -v  \"$dump\" temp > S461.txt"; system ($cmd);
 $cmd="korpm  S461.txt -r 5 --dir ../S461 --score_file ../pot/korp6Dv1.bin -o S461_KORPM_DIR.txt --dexp --rsa --class --weights \"$ws\" > log";system ($cmd);
 system ("../scripts/Mstat.pl S461_KORPM_DIR.txt  10 11 2 > DKORPM.Mlog");
 system ("../scripts/confusion.pl   S461_KORPM_DIR.txt 10 11 200 >  S461_KORPM_DIR_prc.txt");

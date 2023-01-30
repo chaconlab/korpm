@@ -17,7 +17,7 @@ CPP_DEPS += \
 korpm.o: ../korpm.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -I../../../src -O3 -g -Wall -c -fmessage-length=0 -fpermissive -Wmaybe-uninitialized -MMD -MP -MF"$(@:%.o=%.d)" -MT"korpm.d" -o "$@" "$<"
+	g++ -I../../../src -O3 -U_FORTIFY_SOURCE -g -Wall -c -fmessage-length=0 -fpermissive -Wmaybe-uninitialized -MMD -MP -MF"$(@:%.o=%.d)" -MT"korpm.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

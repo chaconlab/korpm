@@ -10,7 +10,6 @@ void signDistanceGridMol2(S_Grid g, Macromolecule *mol, float PR)
 
 {
 
-	int i;
 	int a,b,c;
 	int icx,icy,icz;
 	int r;
@@ -66,7 +65,6 @@ void signDistanceGridMol2(S_Grid g, Macromolecule *mol, float PR)
 
 void signDistanceGridMol(S_Grid g, float voxelSize,Macromolecule *mol, float PR)
 {
-	int i;
 	int a,b,c;
 	int icx,icy,icz;
 	int r;
@@ -126,9 +124,8 @@ void Macromolecule::lsms( float PR,  bool inner )
 	Macromolecule *pdb2;
 	Tcoor original_center;
 
-  float diff[3];
+
   int maxLength;
-  int m,n,k;
 
 
 	pdb2=new Macromolecule(this);
@@ -172,7 +169,7 @@ void Macromolecule::lsms( float PR,  bool inner )
 
 vlVolume * Macromolecule::projectSurface( float unit, float PR, bool inner )
 {
-  vlVolume *vol,*aux;
+  vlVolume *vol;
   int maxLength= (this->maxLength()+(PR+3)*2)/unit;
   int m,n,k;
   vlDim pad;

@@ -66,7 +66,7 @@ float tobi_energy(float *Rcoord, int Rnumres, int *Rnres, int *Rpfirst, int *Rca
 	float dist, distLx, distLy, distLpx, distLpy;
 	float dlimit = 6*6+2;
 	float dlimitCA = 24*24+1;
-	float Lx, Ly, Lz, px,py,pz, rx,ry,rz, Rpx, Rpy, Rpz, Lpx, Lpy, Lpz, px2,py2,pz2;
+	float px,py,pz, rx,ry,rz, Rpx, Rpy, Rpz, px2,py2,pz2;
 
 	for (int i1 = 0; i1 < Rnumres; i1++ )
 	{
@@ -77,7 +77,6 @@ float tobi_energy(float *Rcoord, int Rnumres, int *Rnres, int *Rpfirst, int *Rca
 
 		for (int i2 = 0; i2 < Lnumres; i2++ )
 		{
-
 			// pos CA Ligand
 			px = *(Lcoord+Lcas[i2]);
 			py = *(Lcoord+Lcas[i2]+1);

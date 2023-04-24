@@ -18,6 +18,7 @@ float VDW_H[N_ATOM_MAX][MAX_VDW];
 ///Collection of electrostatic factors for all atoms at different distances
 float ELE[MAX_ELE];
 
+
 // inline ??
 int resnum_from_resname( char * resname )
 {
@@ -12271,6 +12272,22 @@ void init_CYM(Convention opt)
     AA[p].atom[11].charge = 0.33; //  1H
     AA[p].atom[12].charge = 0.33; //  2H
     break;
+  default:
+    AA[p].atom[0].charge = -0.356; //   N
+    AA[p].atom[1].charge = 0.064; //   CA
+    AA[p].atom[2].charge = 0.45; //   C
+    AA[p].atom[3].charge = -0.384; //   O
+    AA[p].atom[4].charge = -0.105; //   CB
+    AA[p].atom[5].charge = 0.015; //   SG
+    AA[p].atom[6].charge = 0.176; //   H
+    AA[p].atom[7].charge = 0.02; //   HA
+    AA[p].atom[8].charge = 0.055; //   2HB
+    AA[p].atom[9].charge = 0.055; //   3HB
+
+    AA[p].atom[10].charge = -0.67; //   0XT
+    AA[p].atom[11].charge = 0.33; //  1H
+    AA[p].atom[12].charge = 0.33; //  2H
+    break;
   }
 
 //CARGAS INCORRECTAS
@@ -12620,6 +12637,28 @@ AA[p].chi_types[2] = 4;
       break;
     //A REVISAR
     case ICM:
+      AA[p].atom[0].charge = -0.356; //    N
+      AA[p].atom[1].charge = 0.064; //    CA
+      AA[p].atom[2].charge = 0.45; //    C
+      AA[p].atom[3].charge = -0.384; //    O
+      AA[p].atom[4].charge = -0.12; //    CB
+      AA[p].atom[5].charge = -0.17; //    CG
+      AA[p].atom[6].charge = 0.5; //    CD
+      AA[p].atom[7].charge = -0.57; //    OE1
+      AA[p].atom[8].charge = -0.57; //    OE2
+      AA[p].atom[9].charge = 0.176; //    H
+      AA[p].atom[10].charge = 0.02; //    HA
+      AA[p].atom[11].charge = 0.02; //    2HB
+      AA[p].atom[12].charge = 0.02; //    3HB
+      AA[p].atom[13].charge = -0.04; //    2HG
+      AA[p].atom[14].charge = -0.04; //    3HG
+      AA[p].atom[15].charge = -0.04; //    2HE NEW ADDED
+
+      AA[p].atom[16].charge = -0.67; //   0XT
+      AA[p].atom[17].charge = 0.33; //  1H
+      AA[p].atom[18].charge = 0.33; //  2H
+      break;
+    default:
       AA[p].atom[0].charge = -0.356; //    N
       AA[p].atom[1].charge = 0.064; //    CA
       AA[p].atom[2].charge = 0.45; //    C
@@ -15361,6 +15400,34 @@ void init_TYM(Convention opt)
     break;
     //A REVISAR
     case ICM:
+      AA[p].atom[0].charge = -0.356; //    N
+      AA[p].atom[1].charge = 0.064; //    CA
+      AA[p].atom[2].charge = 0.45; //    C
+      AA[p].atom[3].charge = -0.384; //    O
+      AA[p].atom[4].charge = -0.04; //    CB
+      AA[p].atom[5].charge = 0.02; //    CG
+      AA[p].atom[6].charge = -0.01; //    CD1
+      AA[p].atom[7].charge = -0.01; //    CD2
+      AA[p].atom[8].charge = -0.06; //    CE1
+      AA[p].atom[9].charge = -0.06; //    CE2
+      AA[p].atom[10].charge = 0.225; //    CZ
+      AA[p].atom[11].charge = -0.33; //    OH
+      AA[p].atom[12].charge = 0.176; //    H
+      AA[p].atom[13].charge = 0.01; //    HD1
+      AA[p].atom[14].charge = 0.03; //    HE1
+      AA[p].atom[15].charge = 0.03; //    HE2
+      AA[p].atom[16].charge = 0.01; //    HD2
+      AA[p].atom[17].charge = 0.02; //    HA
+      AA[p].atom[18].charge = 0.025; //   2HB
+      AA[p].atom[19].charge = 0.025; //   3HB
+
+      AA[p].atom[20].charge = -0.67; //   0XT
+      AA[p].atom[21].charge = 0.33; //  1H
+      AA[p].atom[22].charge = 0.33; //  2H
+
+    break;
+
+    default:
       AA[p].atom[0].charge = -0.356; //    N
       AA[p].atom[1].charge = 0.064; //    CA
       AA[p].atom[2].charge = 0.45; //    C
@@ -22405,13 +22472,12 @@ void init_vdw_h(void)
 
 void init_ele(void)
 {
-    int i,j;
+    int j;
     float dist;
-    float eps;
     float beta=86.9525;//(epsilon0-A);
     float lambda_b=(-0.003627)*beta;
     float er;
-    float diel=-0.1146;
+    //float diel=-0.1146;
     float approx_zero=1.0E-6;
       for(j=0;j<MAX_ELE;j++)
       {

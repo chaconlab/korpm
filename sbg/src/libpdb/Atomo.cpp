@@ -11,35 +11,35 @@ using namespace std;
 Element Table_Elements::table_Elements[NUM_ELEMENTS]=
 {
 //                        Symbol   Symbol group period number      weight      atomic   cov    vdw     en
-  Element((char*)"Carbon",    C , "C ",      14,    2,   6.0,       12.011,     0.77,  0.77,  1.85,  2.55), // 0
-  Element((char*)"Hydrogen",  H,  "H ",       1,    1,   1.0,       1.00797,    0.78,  0.3,   1.2,   2.2),  // 1
-  Element((char*)"Nitrogen",  N,  "N ",      15,    2,   7.0,       14.00674,   0.71,  0.7,   1.54,  3.04), // 2
-  Element((char*)"Oxygen",    O,  "O ",      16,    2,   8.0,       15.9994,    0.6,   0.66,  1.4,   3.44), // 3
-  Element((char*)"Phosphorus",P,  "P ",      15,    3,   15.0,      30.973762,  1.15,  1.10,  1.9,   2.19), // 4
-  Element((char*)"Sulphur",   S,  "S ",      16,    3,   16.0,      32.066,     1.04,  1.04,  1.85,  2.58), // 5
-  Element((char*)"Calcium",   CA, "CA",       2,    4,   20.0,      40.078,     1.97,  1.74, 1.367,   1.0), // 6 Mon: vdw radius taken from Rosetta
-  Element((char*)"Iron",      FE, "FE",       8,    4,   26.0,      55.845,     1.24,  1.16, 0.650,   1.83),// 7 Mon: vdw radius taken from Rosetta
-  Element((char*)"Magnesium", MG, "MG",       2,    3,   12.0,      24.30506,   1.6,   1.36, 1.185,  1.31), // 8 Mon: vdw radius taken from Rosetta
-  Element((char*)"Manganese", MN, "MN",       7,    4,   25.0,      54.93805,   1.24,  1.77,  1.0,   1.55), // 9 Mon: vdw radius manually set to 100pm
-  Element((char*)"Sodium",    NA, "NA",       1,    3,   11.0,      22.989768,  1.54,  0.0,  1.364,  0.93), // 10 Mon: 2.31A is a huge vdw radius for an ion...
-  Element((char*)"Zinc",      ZN, "ZN",      12,    4,   30.0,      65.39,      1.33,  1.25, 1.090,   1.65),// 11 Mon: vdw radius taken from Rosetta
-  Element((char*)"Nickel",    NI, "NI",      10,    4,   28.0,      58.6934,    1.25,  1.15,  0.0,   1.91), // 12
-  Element((char*)"Copper",    CU, "CU",      11,    4,   29.0,      63.546,     1.28,  1.17,  0.70,   1.9), // 13 Mon: vdw radius manually set to 70pm
-  Element((char*)"Potassium", K,  "K ",       1,    4,   19.0,      39.0983,    2.27,  2.03, 1.764,  0.82), // 14 Mon: 2.31A is a huge vdw radius for an ion...
-  Element((char*)"Cobalt",    CO, "CO",       9,    4,   27.0,      58.9332,    1.25,  1.16,  0.8 ,  1.88), // 15 Mon: vdw radius manually set to 80pm
-  Element((char*)"Aluminum",  AL, "AL",      13,    3,   13.0,      26.981539,  1.43,  1.25,  2.05,  1.61), // 16
-  Element((char*)"Bromine",   BR, "BR",      17,    4,   35.0,      79.904,     0.0,   1.14,  1.95,  2.96), // 17
-  Element((char*)"Chlorine",  CL, "CL",      17,    3,   17.0,      35.4527,    0.0,   0.99,  1.81,  3.16), // 18
-  Element((char*)"Chromium",  CR, "CR",       6,    4,   24.0,      51.9961,    1.25,  0.0,   0.0,   1.66), // 19
-  Element((char*)"Silicon",   SI, "SI",      14,    3,   14.0,      28.0855,    1.17,  1.17,  2.0,   1.9),  // 20
-  Element((char*)"Cadmium",   CD, "CD",      12,    5,   48.0,     112.411,     1.49,  1.41,  0.0,   1.69), // 21
-  Element((char*)"Gold",      AU, "AU",      11,    6,   79.0,     196.96654,   1.44,  1.34,  0.0,   2.0),  // 22
-  Element((char*)"Silver",    AG, "AG",      11,    5,   47.0,     107.8682,    1.44,  1.34,  0.0,   1.93), // 23
-  Element((char*)"Platinum",  PT, "PT",      10,    6,   78.0,     195.08,      1.38,  1.29,  0.0,   2.54), // 24
-  Element((char*)"Mercury",   HG, "HG",      12,    6,   80.0,     200.59,      1.60,  1.44,  0.0,   1.8),  // 25
-  Element((char*)"Iodine",     I, "I ",      17,    5,   53.0,     126.904,     1.40,  1.39,  1.98,  2.96), // 26
-  Element((char*)"Fluorine",   F, "F ",      17,    2,    9.0,      18.998,     0.42,  0.71,  1.47,  3.98), // 27
-  Element((char*)"Deuterium",  D, "D ",       1,    1,    1.0,       2.01410,   0.78,  0.3,   1.2,   2.2)   // 28
+  Element((char*)"Carbon",    C , (char *)"C ",      14,    2,   6.0,       12.011,     0.77,  0.77,  1.85,  2.55), // 0
+  Element((char*)"Hydrogen",  H,  (char *)"H ",       1,    1,   1.0,       1.00797,    0.78,  0.3,   1.2,   2.2),  // 1
+  Element((char*)"Nitrogen",  N,  (char *)"N ",      15,    2,   7.0,       14.00674,   0.71,  0.7,   1.54,  3.04), // 2
+  Element((char*)"Oxygen",    O,  (char *)"O ",      16,    2,   8.0,       15.9994,    0.6,   0.66,  1.4,   3.44), // 3
+  Element((char*)"Phosphorus",P,  (char *)"P ",      15,    3,   15.0,      30.973762,  1.15,  1.10,  1.9,   2.19), // 4
+  Element((char*)"Sulphur",   S,  (char *)"S ",      16,    3,   16.0,      32.066,     1.04,  1.04,  1.85,  2.58), // 5
+  Element((char*)"Calcium",   CA, (char *)"CA",       2,    4,   20.0,      40.078,     1.97,  1.74, 1.367,   1.0), // 6 Mon: vdw radius taken from Rosetta
+  Element((char*)"Iron",      FE, (char *)"FE",       8,    4,   26.0,      55.845,     1.24,  1.16, 0.650,   1.83),// 7 Mon: vdw radius taken from Rosetta
+  Element((char*)"Magnesium", MG, (char *)"MG",       2,    3,   12.0,      24.30506,   1.6,   1.36, 1.185,  1.31), // 8 Mon: vdw radius taken from Rosetta
+  Element((char*)"Manganese", MN, (char *)"MN",       7,    4,   25.0,      54.93805,   1.24,  1.77,  1.0,   1.55), // 9 Mon: vdw radius manually set to 100pm
+  Element((char*)"Sodium",    NA, (char *)"NA",       1,    3,   11.0,      22.989768,  1.54,  0.0,  1.364,  0.93), // 10 Mon: 2.31A is a huge vdw radius for an ion...
+  Element((char*)"Zinc",      ZN, (char *)"ZN",      12,    4,   30.0,      65.39,      1.33,  1.25, 1.090,   1.65),// 11 Mon: vdw radius taken from Rosetta
+  Element((char*)"Nickel",    NI, (char *)"NI",      10,    4,   28.0,      58.6934,    1.25,  1.15,  0.0,   1.91), // 12
+  Element((char*)"Copper",    CU, (char *)"CU",      11,    4,   29.0,      63.546,     1.28,  1.17,  0.70,   1.9), // 13 Mon: vdw radius manually set to 70pm
+  Element((char*)"Potassium", K,  (char *)"K ",       1,    4,   19.0,      39.0983,    2.27,  2.03, 1.764,  0.82), // 14 Mon: 2.31A is a huge vdw radius for an ion...
+  Element((char*)"Cobalt",    CO, (char *)"CO",       9,    4,   27.0,      58.9332,    1.25,  1.16,  0.8 ,  1.88), // 15 Mon: vdw radius manually set to 80pm
+  Element((char*)"Aluminum",  AL, (char *)"AL",      13,    3,   13.0,      26.981539,  1.43,  1.25,  2.05,  1.61), // 16
+  Element((char*)"Bromine",   BR, (char *)"BR",      17,    4,   35.0,      79.904,     0.0,   1.14,  1.95,  2.96), // 17
+  Element((char*)"Chlorine",  CL, (char *)"CL",      17,    3,   17.0,      35.4527,    0.0,   0.99,  1.81,  3.16), // 18
+  Element((char*)"Chromium",  CR, (char *)"CR",       6,    4,   24.0,      51.9961,    1.25,  0.0,   0.0,   1.66), // 19
+  Element((char*)"Silicon",   SI, (char *)"SI",      14,    3,   14.0,      28.0855,    1.17,  1.17,  2.0,   1.9),  // 20
+  Element((char*)"Cadmium",   CD, (char *)"CD",      12,    5,   48.0,     112.411,     1.49,  1.41,  0.0,   1.69), // 21
+  Element((char*)"Gold",      AU, (char *)"AU",      11,    6,   79.0,     196.96654,   1.44,  1.34,  0.0,   2.0),  // 22
+  Element((char*)"Silver",    AG, (char *)"AG",      11,    5,   47.0,     107.8682,    1.44,  1.34,  0.0,   1.93), // 23
+  Element((char*)"Platinum",  PT, (char *)"PT",      10,    6,   78.0,     195.08,      1.38,  1.29,  0.0,   2.54), // 24
+  Element((char*)"Mercury",   HG, (char *)"HG",      12,    6,   80.0,     200.59,      1.60,  1.44,  0.0,   1.8),  // 25
+  Element((char*)"Iodine",     I, (char *)"I ",      17,    5,   53.0,     126.904,     1.40,  1.39,  1.98,  2.96), // 26
+  Element((char*)"Fluorine",   F, (char *)"F ",      17,    2,    9.0,      18.998,     0.42,  0.71,  1.47,  3.98), // 27
+  Element((char*)"Deuterium",  D, (char *)"D ",       1,    1,    1.0,       2.01410,   0.78,  0.3,   1.2,   2.2)   // 28
 };
 // PyRosetta's metallic ions with available .parms file: (must have vdw radius, otherwise they do not generate a density map, e.g. in rcd)
 // PyRosetta.namespace.ubuntu.release-72/database/chemical/residue_type_sets/fa_standard/residue_types/metal_ions
@@ -338,7 +338,8 @@ Atom::Atom()
   /*The atom is created with the firts element of the table*/
   element= Table_Elements::getElement(0);
   pdbSerialNumber=0;
-  strcpy(pdbName," C  ");
+  memcpy(pdbName,(const char *)" C  ",5);
+  //strcpy(pdbName,(const char *)" C  ");
   pdbocc=0.0;
   pdbfact=0.0;
   position[0]=0.0;
@@ -357,7 +358,8 @@ Atom::Atom()
 Atom::Atom(Element *e, Tcoor p,float ch,char name[5],int serial, float occ, float fact)
 {
   element=e;
-  strcpy(pdbName,name);
+  memcpy(pdbName,(const char *)name,5);
+//  strcpy(pdbName,(const char *)name);
   position[0]=p[0];
   position[1]=p[1];
   position[2]=p[2];
@@ -374,7 +376,9 @@ Atom::Atom(Element *e, Tcoor p,float ch,char name[5],int serial, float occ, floa
 Atom::Atom(Atom_type atom_type, char name[5], float *p, int serial)
 {
   element= Table_Elements::getElement(atom_type.at);
-  strcpy(pdbName,name);
+  memcpy(pdbName,(const char *)name,5);
+
+//  strcpy(pdbName,(const char *)name);
 
   position[0]=p[0];
   position[1]=p[1];
@@ -401,7 +405,9 @@ Atom::Atom(Atom_type atom_type, char name[5], float *p, int serial)
 Atom::Atom(Atom *a)
 {
   element=a->getElement();
-  strcpy(pdbName,a->getPdbName());
+  // strcpy(pdbName,a->getPdbName());
+  memcpy(pdbName,(const char *)a->getPdbName(),5);
+
   Tcoor pos;
   a->getPosition(pos);
   position[0]=pos[0];

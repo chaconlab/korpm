@@ -222,8 +222,8 @@ Conditions::~Conditions()
 {
   for(int i=0;i<limit;i++)
   {
-  		delete(list[i]);
-  	  //free(list[i]);
+  		//delete(list[i]);
+  	  free(list[i]);
   }
   free(list);
 }

@@ -4,7 +4,7 @@
 
 Molecule::Molecule(Molecule *old,bool with_elements)
 {
-  int i;
+
   strcpy(id,old->getName());
   nid=old->getIdNumber();
   father=NULL;
@@ -14,7 +14,7 @@ Molecule::Molecule(Molecule *old,bool with_elements)
 	  elements=(PDB_Contained**)malloc(sizeof(PDB_Contained*)*limit);
 	  if(elements==NULL)
 		  fprintf(stderr,"Error de asignacion de memoria\n");
-      for(i=0;i<limit;i++)
+      for(int i=0;i<limit;i++)
 	  {
     	if(old->getClass()==pdb_protein || old->getClass()==pdb_nacid)
     	  elements[i]=(PDB_Contained*)new  Chain((Chain*)old->getE(i));
@@ -47,7 +47,9 @@ Molecule:: Molecule()
 
 Molecule::Molecule(Tname name, int in_nid)
 {
-  strcpy(id,name);
+  // strcpy(id,name);
+  memcpy(id, name, strlen(name) + 1);
+
   elements=(PDB_Contained**)malloc(0);
   limit=0;
   currentE=0;
@@ -57,10 +59,8 @@ Molecule::Molecule(Tname name, int in_nid)
 
 Molecule::~Molecule()
 {
-  int i;
 
-
-  for(i=0;i<limit;i++)
+  for(int i=0;i<limit;i++)
   {
 	  switch(elements[i]->getClass())
 	  {

@@ -19,17 +19,26 @@
 #include <stdio.h>
 
 
+PDB_Contained::~PDB_Contained()
+{
 
-/*Container::~Container()
+}
+
+
+
+/*
+PDB_Container::~PDB_Container()
 {
   int i;
-  printf("hola\n");
   for(i=0;i<limit;i++)
   {
 	delete elements[i];
   }
   free(elements);
-}*/
+  limit=0;
+}
+*/
+
 
 void *PDB_Contained::getFather()
 {
@@ -120,6 +129,9 @@ bool PDB_Container::eraseAll()
   currentE=-1;
   return true;
 }
+
+
+
 
 int PDB_Container::getLimit()
 {

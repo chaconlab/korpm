@@ -25,7 +25,7 @@
    ///@param with_elements: If true , it copies the array of elements in the buffer of the new object, otherwise the buffer is empty
    Segment(Segment *old,bool with_elements=true);
   ///Destructor
-  ~Segment();
+  virtual ~Segment();
   ///Return the class of the object
   TElement getClass();
   /// Returns the Molecule type that contains the object

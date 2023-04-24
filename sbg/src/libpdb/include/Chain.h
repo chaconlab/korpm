@@ -27,7 +27,7 @@
     */
    Chain(Chain *old,bool with_elements=true);
   ///Destructor
-  ~Chain();
+  virtual ~Chain();
 
   ///Return the class of the object
   TElement getClass();

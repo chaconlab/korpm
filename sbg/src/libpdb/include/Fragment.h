@@ -40,7 +40,7 @@ typedef float( * COORDS ) [3];
    ///@param with_elements: If true , it copies the array of elements in the buffer of the new object, otherwise the buffer is empty
    Fragment(Fragment *old,bool with_elements=true);
    /// Destructor
-  ~Fragment();
+   virtual ~Fragment();
 	///Returns the order position of the Fragment
 	int get_pos();
 	///Returns the associated letter of the fragment in the PDB file

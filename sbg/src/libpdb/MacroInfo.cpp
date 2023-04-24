@@ -4,6 +4,18 @@
 #include <Macromolecule.h>
 #include <pdbIter.h>
 #include <libtools/include/Memstuff.h>
+// PDB atoms to prevent char warnings
+char *Nstr   = (char *)" N  ";
+char *CAstr  = (char *)" CA ";
+char *Cstr   = (char *)" C  ";
+char *Ostr   = (char *)" O  ";
+char *CBstr  = (char *)" CB ";
+char *CGstr  = (char *)" CG ";
+char *CDstr  = (char *)" CD ";
+char *CEstr  = (char *)" CE ";
+char *CZstr  = (char *)" CZ ";
+char *HAstr  = (char *)" HA ";
+char *Hstr   = (char *)" H  ";
 
 using namespace std;
 
@@ -66,16 +78,15 @@ int calculate_rotation_matrix(double R[3][3], double U[3][3], double E0, double*
 
 void Macromolecule::info( FILE *file )
 {
-	bool contP, contCh, contF, contR, contA, contH;
-	int cont,cont_p,cont_ch,cont_seg,cont_mol,tot_mol;
+	bool contP, contCh, contF, contR, contA;
+	int cont,cont_p,cont_ch,cont_seg,tot_mol;
 	int tot_ch=0,tot_seg=0,tot_frag=0,tot_at=0;
-	int water = 0, heterom = 0;
-	int csmol=0, csmolatom=0;
-	Segment * seg;
-	Chain * cad;
-	Molecule * p;
-	Fragment * frag;
-	Atom * a;
+	int csmol=0;
+	Segment *seg;
+	Chain *cad;
+	Molecule *p;
+	Fragment *frag;
+	// Atom *a;
 	char lineM[100];
 	char lineMv[100];
 	char lineC[100];
@@ -154,7 +165,7 @@ void Macromolecule::info( FILE *file )
 						contA = true;
 						while ( contA != false )
 						{
-							a = ( Atom * ) frag->getCurrent();
+							// a = ( Atom * ) frag->getCurrent();
 							cont++;
 							contA = frag->next();
 						}
@@ -345,8 +356,7 @@ void Macromolecule::exchange_Pdbfact(double *table, bool fragment)
 	Atom * atom;
 	pdbIter *iter1, *iter2;
 	Fragment * res;
-	int j,resn;
-	char * at_name;
+	//char * at_name;
 
 
 	//Iterador para recorrer segmentos
@@ -371,7 +381,7 @@ void Macromolecule::exchange_Pdbfact(double *table, bool fragment)
 			for ( iter3->pos_atom = 0; !iter3->gend_atom(); iter3->next_atom() )
 			{
 				atom = ( Atom * ) iter3->get_atom();
-				at_name = atom->getName();
+				// at_name = atom->getName();
 				atom->setPdbfact(table[i]);
 				if(!fragment) // Mon added (8/4/2010)
 					i++; // Mon added (26/3/2010)
@@ -543,7 +553,7 @@ Macromolecule * Macromolecule::select( Conditions * cond, bool positive, bool in
 	Fragment * res2;
 
 
-	Macromolecule * m = new Macromolecule( "selection" );
+	Macromolecule * m = new Macromolecule();
 
 	initAll();
 	contM = true;
@@ -555,13 +565,15 @@ Macromolecule * Macromolecule::select( Conditions * cond, bool positive, bool in
 		switch(mol->getClass())
 		{
 		case pdb_protein:
-			mol2 = new Protein( "Selection" );
+			mol2 = new Protein();
 			break;
 		case pdb_nacid:
-			mol2 = new NAcid( "Selection" );
+			mol2 = new NAcid();
 			break;
 		case pdb_smol:
 			mol2 = new SMol( mol->getName(),mol->getIdNumber() );
+			break;
+		default:
 			break;
 		}
 
@@ -600,7 +612,7 @@ Macromolecule * Macromolecule::select( Conditions * cond, bool positive, bool in
 			if(mol2->getLimit()>0)
 				m->add(mol2);
 			else
-				delete(mol2);
+				delete mol2;
 
 		}
 		else
@@ -619,7 +631,7 @@ Macromolecule * Macromolecule::select( Conditions * cond, bool positive, bool in
 					seg = ( Segment * ) cad->getCurrent();
 
 					cS++;
-					seg2 = new Segment( "Selection" );
+					seg2 = new Segment();
 
 					contR = true;
 					while ( contR != false )
@@ -665,7 +677,7 @@ Macromolecule * Macromolecule::select( Conditions * cond, bool positive, bool in
 						if ( res2->getLimit() > 0 )
 							seg2->add( res2 );
 						else
-							delete(res2);
+							delete res2;
 
 						contR = seg->next();
 					}
@@ -673,7 +685,7 @@ Macromolecule * Macromolecule::select( Conditions * cond, bool positive, bool in
 					if ( seg2->getLimit() > 0 )
 						cad2->add( seg2 );
 					else
-						delete(seg2);
+						delete seg2;
 
 					contS = cad->next();
 				}
@@ -681,7 +693,7 @@ Macromolecule * Macromolecule::select( Conditions * cond, bool positive, bool in
 				if ( cad2->getLimit() > 0 )
 					mol2->add( cad2 );
 				else
-					delete(cad2);
+					delete cad2;
 
 				contCh = mol->next();
 			}
@@ -689,7 +701,7 @@ Macromolecule * Macromolecule::select( Conditions * cond, bool positive, bool in
 			if ( mol2->getLimit() > 0 )
 				m->add( mol2 );
 			else
-				delete(mol2);
+				delete mol2;
 		}
 
 		contM = this->next();
@@ -719,7 +731,7 @@ Macromolecule * Macromolecule::select_cpy( Conditions * cond, bool positive )
 	Fragment * res2;
 
 
-	Macromolecule * m = new Macromolecule( "selection" );
+	Macromolecule * m = new Macromolecule();
 
 	initAll();
 	contM = true;
@@ -731,13 +743,15 @@ Macromolecule * Macromolecule::select_cpy( Conditions * cond, bool positive )
 		switch(mol->getClass())
 		{
 		case pdb_protein:
-			mol2 = new Protein( "Selection" );
+			mol2 = new Protein();
 			break;
 		case pdb_nacid:
-			mol2 = new NAcid( "Selection" );
+			mol2 = new NAcid();
 			break;
 		case pdb_smol:
 			mol2 = new SMol( mol->getName(),mol->getIdNumber() );
+			break;
+		default:
 			break;
 		}
 
@@ -790,7 +804,7 @@ Macromolecule * Macromolecule::select_cpy( Conditions * cond, bool positive )
 					seg = ( Segment * ) cad->getCurrent();
 
 					cS++;
-					seg2 = new Segment( "Selection" );
+					seg2 = new Segment();
 
 					contR = true;
 					while ( contR != false )
@@ -837,7 +851,7 @@ Macromolecule * Macromolecule::select_cpy( Conditions * cond, bool positive )
 						if ( res2->getLimit() > 0 )
 							seg2->add( res2 );
 						else
-							delete(res2);
+							delete res2;
 
 						contR = seg->next();
 					}
@@ -845,7 +859,7 @@ Macromolecule * Macromolecule::select_cpy( Conditions * cond, bool positive )
 					if ( seg2->getLimit() > 0 )
 						cad2->add( seg2 );
 					else
-						delete(seg2);
+						delete seg2;
 
 					contS = cad->next();
 				}
@@ -853,7 +867,7 @@ Macromolecule * Macromolecule::select_cpy( Conditions * cond, bool positive )
 				if ( cad2->getLimit() > 0 )
 					mol2->add( cad2 );
 				else
-					delete(cad2);
+					delete cad2;
 
 				contCh = mol->next();
 			}
@@ -861,7 +875,7 @@ Macromolecule * Macromolecule::select_cpy( Conditions * cond, bool positive )
 		if ( mol2->getLimit() > 0 )
 			m->add( mol2 );
 		else
-			delete(mol2);
+			delete mol2;
 		contM = this->next();
 	}
 	return m;
@@ -889,7 +903,7 @@ Macromolecule * Macromolecule::select_aaName( char **aaName )
 	Fragment * res2;
 
 
-	Macromolecule * m = new Macromolecule( "Selection" );
+	Macromolecule * m = new Macromolecule();
 
 	initAll();
 	contM = true;
@@ -900,13 +914,15 @@ Macromolecule * Macromolecule::select_aaName( char **aaName )
 		switch(mol->getClass())
 		{
 		case pdb_protein:
-			mol2 = new Protein( "Selection" );
+			mol2 = new Protein();
 			break;
 		case pdb_nacid:
-			mol2 = new NAcid( "Selection" );
+			mol2 = new NAcid();
 			break;
 		case pdb_smol:
 			mol2 = new SMol( mol->getName(),mol->getIdNumber() );
+			break;
+		default:
 			break;
 		}
 
@@ -944,7 +960,7 @@ Macromolecule * Macromolecule::select_aaName( char **aaName )
 				{
 					seg = ( Segment * ) cad->getCurrent();
 
-					seg2 = new Segment( "Selection" );
+					seg2 = new Segment();
 
 					contR = true;
 					while ( contR != false )
@@ -1030,13 +1046,16 @@ float Macromolecule::minRmsd( Macromolecule * mol2, float mdest[4][4] )
 {
 	double **ref_xlist;
 	double **mov_xlist;
-	bool end = true;
-	bool end2 = true;
+	bool end;
+	bool end2;
 	Tcoor pos1,pos2;
 	Atom *at,*at2;
 	int num_atoms=0;
 	int n,i,j;
 	num_atoms = get_num_atoms();
+
+	end = true;
+	end2 = true;
 
 	//	fprintf(stderr,"USING new minRmsd()\n");
 	ref_xlist = (double **) malloc(sizeof(double *) * num_atoms );
@@ -1067,7 +1086,7 @@ float Macromolecule::minRmsd( Macromolecule * mol2, float mdest[4][4] )
 		}
 
 		end = nextAtom();
-		end2 = mol2->nextAtom();
+		end2 = (bool)mol2->nextAtom();
 		natoms++;
 	}
 
@@ -1098,6 +1117,7 @@ float Macromolecule::minRmsd( Macromolecule * mol2, float mdest[4][4] )
 	mdest[0][3] = mov_to_ref[0]  - (mdest[0][0]*mov_com[0] + mdest[0][1]*mov_com[1] + mdest[0][2]*mov_com[2]);
 	mdest[1][3] = mov_to_ref[1]  - (mdest[1][0]*mov_com[0] + mdest[1][1]*mov_com[1] + mdest[1][2]*mov_com[2]);
 	mdest[2][3] = mov_to_ref[2]  - (mdest[2][0]*mov_com[0] + mdest[2][1]*mov_com[1] + mdest[2][2]*mov_com[2]);
+	mdest[3][3] = 1.0;
 
 	// Free memory
 	for(n = 0; n < num_atoms; n++ )
@@ -1120,12 +1140,10 @@ float Macromolecule::minRmsd( Macromolecule * mol2, float mdest[4][4], bool *mas
 	bool debug = false;
 	double **ref_xlist;
 	double **mov_xlist;
-	bool end1 = true;
-	bool end2 = true;
 	Tcoor pos1,pos2;
 	Atom *at1,*at2;
 	int num_atoms=0;
-	int n,i,j,i1,i2,ncommon=0;
+	int n,i,j,ncommon=0;
 	num_atoms = get_num_atoms();
 
 	ref_xlist = (double **) malloc(sizeof(double *) * num_atoms );
@@ -1203,6 +1221,7 @@ float Macromolecule::minRmsd( Macromolecule * mol2, float mdest[4][4], bool *mas
 	mdest[0][3] = mov_to_ref[0]  - (mdest[0][0]*mov_com[0] + mdest[0][1]*mov_com[1] + mdest[0][2]*mov_com[2]);
 	mdest[1][3] = mov_to_ref[1]  - (mdest[1][0]*mov_com[0] + mdest[1][1]*mov_com[1] + mdest[1][2]*mov_com[2]);
 	mdest[2][3] = mov_to_ref[2]  - (mdest[2][0]*mov_com[0] + mdest[2][1]*mov_com[1] + mdest[2][2]*mov_com[2]);
+	mdest[3][3] = 1.0;
 
 	// Free memory
 	for(n = 0; n < ncommon; n++ )
@@ -1489,7 +1508,7 @@ float Macromolecule::rmsd( Macromolecule * mol2, int **list, int total )
 	double suma = 0, tmp;
 	int i,a, natoms;
 	pdbIter *iter1,*iter2;
-	char *name, *name2;
+
 
 	iter1=new pdbIter(this,false);
 	iter2=new pdbIter(mol2,false);
@@ -1553,7 +1572,7 @@ float Macromolecule::rmsd( Macromolecule * mol2, int **list, int total, Macromol
 	int cont2;
 	int i,a, natoms;
 	pdbIter *iter1,*iter2;
-	char *name, *name2;
+
 
 	natoms=0;
 	iter1=new pdbIter(this,false);
@@ -1670,7 +1689,7 @@ float Macromolecule::rmsd( Macromolecule * mol2, char **list )
 	double suma = 0, tmp;
 	int i,a, natoms=0;
 	pdbIter *iter1,*iter2;
-	char *name, *name2;
+
 
 	int cont=0;
 
@@ -1760,7 +1779,7 @@ float Macromolecule::rmsd( Macromolecule *mol2, bool *mask1, bool *mask2 )
 	Atom *at1, *at2;
 	Tcoor pos1, pos2;
 	double suma = 0.0;
-	int ncommon = 0, i1 = 0, i2 = 0;
+	int ncommon = 0;
 
 	pdbIter *iter1,*iter2;
 	iter1 = new pdbIter(this,false);
@@ -1812,11 +1831,11 @@ float Macromolecule::rmsd( Macromolecule *mol2, bool *mask1, bool *mask2 )
 
 float Macromolecule::rmsd_file( Macromolecule *mol2, bool *mask1, bool *mask2, char *name )
 {
-	bool debug = false;
+
 	Atom *at1, *at2;
 	Tcoor pos1, pos2;
 	double suma = 0.0;
-	int ncommon = 0, i1 = 0, i2 = 0;
+
     FILE *file;
 
 	pdbIter *iter1,*iter2;
@@ -1997,7 +2016,8 @@ void Macromolecule::gaussian_weight(Macromolecule *mol2, double **p_profile, dou
 	if(*p_profile == NULL)
 	{
 		profile = (double *) malloc(sizeof(double) * num_atoms);
-		check_pointer(profile,"gaussian_weight weights profile allocation");
+		char *msg  = (char *)"gaussian_weight weights profile allocation";
+		check_pointer(profile,msg);
 		*p_profile = profile;
 	}
 	else
@@ -2048,7 +2068,8 @@ void Macromolecule::gaussian_weight(Macromolecule *mol2, double **p_profile, boo
 	if(*p_profile == NULL)
 	{
 		profile = (double *) malloc(sizeof(double) * num_atoms);
-		check_pointer(profile,"gaussian_weight weights profile allocation");
+		char *msg  = (char *)"gaussian_weight weights profile allocation";
+		check_pointer(profile,msg);
 		*p_profile = profile;
 	}
 	else
@@ -2407,7 +2428,6 @@ void Macromolecule::coordMatrixSet(float *coord)
 void Macromolecule::getPtrAtomProperty(float **coord)
 {
 	pdbIter *iter1;
-	Tcoor pos1;
 	int index=0;
 
 	iter1=new pdbIter(this);
@@ -2637,7 +2657,7 @@ int Macromolecule::pdbmatrices(float **coord, int **nres, int **pfirst, int **ca
 	natom=(int) iter0->num_atom();
 	delete iter0;
 
-	float *cxyz, px,py,pz;
+	float *cxyz;
 	cxyz =(float *) malloc(natom*3*sizeof(float));
 
 	int *Tpatom;
@@ -2653,7 +2673,7 @@ int Macromolecule::pdbmatrices(float **coord, int **nres, int **pfirst, int **ca
 	{
 		seg = ( Segment * ) iter1->get_segment();
 		iter2 = new pdbIter( seg );
-		fprintf( stderr, "Processing aa %s resn= %d  %d\n", resi->getName(), resn, iter2->pos_fragment );
+		fprintf( stderr, "Processing aa %s  %d\n", resi->getName(), iter2->pos_fragment );
 
 		//Bucle para recorrer residuos
 		for ( iter2->pos_fragment = 0; !iter2->gend_fragment(); iter2->next_fragment() )
@@ -4060,7 +4080,9 @@ bool sameResidues(Fragment * res1,Fragment *res2, float square_distance, float *
 		case pdb_nucleotide:
 			strcpy(main_atom," P  ");
 			break;
-
+		default :
+			return false;
+			break;
 		}
 
 	name1=res1->getName();
@@ -4133,11 +4155,8 @@ int** Macromolecule::getInterface( Macromolecule * mol2, float distance, int *nu
 	Fragment * res1,*res2;
 	Chain * seg, * seg2;
 
-	int cont=0, cont2=0,cont_contacts=0;
-	int num_res[2];
+	int cont_contacts=0;
 	int **interface;
-	int i,j;
-	char *in_chain;
 	float square_distance=distance*distance;
 	float square_limit=((30.0-distance)*(30.0-distance));
 	bool closeEnough;
@@ -4253,12 +4272,11 @@ int* Macromolecule::relative(Macromolecule *mol2, int *list,float distance, int 
 {
 	pdbIter *iter1, *iter2,*iter_aux1,*iter_aux2;
 	Fragment * res1,*res2,*resAux1,*resAux2;
-	int cont=0, cont2=0, cont_relatives=0;
+	int cont=0, cont2=0;
 	float Distance,dist;
 	float square_distance=distance*distance;
 	bool closeEnough;
 	int *relatives;
-	bool Found;
 	int i,j,step;
 	char *name1,*name2;
 	bool wrong;
@@ -4495,13 +4513,13 @@ void Macromolecule::loadNCACFirstAA( vector <vector <float> > & CAs ) {
 
 char* Macromolecule::get_sequence()
 {
-	int n,n_fragments,i;
+	int n_fragments,i;
 	char *seq,*seq2;
 
 	Conditions *conds = new Conditions();
 	Condition *cond = new Condition(-1,-1,-1,-1,-1,-1,-1,-1,-1,-1);
 	// CA selection
-	cond->add(" CA ");
+	cond->add(CAstr);
 	conds->add(cond);
 
 	Macromolecule *mol_ca = this->select_cpy(conds);
@@ -4565,22 +4583,24 @@ char* Macromolecule::secondary_structure(bool output_char)
 	char *ss;
 	float atom_coor[5][3];
 
-	int i=0, j, minpos, i_d;
+	int i=0, j, i_d;
 	double f[3][3];
-	float temp, temp2, temp3, temp4, min1, min2;
+	float  min1, min2;
 	double f_beta[3];
 	double a_helix[3];
 	double a_beta;
-	char helix0='H';
-	char helix1='G';
-	char helix2='I';
-	char beta='E';
-	char coil='C';
+	char helix0,helix1,helix2,beta,coil;
+
+	helix0='H';
+	helix1='G';
+	helix2='I';
+	beta='E';
+	coil='C';
 
 	//Select only Alpha Carbons
 	conds= new Conditions();
 	cond= new Condition(-1,-1,-1,-1,-1,-1,-1,-1,-1,-1);
-	cond->add(" CA ");
+	cond->add(CAstr);
 	conds->add(cond);
 	prot_ca = this->select_cpy(conds);
 	//delete(conds);
@@ -4895,7 +4915,7 @@ char *Macromolecule::get_ss()
 	//Select only Alpha Carbons
 	conds= new Conditions();
 	cond= new Condition(-1,-1,-1,-1,-1,-1,-1,-1,-1,-1);
-	cond->add(" CA ");
+	cond->add(CAstr);
 	conds->add(cond);
 	prot_ca=this->select_cpy(conds);
 	delete(conds);
@@ -4928,7 +4948,7 @@ double Macromolecule::dist_profile( Macromolecule *mol2, double **profile, bool 
 	bool debug = false;
 	Atom *at1, *at2;
 	Tcoor pos1, pos2;
-	double suma = 0.0, tmp, max=0.0, dist;
+	double suma = 0.0, tmp, dist;
 	int a, natoms, totatoms=0, res_index=0, nres=0;
 	double *p_profile = *profile;
 
@@ -5066,8 +5086,8 @@ double Macromolecule::dist_profile( Macromolecule *mol2, double **profile, bool 
 
 void aux_min_w (double **d, int p, int i, int start, int end,  float *min1, float *min2)
 {
-	int  minpos;
-	int j;
+	int  minpos=-9999;
+
 
 	*min1=10000;
 	*min2=1000;

@@ -9,8 +9,9 @@
 #include <libtools/include/timer.h>
 #include <libtools/include/Io.h>
 #include <libpdb/include/SS_DISICL.h>
-#include <cmdl/CmdLine.h>
+#include <tclap/CmdLine.h>
 
+#define VERSION "v1.1"
 
 
 using namespace TCLAP;
@@ -29,9 +30,12 @@ float atomic_rmsd(float *array, float *array2, int natoms);
 int main(int argc, char *argv[])
 {
 
-	CmdLine cmd(argv[0],"   ", "1.07" );
+
+	CmdLine cmd(argv[0],' ', VERSION );
+
 	char file_ref[500]; // pdb input reference
 	char file_mob[500]; // pdb input
+	char file_mob2[500]; // pdb input
 	char file_out[500]; // pdb output
 	char file_aln[500]; // Sequence alignment file name
 	char file_sim[500]; // Similarity file name
@@ -57,10 +61,10 @@ int main(int argc, char *argv[])
 		//
 		// Define required arguments no labeled
 		//
-		UnlabeledValueArg<std::string> pdb_ref("ref_pdb","Reference PDB file","default","pdb");
+		UnlabeledValueArg<std::string> pdb_ref("ref_pdb","Reference PDB file",true, "default","pdb");
 		cmd.add( pdb_ref );
 
-		UnlabeledValueArg<std::string> pdb_mob("mob_pdb","Mobile PDB file (if Multi-PDB, Model index and initial and aligned RMSDs will be dumped.)","default","pdb");
+		UnlabeledValueArg<std::string> pdb_mob("mob_pdb","Mobile PDB file (if Multi-PDB, Model index and initial and aligned RMSDs will be dumped.)",true, "default","pdb");
 		cmd.add( pdb_mob );
 
 		// optional arguments
@@ -89,6 +93,12 @@ int main(int argc, char *argv[])
 		SwitchArg CAlpha("c","calpha", "only C alpha in proteins or P in nucleic acids", false);
 		cmd.add( CAlpha );
 
+		SwitchArg CB_add("","CB", "add CB to RMSD", false);
+		cmd.add( CB_add );
+
+		SwitchArg O_add("","O", "add O to RMSD", false);
+		cmd.add( O_add );
+
 		SwitchArg sim_text("","sim_text", "Force plain text format for similarity matrix output.", false);
 		cmd.add( sim_text );
 
@@ -98,17 +108,20 @@ int main(int argc, char *argv[])
 		ValueArg<std::string> pdb_moved("o","output","output pdb file (mobile onto reference)",false,"","string");
 		cmd.add(pdb_moved);
 
+		ValueArg<std::string> pdb_mob2("","input2","extra PDB to move with transformation",false,"","string");
+		cmd.add(pdb_mob2);
+
 		ValueArg<int> Start("","start","N-terminal loop residue index, first mobile residue (PDB residue index). (default=disabled)",false,-1,"int");
 		cmd.add( Start );
 
-        ValueArg<int> End("","end","C-terminal loop residue index, last mobile residue (PDB residue index). (default=disabled)",false,-1,"int");
+		ValueArg<int> End("","end","C-terminal loop residue index, last mobile residue (PDB residue index). (default=disabled)",false,-1,"int");
 		cmd.add( End );
 
 		ValueArg<char> Chain("","chain", "Chain ID (default=first chain of reference PDB)",false,1,"int");
 		cmd.add( Chain );
 
 		ValueArg<int> NFlanks("","flanks", "Number of loop flanking residues. E.g. \"2\" means two flanking residues at Nt and other two at Ct, \"0\" means disabled (default=0).",false,0,"int");
-        cmd.add( NFlanks );
+		cmd.add( NFlanks );
 
 		ValueArg<int> ResOffset("","res_offset", "Residue index offset from both ends. Typically used to discard anchors (fixed) in Multi-PDB loops file. (default=0)",false,0,"int");
 		cmd.add( ResOffset );
@@ -125,6 +138,7 @@ int main(int argc, char *argv[])
 		// reading pdb
 		Macromolecule *mol=new Macromolecule("pdb");
 		Macromolecule *mol2=new Macromolecule("pdb2");
+		Macromolecule *mol3=new Macromolecule("pdb3");
 		Macromolecule *mol_ca;
 		Macromolecule *mol2_ca;
 
@@ -133,6 +147,11 @@ int main(int argc, char *argv[])
 		strcpy(file_mob,((temp=pdb_mob.getValue()).c_str()));
 		mol->readPDB(file_ref);
 		mol2->readPDB(file_mob);
+
+		if(pdb_mob2.isSet()) {
+			strcpy(file_mob2,((temp=pdb_mob2.getValue()).c_str()));
+			mol3->readPDB(file_mob2);
+		}
 
 		// Removing Hydrogens
 		if(RemoveH.isSet())
@@ -186,10 +205,10 @@ int main(int argc, char *argv[])
 		chain = ch->getName()[0];
 		delete iter_molec;
 
-//		// Apply the selected number of residues offset (0 by default)
-//		ri += ResOffset.getValue();
-//		rf -= ResOffset.getValue();
-//		fprintf(stderr, "> Considered chain \"%c\" goes from residue %d (Nt) to %d (Ct), including an index offset of %d.\n", chain, ri, rf, ResOffset.getValue() );
+		//		// Apply the selected number of residues offset (0 by default)
+		//		ri += ResOffset.getValue();
+		//		rf -= ResOffset.getValue();
+		//		fprintf(stderr, "> Considered chain \"%c\" goes from residue %d (Nt) to %d (Ct), including an index offset of %d.\n", chain, ri, rf, ResOffset.getValue() );
 
 		// Number of loop flanking residues (e.g. "2" means two flanking residues at Nt, and other two at Ct)
 		int nflanks = NFlanks.getValue();
@@ -224,24 +243,36 @@ int main(int argc, char *argv[])
 		// Atomic selection Conditions
 		Condition *calpha= new Condition(-1,-1,-1,-1,ichain,ichain,ri,rf,-1,-1);
 		// Condition *calpha= new Condition(-1,-1,ichain,ichain,-1,-1,ri,rf,-1,-1); // Mon (9/4/2018): Bug, we must select by chain, not segment.
-// MON: Check above lines !!! Rare....
+		// MON: Check above lines !!! Rare....
 
 		Condition *calphaX= new Condition(-1,-1,-1,-1,-1,-1,ri,rf,-1,-1); // Selection for mobile Multi-PDB
-//		Condition *calphaX= new Condition(-1,-1,ichain,ichain,-1,-1,-1,-1,-1,-1); // Selection for mobile Multi-PDB
+		//		Condition *calphaX= new Condition(-1,-1,ichain,ichain,-1,-1,-1,-1,-1,-1); // Selection for mobile Multi-PDB
 
-//		          mobile = new Condition(-1,-1,-1,-1,-1,-1,ri+1,rf-1,-1,-1); // get residues from Nt+1 to Ct-1, i.e. only those mobile...
+		//		          mobile = new Condition(-1,-1,-1,-1,-1,-1,ri+1,rf-1,-1,-1); // get residues from Nt+1 to Ct-1, i.e. only those mobile...
 
 		if( CAlpha.isSet() )
 		{
 			calpha->add(" CA ");
 			calpha->add(" P  ");
 		}
+
+		if( CB_add.isSet() )
+		{
+			calpha->add(" CB ");
+		}
+
+		if( O_add.isSet() )
+		{
+			calpha->add(" O  ");
+		}
+
+
 		if( BBone.isSet() )
 		{
 			calpha->add(" N  ");
 			calpha->add(" CA ");
 			calpha->add(" C  ");
-			calpha->add(" O  ");
+			//	calpha->add(" O  ");
 		}
 		Conditions *calpha2= new Conditions();
 		calpha2->add(calpha);
@@ -261,8 +292,9 @@ int main(int argc, char *argv[])
 		Conditions *calpha2X= new Conditions();
 		calpha2X->add(calphaX);
 
+
 		// Compute RMSDs between some loop in the reference PDB and all the loops in the mobile Multi-PDB
-//		if(nmol > 1 || ri >= 0 || rf >= 0) // If mobile Multi-PDB found
+		//		if(nmol > 1 || ri >= 0 || rf >= 0) // If mobile Multi-PDB found
 		if(nmol > 1) // If mobile Multi-PDB found
 		{
 			printf( "# %d models found in input mobile Multi-PDB: %s\n", nmol, file_mob);
@@ -276,14 +308,14 @@ int main(int argc, char *argv[])
 			// Copy trimmed reference Macromolecule (just mobile loop region) to load decoys coordinates later
 			Macromolecule *mol2_decoy = new Macromolecule(mol_ca);
 
-//			}
-//			else
-//			{
-//				fprintf(stderr,"%d missing atoms in mol\n",mol->format_residues(false,2));
-//				fprintf(stderr,"%d missing atoms in mol2\n",mol2->format_residues(false,2));
-//				mol_ca = mol;
-//				mol2_ca = mol2;
-//			}
+			//			}
+			//			else
+			//			{
+			//				fprintf(stderr,"%d missing atoms in mol\n",mol->format_residues(false,2));
+			//				fprintf(stderr,"%d missing atoms in mol2\n",mol2->format_residues(false,2));
+			//				mol_ca = mol;
+			//				mol2_ca = mol2;
+			//			}
 
 			int natom = mol_ca->get_num_atoms(); // Get number of atoms in reference loop
 			int natom2 = mol2_ca->get_num_atoms(); // Get number of atoms in mobile loops
@@ -478,10 +510,10 @@ int main(int argc, char *argv[])
 				maskmol = mol_ca->maskres2maskatom(maskres);
 				maskmol2 = mol2_ca->maskres2maskatom(maskres2);
 				if(save_rmsd.isSet())
-						{				printf("> Saving initial.rmsd\n");
+				{				printf("> Saving initial.rmsd\n");
 
 				rmsd_i = mol_ca->rmsd_file(mol2_ca,maskmol,maskmol2, "initial.rmsd");
-						}
+				}
 				rmsd_i = mol_ca->rmsd(mol2_ca,maskmol,maskmol2);
 
 				// here save dihedral....
@@ -732,6 +764,12 @@ int main(int argc, char *argv[])
 			}
 
 			strcpy(file_out,((temp=pdb_moved.getValue()).c_str()));
+			if(pdb_mob2.isSet()) {
+				M4Rot *matrix4_op=new M4Rot(matrix4);
+				mol3->applyAtoms(matrix4_op); // superpose full-atom
+				mol3->writePDB("temp2.pdb");
+			}
+
 			mol2->writePDB(file_out);
 			printf(">> Saved in %s\n", file_out);
 		}

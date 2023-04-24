@@ -22,7 +22,6 @@ using namespace std;
 
 
 
-
 #ifdef VOLUME_INCLUDED
 
 #include "libvolume/include/vlvolume.h"
@@ -123,7 +122,7 @@ public:
 	/// @param num_m: number of molecules in the list
 	Macromolecule( Macromolecule **list, int num_m );
 	/// Destructor
-	~Macromolecule();
+	virtual ~Macromolecule();
 	///Returns the class of the object
 	TElement getClass();
 	/// Returns the Molecule type that contains the object

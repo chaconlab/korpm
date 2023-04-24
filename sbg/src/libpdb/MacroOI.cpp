@@ -28,31 +28,31 @@ bool Macromolecule::readPDB( char *name)
 	{
 		while(point[i]!='\0')
 		{
-		  extension[i]=point[i];
-		  i++;
+			extension[i]=point[i];
+			i++;
 		}
 		extension[i]='\0';
 
 		type=3;
 		if(pdb_strcasecmp(extension,".pdb")==0)
 		{
-		type=0;
+			type=0;
 		}
 		if(pdb_strcasecmp(extension,".ent")==0)
 		{
-		 type=0;
+			type=0;
 		}
 		if(pdb_strcasecmp(extension,".pqr")==0)
 		{
-		type=0;
+			type=0;
 		}
 		if(pdb_strcasecmp(extension,".mol2")==0)
 		{
-		 type=1;
+			type=1;
 		}
 		if(pdb_strcasecmp(extension,".sdf")==0)
 		{
-		 type=2;
+			type=2;
 		}
 	}
 
@@ -82,7 +82,7 @@ bool Macromolecule::readPDB_pdb( char *name)
 	int atom_no, res_no, i,k, cont_CA=0,cont_res=0;
 	double occ, tfac;
 	char atom_name[5], res_name[4],old_res_name[4], rec_type[7];
-//	name_len = sizeof( atom_name );
+	//	name_len = sizeof( atom_name );
 	char number[6];
 
 
@@ -105,28 +105,28 @@ bool Macromolecule::readPDB_pdb( char *name)
 
 	for(i=0;i<9;i++)
 	{
-		  x_c[i]=y_c[i]=z_c[i]='\0';
+		x_c[i]=y_c[i]=z_c[i]='\0';
 	}
 	for(i=0;i<7;i++)
 	{
-		  occ_c[i]=tfac_c[i]='\0';
+		occ_c[i]=tfac_c[i]='\0';
 	}
 
-//	for ( i = 0; i < name_len; atom_name[i++] = ' ' );
-//	for ( i = 0; i < 5; atom_name[i++] = ' ' );
-//	atom_name[4] = '\0';
+	//	for ( i = 0; i < name_len; atom_name[i++] = ' ' );
+	//	for ( i = 0; i < 5; atom_name[i++] = ' ' );
+	//	atom_name[4] = '\0';
 
 	char blank, alt_loc, entity_id[2], insert_code,old_insert_code, no[4];
 	entity_id[1] = '\0';
 
 	for(i=0;i<4;i++)
 	{
-		  no[i] = '\0';
-		  res_name[i] = '\0';
+		no[i] = '\0';
+		res_name[i] = '\0';
 	}
 	for(i=0;i<7;i++)
 	{
-		  rec_type[i] = '\0';
+		rec_type[i] = '\0';
 	}
 
 	number[5] = '\0';
@@ -165,8 +165,8 @@ bool Macromolecule::readPDB_pdb( char *name)
 	//Open the file
 	file=fopen(name,"rt");
 	if(file==NULL) {
-	  fprintf(stderr,"    Can't open -%s- for reading: No such pdb file\n\n",name);
-	   exit(1);
+		fprintf(stderr,"    Can't open -%s- for reading: No such pdb file\n\n",name);
+		exit(1);
 	}
 
 
@@ -174,80 +174,80 @@ bool Macromolecule::readPDB_pdb( char *name)
 	cont_res=0;
 	while ( fgets( line, 82, file ) != 0 )
 	{
-		 occ = 1.0;
-		 jump=true;
-		 //Interprets the read line
-		 if ( sscanf( line, fmt, rec_type, number, atom_name, & alt_loc, res_name, & entity_id[0], & res_no, & insert_code, x_c,
-		         y_c, z_c, occ_c, tfac_c, & blank, & no[0] ) == EOF )
-		 {
+		occ = 1.0;
+		jump=true;
+		//Interprets the read line
+		if ( sscanf( line, fmt, rec_type, number, atom_name, & alt_loc, res_name, & entity_id[0], & res_no, & insert_code, x_c,
+				y_c, z_c, occ_c, tfac_c, & blank, & no[0] ) == EOF )
+		{
 			fclose(file);
 			return true;
-		 }
-		 x=atof(x_c);
-		 y=atof(y_c);
-		 z=atof(z_c);
-		 occ=atof(occ_c);
-		 tfac=atof(tfac_c);
-		 atom_name[4] = '\0';
+		}
+		x=atof(x_c);
+		y=atof(y_c);
+		z=atof(z_c);
+		occ=atof(occ_c);
+		tfac=atof(tfac_c);
+		atom_name[4] = '\0';
 
-		 atom_no=atoi(number);
-// fprintf(stderr,"atom_name=%s--- atom_no= %d (number=%s)\n",atom_name,atom_no,number);
-//getchar();
-		 if( strcmp( rec_type, "ATOM  " ) == 0 || strcmp( rec_type, "HETATM" ) == 0)
-		 {
-			 jump=false;
-			 if(hexadecimal)
+		atom_no=atoi(number);
+		// fprintf(stderr,"atom_name=%s--- atom_no= %d (number=%s)\n",atom_name,atom_no,number);
+		//getchar();
+		if( strcmp( rec_type, "ATOM  " ) == 0 || strcmp( rec_type, "HETATM" ) == 0)
+		{
+			jump=false;
+			if(hexadecimal)
 
-			 {
-				 atom_no=0;
-			 }
-			 for(i=0;i<5;i++)
-			 {
-				 if((number[i]>=65 && number[i]<=70) || (number[i]>=97 && number[i]<=102))
-				 {
-					 //fprintf(stderr,"Hola: %c %s\n",number[i],number);
-					 //sscanf(number,"%x",&atom_no);
-					 atom_no=0;
-					 hexadecimal=true;
-					 i=6;
-				 }
-				 if(number[i]=='\0')
-					 i=5;
-			 }
-		 }
+			{
+				atom_no=0;
+			}
+			for(i=0;i<5;i++)
+			{
+				if((number[i]>=65 && number[i]<=70) || (number[i]>=97 && number[i]<=102))
+				{
+					//fprintf(stderr,"Hola: %c %s\n",number[i],number);
+					//sscanf(number,"%x",&atom_no);
+					atom_no=0;
+					hexadecimal=true;
+					i=6;
+				}
+				if(number[i]=='\0')
+					i=5;
+			}
+		}
 
 
-		 //printf("%s %s %d\n",atom_name,res_name, CA_previous);
+		//printf("%s %s %d\n",atom_name,res_name, CA_previous);
 
-		 //if(alt_loc!=' ' && alt_loc!='A' )
-		 if(alt_loc>65 && alt_loc<=90)
-		 {
-			 if( strcmp( rec_type, "ATOM  " ) == 0)
-			 {
-				 if (first_warning)
-				 {
-					 first_warning=false;
-					 // Mon: Hasta los cojones de ver estos warnings... con uno va que chuta!
-					 fprintf(stderr,"WARNING Alternate locations found in %s. E.g: Alt-loc[%d %s] (only \"A\" location considered)",name,atom_no,atom_name);
-//					 fprintf(stderr,"WARNING reading %s : Alt-loc[%d %s]",name,atom_no,atom_name);
-				 }
-//				 else
-//					 fprintf(stderr," Alt-loc[%d %s]",atom_no,atom_name);
+		//if(alt_loc!=' ' && alt_loc!='A' )
+		if(alt_loc>65 && alt_loc<=90)
+		{
+			if( strcmp( rec_type, "ATOM  " ) == 0)
+			{
+				if (first_warning)
+				{
+					first_warning=false;
+					// Mon: Hasta los cojones de ver estos warnings... con uno va que chuta!
+					fprintf(stderr,"WARNING Alternate locations found in %s. E.g: Alt-loc[%d %s] (only \"A\" location considered)",name,atom_no,atom_name);
+					//					 fprintf(stderr,"WARNING reading %s : Alt-loc[%d %s]",name,atom_no,atom_name);
+				}
+				//				 else
+				//					 fprintf(stderr," Alt-loc[%d %s]",atom_no,atom_name);
 
-			 }
+			}
 
-			 jump=true;
-		 }
+			jump=true;
+		}
 
-		 if ( strcmp( rec_type, "     " ) == 0
-				 ||  strcmp( rec_type, "" ) == 0
-				 ||  strcmp( rec_type, "END   " ) == 0 )
-		 {
-			 jump=true;
-		 }
-		 //if ( strcmp( rec_type, "TER   " ) == 0 )
-		 if(rec_type[0]=='T' && rec_type[1]=='E' && rec_type[2]=='R')
-		 {
+		if ( strcmp( rec_type, "     " ) == 0
+				||  strcmp( rec_type, "" ) == 0
+				||  strcmp( rec_type, "END   " ) == 0 )
+		{
+			jump=true;
+		}
+		//if ( strcmp( rec_type, "TER   " ) == 0 )
+		if(rec_type[0]=='T' && rec_type[1]=='E' && rec_type[2]=='R')
+		{
 
 			old_mol_type=input_null;
 			strcpy(old_res_name,"");
@@ -260,416 +260,418 @@ bool Macromolecule::readPDB_pdb( char *name)
 			CA_previous=false;
 			cont_CA=0;
 			jump=true;
-		 }
+		}
 
-		 if ( strcmp( rec_type, "MODEL " ) == 0 )
-		 {
-			 if(first_model)
-			 {
-				 fprintf(stderr,"WARNING: ReadPDB. File %s has multiple models. Models are read as different Molecule sets\n",name);
-				 first_model=false;
-			 }
-			 old_mol_type=input_null;
-			 strcpy(old_res_name,"");
-			 old_insert_code='Z';
-			 strcpy( old_entity_id, "" );
-			 old_res_no = -1;
-			 old_pos[0]=old_pos[1]=old_pos[2]=-1000000;
-			 old_ca_pos[0]=old_ca_pos[1]=old_ca_pos[2]=-1000000;
-			 dist_ca=0;
-			 CA_previous=false;
-			 cont_CA=0;
-			 jump=true;
-		 }
-		 // fprintf(stderr,"arriba [%s] %d [%s]\n",res_name, mol_type, rec_type);
-         // getchar();
-		 //IF VALID ATOM LINE
-		 if(!jump)
-		 {
-			 //DETERMINE ATOM TYPE
+		if ( strcmp( rec_type, "MODEL " ) == 0 )
+		{
+			if(first_model)
+			{
+				fprintf(stderr,"WARNING: ReadPDB. File %s has multiple models. Models are read as different Molecule sets\n",name);
+				first_model=false;
+			}
+			old_mol_type=input_null;
+			strcpy(old_res_name,"");
+			old_insert_code='Z';
+			strcpy( old_entity_id, "" );
+			old_res_no = -1;
+			old_pos[0]=old_pos[1]=old_pos[2]=-1000000;
+			old_ca_pos[0]=old_ca_pos[1]=old_ca_pos[2]=-1000000;
+			dist_ca=0;
+			CA_previous=false;
+			cont_CA=0;
+			jump=true;
+		}
+		// fprintf(stderr,"arriba [%s] %d [%s]\n",res_name, mol_type, rec_type);
+		// getchar();
+		//IF VALID ATOM LINE
+		if(!jump)
+		{
+			//DETERMINE ATOM TYPE
 
-			 if ((strcmp(res_name,old_res_name)==0))   mol_type=old_mol_type;
+			if ((strcmp(res_name,old_res_name)==0))   mol_type=old_mol_type;
 
-			 else if ( strcmp( rec_type, "ATOM  " ) == 0 )
-			 {
-				 if(     (strcmp(res_name,"  A")==0) ||
-						 (strcmp(res_name,"  C")==0) ||
-						 (strcmp(res_name,"  G")==0) ||
-						 (strcmp(res_name,"  T")==0) ||
-						 (strcmp(res_name,"  U")==0) ||
-						 (strcmp(res_name," DA")==0) ||
-						 (strcmp(res_name," DG")==0) ||
-						 (strcmp(res_name," DT")==0) ||
-						 (strcmp(res_name," DC")==0) ||
-						 (strcmp(res_name," DU")==0)
-						)
-					{
-		 				mol_type=input_nucleacid;
-		 			}
-		 			else
-		 			{
-                         int ii;
-                         res_found=false;
-		 				 for (ii = 0; ii < 30; ii++ ) {
-				 			 // fprintf(stderr," [%s] [%s] %d\n",res_name, AA[ii].aa_name3, ii);
-		 					 if ( strcmp( res_name, AA[ii].aa_name3 ) == 0 )  { res_found=true; break; }
-		 				 }
+			else if ( strcmp( rec_type, "ATOM  " ) == 0 )
+			{
+				if(     (strcmp(res_name,"  A")==0) ||
+						(strcmp(res_name,"  C")==0) ||
+						(strcmp(res_name,"  G")==0) ||
+						(strcmp(res_name,"  T")==0) ||
+						(strcmp(res_name,"  U")==0) ||
+						(strcmp(res_name," DA")==0) ||
+						(strcmp(res_name," DG")==0) ||
+						(strcmp(res_name," DT")==0) ||
+						(strcmp(res_name," DC")==0) ||
+						(strcmp(res_name," DU")==0)
+				)
+				{
+					mol_type=input_nucleacid;
+				}
+				else
+				{
+					int ii;
+					res_found=false;
+					for (ii = 0; ii < 30; ii++ ) {
+						// fprintf(stderr," [%s] [%s] %d\n",res_name, AA[ii].aa_name3, ii);
+						if ( strcmp( res_name, AA[ii].aa_name3 ) == 0 )  { res_found=true; break; }
+					}
 
-		 				if (res_found) mol_type=input_protein;
-		 					else { mol_type=input_smol;
-		 					       strcpy(rec_type,"HETATM");
-								  }
+					if (res_found) mol_type=input_protein;
+					else { mol_type=input_smol;
+					strcpy(rec_type,"HETATM");
+					}
 
-		 				//fprintf(stderr," [%s] %d %s %d\n",res_name, mol_type, rec_type, ii);
-		 				//getchar();
-		 			}
-			 }
-	 		 else
-	 			 if ( strcmp( rec_type, "HETATM" ) == 0 )
-		 			 {
-	 					mol_type=input_smol;
-		 			 }
-		 			 else
-		 			 {
-	 					mol_type=input_null;
-		 			 }
-
-
-			 //MODIFICATIONS IN READ VALUES
-			 //**************rename hydrogens
-			 if(strcmp(atom_name," HN ")==0) // ????
-			 {
-				 strcpy(atom_name, " H  "); // ????
-			 }
-
-			 //fprintf(stderr,"fuera [%s] %d %s\n",res_name, mol_type, rec_type);
-
-			 k=0;
-			 while (!isalpha(atom_name[k]) &&  (k<4) )
-						 k++; // Index "k" pointing to first letter
-
-			 if (k==4) {
-				 fprintf(stderr," Non atom name in line: \n %s \n\n",line);
-				 exit(1);
-			 }
+					//fprintf(stderr," [%s] %d %s %d\n",res_name, mol_type, rec_type, ii);
+					//getchar();
+				}
+			}
+			else
+				if ( strcmp( rec_type, "HETATM" ) == 0 )
+				{
+					mol_type=input_smol;
+				}
+				else
+				{
+					mol_type=input_null;
+				}
 
 
-				 sym[0] = atom_name[k]; // atom identity for 1 Char (C,N,...)
-				 k++;
-				 sym[1] =' ';
+			//MODIFICATIONS IN READ VALUES
+			//**************rename hydrogens
+			if(strcmp(atom_name," HN ")==0) // ????
+			{
+				strcpy(atom_name, " H  "); // ????
+			}
 
-				 if  (isalpha(atom_name[k]) && (mol_type==input_smol) ) {
+			//fprintf(stderr,"fuera [%s] %d %s\n",res_name, mol_type, rec_type);
 
-					 if (islower(atom_name[k]))
-						 atom_name[k]=toupper(atom_name[k]);
+			k=0;
+			while (!isalpha(atom_name[k]) &&  (k<4) )
+				k++; // Index "k" pointing to first letter
 
-					 if ((sym[0] =='C')&&(atom_name[k] =='A')&&(strcmp( res_name, "CA ") == 0 )) sym[1] ='A';
-					 if ((sym[0] =='M')&&(atom_name[k] =='G')) sym[1] ='G';
-					 if ((sym[0] =='M')&&(atom_name[k] =='N')) sym[1] ='N';
-					 if ((sym[0] =='N')&&(atom_name[k] =='A')&&(strcmp( res_name, "NA ") == 0 )) sym[1] ='A';
-					 if ((sym[0] =='Z')&&(atom_name[k] =='N')) sym[1] ='N';
-					 if ((sym[0] =='F')&&(atom_name[k] =='E')) sym[1] ='E';
-					 if ((sym[0] =='N')&&(atom_name[k] =='I')) sym[1] ='I';
-					 if ((sym[0] =='C')&&(atom_name[k] =='U')&&(strcmp( res_name, "CU ") == 0 )) sym[1] ='U';
-					 if ((sym[0] =='A')&&(atom_name[k] =='L')) sym[1] ='L';
-					 if ((sym[0] =='C')&&(atom_name[k] =='L')&&(strcmp( res_name, "CL ") == 0 )) sym[1] ='L';
-					 if ((sym[0] =='C')&&(atom_name[k] =='O')&&(strcmp( res_name, "CO ") == 0 )) sym[1] ='O';
-					 if ((sym[0] =='B')&&(atom_name[k] =='R')) sym[1] ='R';
-					 if ((sym[0] =='A')&&(atom_name[k] =='U')) sym[1] ='U';
-					 if ((sym[0] =='P')&&(atom_name[k] =='T')&&(strcmp( res_name, "PT ") == 0 ) ) sym[1] ='T';
-					 if ((sym[0] =='H')&&(atom_name[k] =='G')&&(strcmp( res_name, "HG ") == 0 ) ) sym[1] ='G';
+			if (k==4) {
+				fprintf(stderr," Non atom name in line: \n %s \n\n",line);
+				exit(1);
+			}
 
 
-					 // fprintf(stderr," [%c%c]->[%s] resname [%s]\n",sym[0],sym[1], atom_name, res_name);
-				 }
+			sym[0] = atom_name[k]; // atom identity for 1 Char (C,N,...)
+			k++;
+			sym[1] =' ';
 
-				  // fprintf(stderr," [%c%c] %f\n",sym[0],sym[1], k);
+			if  (isalpha(atom_name[k]) && (mol_type==input_smol) ) {
+
+				if (islower(atom_name[k]))
+					atom_name[k]=toupper(atom_name[k]);
+
+				if ((sym[0] =='C')&&(atom_name[k] =='A')&&(strcmp( res_name, "CA ") == 0 )) sym[1] ='A';
+				if ((sym[0] =='M')&&(atom_name[k] =='G')) sym[1] ='G';
+				if ((sym[0] =='M')&&(atom_name[k] =='N')) sym[1] ='N';
+				if ((sym[0] =='N')&&(atom_name[k] =='A')&&(strcmp( res_name, "NA ") == 0 )) sym[1] ='A';
+				if ((sym[0] =='Z')&&(atom_name[k] =='N')) sym[1] ='N';
+				if ((sym[0] =='F')&&(atom_name[k] =='E')) sym[1] ='E';
+				if ((sym[0] =='N')&&(atom_name[k] =='I')) sym[1] ='I';
+				if ((sym[0] =='C')&&(atom_name[k] =='U')&&(strcmp( res_name, "CU ") == 0 )) sym[1] ='U';
+				if ((sym[0] =='A')&&(atom_name[k] =='L')) sym[1] ='L';
+				if ((sym[0] =='C')&&(atom_name[k] =='L')&&(strcmp( res_name, "CL ") == 0 )) sym[1] ='L';
+				if ((sym[0] =='C')&&(atom_name[k] =='O')&&(strcmp( res_name, "CO ") == 0 )) sym[1] ='O';
+				if ((sym[0] =='B')&&(atom_name[k] =='R')) sym[1] ='R';
+				if ((sym[0] =='A')&&(atom_name[k] =='U')) sym[1] ='U';
+				if ((sym[0] =='P')&&(atom_name[k] =='T')&&(strcmp( res_name, "PT ") == 0 ) ) sym[1] ='T';
+				if ((sym[0] =='H')&&(atom_name[k] =='G')&&(strcmp( res_name, "HG ") == 0 ) ) sym[1] ='G';
 
 
-			 //*****************Pos
-			 pos[0] = ( float )x;
-			 pos[1] = ( float )y;
-			 pos[2] = ( float )z;
+				// fprintf(stderr," [%c%c]->[%s] resname [%s]\n",sym[0],sym[1], atom_name, res_name);
+			}
 
-			 //ATOM CREATION
-			 if(strcmp( entity_id, old_entity_id ) != 0  ||  mol_type!=old_mol_type)
-			 {
-			  cont_res=0;
-			 }
+			// fprintf(stderr," [%c%c] %f\n",sym[0],sym[1], k);
 
-			 // at = new Atom( Table_Elements::getElement( sym ), pos, 0.0, atom_name, atom_no, occ, tfac );
-			 // fprintf(stderr,"About to getElement(sym). sym= %s\n",sym);
-			 Element *elem = Table_Elements::getElement(sym);
-			 // fprintf(stderr,"elem.sym= %s\n",elem->sym);
-			 if (elem == NULL)
-			 {
-				 fprintf(stderr,"Warning! Unknown atom: [%c%c]->[%s] resname [%s], changed to C (carbon).\n",sym[0],sym[1], atom_name, res_name);
-				 at = new Atom( Table_Elements::getElement("C "), pos, 0.0, " C  ", atom_no, occ, tfac );
-			 }
-			 else
-				 at = new Atom( elem, pos, 0.0, atom_name, atom_no, occ, tfac );
 
-			 //CASE PROTEIN
-			 if(mol_type==input_protein)
-			 {
+			//*****************Pos
+			pos[0] = ( float )x;
+			pos[1] = ( float )y;
+			pos[2] = ( float )z;
 
-				 //*****************CA
-				 if(strcmp( atom_name, " CA " ) == 0) // ????
-				 {
-					 cont_CA++;
-					 if(!CA_previous)
-						 dist_ca=0.0;
-					 else
-						 dist_ca=sqrt_dist(pos,old_ca_pos);
+			//ATOM CREATION
+			if(strcmp( entity_id, old_entity_id ) != 0  ||  mol_type!=old_mol_type)
+			{
+				cont_res=0;
+			}
+
+			// at = new Atom( Table_Elements::getElement( sym ), pos, 0.0, atom_name, atom_no, occ, tfac );
+			// fprintf(stderr,"About to getElement(sym). sym= %s\n",sym);
+			Element *elem = Table_Elements::getElement(sym);
+			// fprintf(stderr,"elem.sym= %s\n",elem->sym);
+			if (elem == NULL)
+			{
+				fprintf(stderr,"Warning! Unknown atom: [%c%c]->[%s] resname [%s], changed to C (carbon).\n",sym[0],sym[1], atom_name, res_name);
+				at = new Atom( Table_Elements::getElement((char *)"C "), pos, 0.0, (char *)" C  ", atom_no, occ, tfac );
+			}
+			else
+				at = new Atom( elem, pos, 0.0, atom_name, atom_no, occ, tfac );
+
+			//CASE PROTEIN
+			if(mol_type==input_protein)
+			{
+
+				//*****************CA
+				if(strcmp( atom_name, " CA " ) == 0) // ????
+				{
+					cont_CA++;
+					if(!CA_previous)
+						dist_ca=0.0;
+					else
+						dist_ca=sqrt_dist(pos,old_ca_pos);
 					old_ca_pos[0]=pos[0];
 					old_ca_pos[1]=pos[1];
 					old_ca_pos[2]=pos[2];
 					CA_previous=true;
-				 }
-				 else
-					 dist_ca=0;
-
-				 //No New residue?
-				 if ( old_res_no == res_no
-						 && insert_code==old_insert_code
-						 && strcmp(res_name,old_res_name)==0
-						 &&  (cont_CA<2)
-						 && strcmp( entity_id, old_entity_id ) == 0
-						 && mol_type==old_mol_type)
-				 {
-					 frag->add(at);
-				 }
-				 else //New Residue
-				 {
-
-					 frag=new Residue(res_name,res_no,cont_res, insert_code );
-					 cont_res++;
-					 if(cont_res==9999)
-					 	cont_res=0;
-
-					 inserted_frag=false;
-					 frag->add(at);
-					 if(strcmp( at->getName(), " CA " ) == 0) // ????
-						 cont_CA=1;
-					 else
-						 cont_CA=0;
-
-				 }
-
-				 if( (dist_ca>=RESIDUE_DIST) || !inserted_frag)
-				 {
-					 //No New Segment?
-					 if(res_no==(old_res_no+1)
-							 && dist_ca<RESIDUE_DIST
-							 && strcmp( entity_id, old_entity_id ) == 0
-							 && mol_type==old_mol_type)
-					 {
-						 seg->add(frag);
-						 inserted_frag=true;
-					 }
-					 else //New Segment
-					 {
-						 newsegment=false;
-						 if( inserted_frag )
-						 {
-							 if(seg->getLimit()>1)
-						 	 {
-								 seg->remove(seg->getLimit()-1);
-								 seg=new Segment( "Segment" );
-								 seg->add(frag);
-		 						 inserted_frag=true;
-		 						 newsegment=true;
-							 }
-						 }
-						 else
-						 {
-							 seg=new Segment( "Segment" );
-							 seg->add(frag);
-	 						 inserted_frag=true;
-	 						 newsegment=true;
-						 }
-
-						 if(newsegment)
-						 {
-							 //No New Chain?
-							 if(strcmp( entity_id, old_entity_id ) == 0
-									 && mol_type==old_mol_type)
-							 {
-								 ch->add(seg);
-							 }
-							 else //New Chain
-							 {
-
-								 ch=new Chain( entity_id );
-
-								 ch->add(seg);
-								 CA_previous=false;
-
-								 //No new Molecule?
-								 if(mol_type==old_mol_type)
-								 {
-									 mol->add(ch);
-								 }
-								 else //New Protein
-								 {
-									 mol=new Protein( ( char * ) "Protein" );
-									 mol->add(ch);
-									 this->add(mol);
-								 }
-							 }
-						 }
-					 }
-				 }
-			 }
-			 //END CASE PROTEIN
-
-
-			 //CASE NUCLEACID
-			 if(mol_type==input_nucleacid)
-			 {
-				 //*****************CA
-				 if(strcmp( atom_name, " P  " ) == 0)
-				 {
-					 cont_CA++;
-					 if(!CA_previous)
-						 dist_ca=0.0;
-					 else
-						 dist_ca=sqrt_dist(pos,old_ca_pos);
-						 old_ca_pos[0]=pos[0];
-						 old_ca_pos[1]=pos[1];
-						 old_ca_pos[2]=pos[2];
-						 CA_previous=true;
-				 }
-				 else
-					 dist_ca=0;
-
-
-				 //No New residue?
-				 if ( old_res_no == res_no
-						 && insert_code==old_insert_code
-						 && strcmp(res_name,old_res_name)==0 &&  (cont_CA<2)
-						 && strcmp( entity_id, old_entity_id ) == 0
-						 && mol_type==old_mol_type)
-				 {
-					 frag->add(at);
-				 }
-				 else //New Nucleotide
-				 {
-					 frag=new Nucleotide(res_name,res_no,cont_res, insert_code );
-					 inserted_frag=false;
-					 frag->add(at);
-					 if(strcmp( at->getName(), " P  " ) == 0) // ????
-					 		cont_CA=1;
-					 else
-					 	 cont_CA=0;
-
-					 cont_res++;
-				 }
-
-				 if( dist_ca>=NUCLE_DIST || !inserted_frag)
-				 {
-					 //No New Segment?
-					 if(res_no==(old_res_no+1)
-							 && strcmp( entity_id, old_entity_id ) == 0
-							 && dist_ca<NUCLE_DIST
-							 && mol_type==old_mol_type)
-					 {
-						 seg->add(frag);
-						 inserted_frag=true;
-					 }
-					 else //New Fragment
-					 {
-						 newsegment=false;
-						 if( inserted_frag )
-						 {
-						 	 if(seg->getLimit()>1)
-						  	 {
-						 		 seg->remove(seg->getLimit()-1);
-						 		 seg=new Segment( "Segment" );
-						 		 seg->add(frag);
-						 		 inserted_frag=true;
-						 		 newsegment=true;
-						 	 }
-						  }
-						  else
-						  {
-							  seg=new Segment( "Segment" );
-							  seg->add(frag);
-							  inserted_frag=true;
-							  newsegment=true;
-						  }
-
-
-						 if(newsegment)
-						 {
-							 //No New Chain?
-							 if(strcmp( entity_id, old_entity_id ) == 0
-									 && mol_type==old_mol_type)
-							 {
-								 ch->add(seg);
-							 }
-							 else //New Chain
-							 {
-								 ch=new Chain( entity_id );
-								 ch->add(seg);
-								 CA_previous=false;
-
-								 //No new Molecule?
-								 if(mol_type==old_mol_type)
-								 {
-									 mol->add(ch);
-								 }
-								 else //New NAcid
-								 {
-									 mol=new NAcid( ( char * ) "NAcid" );
-									 mol->add(ch);
-									 this->add(mol);
-								 }
-							 }
-						 }
-					 }
 				}
-			 }
-			 //END CASE NUCLEACID
+				else
+					dist_ca=0;
 
-			 //CASE SMOL
-			 if(mol_type==input_smol)
-			 {
-				 //No New residue?
-				 if ( old_res_no == res_no
-						 && insert_code==old_insert_code
-						 && strcmp(res_name,old_res_name)==0
-						 && strcmp( entity_id, old_entity_id ) == 0
-						 && mol_type==old_mol_type)
-				 {
-					 mol->add(at);
-				 }
-				 else //New SMOL
-				 {
-					 mol=new SMol(res_name,res_no,cont_res );
-					 mol->add(at);
-					 this->add(mol);
-					 CA_previous=false;
-					 cont_res++;
-				 }
-			 }
-			 //END CASE SMOL
+				//No New residue?
+				if ( old_res_no == res_no
+						&& insert_code==old_insert_code
+						&& strcmp(res_name,old_res_name)==0
+						&&  (cont_CA<2)
+						&& strcmp( entity_id, old_entity_id ) == 0
+						&& mol_type==old_mol_type)
+				{
+					frag->add(at);
+				}
+				else //New Residue
+				{
+
+					frag=new Residue(res_name,res_no,cont_res, insert_code );
+					cont_res++;
+					if(cont_res==9999)
+						cont_res=0;
+
+					inserted_frag=false;
+					frag->add(at);
+					if(strcmp( at->getName(), " CA " ) == 0) // ????
+						cont_CA=1;
+					else
+						cont_CA=0;
+
+				}
+
+				if( (dist_ca>=RESIDUE_DIST) || !inserted_frag)
+				{
+					//No New Segment?
+					if(res_no==(old_res_no+1)
+							&& dist_ca<RESIDUE_DIST
+							&& strcmp( entity_id, old_entity_id ) == 0
+							&& mol_type==old_mol_type)
+					{
+						seg->add(frag);
+						inserted_frag=true;
+					}
+					else //New Segment
+					{
+						newsegment=false;
+						if( inserted_frag )
+						{
+							if(seg->getLimit()>1)
+							{
+								seg->remove(seg->getLimit()-1);
+								seg=new Segment((char *)"Segment" );
+								seg->add(frag);
+								inserted_frag=true;
+								newsegment=true;
+							}
+						}
+						else
+						{
+							seg=new Segment((char *)"Segment" );
+							seg->add(frag);
+							inserted_frag=true;
+							newsegment=true;
+						}
+
+						if(newsegment)
+						{
+							//No New Chain?
+							if(strcmp( entity_id, old_entity_id ) == 0
+									&& mol_type==old_mol_type)
+							{
+								ch->add(seg);
+							}
+							else //New Chain
+							{
+
+								ch=new Chain( entity_id );
+
+								ch->add(seg);
+								CA_previous=false;
+
+								//No new Molecule?
+								if(mol_type==old_mol_type)
+								{
+									mol->add(ch);
+								}
+								else //New Protein
+								{
+									mol=new Protein( ( char * ) "Protein" );
+									mol->add(ch);
+									this->add(mol);
+								}
+							}
+						}
+					}
+				}
+			}
+			//END CASE PROTEIN
 
 
-			 if ( strcmp( rec_type, "ATOM  " ) == 0
-					 || strcmp( rec_type, "HETATM" ) == 0 )
-			 {
-				 old_mol_type=mol_type;
-				 strcpy(old_res_name,res_name);
-				 old_insert_code=insert_code;
-				 strcpy( old_entity_id, entity_id );
-				 old_res_no = res_no;
-				 old_pos[0]=pos[0];
-				 old_pos[1]=pos[1];
-				 old_pos[2]=pos[2];
-			 }
+			//CASE NUCLEACID
+			if(mol_type==input_nucleacid)
+			{
+				//*****************CA
+				if(strcmp( atom_name, " P  " ) == 0)
+				{
+					cont_CA++;
+					if(!CA_previous) {
+						dist_ca=0.0;
+					}
+					else {
+						dist_ca=sqrt_dist(pos,old_ca_pos);
+					}
+					old_ca_pos[0]=pos[0];
+					old_ca_pos[1]=pos[1];
+					old_ca_pos[2]=pos[2];
+					CA_previous=true;
+				}
+				else
+					dist_ca=0;
 
-		 }//JUMP
+
+				//No New residue?
+				if ( old_res_no == res_no
+						&& insert_code==old_insert_code
+						&& strcmp(res_name,old_res_name)==0 &&  (cont_CA<2)
+						&& strcmp( entity_id, old_entity_id ) == 0
+						&& mol_type==old_mol_type)
+				{
+					frag->add(at);
+				}
+				else //New Nucleotide
+				{
+					frag=new Nucleotide(res_name,res_no,cont_res, insert_code );
+					inserted_frag=false;
+					frag->add(at);
+					if(strcmp( at->getName(), " P  " ) == 0) // ????
+						cont_CA=1;
+					else
+						cont_CA=0;
+
+					cont_res++;
+				}
+
+				if( dist_ca>=NUCLE_DIST || !inserted_frag)
+				{
+					//No New Segment?
+					if(res_no==(old_res_no+1)
+							&& strcmp( entity_id, old_entity_id ) == 0
+							&& dist_ca<NUCLE_DIST
+							&& mol_type==old_mol_type)
+					{
+						seg->add(frag);
+						inserted_frag=true;
+					}
+					else //New Fragment
+					{
+						newsegment=false;
+						if( inserted_frag )
+						{
+							if(seg->getLimit()>1)
+							{
+								seg->remove(seg->getLimit()-1);
+								seg=new Segment((char *)"Segment" );
+								seg->add(frag);
+								inserted_frag=true;
+								newsegment=true;
+							}
+						}
+						else
+						{
+							seg=new Segment((char *)"Segment" );
+							seg->add(frag);
+							inserted_frag=true;
+							newsegment=true;
+						}
+
+
+						if(newsegment)
+						{
+							//No New Chain?
+							if(strcmp( entity_id, old_entity_id ) == 0
+									&& mol_type==old_mol_type)
+							{
+								ch->add(seg);
+							}
+							else //New Chain
+							{
+								ch=new Chain( entity_id );
+								ch->add(seg);
+								CA_previous=false;
+
+								//No new Molecule?
+								if(mol_type==old_mol_type)
+								{
+									mol->add(ch);
+								}
+								else //New NAcid
+								{
+									mol=new NAcid( ( char * ) "NAcid" );
+									mol->add(ch);
+									this->add(mol);
+								}
+							}
+						}
+					}
+				}
+			}
+			//END CASE NUCLEACID
+
+			//CASE SMOL
+			if(mol_type==input_smol)
+			{
+				//No New residue?
+				if ( old_res_no == res_no
+						&& insert_code==old_insert_code
+						&& strcmp(res_name,old_res_name)==0
+						&& strcmp( entity_id, old_entity_id ) == 0
+						&& mol_type==old_mol_type)
+				{
+					mol->add(at);
+				}
+				else //New SMOL
+				{
+					mol=new SMol(res_name,res_no,cont_res );
+					mol->add(at);
+					this->add(mol);
+					CA_previous=false;
+					cont_res++;
+				}
+			}
+			//END CASE SMOL
+
+
+			if ( strcmp( rec_type, "ATOM  " ) == 0
+					|| strcmp( rec_type, "HETATM" ) == 0 )
+			{
+				old_mol_type=mol_type;
+				strcpy(old_res_name,res_name);
+				old_insert_code=insert_code;
+				strcpy( old_entity_id, entity_id );
+				old_res_no = res_no;
+				old_pos[0]=pos[0];
+				old_pos[1]=pos[1];
+				old_pos[2]=pos[2];
+			}
+
+		}//JUMP
 	}//WHILE
 
 	if (!first_warning)  fprintf(stderr,"\n");
@@ -680,159 +682,163 @@ bool Macromolecule::readPDB_pdb( char *name)
 
 bool Macromolecule::writePDB( char *name, bool number, bool change_name)
 {
-  FILE *file;
-  bool contP, contCh, contF, contR, contA;
-  char line[83];
-  char * fmt;
-  char * fmt2;
-  int res_no = 0;
-  int cont_at=1;
+	FILE *file;
+	bool contP, contCh, contF, contR, contA;
+	char line[83];
+	char * fmt;
+	char * fmt2;
+	int res_no = 0;
+	int cont_at=1;
 
-  Segment * seg;
-  Chain * cad;
-  Molecule * p;
-  Fragment * res;
-  Atom * a;
+	Segment * seg;
+	Chain * cad;
+	Molecule * p;
+	Fragment * res;
+	Atom * a;
 
-  Tcoor coor;
+	Tcoor coor;
 
-  char name_simple[5];
+	char name_simple[5];
 
-  if(change_name)
-  {
-	  strcpy(name_simple,"    ");
-  }
+	if(change_name)
+	{
+		strcpy(name_simple,"    ");
+	}
 
-  char *ext;
-  	ext=strrchr(name,'.');
-
-
-  if(strcmp(ext,".pqr")!=0)
-  {
-	  fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
-	  fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
-  }
-  else
-  {
-	  fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
-	  fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
-  }
+	char *ext;
+	ext=strrchr(name,'.');
 
 
-  if(this->get_num_atoms()<=0)
-  {
-	  return false;
-  }
+	if(strcmp(ext,".pqr")!=0)
+	{
+		fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
+		fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
+	}
+	else
+	{
+		fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
+		fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
+	}
 
 
-  file=fopen(name,"wt");
-  if(file==NULL)
-    return false;
-  //rename_residues();
+	if(this->get_num_atoms()<=0)
+	{
+		return false;
+	}
 
 
-  initAll();
-  contP = true;
-  while ( contP != false )
-  {
-    p = ( Molecule * ) this->getCurrent();
+	file=fopen(name,"wt");
+	if(file==NULL)
+		return false;
+	//rename_residues();
 
-    if(p->getClass()==pdb_smol)
-    {
-    	contA = true;
-    	while ( contA != false )
-    	{
-    		a = ( Atom * ) p->getCurrent();
 
-    	    if (change_name)
-    	    {
-    	    	name_simple[1]=(a->getElement())->sym[0];
-    	    	name_simple[2]=(a->getElement())->sym[1];
-    	    	a->setPdbName(name_simple);
-    	    	//fprintf(stderr,"hola: %s\n",a->getPdbName());
-    	    }
-    		/* Escritura de un atomo */
-    	    a->getPosition(coor);
+	initAll();
+	contP = true;
+	while ( contP != false )
+	{
+		p = ( Molecule * ) this->getCurrent();
 
-    	    if(number)
-    	    	  sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
-    	    	             p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-    	    else
-    	    	  sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
-    	      	    	   ((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+		if(p->getClass()==pdb_smol)
+		{
+			contA = true;
+			while ( contA != false )
+			{
+				a = ( Atom * ) p->getCurrent();
 
-    	    fputs( line, file );
-    	    if(cont_at==100000)
-    	    	cont_at=1;
-    	    contA = p->next();
-    	 }
-    }
-    else
-    {
-    	contCh = true;
-    	while ( contCh != false )
-    	{
-    		cad = ( Chain * ) p->getCurrent();
-    		cont_at=1;
+				if (change_name)
+				{
+					name_simple[1]=(a->getElement())->sym[0];
+					name_simple[2]=(a->getElement())->sym[1];
+					a->setPdbName(name_simple);
+					//fprintf(stderr,"hola: %s\n",a->getPdbName());
+				}
+				/* Escritura de un atomo */
+				a->getPosition(coor);
 
-    		contF = true;
-    		while ( contF != false )
-    		{
-    			seg = ( Segment * ) cad->getCurrent();
-    			contR = true;
-    			while ( contR != false )
-    			{
-    				res = ( Fragment * ) seg->getCurrent();
-    				res_no++;
+				if(number)
+					sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
+							p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+				else
+					sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
+							((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
 
-    				contA = true;
-    				while ( contA != false )
-    				{
-    					a = ( Atom * ) res->getCurrent();
+				fputs( line, file );
+				if(cont_at==100000)
+					cont_at=1;
+				contA = p->next();
+			}
+		}
+		else
+		{
+			contCh = true;
+			while ( contCh != false )
+			{
+				cad = ( Chain * ) p->getCurrent();
+				cont_at=1;
 
-    					if (change_name)
-    					{
-    					 	name_simple[1]=(a->getElement())->sym[0];
-    					  	name_simple[2]=(a->getElement())->sym[1];
-    					  	a->setPdbName(name_simple);
-    					 }
-    					/* Escritura de un atomo */
-    					a->getPosition(coor);
-    					if(number)
-    						sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
-    								cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-    					else
-    						sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
-    								cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+				contF = true;
+				while ( contF != false )
+				{
+					seg = ( Segment * ) cad->getCurrent();
+					contR = true;
+					while ( contR != false )
+					{
+						res = ( Fragment * ) seg->getCurrent();
+						res_no++;
 
-    			   	    if(cont_at==100000)
-    			    	    	cont_at=1;
+						contA = true;
+						while ( contA != false )
+						{
+							a = ( Atom * ) res->getCurrent();
 
-    					fputs( line, file );
-    					contA = res->next();
-    				}
-    				contR = seg->next();
-    			}
-    			contF = cad->next();
-    		}
-    		contCh = p->next();
-    	}
+							if (change_name)
+							{
+								name_simple[1]=(a->getElement())->sym[0];
+								name_simple[2]=(a->getElement())->sym[1];
+								a->setPdbName(name_simple);
+							}
+							/* Escritura de un atomo */
+							a->getPosition(coor);
+							if(number) {
+								sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
+										cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+							}
+							else {
+								sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
+										cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+							}
+							if(cont_at==100000) {
+								cont_at=1;
+							}
 
-    	 if(number)
-    	    	sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-    	    	a->getPdbSerial() + 1, res->getName(),
-    	         cad->getName() [0], res->getIdNumber());
-    	 else
-    	        sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-    	        	a->getPdbSerial() + 1, res->getName(),
-    	         cad->getName() [0], res->get_pos()+1);
-    	 fputs( line, file );
-    }
-    contP = this->next();
-  }
+							fputs( line, file );
+							contA = res->next();
+						}
+						contR = seg->next();
+					}
+					contF = cad->next();
+				}
+				contCh = p->next();
+			}
 
-  fclose(file);
-  return true;
+			if(number) {
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->getIdNumber());
+			}
+			else {
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->get_pos()+1);
+			}
+			fputs( line, file );
+		}
+		contP = this->next();
+	}
+
+	fclose(file);
+	return true;
 }
 
 bool Macromolecule::writeMPDB( char *name, int n, bool number)
@@ -870,10 +876,10 @@ bool Macromolecule::writeMPDB( char *name, int n, bool number)
 	if(file==NULL)
 		return false;
 
-//	COLUMNS       DATA TYPE      FIELD         DEFINITION
-//	----------------------------------------------------------------------
-//	 1 -  6       Record name    "MODEL "
-//	11 - 14       Integer        serial        Model serial number.
+	//	COLUMNS       DATA TYPE      FIELD         DEFINITION
+	//	----------------------------------------------------------------------
+	//	 1 -  6       Record name    "MODEL "
+	//	11 - 14       Integer        serial        Model serial number.
 
 	sprintf( line, "MODEL   %6d\n",n);
 	fputs( line, file );
@@ -974,330 +980,330 @@ bool Macromolecule::writeMPDB( char *name, int n, bool number)
 
 bool Macromolecule::writePDB( char *name, int *list, int total, bool number)
 {
-  FILE *file;
-  bool contP, contCh, contF, contR, contA;
-  char line[83];
-  char * fmt;
-  char * fmt2;
-  int res_no = 0;
-  int cont=0;
-  int i;
-  bool Found;
+	FILE *file;
+	bool contP, contCh, contF, contR, contA;
+	char line[83];
+	char * fmt;
+	char * fmt2;
+	int res_no = 0;
+	int cont=0;
+	int i;
+	bool Found;
 
-  Segment * seg;
-  Chain * cad;
-  Molecule * p;
-  Fragment * res;
-  Atom * a;
-  int cont_at=1;
+	Segment * seg;
+	Chain * cad;
+	Molecule * p;
+	Fragment * res;
+	Atom * a;
+	int cont_at=1;
 
-  Tcoor coor;
-  char *ext;
-  ext=strrchr(name,'.');
-
-
-  if(strcmp(ext,".pqr")!=0)
-  {
- 	  fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
- 	  fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
-  }
-  else
-  {
- 	  fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
- 	  fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
-  }
+	Tcoor coor;
+	char *ext;
+	ext=strrchr(name,'.');
 
 
-  file=fopen(name,"wt");
-  if(file==NULL)
-    return false;
-
-  initAll();
-  contP = true;
-  while ( contP != false )
-  {
-    p = ( Molecule * ) this->getCurrent();
-
-   if(p->getClass()==pdb_smol)
-   {
-	  contA = true;
-	  while ( contA != false )
-	  {
-	   a = ( Atom * ) p->getCurrent();
-
-	   /* Escritura de un atomo */
- 	   Found=false;
-	   for(i=0;i<total && !Found;i++)
-		if(list[i]==cont)
-		  Found=true;
-
-	   if(Found)
-	   {
-
-		   /* Escritura de un atomo */
-		   a->getPosition(coor);
-		   if(number)
-			   sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
-								 p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-		   else
-			   sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
-							   ((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-		   if(cont_at==100000)
-			   cont_at=1;
-
-		   fputs( line, file );
-	   }
-	   contA = p->next();
-	  }
-	  cont++;
-   }
-   else
-   {
-
-    contCh = true;
-    while ( contCh != false )
-    {
-      cad = ( Chain * ) p->getCurrent();
-      cont_at=1;
-      contF = true;
-      while ( contF != false )
-      {
-        seg = ( Segment * ) cad->getCurrent();
-
-        contR = true;
-        while ( contR != false )
-        {
-          res = ( Fragment * ) seg->getCurrent();
-          res_no++;
-
-          contA = true;
-          while ( contA != false )
-          {
-            a = ( Atom * ) res->getCurrent();
-
-            /* Escritura de un atomo */
-            Found=false;
-            for(i=0;i<total && !Found;i++)
-              if(list[i]==cont)
-                Found=true;
-
-            if(Found)
-            {
-              a->getPosition(coor);
-
-              if(number)
-					sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
-							cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-				else
-					sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
-							cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-
-              if(cont_at==100000)
-            	  cont_at=1;
-              fputs( line, file );
-
-            }
-
-            contA = res->next();
-          }
-          contR = seg->next();
-          cont++;
-        }
-        contF = cad->next();
-      }
-      contCh = p->next();
-    }
-
-
-    if(number)
-    	sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-    			a->getPdbSerial() + 1, res->getName(),
-        	    cad->getName() [0], res->getIdNumber());
+	if(strcmp(ext,".pqr")!=0)
+	{
+		fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
+		fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
+	}
 	else
-        sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-        	    a->getPdbSerial() + 1, res->getName(),
-        	    cad->getName() [0], res->get_pos()+1);
-    fputs( line, file );
-   }
-    contP = this->next();
-  }
+	{
+		fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
+		fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
+	}
 
 
-  fclose(file);
-  return true;
+	file=fopen(name,"wt");
+	if(file==NULL)
+		return false;
+
+	initAll();
+	contP = true;
+	while ( contP != false )
+	{
+		p = ( Molecule * ) this->getCurrent();
+
+		if(p->getClass()==pdb_smol)
+		{
+			contA = true;
+			while ( contA != false )
+			{
+				a = ( Atom * ) p->getCurrent();
+
+				/* Escritura de un atomo */
+				Found=false;
+				for(i=0;i<total && !Found;i++)
+					if(list[i]==cont)
+						Found=true;
+
+				if(Found)
+				{
+
+					/* Escritura de un atomo */
+					a->getPosition(coor);
+					if(number)
+						sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
+								p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+					else
+						sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
+								((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+					if(cont_at==100000)
+						cont_at=1;
+
+					fputs( line, file );
+				}
+				contA = p->next();
+			}
+			cont++;
+		}
+		else
+		{
+
+			contCh = true;
+			while ( contCh != false )
+			{
+				cad = ( Chain * ) p->getCurrent();
+				cont_at=1;
+				contF = true;
+				while ( contF != false )
+				{
+					seg = ( Segment * ) cad->getCurrent();
+
+					contR = true;
+					while ( contR != false )
+					{
+						res = ( Fragment * ) seg->getCurrent();
+						res_no++;
+
+						contA = true;
+						while ( contA != false )
+						{
+							a = ( Atom * ) res->getCurrent();
+
+							/* Escritura de un atomo */
+							Found=false;
+							for(i=0;i<total && !Found;i++)
+								if(list[i]==cont)
+									Found=true;
+
+							if(Found)
+							{
+								a->getPosition(coor);
+
+								if(number)
+									sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
+											cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+								else
+									sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
+											cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+
+								if(cont_at==100000)
+									cont_at=1;
+								fputs( line, file );
+
+							}
+
+							contA = res->next();
+						}
+						contR = seg->next();
+						cont++;
+					}
+					contF = cad->next();
+				}
+				contCh = p->next();
+			}
+
+
+			if(number)
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->getIdNumber());
+			else
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->get_pos()+1);
+			fputs( line, file );
+		}
+		contP = this->next();
+	}
+
+
+	fclose(file);
+	return true;
 }
 
 bool Macromolecule::writePDB_atoms( char *name, int *list, int total, bool sign,bool number)
 {
-  FILE *file;
-  bool contP, contCh, contF, contR, contA;
-  char line[83];
-  char * fmt;
-  char * fmt2;
-  int res_no = 0;
-  int cont=0;
-  int i;
-  bool Found;
+	FILE *file;
+	bool contP, contCh, contF, contR, contA;
+	char line[83];
+	char * fmt;
+	char * fmt2;
+	int res_no = 0;
+	int cont=0;
+	int i;
+	bool Found;
 
-  Segment * seg;
-  Chain * cad;
-  Molecule * p;
-  Fragment * res;
-  Atom * a;
-  Tcoor coor;
-  int cont_at=1;
+	Segment * seg;
+	Chain * cad;
+	Molecule * p;
+	Fragment * res;
+	Atom * a;
+	Tcoor coor;
+	int cont_at=1;
 
-  char *ext;
-  ext=strrchr(name,'.');
-
-
-  if(strcmp(ext,".pqr")!=0)
-  {
- 	  fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
- 	  fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
-  }
-  else
-  {
- 	  fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
- 	  fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
-  }
+	char *ext;
+	ext=strrchr(name,'.');
 
 
-  file=fopen(name,"wt");
-  if(file==NULL)
-    return false;
-
-  initAll();
-  contP = true;
-  while ( contP != false )
-  {
-    p = ( Molecule * ) this->getCurrent();
-
-    if(p->getClass()==pdb_smol)
-    {
-	  contA = true;
-	  while ( contA != false )
-	  {
-	   a = ( Atom * ) p->getCurrent();
-
-       if(sign==true)
-   	   {
-    	   Found=false;
-    	   for(i=0;i<total && !Found;i++)
-    		   if(list[i]==cont)
-    			   Found=true;
-   	   }
-       else
-       {
-    	   Found=true;
-    	   for(i=0;i<total && Found;i++)
-    		   if(list[i]==cont)
-    			   Found=false;
-       }
-
-	   if(Found)
-	   {
-
-		   /* Escritura de un atomo */
-		   a->getPosition(coor);
-		   if(number)
-			   sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
-								 p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-		   else
-			   sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
-							   ((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-		   if(cont_at==100000)
-			   cont_at=1;
-		   fputs( line, file );
-	   }
-	   contA = p->next();
-	   cont++;
-	  }
-
-   }
-   else
-   {
-
-    contCh = true;
-    while ( contCh != false )
-    {
-      cad = ( Chain * ) p->getCurrent();
-      cont_at=1;
-
-      contF = true;
-      while ( contF != false )
-      {
-        seg = ( Segment * ) cad->getCurrent();
-
-        contR = true;
-        while ( contR != false )
-        {
-          res = ( Fragment * ) seg->getCurrent();
-					 res_no++;
+	if(strcmp(ext,".pqr")!=0)
+	{
+		fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
+		fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
+	}
+	else
+	{
+		fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
+		fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
+	}
 
 
-          contA = true;
-          while ( contA != false )
-          {
-            a = ( Atom * ) res->getCurrent();
+	file=fopen(name,"wt");
+	if(file==NULL)
+		return false;
 
-            /* Escritura de un atomo */
-            if(sign==true)
-	          {
-	            Found=false;
-	            for(i=0;i<total && !Found;i++)
-	              if(list[i]==cont)
-	                Found=true;
-	          }
-	          else
-	          {
-	            Found=true;
-	            for(i=0;i<total && Found;i++)
-	              if(list[i]==cont)
-	                Found=false;
-	          }
+	initAll();
+	contP = true;
+	while ( contP != false )
+	{
+		p = ( Molecule * ) this->getCurrent();
 
-            if(Found)
-            {
-              a->getPosition(coor);
+		if(p->getClass()==pdb_smol)
+		{
+			contA = true;
+			while ( contA != false )
+			{
+				a = ( Atom * ) p->getCurrent();
 
-              if(number)
-					sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
-							cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+				if(sign==true)
+				{
+					Found=false;
+					for(i=0;i<total && !Found;i++)
+						if(list[i]==cont)
+							Found=true;
+				}
 				else
-					sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
-							cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-              if(cont_at==100000)
-                 cont_at=1;
-              fputs( line, file );
+				{
+					Found=true;
+					for(i=0;i<total && Found;i++)
+						if(list[i]==cont)
+							Found=false;
+				}
 
-            }
+				if(Found)
+				{
 
-            contA = res->next();
-          	cont++;
-          }
-          contR = seg->next();
+					/* Escritura de un atomo */
+					a->getPosition(coor);
+					if(number)
+						sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
+								p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+					else
+						sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
+								((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+					if(cont_at==100000)
+						cont_at=1;
+					fputs( line, file );
+				}
+				contA = p->next();
+				cont++;
+			}
 
-        }
-        contF = cad->next();
-      }
-      contCh = p->next();
-    }
-    if(number)
-    	sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-    			a->getPdbSerial() + 1, res->getName(),
-        	    cad->getName() [0], res->getIdNumber());
-    else
-    	sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-        	    a->getPdbSerial() + 1, res->getName(),
-        	    cad->getName() [0], res->get_pos()+1);
-    fputs( line, file );    fputs( line, file );
-   }
-    contP = this->next();
-  }
+		}
+		else
+		{
 
-  fclose(file);
-  return true;
+			contCh = true;
+			while ( contCh != false )
+			{
+				cad = ( Chain * ) p->getCurrent();
+				cont_at=1;
+
+				contF = true;
+				while ( contF != false )
+				{
+					seg = ( Segment * ) cad->getCurrent();
+
+					contR = true;
+					while ( contR != false )
+					{
+						res = ( Fragment * ) seg->getCurrent();
+						res_no++;
+
+
+						contA = true;
+						while ( contA != false )
+						{
+							a = ( Atom * ) res->getCurrent();
+
+							/* Escritura de un atomo */
+							if(sign==true)
+							{
+								Found=false;
+								for(i=0;i<total && !Found;i++)
+									if(list[i]==cont)
+										Found=true;
+							}
+							else
+							{
+								Found=true;
+								for(i=0;i<total && Found;i++)
+									if(list[i]==cont)
+										Found=false;
+							}
+
+							if(Found)
+							{
+								a->getPosition(coor);
+
+								if(number)
+									sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
+											cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+								else
+									sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
+											cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+								if(cont_at==100000)
+									cont_at=1;
+								fputs( line, file );
+
+							}
+
+							contA = res->next();
+							cont++;
+						}
+						contR = seg->next();
+
+					}
+					contF = cad->next();
+				}
+				contCh = p->next();
+			}
+			if(number)
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->getIdNumber());
+			else
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->get_pos()+1);
+			fputs( line, file );    fputs( line, file );
+		}
+		contP = this->next();
+	}
+
+	fclose(file);
+	return true;
 }
 
 
@@ -1305,288 +1311,290 @@ bool Macromolecule::writePDB_atoms( char *name, int *list, int total, bool sign,
 
 bool Macromolecule::writePDB(Macromolecule *mol2, char *name, int **list, int total, bool number)
 {
-  FILE *file;
-  bool contP, contCh, contF, contR, contA;
-  char line[83];
-  char * fmt;
-  char * fmt2;
-  int res_no = 0;
-  int cont=0;
-  int i;
-  bool Found;
+	FILE *file;
+	bool contP, contCh, contF, contR, contA;
+	char line[83];
+	char * fmt;
+	char * fmt2;
+	int res_no = 0;
+	int cont=0;
+	int i;
+	bool Found;
 
-  Segment * seg;
-  Chain * cad;
-  Molecule * p;
-  Fragment * res;
-  Atom * a;
-  Tcoor coor;
-  int cont_at=1;
-  char *ext;
-  ext=strrchr(name,'.');
+	Segment * seg;
+	Chain * cad;
+	Molecule * p;
+	Fragment * res;
+	Atom * a;
+	Tcoor coor;
+	int cont_at=1;
+	char *ext;
+	ext=strrchr(name,'.');
 
-  if(strcmp(ext,".pqr")!=0)
-  {
- 	  fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
- 	  fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
-  }
-  else
-  {
- 	  fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
- 	  fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
-  }
-
-  file=fopen(name,"wt");
-  if(file==NULL)
-    return false;
-
-  //PRIMERA MOLECULA
-  initAll();
-  contP = true;
-  while ( contP != false )
-  {
-    p = ( Molecule * ) this->getCurrent();
-    fprintf(stderr,"%s\n",p->getName());
-    if(p->getClass()==pdb_smol)
+	if(strcmp(ext,".pqr")!=0)
 	{
-		contA = true;
-		while ( contA != false )
-		{
-			a = ( Atom * ) p->getCurrent();
-
-			if(list!=NULL)
-			{
-				Found=false;
-				for(i=0;i<total && !Found;i++)
-					if(list[0][i]==cont)
-						Found=true;
-			}
-			else Found=true;
-
-			if(Found)
-			{
-				/* Escritura de un atomo */
-				a->getPosition(coor);
-				if(number)
-					sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
-							 p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-				else
-					sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
-						   ((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-
-				fputs( line, file );
-				if(cont_at==100000)
-				   cont_at=1;
-			}
-			contA = p->next();
-		 }
-		cont++;
+		fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
+		fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%6.2lf%6.2lf\n";
 	}
 	else
 	{
+		fmt=( char * ) "ATOM  %5d %-5s%3s %c%4d%c   %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
+		fmt2= ( char * ) "HETATM%5d %-5s%3s  %4d    %8.3lf%8.3lf%8.3lf%8.4lf%8.4lf\n";
+	}
 
+	file=fopen(name,"wt");
+	if(file==NULL)
+		return false;
 
-		contCh = true;
-		while ( contCh != false )
+	//PRIMERA MOLECULA
+	initAll();
+	contP = true;
+	while ( contP != false )
+	{
+		p = ( Molecule * ) this->getCurrent();
+		fprintf(stderr,"%s\n",p->getName());
+		if(p->getClass()==pdb_smol)
 		{
-		  cad = ( Chain * ) p->getCurrent();
-		  cont_at=1;
-		  contF = true;
-		  while ( contF != false )
-		  {
-			seg = ( Segment * ) cad->getCurrent();
-
-			contR = true;
-			while ( contR != false )
+			contA = true;
+			while ( contA != false )
 			{
-			  res = ( Fragment * ) seg->getCurrent();
-			  res_no++;
+				a = ( Atom * ) p->getCurrent();
 
-			  contA = true;
-			  while ( contA != false )
-			  {
-				a = ( Atom * ) res->getCurrent();
-
-				/* Escritura de un atomo */
 				if(list!=NULL)
 				{
-				  Found=false;
-				  for(i=0;i<total && !Found;i++)
-					if(list[0][i]==cont)
-					  Found=true;
+					Found=false;
+					for(i=0;i<total && !Found;i++)
+						if(list[0][i]==cont)
+							Found=true;
 				}
 				else Found=true;
 
 				if(Found)
 				{
-				  a->getPosition(coor);
-
-				  if(number)
-						sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
-								cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+					/* Escritura de un atomo */
+					a->getPosition(coor);
+					if(number)
+						sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
+								p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
 					else
-						sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
-								cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+						sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
+								((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
 
-				  if(cont_at==100000)
-				     cont_at=1;
-				  fputs( line, file );
-
+					fputs( line, file );
+					if(cont_at==100000)
+						cont_at=1;
 				}
-
-				contA = res->next();
-			  }
-			  contR = seg->next();
-			  cont++;
+				contA = p->next();
 			}
-			contF = cad->next();
-		  }
-		  contCh = p->next();
+			cont++;
+		}
+		else
+		{
+
+
+			contCh = true;
+			while ( contCh != false )
+			{
+				cad = ( Chain * ) p->getCurrent();
+				cont_at=1;
+				contF = true;
+				while ( contF != false )
+				{
+					seg = ( Segment * ) cad->getCurrent();
+
+					contR = true;
+					while ( contR != false )
+					{
+						res = ( Fragment * ) seg->getCurrent();
+						res_no++;
+
+						contA = true;
+						while ( contA != false )
+						{
+							a = ( Atom * ) res->getCurrent();
+
+							/* Escritura de un atomo */
+							if(list!=NULL)
+							{
+								Found=false;
+								for(i=0;i<total && !Found;i++)
+									if(list[0][i]==cont)
+										Found=true;
+							}
+							else Found=true;
+
+							if(Found)
+							{
+								a->getPosition(coor);
+
+								if(number)
+									sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
+											cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+								else
+									sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
+											cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+
+								if(cont_at==100000)
+									cont_at=1;
+								fputs( line, file );
+
+							}
+
+							contA = res->next();
+						}
+						contR = seg->next();
+						cont++;
+					}
+					contF = cad->next();
+				}
+				contCh = p->next();
+			}
+
+			if(number)
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->getIdNumber());
+			else
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->get_pos()+1);
+			fputs( line, file );
+		}
+		contP = this->next();
+	}
+
+
+
+	//SEGUNDA MOLECULA
+	cont=0;
+	cont_at=1;
+	mol2->initAll();
+	contP = true;
+	while ( contP != false )
+	{
+		p = ( Molecule * ) mol2->getCurrent();
+		fprintf(stderr,"%s\n",p->getName());
+
+		if(p->getClass()==pdb_smol)
+		{
+			contA = true;
+			while ( contA != false )
+			{
+				a = ( Atom * ) p->getCurrent();
+
+				if(list!=NULL)
+				{
+					Found=false;
+					for(i=0;i<total && !Found;i++)
+						if(list[0][i]==cont)
+							Found=true;
+				}
+				else Found=true;
+
+				if(Found)
+				{
+
+					/* Escritura de un atomo */
+					a->getPosition(coor);
+					if(number)
+						sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
+								p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+					else
+						sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
+								((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+					if(cont_at==100000)
+						cont_at=1;
+					fputs( line, file );
+				}
+				contA = p->next();
+			}
+			cont++;
+
+		}
+		else
+		{
+
+
+			contCh = true;
+			while ( contCh != false )
+			{
+				cad = ( Chain * ) p->getCurrent();
+				cont_at=1;
+				contF = true;
+				while ( contF != false )
+				{
+					seg = ( Segment * ) cad->getCurrent();
+
+					contR = true;
+					while ( contR != false )
+					{
+						res = ( Fragment * ) seg->getCurrent();
+						res_no++;
+
+						contA = true;
+						while ( contA != false )
+						{
+							a = ( Atom * ) res->getCurrent();
+
+							/* Escritura de un atomo */
+							if(list!=NULL)
+							{
+								Found=false;
+								for(i=0;i<total && !Found;i++)
+									if(list[1][i]==cont)
+										Found=true;
+							}
+							else Found=true;
+
+							if(Found)
+							{
+								a->getPosition(coor);
+
+								if(number)
+									sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
+											cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+								else
+									sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
+											cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
+								if(cont_at==100000)
+									cont_at=1;
+
+								fputs( line, file );
+
+							}
+
+							contA = res->next();
+						}
+						contR = seg->next();
+						cont++;
+					}
+					contF = cad->next();
+				}
+				contCh = p->next();
+			}
+			if(number) {
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->getIdNumber());
+			}
+			else {
+				sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
+						a->getPdbSerial() + 1, res->getName(),
+						cad->getName() [0], res->get_pos()+1);
+			}
+			fputs( line, file );
+
 		}
 
-		if(number)
-			sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-					a->getPdbSerial() + 1, res->getName(),
-					cad->getName() [0], res->getIdNumber());
-		else
-			sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-					a->getPdbSerial() + 1, res->getName(),
-					cad->getName() [0], res->get_pos()+1);
-		fputs( line, file );
+		contP = mol2->next();
 	}
-    contP = this->next();
-  }
 
 
+	sprintf( line, "END\n");
+	fputs( line, file );
 
- //SEGUNDA MOLECULA
- cont=0;
- cont_at=1;
- mol2->initAll();
- contP = true;
- while ( contP != false )
- {
-   p = ( Molecule * ) mol2->getCurrent();
-   fprintf(stderr,"%s\n",p->getName());
-
-   if(p->getClass()==pdb_smol)
-	{
-		contA = true;
-		while ( contA != false )
-		{
-			a = ( Atom * ) p->getCurrent();
-
-			if(list!=NULL)
-			{
-				Found=false;
-				for(i=0;i<total && !Found;i++)
-					if(list[0][i]==cont)
-						Found=true;
-			}
-			else Found=true;
-
-			if(Found)
-			{
-
-				/* Escritura de un atomo */
-				a->getPosition(coor);
-				if(number)
-					sprintf( line, fmt2, a->getPdbSerial(), a->getPdbName(), p->getName(),
-							 p->getIdNumber(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-				else
-					sprintf( line, fmt2, cont_at++, a->getPdbName(), p->getName(),
-						   ((SMol*)p)->get_pos()+1, coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-				if(cont_at==100000)
-				   cont_at=1;
-				fputs( line, file );
-			}
-			contA = p->next();
-		 }
-		cont++;
-
-	}
-	else
-	{
-
-
-	   contCh = true;
-	   while ( contCh != false )
-	   {
-		 cad = ( Chain * ) p->getCurrent();
-		 cont_at=1;
-		 contF = true;
-		 while ( contF != false )
-		 {
-		   seg = ( Segment * ) cad->getCurrent();
-
-		   contR = true;
-		   while ( contR != false )
-		   {
-			 res = ( Fragment * ) seg->getCurrent();
-			 res_no++;
-
-			 contA = true;
-			 while ( contA != false )
-			 {
-			   a = ( Atom * ) res->getCurrent();
-
-			   /* Escritura de un atomo */
-			   if(list!=NULL)
-			   {
-				 Found=false;
-				 for(i=0;i<total && !Found;i++)
-				   if(list[1][i]==cont)
-					 Found=true;
-			   }
-			   else Found=true;
-
-			   if(Found)
-			   {
-				 a->getPosition(coor);
-
-				 if(number)
-						sprintf( line, fmt, a->getPdbSerial(), a->getPdbName(), res->getName(),
-								cad->getName() [0],res->getIdNumber()/*res->get_pos()*/,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-					else
-						sprintf( line, fmt, cont_at++, a->getPdbName(), res->getName(),
-								cad->getName() [0],res->get_pos()+1,res->get_letter(), coor[0], coor[1], coor[2], a->getPdbocc(), a->getPdbfact() );
-				 if(cont_at==100000)
-				     cont_at=1;
-
-				 fputs( line, file );
-
-			   }
-
-			   contA = res->next();
-			 }
-			 contR = seg->next();
-			 cont++;
-		   }
-		   contF = cad->next();
-		 }
-		 contCh = p->next();
-	   }
-     if(number)
-    	 sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-    			 a->getPdbSerial() + 1, res->getName(),
-    			 cad->getName() [0], res->getIdNumber());
-     else
-    	 sprintf( line, "TER    %4d      %s %c%4d                                                      \n",
-    			 a->getPdbSerial() + 1, res->getName(),
-    			 cad->getName() [0], res->get_pos()+1);
-     fputs( line, file );
-
-   }
-
-   contP = mol2->next();
- }
-
-
- sprintf( line, "END\n");
- fputs( line, file );
-
-  fclose(file);
-  return true;
+	fclose(file);
+	return true;
 }
 
 bool Macromolecule::readSDF( char *name)
@@ -1594,8 +1602,8 @@ bool Macromolecule::readSDF( char *name)
 	FILE *file;
 	file=fopen(name,"rt");
 	if(file==NULL) {
-	  fprintf(stderr,"Can't open %s for reading: No such sdf file\n",name);
-	   exit(1);
+		fprintf(stderr,"Can't open %s for reading: No such sdf file\n",name);
+		exit(1);
 	}
 	int step=0;
 	char aux1[100],aux2[100],line[500];
@@ -1661,13 +1669,13 @@ bool Macromolecule::readSDF( char *name)
 				for(i=0;i<3;i++)
 				{
 
-						if(type_aux[i]!='\0')
-							type_aux2[i]=type_aux[i];
-						else
-						{
-							type_aux2[i]=' ';
-							i=3;
-						}
+					if(type_aux[i]!='\0')
+						type_aux2[i]=type_aux[i];
+					else
+					{
+						type_aux2[i]=' ';
+						i=3;
+					}
 
 
 				}
@@ -1756,8 +1764,8 @@ bool Macromolecule::readMol2(char *name)
 {
 	FILE * f=fopen(name,"rt");
 	if(f==NULL) {
-	  fprintf(stderr,"Can't open %s for reading: No such mol2 file\n",name);
-	   exit(1);
+		fprintf(stderr,"Can't open %s for reading: No such mol2 file\n",name);
+		exit(1);
 	}
 	char line[500],aux1[100],aux2[100];
 	int step=0;
@@ -1796,22 +1804,22 @@ bool Macromolecule::readMol2(char *name)
 				issmol=false;
 
 				if (contMol!=1) {
-				this->add(smol);
+					this->add(smol);
 				}
 				smol=new SMol(aux1,contMol,contMol);
 				contMol++;
 			}
 			else
-			if(strcmp(aux1,"ATOM")==0)
-			{
-				step=2;
-
-			}
-			else
-				if(strcmp(aux1,"BOND")==0)
+				if(strcmp(aux1,"ATOM")==0)
 				{
-					step=3;
+					step=2;
+
 				}
+				else
+					if(strcmp(aux1,"BOND")==0)
+					{
+						step=3;
+					}
 		}
 
 
@@ -1848,7 +1856,7 @@ bool Macromolecule::readMol2(char *name)
 		case 2:
 			if(issmol)
 			{
-                cont_at=0;
+				cont_at=0;
 				for(i=0;i<num_atoms;i++)
 				{
 					int k=0; //nuevo Erney
@@ -1858,7 +1866,7 @@ bool Macromolecule::readMol2(char *name)
 					if(!isalpha(aux1[1])) type_aux[1]=' ';
 					else if(islower(aux1[1]))
 						type_aux[1]=toupper(aux1[1]);
-					  else type_aux[1]=aux1[1];
+					else type_aux[1]=aux1[1];
 					//fprintf(stderr,"%s %s\n", type_aux,type_aux2 );
 					type_aux[2]='\0';
 					for(j=0;j<6;j++) //puse 6 pero iba un 5 en el original, donde se puso la k iba la j Erney
@@ -1901,26 +1909,26 @@ bool Macromolecule::readMol2(char *name)
 					if(strcmp(aux1,"1")==0)
 						link=1;
 					else
-					if(strcmp(aux1,"2")==0)
-						link=2;
-					else
-					if(strcmp(aux1,"3")==0)
-						link=3;
-					else
-					if(strcmp(aux1,"am")==0)
-						link=4;
-					else
-					if(strcmp(aux1,"ar")==0)
-						link=5;
-					else
-					if(strcmp(aux1,"du")==0)
-						link=6;
-					else
-					if(strcmp(aux1,"un")==0)
-						link=7;
-					else
-					if(strcmp(aux1,"nc")==0)
-						link=8;
+						if(strcmp(aux1,"2")==0)
+							link=2;
+						else
+							if(strcmp(aux1,"3")==0)
+								link=3;
+							else
+								if(strcmp(aux1,"am")==0)
+									link=4;
+								else
+									if(strcmp(aux1,"ar")==0)
+										link=5;
+									else
+										if(strcmp(aux1,"du")==0)
+											link=6;
+										else
+											if(strcmp(aux1,"un")==0)
+												link=7;
+											else
+												if(strcmp(aux1,"nc")==0)
+													link=8;
 
 
 					at1=(Atom*)smol->getE(init-1);
@@ -1945,7 +1953,7 @@ bool Macromolecule::readMol2(char *name)
 
 	}
 
-	 // add the last one
+	// add the last one
 	this->add(smol);
 
 	return true;
@@ -2052,13 +2060,13 @@ int return_pos_aux(SMol *smol,Atom *at)
 }
 
 int pdb_strcasecmp(const char *s1, const char *s2)
- {
-     while ((*s1 != '\0')
-            && (tolower(*(unsigned char *) s1) ==
-                tolower(*(unsigned char *) s2))) {
-         s1++;
-         s2++;
-     }
+{
+	while ((*s1 != '\0')
+			&& (tolower(*(unsigned char *) s1) ==
+					tolower(*(unsigned char *) s2))) {
+		s1++;
+		s2++;
+	}
 
-     return tolower(*(unsigned char *) s1) - tolower(*(unsigned char *) s2);
- }
+	return tolower(*(unsigned char *) s1) - tolower(*(unsigned char *) s2);
+}

@@ -10,6 +10,8 @@
 
 #include <stdio.h> // needed by some compilers
 #include "libpdb/include/pdbIter.h"
+//#include "libpdb/include/Atomo.h"
+
 //#include "libpdb/include/Macromolecule.h"
 
 

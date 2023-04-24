@@ -47,8 +47,8 @@ double pd2[5][5] = {
 //  natoms --> Number of atoms
 double pd2_bump(float *coord, char *type, int *res, int natoms)
 {
-	int gap = 6; // Sequential cutoff
-	double radius,radius2,dist2;
+
+	double radius,radius2;
 	double energy = 0.0;
 
 	// FORWARD (i<j) interactions for atom pairs more than FIVE covalent bonds apart
@@ -73,7 +73,6 @@ double pd2_bump(float *coord, char *type, int *res, int natoms)
 	//  Ci vs. O atoms from residues j >= i+2
 	//  Ci vs. CB atoms from residues j >= i+2
 	//
-	int offset;
 	int typei,resi;
 	float *coordj;
 	float coordix,coordiy,coordiz;
@@ -94,7 +93,7 @@ double pd2_bump(float *coord, char *type, int *res, int natoms)
 				{
 					coordj = coord+3*j;
 					// PD2 "soft bump" energy term formula: (radius_sq - (dist_sq)) / radius     // Equivalent to:  radius - (dist_sq/radius)
-					radius = pd2[ typei ][ type[j] ];
+					radius = pd2[ (int) typei ][ (int) type[j] ];
 					radius2 = radius*radius;
 					if( (disa2 =  pow(coordix-coordj[0],2)) < radius2 &&
 						(disa2 += pow(coordiy-coordj[1],2)) < radius2 &&
@@ -117,7 +116,7 @@ double pd2_bump(float *coord, char *type, int *res, int natoms)
 				{
 					coordj = coord+3*j;
 					// PD2 "soft bump" energy term formula: (radius_sq - (dist_sq)) / radius     // Equivalent to:  radius - (dist_sq/radius)
-					radius = pd2[ typei ][ type[j] ];
+					radius = pd2[ typei ][ (int)type[j] ];
 					radius2 = radius*radius;
 					if( (disa2 =  pow(coordix-coordj[0],2)) < radius2 &&
 						(disa2 += pow(coordiy-coordj[1],2)) < radius2 &&
@@ -140,7 +139,7 @@ double pd2_bump(float *coord, char *type, int *res, int natoms)
 				{
 					coordj = coord+3*j;
 					// PD2 "soft bump" energy term formula: (radius_sq - (dist_sq)) / radius     // Equivalent to:  radius - (dist_sq/radius)
-					radius = pd2[ typei ][ type[j] ];
+					radius = pd2[ typei ][ (int)type[j] ];
 					radius2 = radius*radius;
 
 					if( (disa2 =  pow(coordix-coordj[0],2)) < radius2 &&
@@ -167,8 +166,7 @@ double pd2_bump(float *coord, char *type, int *res, int natoms)
 //  natoms --> Number of atoms
 double pd2_bumpNCAC(float *coord, char *type, int *res, int natoms)
 {
-	int gap = 6; // Sequential cutoff
-	double radius,radius2,dist2;
+	double radius,radius2;
 	double energy = 0.0;
 
 	// FORWARD (i<j) interactions for atom pairs more than FIVE covalent bonds apart
@@ -184,7 +182,6 @@ double pd2_bumpNCAC(float *coord, char *type, int *res, int natoms)
 	//  Ai vs. all BB atoms away from CA (included) of residue j >= i+2
 	//  Ci vs. all BB atoms away from C (included) of residue j >= i+2
 	//
-	int offset;
 	int typei,resi;
 	float *coordj;
 	float coordix,coordiy,coordiz;
@@ -205,7 +202,7 @@ double pd2_bumpNCAC(float *coord, char *type, int *res, int natoms)
 				{
 					coordj = coord+3*j;
 					// PD2 "soft bump" energy term formula: (radius_sq - (dist_sq)) / radius     // Equivalent to:  radius - (dist_sq/radius)
-					radius = pd2[ typei ][ type[j] ];
+					radius = pd2[ typei ][ (int)type[j] ];
 					radius2 = radius*radius;
 					if( (disa2 =  pow(coordix-coordj[0],2)) < radius2 &&
 						(disa2 += pow(coordiy-coordj[1],2)) < radius2 &&
@@ -228,7 +225,7 @@ double pd2_bumpNCAC(float *coord, char *type, int *res, int natoms)
 				{
 					coordj = coord+3*j;
 					// PD2 "soft bump" energy term formula: (radius_sq - (dist_sq)) / radius     // Equivalent to:  radius - (dist_sq/radius)
-					radius = pd2[ typei ][ type[j] ];
+					radius = pd2[ typei ][ (int)type[j] ];
 					radius2 = radius*radius;
 					if( (disa2 =  pow(coordix-coordj[0],2)) < radius2 &&
 						(disa2 += pow(coordiy-coordj[1],2)) < radius2 &&
@@ -251,7 +248,7 @@ double pd2_bumpNCAC(float *coord, char *type, int *res, int natoms)
 				{
 					coordj = coord+3*j;
 					// PD2 "soft bump" energy term formula: (radius_sq - (dist_sq)) / radius     // Equivalent to:  radius - (dist_sq/radius)
-					radius = pd2[ typei ][ type[j] ];
+					radius = pd2[ typei ][ (int)type[j] ];
 					radius2 = radius*radius;
 
 					if( (disa2 =  pow(coordix-coordj[0],2)) < radius2 &&
@@ -280,7 +277,7 @@ double pd2_bumpNCAC(float *coord, char *type, int *res, int natoms)
 double pd2_intrabump(double **co, double **pco, int nloop, int cg, int *residuemarker)
 {
 	// int gap = 6; // Sequential cutoff
-	double radius,radius2,dist2;
+	double radius,radius2;
 	double energy = 0.0;
 
 	// FORWARD (i<j) interactions for atom pairs more than FIVE covalent bonds apart
@@ -305,7 +302,6 @@ double pd2_intrabump(double **co, double **pco, int nloop, int cg, int *residuem
 	//  Ci vs. O atoms from residues j >= i+2
 	//  Ci vs. CB atoms from residues j >= i+2
 	//
-	int offset;
 	int typei,typej,resi,resj;
 	double *coordj;
 	float coordix,coordiy,coordiz;
@@ -672,7 +668,7 @@ double pd2_intrabump(double **co, double **pco, int nloop, int cg, int *residuem
 double pd2_extrabump(float *coord, char *type, int *res, int npocket, double **co, double **pco, int nloop, int loopNt, int cg, int *residuemarker)
 {
 	// int gap = 6; // Sequential cutoff
-	double radius,radius2,dist2;
+	double radius,radius2;
 	double energy = 0.0;
 
 	// FORWARD (i<j) interactions for atom pairs more than FIVE covalent bonds apart
@@ -720,7 +716,6 @@ double pd2_extrabump(float *coord, char *type, int *res, int npocket, double **c
 	//  Oi vs. O atoms from residues j <= i-1
 	//  Oi vs. CB atoms from residues j <= i-1
 	//
-	int offset;
 	int typei,typej,resi,resj;
 	double *coordj;
 	float coordix,coordiy,coordiz;
@@ -1029,7 +1024,6 @@ void pd2_res(Macromolecule *mol, int **p_res)
 	pdbIter *iter_frag = new pdbIter(mol);
 	pdbIter *iter_atom;
 	Fragment *frag;
-	Atom *atom;
 
 	int cont=0; // index counter
 	for( iter_frag->pos_fragment = 0; !iter_frag->gend_fragment(); iter_frag->next_fragment() )
@@ -1050,13 +1044,11 @@ void pd2_res(Macromolecule *mol, int **p_res)
 //  resnum --> Residue index in PDB
 int resindex(Macromolecule *mol, int resnum)
 {
-	int *res;
 	int buf = -1;
 
 	pdbIter *iter_frag = new pdbIter(mol);
 	Fragment *frag;
 
-	int cont=0; // index counter
 	for( iter_frag->pos_fragment = 0; !iter_frag->gend_fragment(); iter_frag->next_fragment() )
 	{
 		frag = iter_frag->get_fragment(); // Get residue

@@ -10,7 +10,7 @@
 
 // MON: Checking whether memory was properly allocated in "ptr" by malloc, and showing "info"
 // Checking whether memory was properly allocated in "ptr" by malloc, and showing "info"
-void check_pointer(void *ptr,char *info="No info");
+void check_pointer(void *ptr,char *info=(char *)"No info");
 
 
 #endif /* MEMORY_ */

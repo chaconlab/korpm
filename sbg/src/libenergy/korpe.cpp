@@ -457,7 +457,6 @@ korp *readKORP(char *file, float bonding_factor)
 	}
 
 	// Read header data into map file (common to Binned maps and GMM)
-	float dummybf;
 	readMapHeader(f_map, &map->dimensions, &map->cutoff, &map->frame_model, &map->nonbonding, &map->nonbonding2, &map->bonding_factor, &map->ngauss, &map->fullgauss, &map->use_ji, &map->each_bonding);
 
 	if(bonding_factor >= 0.0)
@@ -507,7 +506,7 @@ korp *readKORP(char *file, float bonding_factor)
 	for(int i=0; i<256; i++)
 		map->iaa[i] = -1; // Initialization (if iaa[i] == -1, then the residue is not mapped)
 	for(int i=0; i<map->nintres; i++)
-		map->iaa[ map->aas[i] ] = i;
+		map->iaa[(int)map->aas[i] ] = i;
 
 	if(debug)
 	{
@@ -618,9 +617,9 @@ korp *readKORP(char *file, float bonding_factor)
 							// printf("%s> Reading Bin-wise 3D map: %1d %2d %2d %2d %2d\n",prog,s,x,y,i,j);
 
 							map->maps3D[s][x][y][i][j] = getMapICOSA(f_map, map->meshes, map->nr, &smap); // Get raw Map from binary FILE (automatic memory allocation)
-
+							char *msg   = (char *)"energy> Reading potential map";
 							if(imaps % 10 == 0)
-								indicator("energy> Reading potential map",imaps,nmaps);
+								indicator(msg,imaps,nmaps);
 							imaps++; // Count maps read so far
 						}
 					}
@@ -662,9 +661,9 @@ korp *readKORP(char *file, float bonding_factor)
 								map->maps[s][x][y][i][j] = getMap(f_map, map->nr, map->ncells, map->nchis, &smap); // Get raw 6D Map from binary FILE (automatic memory allocation)
 							else // 6D
 								map->maps[s][x][y][i][j] = getMap(f_map, map->meshes, map->nr, &smap); // Get raw 6D Map from binary FILE (automatic memory allocation)
-
+							char *msg   = (char *)"energy> Reading potential map";
 							if(imaps % 10 == 0)
-								indicator("energy> Reading potential map",imaps,nmaps);
+								indicator(msg,imaps,nmaps);
 							imaps++; // Count maps read so far
 						}
 					}
@@ -672,7 +671,8 @@ korp *readKORP(char *file, float bonding_factor)
 		}
 		// printf("%s> All %dD-maps read! (%d bytes, %f MB)\n",prog,dimensions,smap,smap/pow(2,20));
 	}
-	indicator("energy> Reading potential map",nmaps,nmaps);
+	char *msg   = (char *)"energy> Reading potential map";
+	indicator(msg,nmaps,nmaps);
 	printf("%s> Map reading stuff finished!\n",prog);
 
 	return map;
@@ -802,7 +802,7 @@ float **getMapICOSA(FILE *f_map, mesh **meshes, int nr, int *p_smap)
 	int smap; // size of map [bytes]
 
 	map = (float **) malloc( sizeof(float *) * nr); // allocate radial dimension (R)
-	smap += sizeof(float *) * nr;
+	smap = sizeof(float *) * nr;
 
 	for(int r=0; r<nr; r++) // screen shells (radial bins)
 	{
@@ -911,9 +911,8 @@ int contactPDB(Macromolecule *pdb, contact **p_contacts, float cutoff, char *iaa
 {
 	//	fprintf(stderr,"Hi, I'm contactPDB\n");
 
-	int verb = 0;
 	char prog[] = "contactPDB";
-	int num_atoms = pdb->get_num_atoms();
+	//int num_atoms = pdb->get_num_atoms();
 	int num_res = pdb->get_num_fragments();
 
 	//	fprintf(stderr,"nintres= %d  num_atoms= %d  num_res= %d\n",nintres,num_atoms,num_res);
@@ -946,8 +945,7 @@ int contactPDB(Macromolecule *pdb, contact **p_contacts, float cutoff, char *iaa
 	Residue *res;
 	//	Segment *seg;
 	Chain *ch;
-	Atom *atom;
-	Tcoor N,CA,C,Navg,CAavg,Cavg,r12,r13,rab,rba,v1,v2,urab;
+	Tcoor N,CA,C,r12,r13;
 
 	//	fprintf(stderr,"\n");
 
@@ -995,7 +993,7 @@ int contactPDB(Macromolecule *pdb, contact **p_contacts, float cutoff, char *iaa
 			// fprintf(stderr,"res->IdNumber= %d\n",res->getIdNumber());
 			// fprintf(stderr,"res->fragid= %d\n",res->fragid);
 
-			imap = mapping[ iaa[ res->fragid ] ];
+			imap = mapping[(int)iaa[ (int)res->fragid ] ];
 
 			// fprintf(stderr,"res->id= %s res->fragid= %d  imap[0]= %d\n",res->getName(), (int) res->fragid, imap[0]);
 
@@ -1067,7 +1065,7 @@ int contactPDB(Macromolecule *pdb, contact **p_contacts, float cutoff, char *iaa
 	int bond;
 	int icont=0; // contact index for current protein
 	frame *fa,*fb;
-	float cutoff2,fax,fay,faz,fbx,fby,fbz;
+	float cutoff2;
 	cutoff2 = cutoff * cutoff; // cutoff squared for efficient distance evaluation
 
 	for(int a = 0; a < ifram; a++) // Screen all interaction frames
@@ -1087,7 +1085,7 @@ int contactPDB(Macromolecule *pdb, contact **p_contacts, float cutoff, char *iaa
 
 						if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 						{
-							fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+							fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 							// exit(2);
 						}
 
@@ -1174,7 +1172,7 @@ frame *frameCoord(float *coord, int num_res, int *resnums, char *reschains)
 	//	seq = (char *) malloc( sizeof(char) * num_res);
 
 	// Some variables...
-	Tcoor r12,r13,rab,rba;
+	Tcoor r12,r13;
 
 	//	fprintf(stderr,"seq=\n");
 	//	for(int i=0; i<num_res; i++)
@@ -1229,7 +1227,6 @@ frame *frameCoord(float *coord, int num_res, int *resnums, char *reschains)
 int contactCoord(contact **p_contacts, float cutoff, frame *frames, int nres, int *seq,
 		int anchorNt, frame *frames2, int nres2, int *seq2)
 {
-	int verb = 0;
 	char prog[] = "contactCoord";
 
 	// Allocating initial memory for contacts
@@ -1245,7 +1242,7 @@ int contactCoord(contact **p_contacts, float cutoff, frame *frames, int nres, in
 	int bond;
 	int icont=0; // contact index for current protein
 	frame *fa,*fb;
-	float cutoff2,fax,fay,faz,fbx,fby,fbz;
+	float cutoff2;
 	cutoff2 = cutoff * cutoff; // cutoff squared for efficient distance evaluation
 
 	if(frames2 == NULL) // Standard mode (all vs. all mode)
@@ -1265,11 +1262,12 @@ int contactCoord(contact **p_contacts, float cutoff, frame *frames, int nres, in
 
 							if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 							{
-								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 								// exit(2);
 							}
 
 							frames2ic(fa,fb,&ta,&tb,&pa,&pb,&chi);
+
 
 							//							bond = (int)fabsf(fa->i - fb->i); // Mon: abs is not necessary, isn't it?
 							//							if( bond > BONDING_THR)
@@ -1354,7 +1352,7 @@ int contactCoord(contact **p_contacts, float cutoff, frame *frames, int nres, in
 
 							if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 							{
-								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 								// exit(2);
 							}
 
@@ -1440,7 +1438,7 @@ int contactCoord(contact **p_contacts, float cutoff, frame *frames, int nres, in
 
 							if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 							{
-								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 								// exit(2);
 							}
 
@@ -1531,7 +1529,6 @@ int contactCoord(contact **p_contacts, float cutoff, frame *frames, int nres, in
 //  posM index of Mutation
 int contactCoordM(contact **p_contactsM, float cutoff, frame *frames, int nres, int *seq, int posM, char chainM)
 {
-	int verb = 0;
 	char prog[] = "contactCoord";
 
 	// Allocating initial memory for contacts
@@ -1548,7 +1545,7 @@ int contactCoordM(contact **p_contactsM, float cutoff, frame *frames, int nres, 
 	int icontM = 0; // contact index for current protein
 
 	frame *fa,*fb;
-	float cutoff2,fax,fay,faz,fbx,fby,fbz;
+	float cutoff2;
 	cutoff2 = cutoff * cutoff; // cutoff squared for efficient distance evaluation
 
 	for(int a = 0; a < nres; a++) // Screen all interaction frames
@@ -1569,7 +1566,7 @@ int contactCoordM(contact **p_contactsM, float cutoff, frame *frames, int nres, 
 
 							if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 							{
-								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 								// exit(2);
 							}
 
@@ -1641,7 +1638,6 @@ int contactCoordM(contact **p_contactsM, float cutoff, frame *frames, int nres, 
 
 int contactCoordML(contact **p_contactsM, float cutoff, frame *frames, int nres, int *seq, int *posM, char *chainM, int nmut)
 {
-	int verb = 0;
 	char prog[] = "contactCoord";
 
 	// Allocating initial memory for contacts
@@ -1658,7 +1654,7 @@ int contactCoordML(contact **p_contactsM, float cutoff, frame *frames, int nres,
 	int icontM = 0; // contact index for current protein
 
 	frame *fa,*fb;
-	float cutoff2,fax,fay,faz,fbx,fby,fbz;
+	float cutoff2;
 	cutoff2 = cutoff * cutoff; // cutoff squared for efficient distance evaluation
 
 	for(int a = 0; a < nres; a++) // Screen all interaction frames
@@ -1680,7 +1676,7 @@ int contactCoordML(contact **p_contactsM, float cutoff, frame *frames, int nres,
 
 								if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 								{
-									fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+									fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 									// exit(2);
 								}
 
@@ -1774,7 +1770,6 @@ int contactCoord(float *coord, int num_res, int *seq, contact **p_contacts, floa
 {
 	//	fprintf(stderr,"Hi, I'm contactPDB\n");
 
-	int verb = 0;
 	char prog[] = "contactCoord";
 
 	//	fprintf(stderr,"nintres= %d  num_atoms= %d  num_res= %d\n",nintres,num_atoms,num_res);
@@ -1796,7 +1791,7 @@ int contactCoord(float *coord, int num_res, int *seq, contact **p_contacts, floa
 	//	seq = (char *) malloc( sizeof(char) * num_res);
 
 	// Some variables...
-	Tcoor N,CA,C,Navg,CAavg,Cavg,r12,r13,rab,rba,v1,v2,urab;
+	Tcoor r12,r13;
 
 	//	fprintf(stderr,"seq=\n");
 	//	for(int i=0; i<num_res; i++)
@@ -1876,7 +1871,7 @@ int contactCoord(float *coord, int num_res, int *seq, contact **p_contacts, floa
 	int bond;
 	int icont=0; // contact index for current protein
 	frame *fa,*fb;
-	float cutoff2,fax,fay,faz,fbx,fby,fbz;
+	float cutoff2;
 	cutoff2 = cutoff * cutoff; // cutoff squared for efficient distance evaluation
 
 	if(coord2 == NULL) // Standard mode (all vs. all mode)
@@ -1896,7 +1891,7 @@ int contactCoord(float *coord, int num_res, int *seq, contact **p_contacts, floa
 
 							if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 							{
-								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 								// exit(2);
 							}
 
@@ -2035,7 +2030,7 @@ int contactCoord(float *coord, int num_res, int *seq, contact **p_contacts, floa
 
 							if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 							{
-								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 								// exit(2);
 							}
 
@@ -2156,7 +2151,7 @@ int contactCoord(float *coord, int num_res, int *seq, contact **p_contacts, floa
 
 							if(dab < DIST2SMALL) // To see crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 							{
-								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+								fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 								// exit(2);
 							}
 
@@ -2244,9 +2239,8 @@ int contactCoord(float *coord, int num_res, int *seq, contact **p_contacts, floa
 //  nintres     --> Number of interacting residues
 int contactPDB_OA(Macromolecule *pdb, contact **p_contacts, float cutoff, char *iaa, char **mapping, int nintres)
 {
-	int verb = 0;
 	char prog[] = "contactPDB_OA";
-	int num_atoms = pdb->get_num_atoms();
+	//int num_atoms = pdb->get_num_atoms();
 	int num_res = pdb->get_num_fragments();
 
 	// Maximum number of interaction frames per residue (to allocate memory for the maximum number of FRames of Interest)
@@ -2270,8 +2264,7 @@ int contactPDB_OA(Macromolecule *pdb, contact **p_contacts, float cutoff, char *
 	pdbIter *iter_prev; // Previous residue iterator
 	Residue *res;
 	Chain *ch;
-	Atom *atom;
-	Tcoor N,CA,C,Navg,CAavg,Cavg,r12,r13,rab,rba,v1,v2,urab;
+	Tcoor N,CA;
 
 	// COMPUTING RESIDUE FRAMES
 	iter_ch = new pdbIter( pdb ); // iter to screen segments
@@ -2292,7 +2285,7 @@ int contactPDB_OA(Macromolecule *pdb, contact **p_contacts, float cutoff, char *
 			res = ( Residue * ) iter_res->get_fragment();
 			iter_atom = new pdbIter( res ); // screens residue atoms
 
-			imap = mapping[ iaa[ res->fragid ] ];
+			imap = mapping[ (int)iaa[ (int)res->fragid ] ];
 
 			for(int t=0; t<imap[0]; t++) // screen frame types according to mapping
 			{
@@ -2366,7 +2359,7 @@ int contactPDB_OA(Macromolecule *pdb, contact **p_contacts, float cutoff, char *
 	int bond;
 	int icont=0; // contact index for current protein
 	frame *fa,*fb;
-	float cutoff2,fax,fay,faz,fbx,fby,fbz;
+	float cutoff2;
 	cutoff2 = cutoff * cutoff; // cutoff squared for efficient distance evaluation
 
 	for(int a = 0; a < ifram; a++) // Screen all interaction frames
@@ -2384,7 +2377,7 @@ int contactPDB_OA(Macromolecule *pdb, contact **p_contacts, float cutoff, char *
 
 						if(dab < DIST2SMALL) // To detect crap PDBs (ITASSER benchmark set II has some 1.5 A CA-CA distance...not too bad)
 						{
-							fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,a,b,DIST2SMALL);
+							fprintf(stderr,"contactPDB> Warning, very small inter-CA distance %f (< %.2f A) in PDB between residues %d and %d.\n",dab,DIST2SMALL*1.0, a,b);
 							// exit(2);
 						}
 
@@ -2517,7 +2510,7 @@ void frames2ic(frame *fa, frame *fb, float *ta, float *tb, float *pa, float *pb,
 //  a,b,g --> Alpha, Beta and Gamma angles
 void frames2ic_OA(Tcoor i, Tcoor j, Tcoor ir, Tcoor jr, float *a, float *b, float *g)
 {
-	Tcoor rab,rba,iri,jrj,iir,v1,v2,urab;
+	Tcoor rab,rba,iri,jrj,iir;
 
 	// Local coordinates "i"
 	diff3D(i,j,rab); // i-j = rab
@@ -2636,23 +2629,22 @@ float korp3D(contact *contacts, int icont, korp *map)
 	int nsmaps = map->nsmaps;
 	bool use_ji = map->use_ji;
 
-	int ninter = 0; // Number of interactions
 	int ir,ita,ipa,itb,ipb,ic;
 	float energy = 0.0;
 	float f;
 
 	// iaa[ aas[i] ] = i;
-	int i,j,x,y,dummy,s;
+	int i,j,x,y,s;
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 			f = fmapping[s]; // Custom weighting factors for Bonding and Non-bonding contacts
 			x = contacts[c].froitA;
 			y = contacts[c].froitB;
-			i = mapping[ iaa[contacts[c].seqA] ] [1+4*contacts[c].froitA]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1+4*contacts[c].froitB]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1+4*contacts[c].froitA]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1+4*contacts[c].froitB]; // j-th interaction frame map
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
 
@@ -2693,21 +2685,20 @@ float korp3DM(contact *contacts, int icont, korp *map)
 	int nsmaps = map->nsmaps;
 	bool use_ji = map->use_ji;
 
-	int ninter = 0; // Number of interactions
 	int ir,ita,ipa,itb,ipb,ic;
 	float energy = 0.0;
 	float f;
 
 	// iaa[ aas[i] ] = i;
-	int i,j,x,y,dummy,s;
+	int i,j,s;
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 			f = fmapping[s]; // Custom weighting factors for Bonding and Non-bonding contacts
-			i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
 
@@ -2736,16 +2727,15 @@ float korp3DM(contact *contacts, int icont, korp *map, int posM, char chM, int M
 	int nsmaps = map->nsmaps;
 	bool use_ji = map->use_ji;
 
-	int ninter = 0; // Number of interactions
 	int ir,ita,ipa,itb,ipb,ic;
 	float energy = 0.0;
 	float f;
 
 	// iaa[ aas[i] ] = i;
-	int i,j,x,y,dummy,s;
+	int i,j,s;
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -2756,8 +2746,8 @@ float korp3DM(contact *contacts, int icont, korp *map, int posM, char chM, int M
 				contacts[c].seqB= Maa;
 			}
 
-			i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
 
@@ -2787,7 +2777,6 @@ float korp3DM(contact *contacts, int icont, korp *map, int posM, char chM, int M
 	int nsmaps = map->nsmaps;
 	bool use_ji = map->use_ji;
 
-	int ninter = 0; // Number of interactions
 	int ir,ita,ipa,itb,ipb,ic;
 	float energy = 0.0;
 	float f;
@@ -2801,10 +2790,10 @@ float korp3DM(contact *contacts, int icont, korp *map, int posM, char chM, int M
 		}
 	}
 	// iaa[ aas[i] ] = i;
-	int i,j,x,y,dummy,s;
+	int i,j,s;
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -2815,8 +2804,8 @@ float korp3DM(contact *contacts, int icont, korp *map, int posM, char chM, int M
 				contacts[c].seqB= Maa;
 			}
 
-			i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
 
@@ -2856,16 +2845,15 @@ float korp3DMW(contact *contacts, int icont, korp *map, int posM, char chM, int 
 	int nsmaps = map->nsmaps;
 	bool use_ji = map->use_ji;
 
-	int ninter = 0; // Number of interactions
 	int ir,ita,ipa,itb,ipb,ic;
 	float energy = 0.0;
 	float f;
 
 	// iaa[ aas[i] ] = i;
-	int i,j,x,y,dummy,s;
+	int i,j,s;
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -2876,12 +2864,12 @@ float korp3DMW(contact *contacts, int icont, korp *map, int posM, char chM, int 
 				contacts[c].seqB= Maa;
 			}
 
-			i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
 
-			f = fmapping[s]* W[contacts[c].seqA]*W[contacts[c].seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
+			f = fmapping[s]* W[(int)contacts[c].seqA]*W[(int)contacts[c].seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
 
 			energy += f * maps[s][0][0][i][j][ir][meshes[ir]->icell[ita]+ipa]; // Take into account i-th (A) residue
 
@@ -2908,14 +2896,13 @@ float korp4D(contact *contacts, int icont, korp *map)
 	float *br = map->br;
 	char *iaa = map->iaa;
 
-	int ninter = 0; // Number of interactions
 	float energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,itb,ic,x,y,i,j,s;
 	float f;
 
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 			f = fmapping[s]; // Custom weighting factors for Bonding and Non-bonding contacts
@@ -2923,8 +2910,8 @@ float korp4D(contact *contacts, int icont, korp *map)
 			x = contacts[c].froitA;
 			y = contacts[c].froitB;
 
-			i = mapping[ iaa[contacts[c].seqA] ] [1+4*x]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1+4*y]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1+4*x]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1+4*y]; // j-th interaction frame map
 
 			contact2bins_OA(&contacts[c],br,nab,ng,&ir,&ita,&itb,&ic); // Return the 4D bin indices from one contact
 
@@ -2945,21 +2932,19 @@ double korp6D(contact *contacts, int icont, korp *map)
 	float *br = map->br;
 	char *iaa = map->iaa;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
-	float f;
+	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s;
 
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 			x = contacts[c].froitA;
 			y = contacts[c].froitB;
 
-			i = mapping[ iaa[contacts[c].seqA] ] [1+4*contacts[c].froitA]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1+4*contacts[c].froitB]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1+4*contacts[c].froitA]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1+4*contacts[c].froitB]; // j-th interaction frame map
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
 
@@ -2989,28 +2974,27 @@ double korp6DW(contact *contacts, int icont, korp *map, double  *W)
 	float *br = map->br;
 	char *iaa = map->iaa;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s;
 	float f;
 
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 			x = contacts[c].froitA;
 			y = contacts[c].froitB;
 
-			i = mapping[ iaa[contacts[c].seqA] ] [1+4*contacts[c].froitA]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1+4*contacts[c].froitB]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1+4*contacts[c].froitA]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1+4*contacts[c].froitB]; // j-th interaction frame map
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
 
 			//			fprintf(stdout,"contact2bins> ir= %2d  ita= %2d  itb= %2d  ipa= %2d  ipb= %2d  ic= %2d  energy= %f\n",ir,ita,itb,ipa,ipb,ic,
 			//					maps[s][x][y][i][j][ir][meshes[ir]->icell[ita]+ipa][meshes[ir]->icell[itb]+ipb][ic]);
 
-			f = fmapping[s]* W[contacts[c].seqA]*W[contacts[c].seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
+			f = fmapping[s]* W[(int)contacts[c].seqA]*W[(int)contacts[c].seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
 
 			energy += f * maps[s][x][y][i][j][ir][meshes[ir]->icell[ita]+ipa][meshes[ir]->icell[itb]+ipb][ic];
 
@@ -3035,19 +3019,18 @@ double korp6DM(contact *contacts, int icont, korp *map)
 	float *br = map->br;
 	char *iaa = map->iaa;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
 	float f;
 
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
-			i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
@@ -3080,14 +3063,13 @@ double korp6DM(contact *contacts, int icont, korp *map,  int posM, char chM,  in
 	char *iaa = map->iaa;
 
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
 	float f;
 
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -3098,8 +3080,8 @@ double korp6DM(contact *contacts, int icont, korp *map,  int posM, char chM,  in
 			if ( (contacts[c].fbi==posM) and (contacts[c].fbch==chM) )  {
 				contacts[c].seqB= Maa;
 			}
-			i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 
 
@@ -3142,14 +3124,13 @@ double korp6DM(contact *contacts, int icont, korp *map,  int posM, char chM,  in
 		//    	FAA[i] = 0.0;
 		faa[i] = 0.0;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
 	float f;
 
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 	    if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -3178,8 +3159,8 @@ double korp6DM(contact *contacts, int icont, korp *map,  int posM, char chM,  in
 		    if (c_seqB==4) c_seqB=18;
             */
 
-			i = mapping[ iaa[c_seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[c_seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[c_seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[c_seqB] ] [1]; // j-th interaction frame map
 
 
 
@@ -3224,16 +3205,15 @@ double korp6DM_BIND(contact *contacts, int icont, korp *map,  int posM, char chM
 		//    	FAA[i] = 0.0;
 		faa[i] = 0.0;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
 	float f;
 
 	//	int kk = 0;
 
 	for(long c=0; c<icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -3246,8 +3226,8 @@ double korp6DM_BIND(contact *contacts, int icont, korp *map,  int posM, char chM
 
 			if( !(contacts[c].fach==chM and contacts[c].fbch==chM) )
 			{
-				i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-				j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+				i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+				j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 				int index;
 				index = (int) contacts[c].seqA + 20 * ( (int) contacts[c].seqB );
@@ -3295,14 +3275,13 @@ double korp6DMW(contact *contacts, int icont, korp *map,  int posM, char chM,  i
 
 	int c_seqA, c_seqB;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
 	double f;
 
 	for(long c = 0; c < icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -3317,8 +3296,8 @@ double korp6DMW(contact *contacts, int icont, korp *map,  int posM, char chM,  i
 				c_seqB = Maa;
 			} else c_seqB = contacts[c].seqB;
 
-			i = mapping[ iaa[c_seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[c_seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[c_seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[c_seqB] ] [1]; // j-th interaction frame map
 
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
@@ -3353,15 +3332,14 @@ double korp6DMW21(contact *contacts, int icont, korp *map,  int posM, char chM, 
 	float *br = map->br;
 	char *iaa = map->iaa;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
 	double f;
 	int c_seqA, c_seqB;
 
 	for(long c = 0; c < icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 
 		{
@@ -3377,8 +3355,8 @@ double korp6DMW21(contact *contacts, int icont, korp *map,  int posM, char chM, 
 				c_seqB = Maa;
 			} else c_seqB = contacts[c].seqB;
 
-			i = mapping[ iaa[c_seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[c_seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[c_seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[c_seqB] ] [1]; // j-th interaction frame map
 
 
 			// fprintf(stdout,"\n dist A %2d  B %2d  D %f %f\n", c_seqA, c_seqB, contacts[c].d, br[0] );
@@ -3417,14 +3395,13 @@ double korp6DMWRSA(contact *contacts, int icont, korp *map,  int posM, char chM,
 	float *br = map->br;
 	char *iaa = map->iaa;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
 	double f;
 
 	for(long c = 0; c < icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -3439,8 +3416,8 @@ double korp6DMWRSA(contact *contacts, int icont, korp *map,  int posM, char chM,
 				//fprintf(stderr,"seqB= %2d  Maa= %2d  posM= %4d  chM= %c  chA= %c\n", contacts[c].seqB, Maa, posM, chM, contacts[c].fach);
 				contacts[c].seqB= Maa;
 			}
-			i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-			j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+			i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 
 			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
@@ -3448,9 +3425,9 @@ double korp6DMWRSA(contact *contacts, int icont, korp *map,  int posM, char chM,
 			//			fprintf(stdout,"contact2bins> ir= %2d  ita= %2d  itb= %2d  ipa= %2d  ipb= %2d  ic= %2d  energy= %f\n",ir,ita,itb,ipa,ipb,ic,
 			//					maps[s][x][y][i][j][ir][meshes[ir]->icell[ita]+ipa][meshes[ir]->icell[itb]+ipb][ic]);
 			if (RSA > 20.0)
-				f = fmapping[s] * W[contacts[c].seqA] * W[contacts[c].seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
+				f = fmapping[s] * W[(int)contacts[c].seqA] * W[(int)contacts[c].seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
 			else
-				f = fmapping[s] * W[contacts[c].seqA+20] * W[contacts[c].seqB+20];
+				f = fmapping[s] * W[(int)contacts[c].seqA+20] * W[(int)contacts[c].seqB+20];
 
 			energy += f * maps[s][0][0][i][j][ir][ meshes[ir]->icell[ita] + ipa ][ meshes[ir]->icell[itb] + ipb ][ic];
 
@@ -3482,14 +3459,13 @@ double korp6DMW_BIND(contact *contacts, int icont, korp *map,  int posM, char ch
 	float *br = map->br;
 	char *iaa = map->iaa;
 
-	int ninter = 0; // Number of interactions
 	double energy = 0.0;
-	int ir,ita,ipa,itb,ipb,ic,x,y,i,j,s,dummy;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
 	double f;
 
 	for(long c = 0; c < icont; c++) // screen all contacts
 	{
-		s = smapping[contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
 		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
 		{
 
@@ -3509,15 +3485,15 @@ double korp6DMW_BIND(contact *contacts, int icont, korp *map,  int posM, char ch
 			// Only inter-chain contacts is the same as "Binding" experiment
 			if ( !(contacts[c].fach==chM and contacts[c].fbch==chM) )
 			{
-				i = mapping[ iaa[contacts[c].seqA] ] [1]; // i-th interaction frame map
-				j = mapping[ iaa[contacts[c].seqB] ] [1]; // j-th interaction frame map
+				i = mapping[ (int)iaa[(int)contacts[c].seqA] ] [1]; // i-th interaction frame map
+				j = mapping[ (int)iaa[(int)contacts[c].seqB] ] [1]; // j-th interaction frame map
 
 				contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
 
 				//			fprintf(stdout,"contact2bins> ir= %2d  ita= %2d  itb= %2d  ipa= %2d  ipb= %2d  ic= %2d  energy= %f\n",ir,ita,itb,ipa,ipb,ic,
 				//					maps[s][x][y][i][j][ir][meshes[ir]->icell[ita]+ipa][meshes[ir]->icell[itb]+ipb][ic]);
 
-				f = fmapping[s] * W[contacts[c].seqA] * W[contacts[c].seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
+				f = fmapping[s] * W[(int)contacts[c].seqA] * W[(int)contacts[c].seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
 
 				energy += f * maps[s][0][0][i][j][ir][ meshes[ir]->icell[ita] + ipa ][ meshes[ir]->icell[itb] + ipb ][ic];
 
@@ -3581,7 +3557,10 @@ char *getResChainIds(Macromolecule *mol)
 // Prints into "f" file-handle all contact information in the "ncont" contacts
 void print_contacts(FILE *f, contact *contacts, long ncont, bool header)
 {
-	fprintf(f,"contacts_inside= %x (Hex)  ncont= %ld\n",contacts,ncont);
+	fprintf(f,"contacts_inside= %p (Hex)  ncont= %ld\n",contacts,ncont);
+	// PABLO REMOVE WARNING 2023
+	// fprintf(f,"contacts_inside= %x (Hex)  ncont= %ld\n",contacts,ncont);
+
 
 	if(header)
 		fprintf(f,"#%2s %5s %3s %2s %3s  %6s %5s %5s %5s %5s %5s\n",

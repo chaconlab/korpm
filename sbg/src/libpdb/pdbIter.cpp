@@ -158,7 +158,7 @@ pdbIter::pdbIter(PDB_Container *c, bool include_smol,bool include_nacid, bool in
     	if(special_iter)
     	{
         	L_segment=(Segment**)realloc(L_segment,sizeof(Segment*)*(end_segment+1));
-        	virtual_segment=new Segment("V");
+        	virtual_segment=new Segment((char *)"V");
     		virtual_segment->add(c);
     		L_segment[end_segment]=virtual_segment;
     		end_segment++;

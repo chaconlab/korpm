@@ -17,7 +17,8 @@ Segment:: Segment()
 
 Segment:: Segment(Tname name, int in_nid )
 {
-  strcpy(id,name);
+  // strcpy(id,name);
+  memcpy(id, name, strlen(name) + 1);
   elements=(PDB_Contained**)malloc(0);
   limit=0;
   currentE=0;
@@ -28,8 +29,9 @@ Segment:: Segment(Tname name, int in_nid )
 
 Segment::Segment(Segment *old,bool with_elements)
 {
-  int i;
-  strcpy(id,old->getName());
+  //strcpy(id,old->getName());
+  memcpy(id, old->getName(), strlen(old->getName()) + 1);
+
   father=NULL;
   nid=old->getIdNumber();
 
@@ -39,7 +41,7 @@ Segment::Segment(Segment *old,bool with_elements)
 	  elements=(PDB_Contained**)malloc(sizeof(PDB_Contained*)*limit);
 	  if(elements==NULL)
 		  fprintf(stdout,"Memory allocation error\n");
-	  for(i=0;i<limit;i++)
+	  for(int i=0;i<limit;i++)
 	  {
 		  if(old->getMolType()==tmol_protein)
 			  elements[i]=new  Residue((Residue*)old->getE(i));

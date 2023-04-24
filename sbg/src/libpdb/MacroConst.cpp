@@ -5,7 +5,7 @@ using namespace std;
 
 Macromolecule::Macromolecule()
 {
-  strcpy( id, "Macromolecule" );
+  strcpy( id, (const char *)"Macromolecule" );
   elements = ( PDB_Contained * * ) malloc( 0 );
   limit = 0;
   currentE = 0;
@@ -18,7 +18,9 @@ Macromolecule::Macromolecule()
 
 Macromolecule::Macromolecule( Tname name, int in_nid)
 {
-  strcpy( id, name );
+  //strcpy( id, (const char *)name );
+  memcpy(id, name, strlen(name) + 1);
+
   elements = ( PDB_Contained * * ) malloc( 0 );
   limit = 0;
   currentE = 0;
@@ -31,7 +33,9 @@ Macromolecule::Macromolecule( Macromolecule * old )
   int i;
   Molecule * m;
 
-  strcpy( id, old->getName() );
+  // strcpy( id, (const char *)old->getName() );
+  memcpy(id, old->getName(), strlen(old->getName()) + 1);
+
   limit = old->getLimit();
   nid=old->getIdNumber();
   father=NULL;
@@ -82,7 +86,7 @@ Macromolecule::Macromolecule( Macromolecule **list, int num_m )
   int i,j,k,k2;
   Molecule * m;
 
-  strcpy( id, list[0]->getName() );
+  strcpy( id, (const char *)list[0]->getName() );
   nid=list[0]->getIdNumber();
   father=NULL;
 

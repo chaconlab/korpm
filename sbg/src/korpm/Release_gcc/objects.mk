@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lrt -lenergy_gcc -lpdb2_gcc -ltools_gcc
+LIBS := -lenergy_gcc -lpdb2_gcc -ltools_gcc
 

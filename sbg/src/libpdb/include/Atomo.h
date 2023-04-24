@@ -24,8 +24,10 @@ int const RING_HYBRID = { 3 };
 int const APOLAR = { 0 };
 int const POLAR = { 1 };
 
-// atom types
 
+
+
+// atom types
 /**
 * *@author Jose Ignacio Garzon
 *
@@ -221,7 +223,7 @@ public:
   Atom(Atom *a);
 
   ///Destructor
-  ~Atom();
+  virtual ~Atom();
 
   ///Returns spatial position of the atom
   void getPosition(Tcoor coor);

@@ -17,7 +17,7 @@ void Macromolecule::centerBox()
 bool Macromolecule::applyAtoms( AtomOperator * op )
 {
   bool end = true;
-  bool end2 = true;
+
   bool out = true;
   Atom * at;
 
@@ -371,7 +371,7 @@ void check_resnames(Fragment *r)
 		  || strcmp(a->getPdbName()," HD2 ")==0)
 			{
 				atom_name1=true;
-				r->modifyName("ASH");
+				r->modifyName((char *)"ASH");
 			}
 
 		}while(r->next() && !atom_name1);
@@ -382,14 +382,14 @@ void check_resnames(Fragment *r)
 		atom_name1=false;
 		do{
 			a=(Atom*)r->getCurrent();
-			if(strcmp(a->getPdbName()," HG  ")==0)
+			if(strcmp(a->getPdbName(),(char *)" HG  ")==0)
 			{
 				atom_name1=true;
 			}
 
 		}while(r->next() && !atom_name1);
 		if(!atom_name1)
-			r->modifyName("CYX");
+			r->modifyName((char *)"CYX");
 		break;
 
 		//GLH
@@ -402,7 +402,7 @@ void check_resnames(Fragment *r)
 		  || strcmp(a->getPdbName()," HE2 ")==0)
 			{
 				atom_name1=true;
-				r->modifyName("GLH");
+				r->modifyName((char *)"GLH");
 			}
 
 		}while(r->next() && !atom_name1);
@@ -427,11 +427,11 @@ void check_resnames(Fragment *r)
 
 		}while(r->next());
 		if(atom_name2 && atom_name1)
-				r->modifyName("HIP");
+				r->modifyName((char *)"HIP");
 		else
 				if(!atom_name2 && atom_name1)
 				{
-						r->modifyName("HID");
+						r->modifyName((char *)"HID");
 				}
 
 		break;
@@ -448,7 +448,7 @@ void check_resnames(Fragment *r)
 
 		}while(r->next() && !atom_name1);
 		if(!atom_name1)
-			r->modifyName("LYN");
+			r->modifyName((char *)"LYN");
 		break;
 
 		//LYN
@@ -463,7 +463,7 @@ void check_resnames(Fragment *r)
 
 		}while(r->next() && !atom_name1);
 		if(!atom_name1)
-			r->modifyName("TYM");
+			r->modifyName((char *)"TYM");
 		break;
 	}
 
@@ -488,7 +488,7 @@ void Macromolecule::mutseq(char seq, int index)
 	pdbIter *iter = new pdbIter( this );
 	Residue *res;
 
-	int s = 0; // Sequence index
+
 	int i; // Aminoacids table index
 
 
@@ -839,7 +839,7 @@ Macromolecule *Macromolecule::select_Box(Tcoor C, float xdim)
   maxZ=C[2]+xdim;
 
 
-  Macromolecule * m = new Macromolecule( "selection" );
+  Macromolecule * m = new Macromolecule( (char *)"selection" );
 
   initAll();
 
@@ -852,13 +852,15 @@ Macromolecule *Macromolecule::select_Box(Tcoor C, float xdim)
     switch(mol->getClass())
     {
     case pdb_protein:
-    	mol2 = new Protein( "Selection" );
+    	mol2 = new Protein( (char *)"Selection" );
     	break;
     case pdb_nacid:
-    	mol2 = new NAcid( "Selection" );
+    	mol2 = new NAcid( (char *)"Selection" );
     	break;
     case pdb_smol:
     	mol2 = new SMol( mol->getName(),mol->getIdNumber() );
+    	break;
+    default :
     	break;
     }
 
@@ -910,7 +912,7 @@ Macromolecule *Macromolecule::select_Box(Tcoor C, float xdim)
     			seg = ( Segment * ) cad->getCurrent();
 
     			cS++;
-    			seg2 = new Segment( "Selection" );
+    			seg2 = new Segment((char *)"Selection" );
 
     			contR = true;
     			while ( contR != false )
@@ -1020,7 +1022,7 @@ Macromolecule *Macromolecule::select_Box(float *min, float *max)
   maxZ=max[2];
 
 
-  Macromolecule * m = new Macromolecule( "selection" );
+  Macromolecule * m = new Macromolecule((char *)"selection" );
 
   initAll();
 
@@ -1033,13 +1035,15 @@ Macromolecule *Macromolecule::select_Box(float *min, float *max)
     switch(mol->getClass())
     {
     case pdb_protein:
-    	mol2 = new Protein( "Selection" );
+    	mol2 = new Protein((char *)"Selection" );
     	break;
     case pdb_nacid:
-    	mol2 = new NAcid( "Selection" );
+    	mol2 = new NAcid((char *)"Selection" );
     	break;
     case pdb_smol:
     	mol2 = new SMol( mol->getName(),mol->getIdNumber() );
+    	break;
+    default:
     	break;
     }
 
@@ -1091,7 +1095,7 @@ Macromolecule *Macromolecule::select_Box(float *min, float *max)
     			seg = ( Segment * ) cad->getCurrent();
 
     			cS++;
-    			seg2 = new Segment( "Selection" );
+    			seg2 = new Segment((char *)"Selection" );
 
     			contR = true;
     			while ( contR != false )
@@ -1177,9 +1181,6 @@ bool Macromolecule::writeMloop( char *name, int n, int ifr, int ilr, char chain)
 	FILE *file;
 	char line[83];
 	char *fmt;
-	int res_no = 0;
-	int cont_at=1;
-	Chain *cad;
 	Fragment *res;
 	Atom *a;
 
@@ -1199,7 +1200,7 @@ bool Macromolecule::writeMloop( char *name, int n, int ifr, int ilr, char chain)
 
 	initAll();
 
-	int i = 0;
+
 	Tcoor pos;
 
 //	fprintf(stderr,"About to create iterator\n");

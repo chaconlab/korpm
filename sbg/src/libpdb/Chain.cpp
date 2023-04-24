@@ -8,7 +8,7 @@ using namespace std;
 
 Chain:: Chain()
 {
-  strcpy(id,"Chain");
+  strcpy(id,(const char *)"Chain");
   elements=(PDB_Contained**)malloc(0);
   limit=0;
   currentE=0;
@@ -19,7 +19,9 @@ Chain:: Chain()
 
 Chain:: Chain(Tname name,int i_nid )
 {
-  strcpy(id,name);
+  memcpy(id, name, strlen(name) + 1);
+
+  //strcpy(id,(const char *)name);
   elements=(PDB_Contained**)malloc(0);
   limit=0;
   currentE=0;
@@ -31,8 +33,9 @@ Chain:: Chain(Tname name,int i_nid )
 
 Chain::Chain(Chain *old, bool with_elements)
 {
-  int i;
-  strcpy(id,old->getName());
+ // strcpy(id,(const char *)old->getName());
+  memcpy(id, old->getName(), strlen(old->getName()) + 1);
+
   nid=old->getIdNumber();
   father=NULL;
 
@@ -43,7 +46,7 @@ Chain::Chain(Chain *old, bool with_elements)
 	  if(elements==NULL)
 		  fprintf(stdout,"Error in memory allocation\n");
 
-	  for(i=0;i<limit;i++)
+	  for(int i=0;i<limit;i++)
 	  {
 		  elements[i]=new  Segment((Segment*)old->getE(i));
 		  ((PDB_Contained*)(elements[i]))->setFather(this);

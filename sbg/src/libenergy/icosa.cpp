@@ -543,10 +543,9 @@ double loco_energy(float *coordl, int *iseql, int nresl, float *coord, int *iseq
 	double dist;
 	double cutoff2=pow(12+CAdist,2);
 	double remo[3]; // atomic position in local coordinate frame
-	int di,tri,limit;
+	int di,tri;
 	double contactscore = 0.0;
 
-	double myener;
 	int myj,myi,swap;
 
 	// Left side

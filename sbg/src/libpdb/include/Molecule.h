@@ -30,7 +30,7 @@
   */
   Molecule(Molecule *old,bool with_elements=true);
   /// Destructor
-  ~Molecule();
+  virtual ~Molecule();
   /// Returns the Molecule type that contains the object
   virtual TMOL getMolType()=0;
 };

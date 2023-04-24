@@ -312,7 +312,6 @@ void Macromolecule::all_dihedrals( float * * dihedral )
 	int chino, i;
 	double chis[4];
 	pdbIter * iter3;
-	TMOL fragtype;
 	//Iterador
 	 iter1 = new pdbIter( this, false, false, true, false ); // only prot...
 

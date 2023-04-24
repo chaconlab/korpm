@@ -6,7 +6,18 @@
 
 #include <libpdb/include/Macromolecule.h>
 #include <libpdb/include/pdbIter.h>
-
+// PDB atoms to prevent char warnings
+char *Nstr2   = (char *)" N  ";
+char *CAstr2  = (char *)" CA ";
+char *Cstr2   = (char *)" C  ";
+char *Ostr2   = (char *)" O  ";
+char *CBstr2  = (char *)" CB ";
+char *CGstr2  = (char *)" CG ";
+char *CDstr2  = (char *)" CD ";
+char *CEstr2  = (char *)" CE ";
+char *CZstr2  = (char *)" CZ ";
+char *HAstr2  = (char *)" HA ";
+char *Hstr2   = (char *)" H  ";
 
 #ifdef VOLUME_INCLUDED
 
@@ -267,7 +278,6 @@ vlVolume * Macromolecule::fillVolumeNE( float unit )
 
   Atom * at;
   vlVolume * vlm;
-  vlPoint3ui * position;
   Tcoor geometricCenter;
   Tcoor volcenter;
   float weight;
@@ -340,10 +350,8 @@ vlVolume * Macromolecule::fillVolumeBFS( float unit, float *bfs )
 
   Atom * at;
   vlVolume * vlm;
-  vlPoint3ui * position;
   Tcoor geometricCenter;
   Tcoor volcenter;
-  float weight;
   vlm = createVolume( unit );
   float shiftX, shiftY, shiftZ;
 	geoCenter( geometricCenter );
@@ -415,7 +423,6 @@ vlVolume * Macromolecule::fillVolumeNE_3BB2R( float unit )
 
   Atom * at;
   vlVolume * vlm;
-  vlPoint3ui * position;
   float weight;
   vlm = createVolume( unit );
   Tcoor volcenter;
@@ -496,7 +503,6 @@ vlVolume * Macromolecule::fillVolumeMW( float unit )
 
   Atom * at;
   vlVolume * vlm;
-  vlPoint3ui * position;
   float weight;
   vlm = createVolume( unit );
   Tcoor volcenter;
@@ -573,7 +579,6 @@ vlVolume * Macromolecule::fillVolume( float maxLenght, float unit )
   float shiftX, shiftY, shiftZ;
   Atom * at;
   vlVolume * vlm;
-  vlPoint3ui * position;
   float weight;
 
 
@@ -648,7 +653,6 @@ vlVolume * Macromolecule::fillVolumeBeta( float unit )
 
   Atom * at;
   vlVolume * vlm;
-  vlPoint3ui * position;
   float weight;
   vlm = createVolume( unit );
   float shiftX, shiftY, shiftZ;
@@ -718,7 +722,6 @@ void Macromolecule::project( vlVolume * vlm )
   float gx, gy, gz;
   Atom * at;
 
-  vlPoint3ui * position;
   float weight;
 
   float shiftX, shiftY, shiftZ;
@@ -1361,15 +1364,16 @@ vlVolume * Macromolecule::createVDW(float voxel_size, int opt, ConventionNames o
 	float mul[2];
 	Conditions *conds= new Conditions();
 	  Condition *condition= new Condition(-1,-1,-1,-1,-1,-1,-1,-1,-1,-1);
-  	condition->add(" C  ");
-  	condition->add(" CA ");
-  	condition->add(" N  ");
-  	condition->add(" O  ");
-  	condition->add(" CB ");
-  	condition->add(" CG ");
-  	condition->add(" CD ");
-  	condition->add(" CE ");
-  	condition->add(" CZ ");
+  	condition->add(Nstr2);
+  	condition->add(CAstr2);
+  	condition->add(Cstr2);
+  	condition->add(Ostr2);
+  	condition->add(CBstr2);
+  	condition->add(CGstr2);
+  	condition->add(CDstr2);
+  	condition->add(CEstr2);
+  	condition->add(CZstr2);
+
 //  	condition->add(" HA ");
 //  	condition->add(" H  ");
   	conds->add(condition);
@@ -1579,7 +1583,6 @@ vlVolume * Macromolecule::createVDW(int start, int end, float voxel_size, int op
 	int dist_down;
 	float dist_pos;
 	float value;
-	int cont_mols;
 	bool atom_found, primera_vez;
 
 	primera_vez=true;
@@ -1898,7 +1901,7 @@ vlVolume *Macromolecule::createELE(float voxel_size, float threshold,int type,in
   Atom * a;
   Element *e;
   int i;
-  int aminoacid,atom;
+  int aminoacid;
   char name[5];
   vlPoint3f origin,*position;
   vlPoint3ui *pos_aux;
@@ -1910,13 +1913,13 @@ vlVolume *Macromolecule::createELE(float voxel_size, float threshold,int type,in
   float dist;
   float value;
   bool atom_found;
-	float in300=(332.0)/((MAX_ELE*ELE_STEP*MAX_ELE*ELE_STEP*4.0));
+//	float in300=(332.0)/((MAX_ELE*ELE_STEP*MAX_ELE*ELE_STEP*4.0));
 	float radius;
-	float e0=8.8542e-12;
-	float ron=8.0,roff=30.0,coeff;
-	float elec_B=78.4+8.5525;
-	float er;
-	float charge, charge2;
+//	float e0=8.8542e-12;
+	float ron=8.0,roff=30.0;
+//	float elec_B=78.4+8.5525;
+//	float er;
+	float charge;
 
     // Change default charges....
     aa_iupac2pqr();
@@ -2083,7 +2086,7 @@ vlVolume *Macromolecule::createELE(int start, int end, float voxel_size, float t
 	Atom * a;
 	Element *e;
 	int i;
-	int aminoacid,atom;
+	int aminoacid;
 	char name[5];
 	vlPoint3f origin,*position;
 	vlPoint3ui *pos_aux;
@@ -2095,13 +2098,9 @@ vlVolume *Macromolecule::createELE(int start, int end, float voxel_size, float t
 	float dist;
 	float value;
 	bool atom_found;
-	float in300=(332.0)/((MAX_ELE*ELE_STEP*MAX_ELE*ELE_STEP*4.0));
 	float radius;
-	float e0=8.8542e-12;
-	float ron=8.0,roff=30.0,coeff;
-	float elec_B=78.4+8.5525;
-	float er;
-	float charge, charge2;
+	float ron=8.0,roff=30.0;
+	float charge;
 
 	// Change default charges....
 	aa_iupac2pqr();
@@ -2263,8 +2262,6 @@ vlVolume *Macromolecule::createELE_file(float voxel_size, int type, int withH)
 {
   Atom * a;
   Element *e;
-  int i;
-  char name[5];
   vlPoint3f origin,*position;
   vlPoint3ui *pos_aux;
   Tcoor posA;
@@ -2274,13 +2271,8 @@ vlVolume *Macromolecule::createELE_file(float voxel_size, int type, int withH)
   int ii,jj,kk;
   float dist;
   float value;
-  bool atom_found;
-	float in300=(332.0)/((MAX_ELE*ELE_STEP*MAX_ELE*ELE_STEP*4.0));
 	float radius;
-	float e0=8.8542e-12;
-	float ron=8.0,roff=30.0,coeff;
-	float elec_B=78.4+8.5525;
-	float er;
+	float ron=8.0,roff=30.0;
 	float charge;
 
   	//Dimensiones del mapa
@@ -2408,8 +2400,7 @@ vlVolume * Macromolecule::project_radiusVDW(float unit, int withH,bool center_hy
 
   float shiftX, shiftY, shiftZ;
   float centerX, centerY, centerZ, ii, jj, kk;
-  int  x[2], y[2], z[2];
-  float gx, gy, gz, dist;
+  float gx, gy, gz;
 
   int i, j, k;
 
@@ -2463,7 +2454,7 @@ vlVolume * Macromolecule::project_radiusVDW(float unit, int withH,bool center_hy
 		  gz = ( float )( atomCoor[2] / unit + shiftZ );
 
 		  /* calculate grid pos around point <vdwr*/
-		  float li, dist;
+		  float li;
 		  li=roundFloat(vdwr/unit)*unit;
 
 		  for(ii=-li;ii<=li;ii+=unit)
@@ -2631,7 +2622,6 @@ vlVolume * Macromolecule::project_Hydrophoby(float voxel_size,  ConventionNames 
 	Atom * a;
 	Element *e;
 	vlPoint3f origin, *position;
-	int cont_mols;
 	int i, aminoacid, atom;
 	char name[5];
 	Tcoor posA;
@@ -2639,7 +2629,6 @@ vlVolume * Macromolecule::project_Hydrophoby(float voxel_size,  ConventionNames 
 	float dist;
 	int ii,jj,kk;
 	bool atom_found;
-	int cont=0;
 	float max_voxel;
 	float value,value2;
 	int polarity;
@@ -2658,13 +2647,15 @@ vlVolume * Macromolecule::project_Hydrophoby(float voxel_size,  ConventionNames 
 	float mul[2];
 	Conditions *conds= new Conditions();
 	Condition *condition= new Condition(-1,-1,-1,-1,-1,-1,-1,-1,-1,-1);
-	condition->add(" C  ");
-	condition->add(" CA ");
-	condition->add(" N  ");
-	condition->add(" O  ");
-	condition->add(" CB ");
-	condition->add(" HA ");
-	condition->add(" H  ");
+
+
+	condition->add(Nstr2);
+  	condition->add(CAstr2);
+  	condition->add(Cstr2);
+  	condition->add(Ostr2);
+  	condition->add(CBstr2);
+  	condition->add(HAstr2);
+  	condition->add(Hstr2);
 	conds->add(condition);
 
 	mol[0]=this->select_cpy(conds);
@@ -2672,8 +2663,8 @@ vlVolume * Macromolecule::project_Hydrophoby(float voxel_size,  ConventionNames 
 	mol[1]=this->select_cpy(conds, false);
 	mul[1]=1.0;
 
-	mol[0]->writePDB("kk1.pdb");
-	mol[1]->writePDB("kk2.pdb");
+	//mol[0]->writePDB("kk1.pdb");
+	//mol[1]->writePDB("kk2.pdb");
 
 
 	// 	for(cont_mols=0;cont_mols<2;cont_mols++)
@@ -2888,8 +2879,7 @@ vlVolume * Macromolecule::project_radiusVDW_loop(float unit, int withH,bool cent
 
   float shiftX, shiftY, shiftZ;
   float centerX, centerY, centerZ, ii, jj, kk;
-  int  x[2], y[2], z[2];
-  float gx, gy, gz, dist;
+  float gx, gy, gz;
 
   int i, j, k;
 
@@ -2925,6 +2915,8 @@ vlVolume * Macromolecule::project_radiusVDW_loop(float unit, int withH,bool cent
   {
     /* get atom */
     at = getCurrentAtom();
+	e=at->getElement();
+
     /* getelectronic density */
     if(e->symbol!=H || withH )
         {
@@ -2939,7 +2931,7 @@ vlVolume * Macromolecule::project_radiusVDW_loop(float unit, int withH,bool cent
     gz = ( float )( atomCoor[2] / unit + shiftZ );
 
     /* calculate grid pos around point <vdwr*/
-    float li, dist;
+    float li;
     li=roundFloat(vdwr/unit)*unit;
 
 	for(ii=-li;ii<=li;ii+=unit)

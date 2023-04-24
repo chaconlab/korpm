@@ -52,7 +52,7 @@ all: ../../../bin/korpm
 ../../../bin/korpm: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: Intel C++ Linker'
-	icpc -L../../../lib/ -mkl=parallel -O3 -o "../../../bin/korpm" $(OBJS) $(USER_OBJS) $(LIBS)
+	icpc -L../../../lib -mkl=parallel -O3 -no-ipo -o "../../../bin/korpm" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

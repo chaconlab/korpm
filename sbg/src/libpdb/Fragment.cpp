@@ -8,6 +8,7 @@ using namespace std;
 Fragment:: Fragment()
 {
   strcpy(id,"Fragment");
+
   elements=(PDB_Contained**)malloc(0);
   limit=0;
   currentE=0;
@@ -18,7 +19,9 @@ Fragment:: Fragment()
 
 Fragment:: Fragment(Tname name, int i_nid, int i_npos,char i_letter)
 {
-  strcpy(id,name);
+  // strcpy(id,name);
+  memcpy(id, name, strlen(name) + 1);
+
   fragid = resnum_from_resname(id); // Mon added...
   if(fragid >= 24 && fragid <= 26)
 	  fragid = 6; // HIP, HID, or HIE --> HIS.
@@ -43,8 +46,9 @@ Fragment:: Fragment(Tname name, int i_nid, int i_npos,char i_letter)
 }
 Fragment:: Fragment(Fragment *old, bool with_elements)
 {
-  int i;
-  strcpy(id,old->getName());
+  // strcpy(id,old->getName());
+  memcpy(id, old->getName(), strlen(old->getName()) + 1);
+
   fragid = resnum_from_resname(id); // Mon added...
   if(fragid >= 24 && fragid <= 26)
 	  fragid = 6; // HIP, HID, or HIE --> HIS.
@@ -68,7 +72,7 @@ Fragment:: Fragment(Fragment *old, bool with_elements)
 	  if(elements==NULL)
 		  fprintf(stdout,"Error in memory allocation\n");
 
-	  for(i=0;i<limit;i++)
+	  for(int i=0;i<limit;i++)
 	  {
 		  elements[i]=new Atom((Atom*)old->getE(i));
 		  ((PDB_Contained*)(elements[i]))->setFather(this);
@@ -88,9 +92,8 @@ Fragment:: Fragment(Fragment *old, bool with_elements)
 
 Fragment:: ~Fragment()
 {
-  int i;
 
-  for(i=0;i<limit;i++)
+  for(int i=0;i<limit;i++)
   {
 	  delete (Atom*)elements[i];
   }

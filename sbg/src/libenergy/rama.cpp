@@ -67,7 +67,7 @@ float ***read_h3(char *file, int *p_size, float *p_step)
 
 	int ntot, nnom, nnt, nct, bins;
 	float paso;
-	char mapaname[100][10];
+
 	float ***mapas;
 
 	FILE *f; // File handler
@@ -88,11 +88,12 @@ float ***read_h3(char *file, int *p_size, float *p_step)
 
 	mapas = (float ***)malloc(sizeof(float **)*ntot);
 
+	char mapaname[ntot][20];
 	for (int i = 0; i < ntot; ++i)
 	{
 		fread(&bins, sizeof(int), 1, f);  // must be a int....
 		fread(&paso, sizeof(float), 1, f);
-		fread(&mapaname[i], sizeof(char), 10, f);
+		fread(&mapaname[i], sizeof(char), 20, f);
 		mapas[i] = (float **)malloc(sizeof(float *)*bins);
 		// printf("# maps %s %d %f\n", mapaname[i], bins, paso );
 
@@ -109,8 +110,10 @@ float ***read_h3(char *file, int *p_size, float *p_step)
 
 	*p_size=bins;
 	*p_step=paso;
+	fclose(f);
+
 	printf("rcd> ");
-	float contador[27];
+	float contador[ntot];
 	for (int i = 0; i < ntot; ++i )
 	{
 		contador[i] = 0;
@@ -126,7 +129,6 @@ float ***read_h3(char *file, int *p_size, float *p_step)
 
 	printf("\n");
 
-	fclose(f);
 
 
 	return mapas;
@@ -271,7 +273,7 @@ void show_map(float **map,int size, char *file)
 	FILE *f_file;
 	if( !(f_file = fopen(file,"w")) )
 	{
-		printf("Reading input error! file %s\n",f_file);
+		printf("Reading input error! file %s\n",file);
 		exit(1);
 	}
 
@@ -366,7 +368,7 @@ int angle2index(double angle, int size)
 // Ramachandran energy derived from neighbor-dependent PDFs from Dunbrack's paper.
 float rama_energy(double *dihedral_angle,int nr_atoms_loop,float ***maps,int size)
 {
-	float c = 180/M_PI;
+	//float c = 180/M_PI;
 	float energy = 0.0;
 
 	for(int i=0; i < (nr_atoms_loop/3)-1; i++) // screen residues
@@ -489,7 +491,7 @@ void finddihedral(float *co, int natoms, float *dihedral)
 // It computes Plcr/Pc, Plcr/Pt, or Pc/Pt potentials depending on the reference used in map_gen().
 float rama_energy2(float *dihedral_angle, int nres, float ***maps, int size)
 {
-	float c = 180/M_PI; // [rad] to [deg]
+	//float c = 180/M_PI; // [rad] to [deg]
 	float energy = 0.0;
 
 	for(int i=1; i < nres-1; i++) // screen residues
@@ -509,7 +511,7 @@ float rama_energy2(float *dihedral_angle, int nres, float ***maps, int size)
 // It computes Plcr/Pc, Plcr/Pt, or Pc/Pt potentials depending on the reference used in map_gen().
 float rama_energy2(double *dihedral_angle, int nres, float ***maps, int size)
 {
-	float c = 180/M_PI; // [rad] to [deg]
+	// float c = 180/M_PI; // [rad] to [deg]
 	float energy = 0.0;
 
 	for(int i=1; i < nres-1; i++) // screen residues

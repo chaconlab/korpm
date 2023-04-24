@@ -39,7 +39,9 @@ protected:
   ///Pointer to Father
   void *father;
 public:
-  ///Virtual Function. Must return the name of the element
+
+  virtual ~PDB_Contained();
+
   virtual char *getName()=0;
   ///Virtual Function. Must move the element (and the sub-elements)
   ///@param offset: Movement to be applied
@@ -53,7 +55,7 @@ public:
   /// , if they have sub-sub-elements, points to the first sub-sub-element also
   virtual bool initAll()=0;
   /// Returns the Molecule type that contains the object
-    virtual TMOL getMolType()=0;
+  virtual TMOL getMolType()=0;
   /// Returns the pointer to the Container object that contains this object
   void *getFather();
   /// Sets the pointer to the Container object that contains this object
@@ -90,6 +92,7 @@ protected:
 
 public:
 
+  //~PDB_Container();
   ///Introduces a new sub-element at the end of the list
   ///@param newE: Pointer to the new sub-element
   bool add(PDB_Contained *newE);

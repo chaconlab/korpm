@@ -76,7 +76,7 @@ void read_aln(char *file, bool **p_mask1, int *nres1, bool **p_mask2, int *nres2
 
 				size1 = strlen(line)-strlen(seq1);
 				if(debug)
-					printf("name size 1= %d  (line= %d) (seq1= %d)\n",size1,strlen(line),strlen(seq1));
+					printf("name size 1= %d  (line= %lu) (seq1= %lu)\n",size1,strlen(line),strlen(seq1));
 
 				if(debug)
 				{
@@ -142,7 +142,7 @@ void read_aln(char *file, bool **p_mask1, int *nres1, bool **p_mask2, int *nres2
 
 				size2 = strlen(line)-strlen(seq2);
 				if(debug)
-					printf("name size 2= %d  (line= %d) (seq2= %d)\n",size2,strlen(line),strlen(seq2));
+					printf("name size 2= %d  (line= %lu) (seq2= %lu)\n",size2,strlen(line),strlen(seq2));
 
 				// Some integrity checking...
 				if(size1 != size2)

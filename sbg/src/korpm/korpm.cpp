@@ -5,11 +5,12 @@
 #include <libpdb/include/Macromolecule.h>
 
 #include "time.h" // Santy's timer (parallelization independent)
-#include <cmdl/CmdLine.h>
+#include <tclap/CmdLine.h>
+using namespace TCLAP;
 
 
 #define FILENAME 300
-#define VERSION "v1.16"
+#define VERSION "v1.18"
 char prog[]="korpm";
 
 
@@ -34,24 +35,30 @@ int main(int argc, char *argv[])
 	int cgmodel = 0; // Atomic model (for formatting)
 
 	std::string temp;
-	char maindir[FILENAME]; // Main Directory Path
-	char mainpdb[FILENAME];
-	char pre_pdbid[FILENAME];
+	char *maindir; // Main Directory Path
+	char *mainpdb;
+	char *pre_pdbid;
+	char *pdbid;
+	char *input;
+	char *mapfile; // Potential energy map filename
+	char *ramafile; // Dunbrack's neighbor-dependent PDFs filename for Ramachandran-based potentials
+	char *output; // Output file name
+	char *weightstr; // Weights for potential energy map (a quoted array of whitespace separated values)
+	maindir = (char *) malloc( sizeof(char) * FILENAME );
+	mainpdb = (char *) malloc( sizeof(char) * FILENAME );
+	pre_pdbid = (char *) malloc( sizeof(char) * FILENAME );
+	pdbid = (char *) malloc( sizeof(char) * FILENAME );
+	input = (char *) malloc( sizeof(char) * FILENAME );
+	mapfile = (char *) malloc( sizeof(char) * FILENAME );
+	ramafile = (char *) malloc( sizeof(char) * FILENAME );
+	output = (char *) malloc( sizeof(char) * FILENAME );
+	weightstr = (char *) malloc( sizeof(char) * FILENAME );
+	mainpdb = (char *) malloc( sizeof(char) * FILENAME );
 
-	char pdbid[FILENAME];
-
-	char input[FILENAME];
-	char mapfile[FILENAME]; // Potential energy map filename
-	char ramafile[FILENAME]; // Dunbrack's neighbor-dependent PDFs filename for Ramachandran-based potentials
-	char output[FILENAME]; // Output file name
-
-	char weightstr[FILENAME]; // Weights for potential energy map (a quoted array of whitespace separated values)
-	float weights[100]; // Weights for potential energy map
 	double *W6D; // Weights array for KORP maps
 	bool custom_weights = false; // Custom weights
 
 	korp *map; // KORP's map structure with all stuff required...
-	float enat;
 	bool rama_switch = false; // Set "true" to activate Rama potential (added as bonding contribution to the selected "emodel" potential)
 	float rama_factor = 10.0; // Ramachandran energy factor (typically 10)
 	int rama_model = 3; // Ramachandran energy model
@@ -67,10 +74,10 @@ int main(int argc, char *argv[])
 
 	// COMMAND-LINE PARSER:
 	using namespace TCLAP;
-	CmdLine cmd(argv[0],"   ", VERSION );
+	CmdLine cmd(argv[0],' ', VERSION );
 	try {
 
-		UnlabeledValueArg<std::string> Input("list","List of PDB/MUT. Format \"160L A A  1 -0.200  AA120M\" ","default","mutations");
+		UnlabeledValueArg<std::string> Input("list","List of PDB/MUT. Format \"160L A A  1 -0.200  AA120M\" ",true, "default","mutations");
 		cmd.add( Input );
 
 		ValueArg<std::string> Output("o","output", "Output file name (default=\"out.txt\")",false,"out.txt","string");
@@ -109,7 +116,6 @@ int main(int argc, char *argv[])
 		SwitchArg Pclase("","class", "Read write homology class info", false);
 		cmd.add( Pclase );
 
-		bool fakerevese_switch = false;  // Read DDG exp from file
 
 		SwitchArg Frev("","frev", "Fake reverse mutation", false);
 		cmd.add( Frev );
@@ -277,10 +283,7 @@ int main(int argc, char *argv[])
 
 	// esto no debia estar aqui...
 	FILE *f, *fout;
-	char dumpc;
-	int dumpi;
 	float deltaE;
-	char dumpf[10];
 	char mutstr[500];
 
 	if ( (fout=fopen(output, "w"))==NULL)
@@ -312,6 +315,8 @@ int main(int argc, char *argv[])
 		// Reading Dunbrack's PDFs (Rama potential)
 		// Load Dunbrack's neighbor-dependent PDFs for Ramachandran-based potentials MAP (Dunbrack_TCB)
 		pdfs = read_dunbrack(ramafile,&size,&step); // Reads binary
+		fprintf(stdout,"rama2\n" );
+
 		// Rama stuff for protein modeling (many single runs)
 		fprintf(stdout,"%s> Generating the complete Ramachandran potential (20x20x20 = 8000 72x72 maps)... ",prog);
 		fflush(stdout);
@@ -376,20 +381,20 @@ int main(int argc, char *argv[])
 		rsa=-1;
 
 		if (!dexp_switch)  // simple input
-			nscan = sscanf(myline,"%s %s ",&pdbid, &mutstr);
+			nscan = sscanf(myline,"%s %s ",pdbid, mutstr);
 		else if (pclase)
 		{
 			if(rsa_switch)
-				nscan = sscanf(myline,"%s %s %f %d %f",&pdbid, &mutstr, &deltaE, &Hclass, &rsa);
+				nscan = sscanf(myline,"%s %s %f %d %f",pdbid, mutstr, &deltaE, &Hclass, &rsa);
 			else
-				nscan = sscanf(myline,"%s %s %f %d",&pdbid, &mutstr, &deltaE, &Hclass);
+				nscan = sscanf(myline,"%s %s %f %d",pdbid, mutstr, &deltaE, &Hclass);
 		}
 		else
 		{
 			if(rsa_switch)
-				nscan = sscanf(myline,"%s %s %f %f",&pdbid, &mutstr, &deltaE, &rsa);
+				nscan = sscanf(myline,"%s %s %f %f",pdbid, mutstr, &deltaE, &rsa);
 			else
-				nscan = sscanf(myline,"%s %s %f",&pdbid, &mutstr, &deltaE);
+				nscan = sscanf(myline,"%s %s %f",pdbid, mutstr, &deltaE);
 		}
 
 		// fprintf(stdout,"%s %s %f %d %f\n",pdbid, mutstr, deltaE, Hclass, rsa);
@@ -415,12 +420,12 @@ int main(int argc, char *argv[])
 		for(int i = 0; i < lenmut; i++)
 			if(mutstr[i] == ',') {
 				mutstr[i] = ' ';
-				sscanf( mutstr + pstart, "%s", &list_mutstr[nmut]);
+				sscanf( mutstr + pstart, "%s", (char *) &list_mutstr[nmut]);
 				pstart =i;
 				//fprintf(stdout, "%s\n", list_mutstr[nmut]);
 				nmut++;
 			}
-		sscanf( mutstr + pstart, "%s", &list_mutstr[nmut]);
+		sscanf( mutstr + pstart, "%s", (char *) &list_mutstr[nmut]);
 		//fprintf(stdout, "%s\n", list_mutstr[nmut]);
 
 		//fprintf(stdout, "%d\n", nmut);
@@ -479,8 +484,6 @@ int main(int argc, char *argv[])
 
 		pdbIter *iter_mol = new pdbIter(mol);
 
-		Residue *res;
-		Segment *iter_seg;
 		Fragment *frag;
 		int r_left=2, r_right=2;
 
@@ -492,7 +495,7 @@ int main(int argc, char *argv[])
 			for( iter_mol->pos_chain = 0; !iter_mol->gend_chain(); iter_mol->next_chain() ) // screen chains
 			{
 				Chain *ch = iter_mol->get_chain();
-				//printf("\n Processing %c\n", ch->getName()[0]);
+				//printf("\n Processing %c %c\n", ch->getName()[0], chn[i]);
 
 
 				if( ch->getName()[0] == chn[i] )
@@ -554,12 +557,12 @@ int main(int argc, char *argv[])
 					delete  iter_seq;
 
 					if  ( mutmol2->get_num_atoms() == 0 ) {
-						//fprintf(stderr,"delete  next chain\n" );
 						delete mutmol2;
 						//getchar();
 
 					} else
 					{
+
 						delete mutmol2;
 						break;
 					}
@@ -584,6 +587,7 @@ int main(int argc, char *argv[])
 
 
 		}
+
 		delete iter_mol;
 
 
@@ -602,9 +606,15 @@ int main(int argc, char *argv[])
 		}
 
 		// Select N, CA, C atoms from input PDB
-		ncac->add(" N  ");
-		ncac->add(" CA ");
-		ncac->add(" C  ");
+
+		char *Nstr  = (char *)" N  ";
+		char *CAstr = (char *)" CA ";
+	  char *Cstr  = (char *)" C  ";
+
+
+		ncac->add(Nstr);
+		ncac->add(CAstr);
+		ncac->add(Cstr);
 		ncac2 = new Conditions();
 		ncac2->add(ncac);
 
@@ -639,7 +649,6 @@ int main(int argc, char *argv[])
 
 
 		// Selecting 5 residues for Rama stuff
-		float mut_coord[15];
 		int l56size;
 		int *iaa = NULL; // AA index for each loop aminoacid
 		if (!(run_mode == 6 || run_mode == 56))
@@ -704,17 +713,7 @@ int main(int argc, char *argv[])
         delete mutmol;
 
 
-
-
-
-
-
-
-
-
-		int ncont; // Number of contacts
 		int ncontM; // Number of contacts
-		int ncontMA; // Number of contacts
 
 		float *coord = NULL; // Main-PDB coordinates
 		int *iseq = NULL;
@@ -779,8 +778,7 @@ int main(int argc, char *argv[])
 		//			ncontMA = contactCoordM(&contactsMA, map->cutoff, framesA, nresA, iseqA, posInChain, chn);
 		//		}
 
-		float delta, Prest, Pwt, Pmut, rmse;
-		double sumaa=0.0, sumab=0.0, final;
+		float delta, Pwt, Pmut, rmse;
 
 		// left/right 1-letter code aminoacids
 		int ileft = -1;
@@ -846,7 +844,7 @@ int main(int argc, char *argv[])
 						Pwt = -korp6DM_BIND(contactsM, ncontM, map, posInChain[0], chn[0], aa1I[0], fwt); // WT (mutated chain)
 						Pmut = -korp6DM_BIND(contactsM, ncontM, map, posInChain[0], chn[0], aa2I[0], fmut); // Mut (mutated chain)
 
-						if (debug) fprintf(stderr, "ncont= %d  ncontM= %d  ncontMA= %d  chn= %c  posInChain= %d\n", ncont, ncontM, ncontMA, chn, posInChain);
+						if (debug) fprintf(stderr, " ncontM= %d   chn= %s  posInChain= %d\n",  ncontM,  chn, posInChain[0]);
 					}
 					else
 					{
@@ -864,11 +862,11 @@ int main(int argc, char *argv[])
 						double W6DK[20] = {1.875,0.718,0.876,0.876,2.440,0.973,1.030,2.512,1.030,2.512,1.643,1.113,1.411,1.113,1.608,1.113,1.113,2.512,1.411,2.440};
 
 						if(!custom_weights) // Set default weights
-							if(run_mode == 56) //  KORP + RAMA
+						{	if(run_mode == 56) //  KORP + RAMA
 								W6D = W6DR;
 							else   // KORP
 								W6D = W6DK;
-
+						}
 						if(binding)
 						{
 							Pwt = -korp6DMW_BIND(contactsM, ncontM, map, posInChain[0], chn[0], aa1I[0], W6D);
@@ -1065,8 +1063,7 @@ int main(int argc, char *argv[])
 			}
 			case 99:
 			{
-				double sumaa=0;
-				//fprintf(stdout, "%f %f\n", deltaE, sumaa);
+
 
 
 				Pwt = W6D[aa1I[0]];

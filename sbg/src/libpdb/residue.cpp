@@ -53,8 +53,9 @@ float set_chi_to_periodic_range( double chi, int aa, int chino )
 ///Auxiliar function
 float dihedral( float * a1, float * a2, float * a3, float * a4 )
 {
-  float xij, yij, zij, xkj, ykj, zkj, xkl, ykl, zkl, dxi, dyi, dzi, gxi, gyi, gzi, bi, bk, ct, boi2, boj2,
-       z1, z2, ap, s, bioj, bjoi;
+  float xij, yij, zij, xkj, ykj, zkj, xkl, ykl, zkl, dxi, dyi, dzi, gxi, gyi, gzi, bi, bk, ct,z1, z2, ap, s;
+  //float boi2, boj2, bioj, bjoi;
+
   /* fprintf( stderr, "\n%f %f %f\n", a1[0],a1[1],a1[2]); fprintf( stderr, "%f %f %f\n", a2[0],a2[1],a2[2]);
   fprintf( stderr, "%f %f %f\n", a3[0],a3[1],a3[2]); fprintf( stderr, "%f %f %f\n", a4[0],a4[1],a4[2]); */
 
@@ -96,15 +97,15 @@ float dihedral( float * a1, float * a2, float * a3, float * a4 )
   bk = gxi * gxi + gyi * gyi + gzi * gzi;
   ct = dxi * gxi + dyi * gyi + dzi * gzi;
 
-  boi2 = 1. / bi;
-  boj2 = 1. / bk;
+ // boi2 = 1. / bi;
+ // boj2 = 1. / bk;
   bi = ( float )sqrt( ( double )bi );
   bk = ( float )sqrt( ( double )bk );
 
   z1 = 1. / bi;
   z2 = 1. / bk;
-  bioj = bi * z2;
-  bjoi = bk * z1;
+ // bioj = bi * z2;
+  // bjoi = bk * z1;
   ct = ct * z1 * z2;
   if ( ct > 1.0 ) ct = 1.0;
   if ( ct < ( -1.0 ) ) ct = -1.0;
@@ -126,8 +127,10 @@ float dihedral( float * a1, float * a2, float * a3, float * a4 )
 ///Auxiliar function
 float dihedral( double * a1, double * a2, double * a3, double * a4 )
 {
-  double xij, yij, zij, xkj, ykj, zkj, xkl, ykl, zkl, dxi, dyi, dzi, gxi, gyi, gzi, bi, bk, ct, boi2, boj2,
-       z1, z2, ap, s, bioj, bjoi;
+  double xij, yij, zij, xkj, ykj, zkj, xkl, ykl, zkl, dxi, dyi, dzi, gxi, gyi, gzi, bi, bk, ct,
+       z1, z2, ap, s;
+ // double  boi2, boj2, bioj, bjoi;
+
   /* fprintf( stderr, "\n%f %f %f\n", a1[0],a1[1],a1[2]); fprintf( stderr, "%f %f %f\n", a2[0],a2[1],a2[2]);
   fprintf( stderr, "%f %f %f\n", a3[0],a3[1],a3[2]); fprintf( stderr, "%f %f %f\n", a4[0],a4[1],a4[2]); */
 
@@ -169,15 +172,15 @@ float dihedral( double * a1, double * a2, double * a3, double * a4 )
   bk = gxi * gxi + gyi * gyi + gzi * gzi;
   ct = dxi * gxi + dyi * gyi + dzi * gzi;
 
-  boi2 = 1. / bi;
-  boj2 = 1. / bk;
+//  boi2 = 1. / bi;
+//  boj2 = 1. / bk;
   bi = sqrt( bi );
   bk = sqrt( bk );
 
   z1 = 1. / bi;
   z2 = 1. / bk;
-  bioj = bi * z2;
-  bjoi = bk * z1;
+//  bioj = bi * z2;
+//  bjoi = bk * z1;
   ct = ct * z1 * z2;
   if ( ct > 1.0 ) ct = 1.0;
   if ( ct < ( -1.0 ) ) ct = -1.0;
@@ -232,7 +235,9 @@ Residue::Residue( Residue * old, bool with_elements ):Fragment( old, with_elemen
 Residue::Residue( int aa,  int in_nid, int in_npos,char in_letter,  TMOL t)
 {
   Atom * at;
-  strcpy( id, ( char * ) AA[aa].aa_name3 );
+  // strcpy( id, ( char * ) AA[aa].aa_name3 );
+  memcpy(id,AA[aa].aa_name3,4);
+
   limit = AA[aa].natoms;
   nid=in_nid;
   npos=in_npos;
@@ -273,22 +278,22 @@ void Residue::get_achis( int aan, double * chis )
     {
       chis[chino] = 9999.0; continue;
     }
-    ( ( Atom * ) elements[AA[aan].chi_atoms[chino] [0]] )->getPosition(p1);
+    ( ( Atom * ) elements[(int) AA[aan].chi_atoms[chino] [0]] )->getPosition(p1);
     if ( AA[aan].chi_atoms[chino] [1] >= limit )
     {
       chis[chino] = 9999.0; continue;
     }
-    ( ( Atom * ) elements[AA[aan].chi_atoms[chino] [1]] )->getPosition(p2);
+    ( ( Atom * ) elements[(int)AA[aan].chi_atoms[chino] [1]] )->getPosition(p2);
     if ( AA[aan].chi_atoms[chino] [2] >= limit )
     {
       chis[chino] = 9999.0; continue;
     }
-    ( ( Atom * ) elements[AA[aan].chi_atoms[chino] [2]] )->getPosition(p3);
+    ( ( Atom * ) elements[(int)AA[aan].chi_atoms[chino] [2]] )->getPosition(p3);
     if ( AA[aan].chi_atoms[chino] [3] >= limit )
     {
       chis[chino] = 9999.0; continue;
     }
-    ( ( Atom * ) elements[AA[aan].chi_atoms[chino] [3]] )->getPosition(p4);
+    ( ( Atom * ) elements[(int)AA[aan].chi_atoms[chino] [3]] )->getPosition(p4);
     chis[chino] = set_chi_to_periodic_range( dihedral( p1, p2, p3, p4 ), aan, chino );
 
 
@@ -320,10 +325,10 @@ void Residue::rotamerize2( float * newchi )
   for ( chino = 0; chino < AA[aan].nchi; chino++ )
   {
 
-    ( ( Atom * ) elements[AA[aan].chi_atoms[chino] [0]] )->getPosition(c1);
-    ( ( Atom * ) elements[AA[aan].chi_atoms[chino] [1]] )->getPosition(c2);
-    ( ( Atom * ) elements[AA[aan].chi_atoms[chino] [2]] )->getPosition(c3);
-    ( ( Atom * ) elements[AA[aan].chi_atoms[chino] [3]] )->getPosition(c4);
+    ( ( Atom * ) elements[(int)AA[aan].chi_atoms[chino] [0]] )->getPosition(c1);
+    ( ( Atom * ) elements[(int)AA[aan].chi_atoms[chino] [1]] )->getPosition(c2);
+    ( ( Atom * ) elements[(int)AA[aan].chi_atoms[chino] [2]] )->getPosition(c3);
+    ( ( Atom * ) elements[(int)AA[aan].chi_atoms[chino] [3]] )->getPosition(c4);
 
 
     // detemine chi angle
@@ -394,9 +399,12 @@ char reschar_from_resname( char * resname )
       return AA[k].aa_name1;
   }
 
-  if ( k >= 20 )
+  if ( k >= 20 ) {
     fprintf( stderr, "  Warning %s residue not identified\n", resname );
     exit(-1);
+  }
+  //
+  return  0;
 
 }
 

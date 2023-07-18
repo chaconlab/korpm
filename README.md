@@ -1,6 +1,7 @@
 # korpm
 
 Fast method for predicting the stability change upon mutation from 3D structure. Predicting protein stability changes upon mutation using a simple orientational potential. [I. Martín-Hernández, Y. Dehouck, U. Bastolla, J.R. López-Blanco and P. Chacón. 2023. Bioinformatics](https://academic.oup.com/bioinformatics/article/39/1/btad011/6984713) 
+==Git users:== be sure that  LFS is installed, otherwise download as a zip file (check the size of korp6Dv1.bin=331.8MB) 
 
 ## Usage 
 

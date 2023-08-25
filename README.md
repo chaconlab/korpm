@@ -1,8 +1,8 @@
 # korpm
 
-Fast method for predicting the stability change upon mutation from 3D structure. Predicting protein stability changes upon mutation using a simple orientational potential. [I. Martín-Hernández, Y. Dehouck, U. Bastolla, J.R. López-Blanco and P. Chacón. 2023. Bioinformatics, 39, 1, 2023](https://academic.oup.com/bioinformatics/article/39/1/btad011/6984713) 
+A fast method for predicting the stability change upon mutation from a 3D structure. Predicting protein stability changes upon mutation using a simple orientational potential. [I. Martín-Hernández, Y. Dehouck, U. Bastolla, J.R. López-Blanco and P. Chacón. 2023. Bioinformatics, 39, 1, 2023](https://academic.oup.com/bioinformatics/article/39/1/btad011/6984713) 
 ```
-Git users: be sure that LFS is installed to support long files, otherwise download the repo as a zip file.
+Git users: Be sure that LFS is installed to support long files, otherwise download the repo as a zip file.
 The size of korp6Dv1.bin should be 331.8MB
 ```
 ## Usage 
@@ -12,7 +12,7 @@ The usage is very simple:
 ```sh
 sbg/bin/korpm input.txt --dir Ssym --score_file pot/korp6Dv1.bin -o out.txt
 ```
-it only requires: 1) two column input file specifying both PDB file and mutation, i.e. 1BNI IA76A  and 2) the path where the PDB files are located (--dir) and the KORP potential file (--score_file).  The results are also stored in the out.txt (-o option) file.
+it only requires: 1) a two-column input file specifying both the PDB file and mutation, i.e. 1BNI IA76A,  and 2) the path where the PDB files are located (--dir) and the KORP potential file (--score_file).  The results are also stored in the out.txt (-o option) file.
 
 ```sh
 more out.txt
@@ -20,22 +20,22 @@ more out.txt
 1EY0 TA44V        0.108
 1IHB FA82Q       -0.727
 ```
-The mutation columns stands for: 1st letter is the wild type amino acid, 2nd is the chain ID, digits corresponds to PDB residue position, and the last letter is the mutated amino acid. We follow the standard convention ΔΔG >= 0 (positives) are stabilizing and ΔΔG < 0 (negatives) are destabilizing.
+The mutation columns stand for: the 1st letter is the wild-type amino acid, 2nd is the chain ID, the digits correspond to the PDB residue position, and the last letter is the mutated amino acid. We follow the standard convention ΔΔG >= 0 (positives) is stabilizing and ΔΔG < 0 (negatives) is destabilizing.
 
 ## Source Code
 
-The complete source C++ code of KORPM  is under [sbg](sbg) directory.    
+The complete source C++ code of KORPM  is under [sbg](sbg) directory. Just execute compile_korpm.sh script.
 
 ## ΔΔG Curated Databases
 
-We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html) unique mutations trying to avoid entries that potentially interact with ligands or belong to a protein-protein interfaces, 
-and removing entries measured at extreme temperature or pH conditions. The initial curated database data comprise 3824 mutations from 139 proteins families
+We extracted from [Thermomut](http://biosig.unimelb.edu.au/thermomutdb/) and [ProThermDB](https://web.iitm.ac.in/bioinfo2/prothermdb/index.html) unique mutations trying to avoid entries that potentially interact with ligands or belong to protein-protein interfaces, 
+and removing entries measured at extreme temperature or pH conditions. The initial curated database data comprise 3824 mutations from 139 protein families
  (seq. identity <25%) with an average of ΔΔG -1.0 Kcal/mol and a standard deviation of 1.6 Kcal/mol. In total, 73% are destabilizing (ΔΔG>0) and 27% are stabilizing (ΔΔG<0). 
- By removing mainly alanines' destabilizing mutations, we obtain a more balanced subset that includes 2371 mutations from 129 proteins families, 58% destabilizing and 42% stabilizing with an average of ΔΔG -0.7 Kcal/mol and a standard deviation of 1.6 Kcal/mol. 
+ By removing mainly alanines' destabilizing mutations, we obtain a more balanced subset that includes 2371 mutations from 129 protein families, 58% destabilizing and 42% stabilizing with an average of ΔΔG -0.7 Kcal/mol and a standard deviation of 1.6 Kcal/mol. 
  This subset, named [Id25c03_1merNCLB.txt](Id25c03_1merNCLB.txt), was used for extract training and validation datasets for k-fold cross-validation experiments. Note that this subset is far from being perfectly balanced, e.g., the most frequent amino acid involved 
- in the mutation still is alanine and cysteines, tryptophans, and, prolines still are underpopulated. This dataset does not include any of the mutations of the Ssym test set. There are two additional subsets excluding 
- all the proteins presenting at least 25% of sequence of identity with either Ssym dataset [Id25c03_1merNCLB_Ssym.txt](Id25c03_1merNCLB_Ssym.txt) or S641 dataset
- [Id25c03_1merNCLB_S461.txt](Id25c03_1merNCLB_S461.txt). In our case, these different datasets where employed to test the absence of significant overfitting in our simple potential. 
+ in the mutation still is alanine, and cysteines, tryptophans, and, prolines still are underpopulated. This dataset does not include any of the mutations of the Ssym test set. There are two additional subsets excluding 
+ all the proteins presenting at least 25% of the sequence of identity with either Ssym dataset [Id25c03_1merNCLB_Ssym.txt](Id25c03_1merNCLB_Ssym.txt) or S641 dataset
+ [Id25c03_1merNCLB_S461.txt](Id25c03_1merNCLB_S461.txt). In our case, these different datasets were employed to test the absence of significant overfitting in our simple potential. 
  
 <table border="0">
 
@@ -50,16 +50,16 @@ and removing entries measured at extreme temperature or pH conditions. The initi
     <td align="center" ><b style="font-size:30px"><a href="Id25c03_1merNCLB.txt">Id25c03_1merNCLB.txt</a> </b></td>
  </tr></table>
 
-In the directory [Db](Db) you can find all the correspond PDB files. 
+In the directory [Db](Db) you can find all the corresponding PDB files. 
 
 ## Results with Ssym
 
-Ssym is a data set with equal number of stabilizing and destabilizing mutations compiled by Pucci et al. (https://doi.org/10.1093/bioinformatics/bty348) for which the structure of both the wild-type and mutant protein are available.  
+Ssym is a data set with an equal number of stabilizing and destabilizing mutations compiled by Pucci et al. (https://doi.org/10.1093/bioinformatics/bty348) for which the structure of both the wild-type and mutant protein are available.  
 
 ```sh
 sbg/bin/korpm Ssym.txt --dexp --dir Ssym --score_file pot/korp6Dv1.bin -o Ssym_all.txt
 ```
-Where [Ssym.txt](Ssym.txt) is the mutations input file and the [Ssym](Ssym) directory in where the input PDB files are store. Since this input contains the experimental ΔΔG (see Appendix for small corrections) you can cross-check the predictions by: 
+Where [Ssym.txt](Ssym.txt) is the mutations input file and the [Ssym](Ssym) directory is where the input PDB files are stored. Since this input contains the experimental ΔΔG (see Appendix for small corrections) you can cross-check the predictions by: 
 ```sh
 scripts/Mstat.pl Ssym_all.txt 10 11 2
 
@@ -110,7 +110,7 @@ stat "KORPM_Ssym.txt" u 6:7
 
 ### Comparative results Ssym
 
-Here you can find some compartive results with state of the art stability prediction programs:
+Here you can find some comparative results with state-of-the-art stability prediction programs:
 <font size="8" face="Courier New" >
 <table border="1">
 <tr><td>METHOD</td><td>RMSE</td><td>MAE</td><td>PCC</td><td>Sc</td><td>Ob1</td><td>Ob2</td><td>TPR</td><td>TNR</td><td> PPV</td><td>NPV</td><td>ACC</td><td>MCC</td><td>AROC</td><td>APRC</td></tr>

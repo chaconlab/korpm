@@ -166,3 +166,6 @@ Corrections of original Ssym dataset based on ThermoMutDB data.
 <tr><td>2LZM</td><td>KA60P</td><td>0.0</td><td>-0.001</td><td>Avoiding zero for the binary classification</td></tr>
 </table>
 </font>
+
+## Funding
+This work was supported by Spanish grants PID2019-109041GB-C21/AEI/10.13039/501100011033 

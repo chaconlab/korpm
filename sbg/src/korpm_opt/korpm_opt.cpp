@@ -8,8 +8,10 @@
 
 //  KORPM OPTIMIZATION
 //  icpc  -L/usr/local/lib test.cpp -o opt -lnlopt
+// # Compile korpm_opt (place first "libnlopt_gcc.a" compilation at directory), if necessary
+// #> g++ -g -L./ -I../../includes/ -I../../includes/opt korpm_opt.cpp -o korpm_opt -lnlopt_gcc
 
-#define VERSION "v1.16"
+#define VERSION "v1.17"
 
 #include <math.h>
 #include <nlopt.hpp>
@@ -27,7 +29,7 @@ int nvar = 0;
 //#define NRUNS 10
 //#define KNNRUNS KN*NRUNS
 #define NFACTOR 0.8
-#define MAXCASES 10000
+#define MAXCASES 200000
 int BINSAUC=1000;
 
 // Required by "quicksort"
@@ -99,7 +101,7 @@ int Score[20][20] = {
 
 
 
-
+/*
 typedef struct {
 	int nexp;
 	double aveE;
@@ -121,6 +123,30 @@ typedef struct {
 	float EramaMut[MAXCASES][3]; // Rama Mutant energy partial sums
 	int iaaWT[MAXCASES][3]; // Rama Wild-Type residue type index
 	int iaaMut[MAXCASES][3]; // Rama Mutant residue type index
+} fdata;
+*/
+
+typedef struct {
+	int nexp;
+	double aveE;
+	double aveC;
+	double sumay;
+	float fact;
+	float **dexp; // [MAXCASES][40]; // Wild-type sums
+	float **dcom; // [MAXCASES][40]; // Mutant sums
+	float *exp; // [MAXCASES]; // Experimental ddG
+	float *com; // [MAXCASES]; // Predicted ddG
+	int *aa1; // [MAXCASES]; // Wild-type aminoacid index
+	int *aa2; // [MAXCASES]; // Mutant aminoacid index
+	int *index; // [MAXCASES]; // Index for shuffle
+	int *index2; // [MAXCASES]; // Index for shuffle
+	int *Hclass; // [MAXCASES]; // homology class type;
+	float *rsa; // [MAXCASES]; // Mutation RSA
+	int nrange; // 0-nrange training nrange-nexp testing
+	float **EramaWT; // [MAXCASES][3]; // Rama Wild-Type energy partial sums
+	float **EramaMut; // [MAXCASES][3]; // Rama Mutant energy partial sums
+	int **iaaWT; // [MAXCASES][3]; // Rama Wild-Type residue type index
+	int **iaaMut; // [MAXCASES][3]; // Rama Mutant residue type index
 } fdata;
 
 
@@ -1520,8 +1546,67 @@ int main( int argc, char * argv[] )
 	}
 	using namespace std;
 
-	// INPUT DATA
+	// MON: Fixing stack overflow bug...
 	fdata d; // Main data structure with all stuff
+
+	// Dynamic memory allocation is mandatory for large stuff...
+	d.dexp = (float **) malloc(sizeof(float *) * MAXCASES);
+	d.dcom = (float **) malloc(sizeof(float *) * MAXCASES);
+	for(int i = 0; i < MAXCASES; i++)
+	{
+		d.dexp[i] = (float *) malloc(sizeof(float) * 40);
+		d.dcom[i] = (float *) malloc(sizeof(float) * 40);
+	}
+	d.exp = (float *) malloc(sizeof(float) * MAXCASES);
+	d.com = (float *) malloc(sizeof(float) * MAXCASES);
+	d.aa1 = (int *) malloc(sizeof(int) * MAXCASES);
+	d.aa2 = (int *) malloc(sizeof(int) * MAXCASES);
+	d.index = (int *) malloc(sizeof(int) * MAXCASES);
+	d.index2 = (int *) malloc(sizeof(int) * MAXCASES);
+	d.Hclass = (int *) malloc(sizeof(int) * MAXCASES);
+	d.rsa = (float *) malloc(sizeof(float) * MAXCASES);
+
+	d.EramaWT = (float **) malloc(sizeof(float *) * MAXCASES);
+	d.EramaMut = (float **) malloc(sizeof(float *) * MAXCASES);
+	for(int i = 0; i < MAXCASES; i++)
+	{
+		d.EramaWT[i] = (float *) malloc(sizeof(float) * 3);
+		d.EramaMut[i] = (float *) malloc(sizeof(float) * 3);
+	}
+	d.iaaWT = (int **) malloc(sizeof(int *) * MAXCASES);
+	d.iaaMut = (int **) malloc(sizeof(int *) * MAXCASES);
+	for(int i = 0; i < MAXCASES; i++)
+	{
+		d.iaaWT[i] = (int *) malloc(sizeof(int) * 3);
+		d.iaaMut[i] = (int *) malloc(sizeof(int) * 3);
+	}
+/*
+typedef struct {
+	int nexp;
+	double aveE;
+	double aveC;
+	double sumay;
+	float fact;
+	float **dexp; // [MAXCASES][40]; // Wild-type sums
+	float **dcom; // [MAXCASES][40]; // Mutant sums
+	float *exp; // [MAXCASES]; // Experimental ddG
+	float *com; // [MAXCASES]; // Predicted ddG
+	int *aa1; // [MAXCASES]; // Wild-type aminoacid index
+	int *aa2; // [MAXCASES]; // Mutant aminoacid index
+	int *index; // [MAXCASES]; // Index for shuffle
+	int *index2; // [MAXCASES]; // Index for shuffle
+	int *Hclass; // [MAXCASES]; // homology class type;
+	float *rsa; // [MAXCASES]; // Mutation RSA
+	int nrange; // 0-nrange training nrange-nexp testing
+	float **EramaWT; // [MAXCASES][3]; // Rama Wild-Type energy partial sums
+	float **EramaMut; // [MAXCASES][3]; // Rama Mutant energy partial sums
+	int **iaaWT; // [MAXCASES][3]; // Rama Wild-Type residue type index
+	int **iaaMut; // [MAXCASES][3]; // Rama Mutant residue type index
+} fdata;
+*/
+
+	// INPUT DATA
+//	fdata d; // Main data structure with all stuff
 	time_t t;
 	srand((unsigned) time(&t));
 	char dumpc;
@@ -1773,14 +1858,14 @@ int main( int argc, char * argv[] )
 			if (verbose>0) fprintf(stdout,"%5d", stats[i][j]);
 			fprintf(f,"%d,", stats[i][j]);
 
-			c1[i]+=stats[i][j];
-			c2[i]+=stats[j][i];
+			c1[i] += stats[i][j];
+			c2[i] += stats[j][i];
 		}
-		if (verbose>0) fprintf(stdout,"%5d\n", c1[i]);
+		if (verbose>0) fprintf(stdout,"%6d\n", c1[i]);
 		fprintf(f,"%d\n", c1[i]);
 
 	}
-	if (verbose>0) fprintf(stdout,"");
+	if (verbose>0) fprintf(stdout,"  ");
 	fprintf(f,"X");
 
 	for(int j=0;j<20;j++) {
@@ -2413,7 +2498,8 @@ int main( int argc, char * argv[] )
 			if (verbose>0) fprintf(stdout,"\n\nK-fold exp %d/%d # class limit  %4d resets %d %d\n", r, NRUNS, aproxkbinsAvg/(KN-1), reset_class, reset_mut);
 			for (int kn = 0; kn < KN; kn++)
 			{
-				if (verbose>0) fprintf(stdout,"kd %4d %4d %4d %4d %4d->", kn, kn_start[kn], knbins[kn], kn_start[kn] + knbins[kn], classcountN[kn]);
+				if (verbose>0)
+					fprintf(stdout,"kd %4d %4d %4d %4d %4d->", kn, kn_start[kn], knbins[kn], kn_start[kn] + knbins[kn], classcountN[kn]);
 				for (int i = nclasscheck; i < nclasscheck+classcountN[kn]; i++)
 					if (verbose>0) fprintf(stdout,"%4d ", classindex[i]);
 				if (verbose>0) fprintf(stdout,"\n");
@@ -2625,7 +2711,8 @@ int main( int argc, char * argv[] )
 				break;
 
 			case 5:
-				// nlopt_set_max_objective(func, PCC, &d);
+				// MON: Include a "switch" to change optimization functions easily... e.g. PCC, MAE, etc...
+				//nlopt_set_max_objective(func, PCC, &d);
 				// nlopt_set_min_objective(func, PPV, &d);
 				// nlopt_set_min_objective(func, RMSE_1, &d); // set nvar=1
 				// nlopt_set_min_objective(func, RMSE_2, &d); // set nvar=1
@@ -2892,7 +2979,8 @@ int main( int argc, char * argv[] )
 					case 40:
 						wt = d.aa1[i];
 						mut = d.aa2[i];
-						double ave=0, v, expf;
+						// double ave=0, v, expf;
+						double v, expf;
 						for(int j=0;j<20;j++)
 						{
 							//	sumaa += x[wt] * x[j] * ( d.dexp[i][j*2] + d.dexp[i][2*j+1] );

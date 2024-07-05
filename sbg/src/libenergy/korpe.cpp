@@ -1635,7 +1635,7 @@ int contactCoordM(contact **p_contactsM, float cutoff, frame *frames, int nres, 
 	return icontM; // Return the total number of contacts upon successful exit
 }
 
-
+// MON: Multi Point Mutations? Yes.
 int contactCoordML(contact **p_contactsM, float cutoff, frame *frames, int nres, int *seq, int *posM, char *chainM, int nmut)
 {
 	char prog[] = "contactCoord";
@@ -1664,8 +1664,8 @@ int contactCoordML(contact **p_contactsM, float cutoff, frame *frames, int nres,
 			fb = &frames[b];
 
 			// Chapa to select just the mutant contacts
-			for(int mut = 0; mut <= nmut; mut++)
-				if ( ((fa->ch == chainM[mut]) and (fa->i == posM[mut] )) or ((fb->ch == chainM[mut]) and (fb->i == posM[mut] )) )
+			for(int m = 0; m < nmut; m++) // MON: "<" instead of "<=" required
+				if ( ((fa->ch == chainM[m]) and (fa->i == posM[m] )) or ((fb->ch == chainM[m]) and (fb->i == posM[m] )) )
 				{
 					// This one seems the fastest alternative... but all are very close...
 					if( ( (fb->p[0]-fa->p[0])*(fb->p[0]-fa->p[0]) ) < cutoff2 )
@@ -3306,7 +3306,7 @@ double korp6DMW(contact *contacts, int icont, korp *map,  int posM, char chM,  i
 		//						maps[s][0][0][i][j][ir][meshes[ir]->icell[ita]+ipa][meshes[ir]->icell[itb]+ipb][ic]);
 
 			f = fmapping[s] * W[c_seqA] * W[c_seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
-			float value=maps[s][0][0][i][j][ir][ meshes[ir]->icell[ita] + ipa ][ meshes[ir]->icell[itb] + ipb ][ic];
+			float value = maps[s][0][0][i][j][ir][ meshes[ir]->icell[ita] + ipa ][ meshes[ir]->icell[itb] + ipb ][ic];
 			// if (value > 3 ) value=3;
 
 			energy += f * value;
@@ -3317,9 +3317,140 @@ double korp6DMW(contact *contacts, int icont, korp *map,  int posM, char chM,  i
 	}
 
 
-	return energy/100;
+	return energy/100; // MON: What is this? It may be not said at Methods...
 }
 
+
+// Update contacts for Multiple Point Mutations (MPMs)
+int contact_MPM(contact *contacts, int icont, int *posM, char *chM,  int *Maa, int nmut)
+{
+	int nup = 0; // Number of Updated contacts
+
+	// Update Mutant Residues Id in contact list
+	for(long c = 0; c < icont; c++) // screen all contacts
+		for(int m = 0; m < nmut; m++)
+		{
+			if ( (contacts[c].fai == posM[m]) and (contacts[c].fach == chM[m]) )
+			{
+				contacts[c].seqA = Maa[m];
+				nup++;
+			}
+
+			if ( (contacts[c].fbi == posM[m]) and (contacts[c].fbch == chM[m]) )
+			{
+				contacts[c].seqB = Maa[m];
+				nup++;
+			}
+		}
+
+	return(nup);
+}
+
+// KORP 6D energy function for Multiple Point Mutations (MPMs) including weights (W)
+// (Set "nmut" to 0 for WT)
+double korp6DMW_MPM(contact *contacts, int icont, korp *map,  int *posM, char *chM,  int *Maa, int nmut, double *W)
+{
+	float *********maps = map->maps;
+	mesh **meshes = map->meshes;
+	char **mapping = map->mapping;
+	char *smapping = map->smapping;
+	float *fmapping = map->fmapping;
+	float *br = map->br;
+	char *iaa = map->iaa;
+
+	int c_seqA, c_seqB;
+
+	double energy = 0.0;
+	int ir,ita,ipa,itb,ipb,ic,i,j,s;
+	double f;
+
+	if(nmut<1)
+	{
+		fprintf(stderr,"Error, invalid number of mutations: nmut= %d\n", nmut);
+		exit(1);
+	}
+
+	for(long c = 0; c < icont; c++) // screen all contacts
+	{
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
+		{
+			//printf("%d fai %d %d Maa %c cont %c  %f %f\n", c, contacts[c].fai,contacts[c].fbi, posM, Maa, contacts[c].seqA, contacts[c].d, br[0]);
+			c_seqA = contacts[c].seqA;
+			c_seqB = contacts[c].seqB;
+
+			for(int m = 0; m < nmut; m++)
+			{
+				if ( (contacts[c].fai == posM[m]) and (contacts[c].fach == chM[m]) )
+					c_seqA = Maa[m];
+				else if ( (contacts[c].fbi == posM[m]) and (contacts[c].fbch == chM[m]) )
+					c_seqB = Maa[m];
+			}
+
+			i = mapping[ (int)iaa[c_seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[c_seqB] ] [1]; // j-th interaction frame map
+
+			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
+
+		//	fprintf(stdout,"contact2bins> %2d-%2d ir= %2d  ita= %2d  itb= %2d  ipa= %2d  ipb= %2d  ic= %2d  energy= %f\n",c_seqA, c_seqB, ir,ita,itb,ipa,ipb,ic,
+		//		maps[s][0][0][i][j][ir][meshes[ir]->icell[ita]+ipa][meshes[ir]->icell[itb]+ipb][ic]);
+
+			f = fmapping[s] * W[c_seqA] * W[c_seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
+			float value = maps[s][0][0][i][j][ir][ meshes[ir]->icell[ita] + ipa ][ meshes[ir]->icell[itb] + ipb ][ic];
+
+			energy += f * value;
+
+		//	fprintf(stderr, "korp6DMW_MPM>  i= %3d  j= %3d  c_seqA= %d  c_seqB= %d  f= %10.6f  energy= %10.6f\n", i, j, c_seqA, c_seqB, f, energy);
+		}
+	}
+
+	return energy/100; // MON: What is this? It may be not said at Methods...
+}
+
+
+// KORP 6D energy function including weights (W)
+double korp6DW2(contact *contacts, int icont, korp *map, double *W)
+{
+	float *********maps = map->maps;
+	mesh **meshes = map->meshes;
+	char **mapping = map->mapping;
+	char *smapping = map->smapping;
+	float *fmapping = map->fmapping;
+	float *br = map->br;
+	char *iaa = map->iaa;
+
+	int c_seqA, c_seqB;
+
+	double energy = 0.0;
+	int ir, ita, ipa, itb, ipb, ic, i, j, s;
+	double f;
+
+	for(long c = 0; c < icont; c++) // screen all contacts
+	{
+		s = smapping[(int)contacts[c].sd]; // 0= Non-bonding, >0= Bonding: 1= i+x, 2= i+x+1, 3= i+x+2, etc...
+		if( s >= 0 && contacts[c].d > br[0]  ) // ICOSA-like
+		{
+			c_seqA = contacts[c].seqA;
+			c_seqB = contacts[c].seqB;
+
+			i = mapping[ (int)iaa[c_seqA] ] [1]; // i-th interaction frame map
+			j = mapping[ (int)iaa[c_seqB] ] [1]; // j-th interaction frame map
+
+			contact2bins(&contacts[c],meshes,br,&ir,&ita,&itb,&ipa,&ipb,&ic); // Return the 6D bin indices from one contact
+
+		//	fprintf(stdout,"contact2bins> %2d-%2d ir= %2d  ita= %2d  itb= %2d  ipa= %2d  ipb= %2d  ic= %2d  energy= %f\n",c_seqA, c_seqB, ir,ita,itb,ipa,ipb,ic,
+		//		maps[s][0][0][i][j][ir][meshes[ir]->icell[ita]+ipa][meshes[ir]->icell[itb]+ipb][ic]);
+
+			f = fmapping[s] * W[c_seqA] * W[c_seqB]; // Custom weighting factors for Bonding and Non-bonding contacts
+			float value = maps[s][0][0][i][j][ir][ meshes[ir]->icell[ita] + ipa ][ meshes[ir]->icell[itb] + ipb ][ic];
+			energy += f * value;
+
+			// fprintf(stderr, "korp6DMW_MPM>  i= %3d  j= %3d  c_seqA= %d  c_seqB= %d  f= %10.6f  energy= %10.6f\n", i, j, c_seqA, c_seqB, f, energy);
+		}
+	}
+
+	return energy/100; // MON: What is this? It may be not said at Methods...
+}
 
 // MUT with 21 WEIGHTs KORP 6D energy function (21st is an additive term)
 double korp6DMW21(contact *contacts, int icont, korp *map,  int posM, char chM,  int Maa, double *W)

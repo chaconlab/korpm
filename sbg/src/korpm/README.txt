@@ -14,7 +14,7 @@ Please, choose the appropriate release for your system:
 
  [Program]        Compiler              Libraries     Linkage     Version
  ------------------------------------------------------------------------
-  korpe*          Intel icpc (v16.0.1)     -           static        1.18 
+  korpe*          Intel icpx (v16.0.1)     -           static        1.18 
   korpe_gcc       GNU gcc     (v4.6.3)     -           static        1.18   
 
 * Intel compiled binary is the faster alternative (10-20%).

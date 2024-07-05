@@ -348,11 +348,18 @@ double korp6DM(contact *contacts, int icont, korp *map, int pos, char ch, int aa
 double korp6DM(contact *contacts, int icont, korp *map, int pos, char ch, int aa, float *faa);
 double korp6DM_BIND(contact *contacts, int icont, korp *map, int pos, char ch, int aa, float *faa);
 double korp6DMW(contact *contacts, int icont, korp *map, int pos, char ch, int aa, double *W);
+double korp6DMW_MPM(contact *contacts, int icont, korp *map, int *pos, char *ch, int *aa, int nmut, double *W);
 // MUT with 21 WEIGHTs KORP 6D energy function (21st is an additive term)
 double korp6DMW21(contact *contacts, int icont, korp *map,  int posM, char chM,  int Maa, double *W);
 double korp6DMWRSA(contact *contacts, int icont, korp *map, int pos, char ch, int aa, double *W, float RSA);
 
 double korp6DMW_BIND(contact *contacts, int icont, korp *map,  int posM, char chM,  int Maa, double *W);
+
+// KORP 6D energy function including weights (W)
+double korp6DW2(contact *contacts, int icont, korp *map, double *W);
+
+// Update Multiple Point Mutations (MPMs) in contacts list
+int contact_MPM(contact *contacts, int icont, int *posM, char *chM,  int *Maa, int nmut);
 
 // Get a per residue array of PDB's residue numbers (automatic memory allocation)
 int *getResNums(Macromolecule *mol);
